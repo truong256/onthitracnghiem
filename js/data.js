@@ -1,0 +1,3972 @@
+/**
+ * DỮ LIỆU CÂU HỎI TRẮC NGHIỆM CHỦ NGHĨA XÃ HỘI KHOA HỌC
+ * Trích xuất 100% từ các file docx trong thư mục dự án:
+ * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 1 (41 câu)
+ * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 2 (40 câu)
+ * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 3 (36 câu)
+ * Tổng cộng: 117 câu hỏi thực tế.
+ */
+
+export const INITIAL_QUIZ_DATA = [
+  {
+    "id": "bai-1",
+    "title": "CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 1",
+    "description": "Bộ câu hỏi ôn tập CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 1",
+    "questions": [
+      {
+        "id": "bai-1-q1",
+        "number": 1,
+        "type": "single_choice",
+        "header": "Câu 1:",
+        "content": "Những nhà tư tưởng tiêu biểu của chủ nghĩa xã hội không tưởng phê phán đầu thế kỷ XIX là ai?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Xanh Ximông, Giăng Mêliê, Rôbớt Ôoen",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Xanh Ximông, Sắclơ Phuriê, Rôbớt Ôoen",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Grắccơ Babớp, Xanh Ximông, Sắclơ Phuriê",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Xanh Ximông, Sắclơ Phuriê, G. Mably",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q2",
+        "number": 2,
+        "type": "single_choice",
+        "header": "Câu 2:",
+        "content": "Tác phẩm nào đánh dấu sự ra đời của chủ nghĩa xã hội khoa học?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tuyên ngôn của Đảng Cộng sản",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Tình cảnh nước Anh",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Góp phần phê phản triết học pháp quyền của Hêghen – Lời nói đầu",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Bộ tư bản",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q3",
+        "number": 3,
+        "type": "single_choice",
+        "header": "Câu 3:",
+        "content": "Đối tượng nghiên cứu của chủ nghĩa xã hội khoa học là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Là những quy luật văn hoá - xã hội.",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Là những quy luật và tính quy luật chính trị – xã hội của quá trình phát sinh, hình thành và phát triển của hình thái kinh tế - xã hội cộng sản chủ nghĩa",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Là những quy luật kinh tế",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Là những quy luật hình thành, phát triển và hoàn thiện của các hình thái kinh tế - xã hội.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q4",
+        "number": 4,
+        "type": "single_choice",
+        "header": "Câu 4:",
+        "content": "Phát kiến nào của C.Mác và Ph.Ăngghen chỉ ra sự diệt vong về kinh tế của chủ nghĩa tư bản?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Học thuyết về sứ mệnh lịch sử toàn thế giới của giai cấp công nhân",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Học thuyết về giá trị thặng dư",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Chủ nghĩa duy vật biện chứng",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Chủ nghĩa duy vật lịch sử",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q5",
+        "number": 5,
+        "type": "single_choice",
+        "header": "Câu 5:",
+        "content": "Ph.Ăngghen đã đánh giá: \"Hai phát hiện vĩ đại này đã đưa chủ nghĩa xã hội trở thành một khoa học\". Hai phát kiến đó là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Sứ mệnh lịch sử của giai cấp công nhân – Học thuyết giá trị thặng dư",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Sứ mệnh lịch sử của giai cấp công nhân – Chủ nghĩa duy vật lịch sử",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Chủ nghĩa duy vật biện chứng và chủ nghĩa duy vật lịch sử",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Học thuyết giá trị thặng dư – Chủ nghĩa duy vật lịch sử",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q6",
+        "number": 6,
+        "type": "single_choice",
+        "header": "Câu 6:",
+        "content": "Phạm trù nào được coi là cơ bản nhất và là xuất phát điểm của chủ nghĩa xã hội khoa học?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Giai cấp công nhân",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Cách mạng xã hội chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Chuyên chính vô sản",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Sứ mệnh lịch sử của giai cấp công nhân",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q7",
+        "number": 7,
+        "type": "single_choice",
+        "header": "Câu 7:",
+        "content": "Điền từ còn thiếu vào chỗ trống: Giai cấp công nhân và nhân dân lao động là cơ sở..., cơ sở... của Đảng cộng sản, là nguồn bổ sung lực lượng phong phú cho Đảng.",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Chính trị - xã hội",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Giai cấp – xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Kinh tế - xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Văn hoá - xã hội",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q8",
+        "number": 8,
+        "type": "single_choice",
+        "header": "Câu 8:",
+        "content": "Giai cấp công nhân Việt Nam ra đời vào thời gian nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Trong cuộc khai thác thuộc địa lần thứ nhất của thực dân Pháp",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Những năm đầu thế kỷ 19.",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Trong cuộc khai thác thuộc địa lần thứ hai của thực dân Pháp",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Trước khi thực dân Pháp xâm lược Việt Nam.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q9",
+        "number": 9,
+        "type": "single_choice",
+        "header": "Câu 9:",
+        "content": "Điền từ còn thiếu vào chỗ trống “Giai cấp công nhân Việt Nam thực hiện lãnh đạo cách mạng thông qua đội tiên phong của nó là (...)”",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Mặt trận tổ quốc Việt Nam",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Tổ chức công đoàn",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Tổng liên đoàn lao động Việt Nam",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Đảng Cộng sản Việt Nam",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q10",
+        "number": 10,
+        "type": "single_choice",
+        "header": "Câu 10:",
+        "content": "Hạn chế cơ bản lớn nhất mà giai cấp công nhân Việt Nam hiện nay cần khắc phục là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Hiệu quả lao động thấp",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Tâm lý tiểu nông",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Số lượng còn ít",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Trình độ khoa học kỹ thuật chưa cao",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q11",
+        "number": 11,
+        "type": "single_choice",
+        "header": "Câu 11:",
+        "content": "Điểm then chốt để giúp giai cấp công nhân Việt Nam hiện nay thực hiện thành công sứ mệnh lịch sử của mình là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Coi trọng công tác xây dựng, chỉnh đốn Đảng",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Phát triển giai cấp công nhân cả về số lượng và chất lượng",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Trí thức hoá giai cấp công nhân",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Xây dựng khối liên minh công – nông",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q12",
+        "number": 12,
+        "type": "single_choice",
+        "header": "Câu 12:",
+        "content": "Theo Ph. Ắngghen: “Thực hiện nhiệm vụ giải phóng thế giới ấy, đó là sứ mệnh lịch sử của........” Hãy chọn đáp án đúng điền vào chỗ trống?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Giai cấp tư sản",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Giai cấp tiểu tư sản",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Giai cấp nông dân",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Giai cấp vô sản",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q13",
+        "number": 13,
+        "type": "multiple_choice",
+        "header": "Câu 13:",
+        "content": "Điều kiện chủ quan để giai cấp công nhân thực hiện được sứ mệnh lịch sử của mình là: (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Không cần liên minh với các giai cấp, tầng lớp khác",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Đảng Cộng sản",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Sự phát triển của bản thân giai cấp công nhân cả về số lượng và chất lượng",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Sở hữu toàn bộ tư liệu sản xuất trong xã hội",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B",
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q14",
+        "number": 14,
+        "type": "multiple_choice",
+        "header": "Câu 14:",
+        "content": "Đặc điểm nào sau đây thể hiện đúng bản chất của giai cấp công nhân? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Không sở hữu tư liệu sản xuất, sống bằng lao động làm thuê",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Có trình độ học vấn thấp, chủ yếu làm việc tay chân",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Luôn gắn bó với giai cấp địa chủ và tiểu thương",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Có tính tổ chức và kỷ luật cao trong lao động sản xuất",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q15",
+        "number": 15,
+        "type": "multiple_choice",
+        "header": "Câu 15:",
+        "content": "Giai cấp công nhân Việt Nam có đặc điểm gì khác với giai cấp công nhân ở các nước tư bản? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Không có sự gắn kết với các giai cấp, tầng lớp khác",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Xuất thân từ nông dân là chủ yếu",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Chịu sự bóc lót của thực dân và phong kiến",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Sở hữu tư liệu sản xuất trong xã hội",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B",
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q16",
+        "number": 16,
+        "type": "single_choice",
+        "header": "Câu 16:",
+        "content": "Phát kiến nào của C.Mác và Ph.Ăngghen chỉ ra những hạn chế có tính lịch sử của chủ nghĩa xã hội không tưởng?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Học thuyết về sứ mệnh lịch sử toàn thế giới của giai cấp công nhân",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Học thuyết về giá trị thặng dư",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Chủ nghĩa duy vật biện chứng",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Chủ nghĩa duy vật lịch sử",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q17",
+        "number": 17,
+        "type": "single_choice",
+        "header": "Câu 17:",
+        "content": "Đâu là nhân tố chủ quan quan trọng nhất để giai cấp công nhân thực hiện thắng lợi sứ mệnh lịch sử của mình?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Liên minh giai cấp công nhân với giai cấp nông dân",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Sự phát triển của giai cấp công nhân về số lượng",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Sự phát triển của giai cấp công nhân về chất lượng",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Đảng Cộng sản",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q18",
+        "number": 18,
+        "type": "single_choice",
+        "header": "Câu 18:",
+        "content": "Tìm ý đúng để hoàn thiện luận điểm sau: Cùng với sự phát triển của khoa học và công nghệ ngày càng hiện đại, giai cấp công nhân:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tăng về số lượng và giảm về chất lượng",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Giảm về số lượng và có trình độ sản xuất ngày càng cao",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Tăng về số lượng và nâng cao về chất lượng",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Giảm về số lượng và nâng cao về chất lượng.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q19",
+        "number": 19,
+        "type": "single_choice",
+        "header": "Câu 19:",
+        "content": "Dấu hiệu đánh dấu sự trưởng thành vượt bậc của giai cấp công nhân với tư cách là giai cấp cách mạng là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Sự trưởng thành về trình độ kỹ thuật",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Sự trưởng thành về ý thức chính trị",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Sự trưởng thành về trình độ nhận thức",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Sự ra đời của Đảng Cộng sản",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q20",
+        "number": 20,
+        "type": "single_choice",
+        "header": "Câu 20:",
+        "content": "Trong các nội dung sau đây thì nội dung nào thuộc về giải pháp xây dựng giai cấp công nhân Việt Nam hiện nay?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Xây dựng giai cấp công nhân tăng về số lượng và chất lượng",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Coi trọng và giữ vững bản chất giai cấp công nhân và nguyên tắc sinh hoạt Đảng",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Xây dựng giai cấp công nhân lớn mạnh, có giác ngộ giai cấp và chính trị vững vàng",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Nâng cao nhận thức, kiên định quan điểm giai cấp công nhân là giai cấp lãnh đạo cách mạng thông qua đội tiền phong là Đảng Cộng sản Việt Nam",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q21",
+        "number": 21,
+        "type": "single_choice",
+        "header": "Câu 21:",
+        "content": "Vấn đề nổi bật nhất đối với việc thực hiện sứ mệnh lịch sử của giai cấp công nhân Việt Nam hiện nay là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tham gia xây dựng nền kinh tế thị trường định hướng xã hội chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Lực lượng chủ đạo trong lao động",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Phát huy vai trò và trách nhiệm của lực lượng đi đầu trong sự nghiệp đẩy mạnh công nghiệp hoá, hiện đại hoá đất nước",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Nắm vững khoa học và công nghệ",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q22",
+        "number": 22,
+        "type": "multiple_choice",
+        "header": "Câu 22:",
+        "content": "Theo C.Mác và Ph.Ăngghen thì đặc điểm nổi bật của giai cấp công nhân là: (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Giai cấp cách mạng và có tinh thần cách mạng triệt để",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Lao động bằng phương thức công nghiệp",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Có quyền sở hữu toàn bộ tư liệu sản xuất",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Làm việc trong nông nghiệp, sử dụng công cụ thủ công",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q23",
+        "number": 23,
+        "type": "single_choice",
+        "header": "Câu 23:",
+        "content": "Xét về phương thức lao động, phương thức sản xuất, giai cấp công nhân mang thuộc tính cơ bản nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Là giai cấp trực tiếp hay gián tiếp vận hành máy móc có tính chất công nghiệp ngày càng hiện đại",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Là giai cấp tạo ra của cải vật chất làm giàu cho xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Có số lượng đông nhất trong dân cư.",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Giai cấp có tư liệu sản xuất nhiều nhất",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q24",
+        "number": 24,
+        "type": "single_choice",
+        "header": "Câu 24:",
+        "content": "Đặc điểm sứ mệnh lịch sử của giai cấp công nhân là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Thay thế chế độ sở hữu tư nhân này bằng một chế độ sở hữu tư nhân khác",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Thay thế chế độ công hữu này bằng một chế độ công hữu khác",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Xóa bỏ triệt để chế độ tư hữu về tư liệu sản xuất",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Thay thế chế độ chiếm hữu nô lệ bằng chế độ xã hội chủ nghĩa",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q25",
+        "number": 25,
+        "type": "single_choice",
+        "header": "Câu 25:",
+        "content": "Nội dung trực tiếp về văn hoá tư tưởng thể hiện sứ mệnh lịch sử của giai cấp công nhân Việt Nam là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Xây dựng hệ giá trị và con người Việt Nam",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Xây dựng con người mới xã hội chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Xây dựng nền giáo dục hiện đại",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Xây dựng nền văn hoá Việt Nam tiên tiến, đậm đà bản sắc dân tộc",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q26",
+        "number": 26,
+        "type": "single_choice",
+        "header": "Câu 26:",
+        "content": "Trong các nội dung sau đây thì nội dung nào thuộc về giải pháp xây dựng giai cấp công nhân Việt Nam hiện nay?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Thực hiện tốt chính sách và pháp luật đối với công nhân và người lao động.",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Xây dựng giai cấp công nhân lớn mạnh, có giác ngộ giai cấp và chính trị vững vàng",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Thực hiện chiến lược xây dựng giai cấp công nhân lớn mạnh, gắn kết chặt chẽ với chiến lược phát triển kinh tế - xã hội, công nghiệp hoá, hiện đại hoá đất nước, hội nhập quốc tế",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Coi trọng và giữ vững bản chất giai cấp công nhân và nguyên tắc sinh hoạt Đảng",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q27",
+        "number": 27,
+        "type": "multiple_choice",
+        "header": "Câu 27:",
+        "content": "Giai cấp công nhân Việt Nam chủ yếu xuất thân từ tầng lớp nào? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Giai cấp nông dân bị tước đoạt hết ruộng đất",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Tầng lớp địa chủ phong kiến",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Thợ thủ công bị phá sản",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Tầng lớp tư sản dân tộc",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q28",
+        "number": 28,
+        "type": "single_choice",
+        "header": "Câu 28:",
+        "content": "Xét trong quan hệ sản xuất tư bản chủ nghĩa giai cấp công nhân là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Giai cấp nghèo khổ nhất",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Giai cấp không có tư liệu sản xuất, đi làm thuê cho nhà tư bản, bị nhà tư bản bóc lột giá trị thặng dư",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Giai cấp tạo ra của cải cho xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Giai cấp có số lượng đông trong dân cư",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q29",
+        "number": 29,
+        "type": "multiple_choice",
+        "header": "Câu 29:",
+        "content": "Trong thời kỳ thuộc địa, giai cấp công nhân Việt Nam chủ yếu làm việc trong: (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Xí nghiệp thủ công truyền thống",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Hợp tác xã nông nghiệp",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Đồn điền cao su",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Nhà máy, hầm mỏ do thực dân Pháp xây dựng",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "C",
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q30",
+        "number": 30,
+        "type": "multiple_choice",
+        "header": "Câu 30:",
+        "content": "Chủ nghĩa xã hội khoa học ra đời dựa trên cơ sở của những tiền đề nào? (Chọn nhiều đáp án) Sinh viên chọn 2 phương án đúng nhất",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tiền đề khoa học tự nhiên",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Tiền đề khoa học lịch sử",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Tiền đề tư tưởng lý luận",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Tiền đề khoa học xã hội",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q31",
+        "number": 31,
+        "type": "multiple_choice",
+        "header": "Câu 31:",
+        "content": "Nội dung sứ mệnh lịch sử của giai cấp công nhân Việt Nam hiện nay bao gồm: (Chọn 3 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 3 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nội dung chính trị - xã hội",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Nội dung lý luận",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Nội dung kinh tế",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Nội dung văn hóa, tư tưởng",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "C",
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q32",
+        "number": 32,
+        "type": "single_choice",
+        "header": "Câu 32:",
+        "content": "Câu nói sau đây được viết trong tác phẩm nào: \"Giai cấp tư sản, trong quá trình thống trị giai cấp chưa đầy một thế kỷ, đã tạo ra những lực lượng sản xuất nhiều hơn và đồ sộ hơn lực lượng sản xuất của tất cả các thế hệ trước gộp lại\"?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Chống Đuyrinh",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Bộ Tư bản",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Tuyên ngôn của Đảng Cộng sản",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Ba nguồn gốc và ba bộ phận cấu thành của chủ nghĩa Mác",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q33",
+        "number": 33,
+        "type": "true_false_group",
+        "header": "Câu 33:",
+        "content": "Câu 33. Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Giai cấp công nhân đại diện cho phương thức sản xuất tiên tiến và lực lượng sản xuất hiện đại.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Giai cấp công nhân Việt Nam hiện nay đã tăng cả về số lượng và chất lượng.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Đảng Cộng sản là nhân tố khách quan quan trọng nhất để giai cấp công nhân thực hiện thắng lợi sứ mệnh lịch sử của mình.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Sự trưởng thành của Đảng Cộng sản – Hạt nhân chính trị quan trọng của giai cấp công nhân.",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q34",
+        "number": 34,
+        "type": "true_false_group",
+        "header": "Câu 34:",
+        "content": "Câu 34. Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Giai cấp công nhân Việt Nam không có sự liên kết với các lực lượng cách mạng khác",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 2,
+            "statement": "Giai cấp công nhân Việt Nam hiện nay đa dạng về cơ cấu nghề nghiệp, có mặt trong mọi thành phần kinh tế",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Giai cấp công nhân Việt Nam là tầng lớp giàu có, ít chịu áp bức bóc lột.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Giai cấp công nhân Việt Nam hiện nay đã tăng nhanh về số lượng và chất lượng",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q35",
+        "number": 35,
+        "type": "true_false_group",
+        "header": "Câu 35:",
+        "content": "Câu 35. Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Giai cấp công nhân Việt Nam hiện nay đã tăng nhanh về số lượng và giảm về chất lượng.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 2,
+            "statement": "Giai cấp công nhân Việt Nam gắn bó mật thiết với các tầng lớp nhân dân trong xã hội.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Giai cấp công nhân Việt Nam là lực lượng nòng cốt của Đảng Cộng sản Việt Nam.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 4,
+            "statement": "Giai cấp công nhân phát huy vai trò và trách nhiệm của lực lượng đi đầu trong sự nghiệp đẩy mạnh công nghiệp hóa, hiện đại hóa đất nước.",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q36",
+        "number": 36,
+        "type": "true_false_group",
+        "header": "Câu 36:",
+        "content": "Câu 36. Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Sự trưởng thành của Đảng Cộng sản – Hạt nhân chính trị quan trọng của giai cấp công nhân.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Giai cấp công nhân Việt Nam hiện nay đã tăng cả về số lượng và chất lượng.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Đảng Cộng sản là nhân tố khách quan quan trọng nhất để giai cấp công nhân thực hiện thắng lợi sứ mệnh lịch sử của mình.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Giai cấp công nhân đại diện cho phương thức sản xuất tiên tiến và lực lượng sản xuất hiện đại.",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q37",
+        "number": 37,
+        "type": "true_false_group",
+        "header": "Câu 37:",
+        "content": "Câu 37. Chọn Đúng hoặc Sai với từng phát biểu:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Giai cấp công nhân là chủ thể của quá trình sản xuất vật chất hiện đại.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Đặc điểm nổi bật của giai cấp công nhân là lao động bằng phương thức nông nghiệp.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 3,
+            "statement": "Giai cấp công nhân là giai cấp cách mạng và có tinh thần cách mạng triệt để.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 4,
+            "statement": "Giai cấp công nhân là những người lao động trực tiếp hay gián tiếp vận hành các công cụ sản xuất có tính chất công nghiệp ngày càng hiện đại và xã hội hóa cao.",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q38",
+        "number": 38,
+        "type": "drag_drop_columns",
+        "header": "Câu 38:",
+        "content": "Câu 38. Kéo thả các yếu tố sau đây vào cột tương ứng:",
+        "instruction": "Kéo thả các yếu tố vào đúng cột tương ứng",
+        "columns": [
+          {
+            "id": "col-1",
+            "title": "Điều kiện khách quan quy định sứ mệnh lịch sử của giai cấp công nhân:",
+            "correctItems": [
+              "Địa vị kinh tế của giai cấp công nhân",
+              "Địa vị chính trị - xã hội của giai cấp công nhân"
+            ]
+          },
+          {
+            "id": "col-2",
+            "title": "Điều kiện chủ quan để giai cấp công nhân thực hiện được sứ mệnh lịch sử:",
+            "correctItems": [
+              "Sự phát triển của bản thân giai cấp công nhân cả về số lượng và chất lượng",
+              "Đảng Cộng sản"
+            ]
+          }
+        ],
+        "allItems": [
+          "Địa vị kinh tế của giai cấp công nhân",
+          "Địa vị chính trị - xã hội của giai cấp công nhân",
+          "Sự phát triển của bản thân giai cấp công nhân cả về số lượng và chất lượng",
+          "Đảng Cộng sản"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q39",
+        "number": 39,
+        "type": "drag_drop",
+        "header": "Câu 39:",
+        "content": "Câu 39: Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
+        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "pairs": [
+          {
+            "id": "target-1",
+            "prompt": "Giai cấp công nhân Việt Nam là lực lượng nòng cốt của ____ Việt Nam",
+            "correctAnswer": "Đảng Cộng Sản"
+          },
+          {
+            "id": "target-2",
+            "prompt": "Giai cấp công nhân Việt Nam gắn bó mật thiết với các ____ trong xã hội",
+            "correctAnswer": "tầng lớp nhân dân"
+          },
+          {
+            "id": "target-3",
+            "prompt": "Giai cấp công nhân Việt Nam có mối quan hệ mật thiết với giai cấp nông dân và _____",
+            "correctAnswer": "tầng lớp tri thức"
+          }
+        ],
+        "optionsPool": [
+          "Đảng Cộng Sản",
+          "tầng lớp nhân dân",
+          "tầng lớp tri thức",
+          "giai cấp tầng lớp"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q40",
+        "number": 40,
+        "type": "drag_drop",
+        "header": "Câu 40:",
+        "content": "Câu 40. Kéo thả các đáp án khớp với các phát biểu từ 1 – 4 về trái dưới đây:",
+        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "pairs": [
+          {
+            "id": "target-1",
+            "prompt": "Đảng Cộng sản là _____ quan trọng nhất để giai cấp công nhân thực hiện thắng lợi sứ mệnh lịch sử của mình.",
+            "correctAnswer": "nhân tố chủ quan"
+          },
+          {
+            "id": "target-2",
+            "prompt": "Giai cấp công nhân là ___ của quá trình sản xuất vật chất hiện đại.",
+            "correctAnswer": "chủ thể"
+          },
+          {
+            "id": "target-3",
+            "prompt": "Giai cấp công nhân đại diện cho ____ tiên tiến.",
+            "correctAnswer": "phương thức sản xuất"
+          },
+          {
+            "id": "target-4",
+            "prompt": "Giai cấp công nhân đại diện cho ___ hiện đại.",
+            "correctAnswer": "lực lượng sản xuất"
+          }
+        ],
+        "optionsPool": [
+          "nhân tố chủ quan",
+          "chủ thể",
+          "phương thức sản xuất",
+          "lực lượng sản xuất"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-1-q41",
+        "number": 41,
+        "type": "drag_drop",
+        "header": "Câu 41:",
+        "content": "Câu 41: Kéo thả các đáp án khớp với các phát biểu từ 1 - 3 vế trái dưới đây:",
+        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "pairs": [
+          {
+            "id": "target-1",
+            "prompt": "Giai cấp công nhân là ____ và có tinh thần cách mạng triệt để",
+            "correctAnswer": "giai cấp cách mạng"
+          },
+          {
+            "id": "target-2",
+            "prompt": "Sứ mệnh lịch sử của giai cấp công nhân là_____ khỏi áp bức, bất công, bóc lột",
+            "correctAnswer": "giải phóng con người"
+          },
+          {
+            "id": "target-3",
+            "prompt": "Thực hiện sự nghiệp giải phóng thế giới ấy, đó là sứ mệnh lịch sử của ____ hiện đại",
+            "correctAnswer": "giai cấp vô sản"
+          }
+        ],
+        "optionsPool": [
+          "giai cấp cách mạng",
+          "giải phóng con người",
+          "giai cấp vô sản",
+          "giai cấp công nhân"
+        ],
+        "needsReview": false
+      }
+    ]
+  },
+  {
+    "id": "bai-2",
+    "title": "CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 2",
+    "description": "Bộ câu hỏi ôn tập CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 2",
+    "questions": [
+      {
+        "id": "bai-2-q1",
+        "number": 1,
+        "type": "single_choice",
+        "header": "Câu 1:",
+        "content": "Theo C. Mác và Ph. Ăngghen thì giai đoạn đầu của hình thái kinh tế – xã hội cộng sản chủ nghĩa là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Chủ nghĩa cộng sản",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Thời kỳ quá độ",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Cộng sản chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Chủ nghĩa xã hội",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q2",
+        "number": 2,
+        "type": "single_choice",
+        "header": "Câu 2:",
+        "content": "Chủ nghĩa xã hội có mấy đặc trưng cơ bản?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "8",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "5",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "6",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "7",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q3",
+        "number": 3,
+        "type": "single_choice",
+        "header": "Câu 3:",
+        "content": "Hình thái kinh tế – xã hội cộng sản chủ nghĩa bắt đầu và hoàn thiện khi nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Bắt đầu từ khi Đảng Cộng sản ra đời và xây dựng xong chủ nghĩa xã hội.",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Bắt đầu từ thời kỳ quá độ và hoàn thiện ở giai đoạn thấp của xã hội cộng sản.",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Bắt đầu từ thời kỳ quá độ cho đến khi xây dựng xong giai đoạn cao của xã hội cộng sản.",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Bắt đầu từ giai đoạn thấp của xã hội cộng sản và hoàn thiện ở giai đoạn cao của xã hội cộng sản.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q4",
+        "number": 4,
+        "type": "single_choice",
+        "header": "Câu 4:",
+        "content": "Đặc trưng về kinh tế của chủ nghĩa xã hội là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Có nền kinh tế phát triển cao dựa trên lực lượng sản xuất hiện đại.",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Có nền kinh tế phát triển cao dựa trên lực lượng sản xuất hiện đại và chế độ tư hữu về tư liệu sản xuất.",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Có nền kinh tế phát triển cao dựa trên lực lượng sản xuất hiện đại và chế độ công hữu về tư liệu sản xuất.",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Có nền kinh tế phát triển cao.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q5",
+        "number": 5,
+        "type": "single_choice",
+        "header": "Câu 5:",
+        "content": "Nguyên nhân sâu xa dẫn đến sự thay thế hình thái kinh tế – xã hội tư bản chủ nghĩa bằng hình thái kinh tế – xã hội cộng sản chủ nghĩa là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Mâu thuẫn giữa lực lượng sản xuất mang tính xã hội hóa ngày càng cao với quan hệ sản xuất tư bản chủ nghĩa dựa trên chế độ chiếm hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất chủ yếu.",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Mâu thuẫn giữa phương thức sản xuất tư bản chủ nghĩa và phương thức sản xuất xã hội chủ nghĩa dựa trên chế độ chiếm hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất chủ yếu.",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Mâu thuẫn giữa lực lượng sản xuất và tư liệu sản xuất dựa trên chế độ chiếm hữu tư nhân tư bản chủ nghĩa.",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Mâu thuẫn giữa các giai cấp, tầng lớp trong xã hội dựa trên chế độ chiếm hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất chủ yếu.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q6",
+        "number": 6,
+        "type": "single_choice",
+        "header": "Câu 6:",
+        "content": "Chọn cụm từ còn thiếu điền vào dấu “…”: “Giữa xã hội tư bản chủ nghĩa và xã hội cộng sản chủ nghĩa là một thời kỳ … từ xã hội nọ sang xã hội kia” (C. Mác).",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Đột phá cách mạng",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Cách mạng",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Cải biến cách mạng",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Quá độ",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q7",
+        "number": 7,
+        "type": "single_choice",
+        "header": "Câu 7:",
+        "content": "Kiểu quá độ lên chủ nghĩa xã hội ở Việt Nam là kiểu quá độ nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Quá độ trực tiếp",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Quá độ chủ quan",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Quá độ khách quan",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Quá độ gián tiếp",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q8",
+        "number": 8,
+        "type": "single_choice",
+        "header": "Câu 8:",
+        "content": "Cương lĩnh xây dựng đất nước trong thời kỳ quá độ lên chủ nghĩa xã hội (Bổ sung và phát triển năm 2011) được Đảng ta thông qua ở Đại hội lần thứ mấy?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Đại hội XI",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Đại hội X",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Đại hội IX",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Đại hội XII",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q9",
+        "number": 9,
+        "type": "single_choice",
+        "header": "Câu 9:",
+        "content": "Tìm đáp án sai. Đặc trưng bản chất của chủ nghĩa xã hội Việt Nam theo tinh thần của Đại hội XI:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Quyền lực thuộc về giai cấp công nhân",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Con người có cuộc sống ấm no, tự do, hạnh phúc, có điều kiện phát triển toàn diện",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Có nền văn hóa tiên tiến đậm đà bản sắc dân tộc",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Có quan hệ hữu nghị và hợp tác với các nước trên thế giới",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q10",
+        "number": 10,
+        "type": "single_choice",
+        "header": "Câu 10:",
+        "content": "Thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là bước quá độ:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Trực tiếp, từ chế độ phong kiến tiến lên chế độ xã hội chủ nghĩa.",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Trực tiếp, từ chế độ tư bản chủ nghĩa lên chế độ xã hội chủ nghĩa.",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Gián tiếp, bỏ qua chế độ tư bản chủ nghĩa tiến lên chủ nghĩa xã hội.",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Gián tiếp, bỏ qua chế độ phong kiến tiến lên chế độ xã hội chủ nghĩa.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q11",
+        "number": 11,
+        "type": "multiple_choice",
+        "header": "Câu 11:",
+        "content": "Đặc điểm về chính trị trong thời kỳ quá độ được thể hiện ở điểm nào? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Thiết lập chuyên chính vô sản",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Đa nguyên chính trị, đa đảng đối lập",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Xây dựng nền dân chủ xã hội chủ nghĩa",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Hoàn toàn không còn vai trò của nhà nước",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q12",
+        "number": 12,
+        "type": "multiple_choice",
+        "header": "Câu 12:",
+        "content": "Đặc điểm nổi bật của thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là gì? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Từ một nền sản xuất nhỏ tiến lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Xây dựng nhà nước pháp quyền tư sản",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Phát triển chủ nghĩa tư bản trong thời gian ngắn để tích lũy",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Có sự lãnh đạo của Đảng Cộng sản Việt Nam",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q13",
+        "number": 13,
+        "type": "single_choice",
+        "header": "Câu 13:",
+        "content": "Câu “Cần phải có thời kỳ quá độ khá lâu dài từ chủ nghĩa tư bản lên chủ nghĩa xã hội” là của ai?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Ăngghen",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Heghen",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "C.Mác",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Lênin",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q14",
+        "number": 14,
+        "type": "single_choice",
+        "header": "Câu 14:",
+        "content": "Đặc điểm nổi bật của thời kỳ quá độ đó là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Những yếu tố của xã hội mới đã phát triển, xoá bỏ hoàn toàn yếu tố của xã hội cũ.",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Tàn dư của xã hội cũ còn tồn tại",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Toàn bộ các yếu tố của xã hội bị triệt tiêu.",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Những nhân tố của xã hội mới và những tàn tích của xã hội cũ tồn tại đan xen lẫn nhau, đấu tranh với nhau trên mọi lĩnh vực.",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q15",
+        "number": 15,
+        "type": "single_choice",
+        "header": "Câu 15:",
+        "content": "Về nội dung, thời kỳ quá độ lên chủ nghĩa xã hội là thời kỳ cải tạo cách mạng sâu sắc, triệt để xã hội tư bản chủ nghĩa trên các lĩnh vực:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Chủ yếu về văn hóa",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Chủ yếu về chính trị",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Chủ yếu là chính trị.",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Kinh tế, chính trị, văn hóa, xã hội",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q16",
+        "number": 16,
+        "type": "single_choice",
+        "header": "Câu 16:",
+        "content": "Phát triển bỏ qua chế độ tư bản chủ nghĩa ở Việt Nam được hiểu như thế nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Bỏ qua sự phát triển của lực lượng sản xuất tư bản chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Bỏ qua các yếu tố gắn với phương thức sản xuất tư bản chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Không xây dựng quan hệ sản xuất tư bản chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất va kiến trúc thượng tang tư bản chủ nghĩa",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q17",
+        "number": 17,
+        "type": "single_choice",
+        "header": "Câu 17:",
+        "content": "Chọn từ đúng điền vào chỗ trống để hoàn thành mục tiêu của Đảng xác định trong thời kỳ quá độ lên chủ nghĩa xã hội ở nước ta: Độc lập dân tộc gắn liền với chủ nghĩa xã hội; dân giàu, nước mạnh, dân chủ, .... , văn minh",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Phát triển",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Công bằng",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Bình đắng",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Tiến bộ",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q18",
+        "number": 18,
+        "type": "single_choice",
+        "header": "Câu 18:",
+        "content": "Theo quan điểm của chủ nghĩa Mác - Lênin mốc bắt đầu của thời kỳ quá độ lên chủ nghĩa xã hội từ khi nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Khi giai cấp công nhân đấu tranh giành chính quyền",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Khi giai cấp công nhân tiến hành cải tạo xã hội cũ và xây dựng xã hội mới",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Khi giai cấp công nhân và nhân dân lao động tiến hành cải tạo xã hội cũ",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Khi giai cấp công nhân và nhân dân lao động giành được chính quyền",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q19",
+        "number": 19,
+        "type": "single_choice",
+        "header": "Câu 19:",
+        "content": "Đặc điểm của thời kỳ quá độ lên chủ nghĩa trên lĩnh vực kinh tế là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tồn tại giai cấp đối kháng",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Tồn tại đấu tranh giai cấp",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Tồn tại nhiều thành phần kinh tế",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Tồn tại nhiểu tàn dư văn hóa của chế độ cũ",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q20",
+        "number": 20,
+        "type": "single_choice",
+        "header": "Câu 20:",
+        "content": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa ở nước ta, được hiểu là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Bỏ qua việc xác lập vị trí thống trị của kiến trúc thượng tầng tư bản chủ nghĩa nhưng không kế thừa những thành tựu mà nhân loại đã đạt được dưới chế độ tư bản chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất tư bản chủ nghĩa nhưng kế thừa những thành tựu mà nhân loại đã đạt được dưới chế độ tư bản chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa nhưng không kế thừa những thành tựu mà nhân loại đã đạt được dưới chế độ tư bản chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa, nhưng tiếp thu, kế thừa những thành tựu mà nhân loại đã đạt được dưới chế độ tư bản chủ nghĩa",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q21",
+        "number": 21,
+        "type": "single_choice",
+        "header": "Câu 21:",
+        "content": "Trong cuốn sách “Một số vấn đề lý luận và thực tiễn về chủ nghĩa xã hội và con đường đi lên chủ nghĩa xã hội ở Việt Nam\", Tổng Bí thư Nguyễn Phú Trọng khẳng định: đường lối cơ bản, xuyên suốt của cách mạng Việt Nam và cũng là điểm cốt yếu trong di sản tư tưởng của Chủ tịch Hồ Chí Minh là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Phát triển kinh tế thị trường định hướng xã hội chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Chủ nghĩa xã hội và giải phóng giai cấp vô sản",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Độc lập dân tộc gắn liền với chủ nghĩa xã hội",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Độc lập dân tộc gắn liền với hội nhập kinh tế quốc tế",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q22",
+        "number": 22,
+        "type": "single_choice",
+        "header": "Câu 22:",
+        "content": "Chọn phương án sai",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa nhưng có sự tiếp thu, kế thừa toàn bộ các lĩnh vực đã tạo ra dưới chế độ tư bản chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa tức là bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa là con đường cách mạng tất yếu chủ quan, con đường xây dựng đất nước trong thời kỳ quá độ lên chủ nghĩa xã hội",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Con đường đi lên chủ nghĩa xã hội của nước ta là sự phát triển quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q23",
+        "number": 23,
+        "type": "single_choice",
+        "header": "Câu 23:",
+        "content": "Tại sao cho rằng con đường cách mạng Việt Nam là quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa là một tất yếu?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Vì nó phù hợp với đặc điểm của đất nước và xu thế phát triển của thời đại",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Vì không cần tiếp thu thành tựu khoa học, kỹ thuật dưới chế độ tư bản chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Vì sự phát triển của lực lượng sản xuất ngày càng cao",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Vì không cần tạo ra sự biến đổi về chất trên tất cả các lĩnh vực",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q24",
+        "number": 24,
+        "type": "single_choice",
+        "header": "Câu 24:",
+        "content": "Căn cứ vào giáo trình Chủ nghĩa xã hội khoa học, hãy xác định khái niệm dùng để chỉ một chế độ xã hội tốt đẹp, giai đoạn đầu của hình thái kinh tế - xã hội cộng sản chủ nghĩa",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Thời kỳ quá độ lên chủ nghĩa xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Chủ nghĩa xã hội",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Chủ nghĩa cộng sản",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Thời kỳ quá độ",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q25",
+        "number": 25,
+        "type": "single_choice",
+        "header": "Câu 25:",
+        "content": "Theo chủ nghĩa Mác – Lênin có mấy hình thức quá độ lên chủ nghĩa xã hội?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "3",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "1",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "2",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "4",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q26",
+        "number": 26,
+        "type": "multiple_choice",
+        "header": "Câu 26:",
+        "content": "Thời kỳ quá độ lên chủ nghĩa xã hội có những mâu thuẫn nào cần giải quyết? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Mâu thuẫn giữa cái cũ và cái mới trong xã hội",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Mâu thuẫn giữa các tầng lớp lao động và tư sản hoàn toàn biến mất.",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Mâu thuẫn giữa năng suất lao động và nhu cầu phát triển xã hội.",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Mâu thuẫn giữa các thành phần kinh tế khác nhau trong xã hội",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q27",
+        "number": 27,
+        "type": "multiple_choice",
+        "header": "Câu 27:",
+        "content": "Việc \"bỏ qua chế độ tư bản chủ nghĩa\" ở Việt Nam có nghĩa là: (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Tiếp thu, kế thừa những thành tựu nhân loại đã đạt được dưới chủ nghĩa tư bản",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Tăng cường sở hữu tư nhân để phát triển lực lượng sản xuất",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Loại bỏ hoàn toàn tất cả yếu tố tư bản trong nền kinh tế",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q28",
+        "number": 28,
+        "type": "true_false_group",
+        "header": "Câu 28:",
+        "content": "Câu 28: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Trong thời kỳ quá độ từ chủ nghĩa tư bản lên chủ nghĩa xã hội tồn tại chủ yếu là tư tưởng vô sản.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 2,
+            "statement": "Trong thời kỳ quá độ từ chủ nghĩa tư bản lên chủ nghĩa xã hội tồn tại nền kinh tế nhiều thành phần.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Đặc điểm cơ bản của thời kỳ quá độ lên chủ nghĩa xã hội là thời kỳ cải tạo cách mạng sâu sắc, triệt để trên lĩnh vực kinh tế.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 4,
+            "statement": "Trong thời kỳ quá độ từ chủ nghĩa tư bản lên chủ nghĩa xã hội tồn tại nhiều giai cấp, tầng lớp.",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q29",
+        "number": 29,
+        "type": "true_false_group",
+        "header": "Câu 29:",
+        "content": "Câu 29: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Trong thời kỳ quá độ lên chủ nghĩa xã hội tồn tại nhiều thành phần kinh tế",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Thời kỳ quá độ lên chủ nghĩa xã hội có sự tồn tại song song giữa các yếu tố cũ và yếu tố mới",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Thời kỳ quá độ lên chủ nghĩa xã hội chỉ có kinh tế nhà nước tồn tại và phát triển",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Trong thời kỳ quá độ lên chủ nghĩa xã hội kinh tế tư nhân bị xóa bỏ hoàn toàn",
+            "correctAnswer": "Sai"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q30",
+        "number": 30,
+        "type": "true_false_group",
+        "header": "Câu 30:",
+        "content": "Câu 30: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Việt Nam quá độ lên chủ nghĩa xã hội từ một nền sản xuất nhỏ, bỏ qua chế độ tư bản chủ nghĩa",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam là nhà nước của nhân dân, do nhân dân, vì nhân dân",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Chủ nghĩa xã hội ở Việt Nam không chấp nhận kinh tế tư nhân tồn tại song song với kinh tế nhà nước",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Việc “bỏ qua\" chế độ tư bản chủ nghĩa là không kế thừa bất kỳ yếu tố tích cực nào của chủ nghĩa tư bản",
+            "correctAnswer": "Sai"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q31",
+        "number": 31,
+        "type": "true_false_group",
+        "header": "Câu 31:",
+        "content": "Câu 31: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Thực chất của thời kỳ quá độ lên chủ nghĩa xã hội là thời kỳ cải biến cách mạng từ xã hội tiền tư bản chủ nghĩa và tư bản chủ nghĩa sang xã hội xã hội chủ nghĩa",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Quá độ gián tiếp từ chủ nghĩa tư bản lên chủ nghĩa cộng sản đối với những nước chưa trải qua chủ nghĩa tư bản phát triển",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Quá độ trực tiếp từ chủ nghĩa tư bản lên chủ nghĩa cộng sản đối với những nước đã trải qua chủ nghĩa tư bản phát triển",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 4,
+            "statement": "Học thuyết hình thái kinh tế - xã hội của chủ nghĩa Mác - Lênin đã chỉ rõ: Lịch sử xã hội đã trải qua 4 hình thái kinh tế - xã hội",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q32",
+        "number": 32,
+        "type": "true_false_group",
+        "header": "Câu 32:",
+        "content": "Câu 32: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Chủ nghĩa xã hội ở Việt Nam không bao gồm việc xây dựng nền kinh tế thị trường",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 2,
+            "statement": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa là sự lựa chọn duy nhất đúng, khoa học, phản ánh đúng quy luật phát triển khách quan của cách mạng Việt Nam trong thời đại ngày nay",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Việt Nam thực hiện quá độ trực tiếp đi lên chủ nghĩa xã hội",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Phát triển nền kinh tế thị trường định hướng xã hội chủ nghĩa là một trong những phương hướng xây dựng chủ nghĩa xã hội ở Việt Nam",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q33",
+        "number": 33,
+        "type": "drag_drop",
+        "header": "Câu 33:",
+        "content": "Câu 33: Kéo thả các đáp án khớp với các phát biểu từ 1–3:",
+        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "pairs": [
+          {
+            "id": "target-1",
+            "prompt": "____ từ chủ nghĩa tư bản lên chủ nghĩa cộng sản đối với những nước đã trải qua chủ nghĩa tư bản phát triển.",
+            "correctAnswer": "Quá độ trực tiếp"
+          },
+          {
+            "id": "target-2",
+            "prompt": "____ từ chủ nghĩa tư bản lên chủ nghĩa cộng sản đối với những nước chưa trải qua chủ nghĩa tư bản phát triển.",
+            "correctAnswer": "Quá độ gián tiếp"
+          },
+          {
+            "id": "target-3",
+            "prompt": "Thực chất của ____ lên chủ nghĩa xã hội là thời kỳ cải biến cách mạng từ xã hội tiền tư bản chủ nghĩa và tư bản chủ nghĩa sang xã hội xã hội chủ nghĩa.",
+            "correctAnswer": "Thời kỳ quá độ"
+          }
+        ],
+        "optionsPool": [
+          "Quá độ trực tiếp",
+          "Quá độ gián tiếp",
+          "Thời kỳ quá độ",
+          "Con đường"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q34",
+        "number": 34,
+        "type": "drag_drop",
+        "header": "Câu 34:",
+        "content": "Câu 34: Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
+        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "pairs": [
+          {
+            "id": "target-1",
+            "prompt": "Việt Nam thực hiện______ đi lên chủ nghĩa xã hội",
+            "correctAnswer": "quá độ gián tiếp"
+          },
+          {
+            "id": "target-2",
+            "prompt": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa, tức là bỏ qua việc xác lập______ của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa.",
+            "correctAnswer": "vị trí thống trị"
+          },
+          {
+            "id": "target-3",
+            "prompt": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa là con đường cách mạng______",
+            "correctAnswer": "tất yếu khách quan"
+          }
+        ],
+        "optionsPool": [
+          "quá độ gián tiếp",
+          "vị trí thống trị",
+          "tất yếu khách quan",
+          "quá độ trực tiếp"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q35",
+        "number": 35,
+        "type": "multiple_choice",
+        "header": "Câu 35:",
+        "content": "Đặc điểm về kinh tế của thời kỳ quá độ lên chủ nghĩa xã hội gồm: (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Có những thành phần kinh tế đổi lập nhau",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Hoàn toàn không còn kinh tế tư nhân.",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Chỉ có kinh tế nhà nước tổn tại và phát triển.",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Tồn tại nền kinh tế nhiều thành phần",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q36",
+        "number": 36,
+        "type": "drag_drop",
+        "header": "Câu 36:",
+        "content": "Câu 36: Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
+        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "pairs": [
+          {
+            "id": "target-1",
+            "prompt": "Việt Nam xây dựng nền ______ có sự điều tiết của nhà nước.",
+            "correctAnswer": "kinh tế thị trường"
+          },
+          {
+            "id": "target-2",
+            "prompt": "Một đặc trưng chính trị của chủ nghĩa xã hội là xây dựng _____ xã hội chủ nghĩa của nhân dân, do nhân dân, vì nhân dân.",
+            "correctAnswer": "nhà nước pháp quyền"
+          },
+          {
+            "id": "target-3",
+            "prompt": "Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam tôn trọng, bảo vệ và bảo đảm ______",
+            "correctAnswer": "quyền con người"
+          }
+        ],
+        "optionsPool": [
+          "kinh tế thị trường",
+          "nhà nước pháp quyền",
+          "quyền con người",
+          "chế độ chính trị"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q37",
+        "number": 37,
+        "type": "single_choice",
+        "header": "Câu 37:",
+        "content": "Cuộc cách mạng của giai cấp công nhân và nhân dân lao động dưới sự lãnh đạo của Đảng cộng sản chống lại giai cấp tư sản, là cuộc cách mạng:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Cách mạng vô sản",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Cách mạng tư sản",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Cách mạng xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Cách mạng dân chủ tư sản",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q38",
+        "number": 38,
+        "type": "multiple_choice",
+        "header": "Câu 38:",
+        "content": "Hai loại quá độ từ chủ nghĩa tư bản lên chủ nghĩa cộng sản đó là: (Chọn nhiều đáp án)",
+        "instructionNote": "Hãy chọn 2 đáp án đúng nhất !",
+        "options": [
+          {
+            "key": "A",
+            "content": "Quá độ gián tiếp",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Quá độ trực tiếp",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Quá độ cơ bản",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Quá độ không cơ bản.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q39",
+        "number": 39,
+        "type": "multiple_choice",
+        "header": "Câu 39:",
+        "content": "Những đặc điểm nổi bật trong thời kỳ quá độ lên chủ nghĩa xã hội gồm: (Chọn 2 đáp án đúng)",
+        "instructionNote": "Hãy chọn 2 đáp án đúng nhất!",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tổn tại nhiều thành phần kinh tế khác nhau.",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Xã hội hoàn toàn không còn giai cấp.",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Không còn mâu thuẫn xã hội nào.",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Sự tồn tại song song của các yếu tổ củ và yếu tố mới",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-2-q40",
+        "number": 40,
+        "type": "multiple_choice",
+        "header": "Câu 40:",
+        "content": "Đặc điểm cơ bản của thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là gì? (Chọn 2 đáp án đúng) A Chuyển thẳng từ chế độ phong kiến lên chủ nghĩa xã hội",
+        "instructionNote": "Hãy chọn 2 đấp án đúng nhất !",
+        "options": [
+          {
+            "key": "B",
+            "content": "Bò qua chế độ phong kiển",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Xây dựng nên kinh tế thị trường định hướng xã hội chủ nghĩa",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Bò qua chế độ tư bản chủ nghĩa",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "C",
+          "D"
+        ],
+        "needsReview": false
+      }
+    ]
+  },
+  {
+    "id": "bai-3",
+    "title": "CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 3",
+    "description": "Bộ câu hỏi ôn tập CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 3",
+    "questions": [
+      {
+        "id": "bai-3-q1",
+        "number": 1,
+        "type": "single_choice",
+        "header": "Câu 1:",
+        "content": "Theo nguyên nghĩa tiếng Hy Lạp thì \"Dân chủ\" là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Là quyền tự do của mỗi người",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Là quyền lực thuộc về nhân dân",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Là quyền của con người",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Là trật tự xã hội",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q2",
+        "number": 2,
+        "type": "single_choice",
+        "header": "Câu 2:",
+        "content": "Bản chất kinh tế của nền dân chủ xã hội chủ nghĩa là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Thực hiện chế độ công hữu về tư liệu sản xuất chủ yếu và thực hiện chế độ phân phối lợi ích theo kết quả lao động là chủ yếu",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Thực hiện chế độ phân phối \"Làm theo năng lực, hưởng theo nhu cầu\"",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Thực hiện chế độ tư hữu về tư liệu sản xuất",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Thực hiện chế độ tư hữu về công cụ sản xuất chủ yếu",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q3",
+        "number": 3,
+        "type": "single_choice",
+        "header": "Câu 3:",
+        "content": "Chọn ý không đúng về điểm khác biệt của nền dân chủ xã hội chủ nghĩa so với nền dân chủ tư sản:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Mang tính nhất nguyên về chính trị",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Dựa trên chế độ sở hữu xã hội về những tư liệu sản xuất chủ yếu của toàn xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Trước hết và chủ yếu được thực hiện bằng Nhà nước pháp quyền xã hội chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Không mang tính giai cấp",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q4",
+        "number": 4,
+        "type": "single_choice",
+        "header": "Câu 4:",
+        "content": "Lịch sử loài người đã từng xuất hiện các nền dân chủ nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nền dân chủ chủ nô, nền dân chủ phong kiến, nền dân chủ tư sản.",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Nền dân chủ nguyên thủy, nền dân chủ chủ nô, nền dân chủ phong kiến, nền dân chủ tư sản, nền dân chủ vô sản",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Nền dân chủ chủ nô, nền dân chủ phong kiến, nền dân chủ tư sản, nền dân chủ vô sản",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Nền dân chủ chủ nô, nền dân chủ tư sản, nền dân chủ xã hội chủ nghĩa",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q5",
+        "number": 5,
+        "type": "single_choice",
+        "header": "Câu 5:",
+        "content": "So với các nền dân chủ trước đây, dân chủ xã hội chủ nghĩa có điểm khác biệt cơ bản nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Là nền dân chủ phi lịch sử",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Là nền dân chủ rộng rãi cho giai cấp công nhân và nhân dân lao động",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Không còn mang tính giai cấp",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Là nền dân chủ thuần túy",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q6",
+        "number": 6,
+        "type": "single_choice",
+        "header": "Câu 6:",
+        "content": "Nhà nước pháp quyền XHCN quản lý mọi mặt của đời sống xã hội chủ yếu bằng gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tuyên truyền",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Giáo dục",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Đường lối, chính sách",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Hiến pháp, pháp luật",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q7",
+        "number": 7,
+        "type": "single_choice",
+        "header": "Câu 7:",
+        "content": "Kiểu nhà nước nào sau đây được V.I. Lênin gọi là nhà nước \"nửa nhà nước\"?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nhà nước chủ nô",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Nhà nước phong kiến",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Nhà nước tư sản",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Nhà nước xã hội chủ nghĩa",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q8",
+        "number": 8,
+        "type": "single_choice",
+        "header": "Câu 8:",
+        "content": "Căn cứ vào phạm vi tác động của quyền lực nhà nước, chức năng của nhà nước được chia thành:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Chức năng đối nội và chức năng đối ngoại",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Chức năng chính trị, kinh tế, văn hóa, xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Chức năng giai cấp, xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Chức năng trấn áp và chức năng tổ chức, xây dựng",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q9",
+        "number": 9,
+        "type": "single_choice",
+        "header": "Câu 9:",
+        "content": "Chế độ dân chủ nhân dân ở Việt Nam được xác lập từ khi nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Sau kháng chiến chống đế quốc Mỹ năm 1975",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Sau khi Đảng Cộng sản ra đời",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Sau kháng chiến chống thực dân Pháp năm 1954",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Sau cách mạng tháng Tám năm 1945",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q10",
+        "number": 10,
+        "type": "single_choice",
+        "header": "Câu 10:",
+        "content": "Nền dân chủ xã hội chủ nghĩa ở Việt Nam có điểm khác biệt cơ bản nào so với các nền dân chủ trước đây?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Là nền dân chủ phi lịch sử",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Là nền dân chủ rộng rãi cho giai cấp công nhân và nhân dân lao động",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Là nền dân chủ thuần túy",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Còn mang tính giai cấp",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q11",
+        "number": 11,
+        "type": "single_choice",
+        "header": "Câu 11:",
+        "content": "Tại sao quyền lực nhà nước ở Việt Nam được tổ chức theo nguyên tắc thống nhất?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Để tăng cường sự kiểm soát của nhà nước",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Để đảm bảo sự phối hợp và kiểm soát giữa các cơ quan lập pháp, hành pháp và tư pháp",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Để kiểm soát chặt chẽ các hoạt động kinh tế",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Để giảm thiểu vai trò của các tổ chức phi chính phủ",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q12",
+        "number": 12,
+        "type": "single_choice",
+        "header": "Câu 12:",
+        "content": "Hãy xác định biện pháp để nâng cao hiệu quả hoạt động của Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam.",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Giảm thiểu sự phát triển của khu vực tư nhân",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Tăng cường sự kiểm soát của nhà nước",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Xây dựng và từng bước hoàn thiện hệ thống giám sát, phản biện xã hội",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Giảm thiểu sự can thiệp của các tổ chức xã hội",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q13",
+        "number": 13,
+        "type": "single_choice",
+        "header": "Câu 13:",
+        "content": "Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam có đặc điểm như thế nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nhà nước đặt dưới sự lãnh đạo của Đảng cộng sản",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Nhà nước hoạt động trên nền tảng của khối liên minh công – nông – trí thức",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Nhà nước được tổ chức và hoạt động trên cơ sở Hiến pháp và pháp luật",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Nhà nước hình thành là kết quả của cách mạng xã hội chủ nghĩa",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q14",
+        "number": 14,
+        "type": "multiple_choice",
+        "header": "Câu 14:",
+        "content": "Dân chủ trong xã hội nguyên thủy được thể hiện như thế nào? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Mọi người đều bình đẳng trong quyết định các vấn đề chung",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Không có sự phân chia giai cấp và quyền lực",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Quyền lực tập trung vào một số cá nhân",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Hình thành tổ chức chính trị phức tạp",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q15",
+        "number": 15,
+        "type": "multiple_choice",
+        "header": "Câu 15:",
+        "content": "Đặc điểm nổi bật của nền dân chủ xã hội chủ nghĩa là gì? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tôn trọng quyền sở hữu tư nhân tuyệt đối",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Phân biệt rõ ràng giữa các tầng lớp xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Thực hiện quyền làm chủ tập thể của nhân dân",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Đặt quyền lợi của nhân dân lao động lên hàng đầu",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "C",
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q16",
+        "number": 16,
+        "type": "single_choice",
+        "header": "Câu 16:",
+        "content": "Đâu là định nghĩa đúng và đầy đủ về dân chủ?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Dân chủ là một giá trị phản ánh những quyền tối thiểu của con người, là một hình thức tổ chức nhà nước thừa nhận quyền làm chủ của nhân dân; là một giá trị xã hội phản ánh sự nghiệp đấu tranh của con người",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Dân chủ là giá trị phản ánh quyền cơ bản của con người, là kết quả của sự nghiệp đấu tranh của con người vì lợi ích của con người",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Dân chủ là một giá trị phản ánh những quyền cơ bản của con người, là một hình thức tổ chức nhà nước của giai cấp cầm quyền; có quá trình ra đời, phát triển cùng với lịch sử xã hội nhân loại",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Dân chủ là một giá trị xã hội phản ánh sự nghiệp đấu tranh của con người vì sự phát triển tiến bộ xã hội",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q17",
+        "number": 17,
+        "type": "single_choice",
+        "header": "Câu 17:",
+        "content": "Bản chất tư tưởng - văn hoá - xã hội của nền dân chủ xã hội chủ nghĩa được thể hiện ở nội dung nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Lấy hệ tư tưởng của giai cấp nông dân làm chủ đạo",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Lấy hệ tư tưởng của giai cấp tư sản làm chủ đạo",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Lấy hệ tư tưởng của giai cấp tiểu tư sản làm chủ đạo",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Lấy hệ tư tưởng Mác - Lênin - hệ tư tưởng của giai cấp công nhân làm chủ đạo",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q18",
+        "number": 18,
+        "type": "single_choice",
+        "header": "Câu 18:",
+        "content": "Đặc điểm của nhà nước pháp quyền xã hội chủ nghĩa là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Quản lý xã hội bằng dư luận",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Quản lý xã hội bằng mệnh lệnh hành chính",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Quản lý xã hội bằng niềm tin",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Quản lý xã hội bằng pháp luật",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q19",
+        "number": 19,
+        "type": "single_choice",
+        "header": "Câu 19:",
+        "content": "So với các mô hình nhà nước khác trong lịch sử thì nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam có sự khác biệt về chất như thế nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Vừa mang bản chất của giai cấp công nhân và nhân dân lao động",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Mang bản chất của đa số nhân dân lao động",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Mang bản chất của giai cấp công nhân, tính nhân dân rộng rãi và tính dân tộc sâu sắc",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Mang bản chất của giai cấp công nhân",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q20",
+        "number": 20,
+        "type": "single_choice",
+        "header": "Câu 20:",
+        "content": "Sự ra đời của nhà nước xã hội chủ nghĩa gắn với sự kiện nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Giai cấp công nhân đấu tranh đòi tăng lương, giảm giờ làm, cải thiện điều kiện lao động",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Giai cấp công nhân lật đổ nhà nước của giai cấp bóc lột, giành được chính quyền",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Giai cấp công nhân xây dựng công nghiệp",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Giai cấp công nhân đấu tranh phản đối tình trạng áp bức bóc lột của giai cấp tư sản",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q21",
+        "number": 21,
+        "type": "single_choice",
+        "header": "Câu 21:",
+        "content": "Dân chủ xã hội chủ nghĩa mang tính nhất nguyên về chính trị, được hiểu là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nền dân chủ xã hội chủ nghĩa đại biểu cho trí tuệ, lợi ích của riêng giai cấp công nhân và nhân dân lao động",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Nền dân chủ xã hội chủ nghĩa đại biểu cho trí tuệ, lợi ích của riêng giai cấp công nhân và tầng lớp trí thức",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Nền dân chủ xã hội chủ nghĩa do Đảng Cộng sản lãnh đạo – đại biểu cho trí tuệ, lợi ích của giai cấp công nhân, nhân dân lao động và toàn dân tộc",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Nền dân chủ xã hội chủ nghĩa đại biểu cho trí tuệ, lợi ích của riêng giai cấp công nhân và giai cấp nông dân",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q22",
+        "number": 22,
+        "type": "single_choice",
+        "header": "Câu 22:",
+        "content": "Hãy xác định mục tiêu chính của việc xây dựng Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam.",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Phát triển kinh tế thị trường tự do",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Phục vụ lợi ích của giai cấp công nhân và nhân dân lao động",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Giảm thiểu sự can thiệp của nhà nước",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Tăng cường sự kiểm soát của nhà nước",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q23",
+        "number": 23,
+        "type": "multiple_choice",
+        "header": "Câu 23:",
+        "content": "Bản chất của nền dân chủ xã hội chủ nghĩa là: (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nền dân chủ mang tính cá nhân",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Nền dân chủ của số nhân dân lao động",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Nền dân chủ của giai cấp tư sản",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Nền dân chủ mang tính tập thể",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q24",
+        "number": 24,
+        "type": "multiple_choice",
+        "header": "Câu 24:",
+        "content": "Dân chủ xã hội chủ nghĩa ở Việt Nam là: (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 1 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nền dân chủ gắn liền với sự lãnh đạo của Đảng Cộng sản Việt Nam",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Chế độ dân chủ tư sản mở rộng",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Chế độ dân chủ không phụ thuộc vào nhà nước",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Nền dân chủ bảo đảm quyền lực thuộc về nhân dân",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q25",
+        "number": 25,
+        "type": "single_choice",
+        "header": "Câu 25:",
+        "content": "Bản chất chính trị của nền dân chủ xã hội chủ nghĩa thể hiện như thế nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nền dân chủ tập trung vào phát triển kinh tế tư nhân và bảo vệ lợi ích của tầng lớp giàu có.",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Quyền lực thuộc về một cá nhân duy nhất, không có sự tham gia của quần chúng nhân dân.",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Quyền lực và lợi ích thuộc về toàn thể nhân dân lao động, trong đó có giai cấp công nhân, dưới sự lãnh đạo của Đảng Cộng sản.",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Nhà nước chủ yếu thực hiện các quyết định chính trị mà không cần sự đồng thuận hoặc tham gia của người dân.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q26",
+        "number": 26,
+        "type": "single_choice",
+        "header": "Câu 26:",
+        "content": "Bản chất dân chủ xã hội chủ nghĩa ở Việt Nam được thực hiện thông qua:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Các hình thức dân chủ tự nguyện.",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Các hình thức dân chủ gián tiếp và trực tiếp.",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Các hình thức dân chủ cơ bản và không cơ bản.",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Các hình thức dân chủ không tự nguyện.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q27",
+        "number": 27,
+        "type": "single_choice",
+        "header": "Câu 27:",
+        "content": "Bằng hiểu biết của bản thân, hãy cho biết đâu là hình thức dân chủ gián tiếp?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Người dân tự tổ chức các phong trào xã hội để yêu cầu các quyền lợi mà không thông qua bất kỳ đại diện nào.",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Người dân tham gia trực tiếp vào các cuộc trưng cầu ý dân về các chính sách hoặc luật pháp cụ thể.",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Người dân bầu ra đại diện của mình để thay mặt họ quyết định các vấn đề quan trọng trong quốc hội hoặc cơ quan lập pháp.",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Người dân trực tiếp tham gia bỏ phiếu để quyết định các vấn đề quan trọng của đất nước.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q28",
+        "number": 28,
+        "type": "multiple_choice",
+        "header": "Câu 28:",
+        "content": "Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam được xây dựng dựa trên những nguyên tắc nào sau đây? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Quyền lực nhà nước là tối cao, không cần kiểm soát.",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Đảng lãnh đạo nhà nước theo phương thức mệnh lệnh.",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Quyền lực nhà nước thống nhất, có phân công, phối hợp và kiểm soát.",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Nhà nước quản lý xã hội bằng hiến pháp, pháp luật.",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "C",
+          "D"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q29",
+        "number": 29,
+        "type": "drag_drop",
+        "header": "Câu 29:",
+        "content": "Câu 30: Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 ở dưới đây:",
+        "instruction": "Kéo thả các đáp án khớp với các phát biểu dưới đây:",
+        "pairs": [
+          {
+            "id": "target-1",
+            "prompt": "1) Nền dân chủ xã hội chủ nghĩa là nền dân chủ mang bản chất của ______",
+            "correctAnswer": "giai cấp công nhân"
+          },
+          {
+            "id": "target-2",
+            "prompt": "2) Dân chủ xã hội chủ nghĩa là sự kết hợp giữa hình thức dân chủ đại diện và ______",
+            "correctAnswer": "dân chủ trực tiếp"
+          },
+          {
+            "id": "target-3",
+            "prompt": "3) Dân chủ xã hội chủ nghĩa bảo đảm phát huy đầy đủ ______ của nhân dân trên tất cả các lĩnh vực",
+            "correctAnswer": "quyền làm chủ"
+          }
+        ],
+        "optionsPool": [
+          "giai cấp công nhân",
+          "dân chủ trực tiếp",
+          "quyền làm chủ"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q30",
+        "number": 30,
+        "type": "single_choice",
+        "header": "Câu 30:",
+        "content": "Căn cứ vào tính chất của quyền lực nhà nước, chức năng của nhà nước được chia thành:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Chức năng chính trị, kinh tế, văn hóa, xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Chức năng giai cấp (trấn áp) và chức năng xã hội (tổ chức và xây dựng)",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Chức năng giai cấp và chức năng đối ngoại",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q31",
+        "number": 31,
+        "type": "true_false_group",
+        "header": "Câu 31:",
+        "content": "Câu 32: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Bản chất dân chủ xã hội chủ nghĩa ở Việt Nam được thực hiện thông qua các thức dân chủ gián tiếp và dân chủ trực tiếp",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Đảng ta khẳng định một trong những đặc trưng của chủ nghĩa xã hội Việt Nam là do nhân dân làm chủ",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Quốc hội là cơ quan quyền lực nhà nước cao nhất hoạt động theo nhiệm kỳ 3 năm",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Trong hoạt động của nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam, các cơ quan của nhà nước không được phân quyền rõ ràng",
+            "correctAnswer": "Sai"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q32",
+        "number": 32,
+        "type": "drag_drop",
+        "header": "Câu 32:",
+        "content": "Câu 33: Kéo thả các đáp án khớp với các phát biểu từ 1 – 4 ở dưới đây:",
+        "instruction": "Kéo thả các đáp án khớp với các phát biểu dưới đây:",
+        "pairs": [
+          {
+            "id": "target-1",
+            "prompt": "1) Dân chủ đại diện được thể hiện qua việc ______",
+            "correctAnswer": "Bầu cử Quốc hội"
+          },
+          {
+            "id": "target-2",
+            "prompt": "2) Một nguyên tắc cốt lõi của nhà nước pháp quyền là ______",
+            "correctAnswer": "Thượng tôn pháp luật"
+          },
+          {
+            "id": "target-3",
+            "prompt": "3) Nhân dân là ______ tối cao trong Nhà nước pháp quyền",
+            "correctAnswer": "Dân chủ đại diện"
+          },
+          {
+            "id": "target-4",
+            "prompt": "4) Hình thức dân chủ gián tiếp là hình thức ______",
+            "correctAnswer": "Chủ thể quyền lực"
+          }
+        ],
+        "optionsPool": [
+          "Bầu cử Quốc hội",
+          "Thượng tôn pháp luật",
+          "Dân chủ đại diện",
+          "Chủ thể quyền lực"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q33",
+        "number": 33,
+        "type": "multiple_choice",
+        "header": "Câu 33:",
+        "content": "Bản chất của dân chủ là gì?",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tôn trọng và đảm bảo quyền con người",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Quyền lực thuộc về toàn thể nhân dân",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Quyền lực thuộc về một nhóm nhỏ trong xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Phân biệt rõ ràng các tầng lớp xã hội",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "B"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q34",
+        "number": 34,
+        "type": "true_false_group",
+        "header": "Câu 34:",
+        "content": "Câu 35: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Dân chủ tư sản là hình thức dân chủ gắn với quyền lực chính trị của giai cấp tư sản",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Với tư cách là một hình thái nhà nước, một chế độ chính trị thì trong lịch sử nhân loại, cho đến nay có năm nền (chế độ) dân chủ",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 3,
+            "statement": "Nền dân chủ chủ nô, gắn với chế độ chiếm hữu nô lệ",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 4,
+            "statement": "Dân chủ xã hội chủ nghĩa là công cụ để giai cấp công nhân thực hiện chuyên chính với các giai cấp khác",
+            "correctAnswer": "Sai"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q35",
+        "number": 35,
+        "type": "true_false_group",
+        "header": "Câu 35:",
+        "content": "Câu 36: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Dân chủ xã hội chủ nghĩa là nền dân chủ cao hơn về chất so với nền dân chủ tư sản",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Trong xã hội tư bản, dân chủ thực chất thuộc về giai cấp tư sản",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Dân chủ xã hội chủ nghĩa là sự phủ định sách tron những thành tựu dân chủ trước đó",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Dân chủ là một phạm trù mang tính lịch sử, gắn với sự xuất hiện và phát triển của nhà nước",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q36",
+        "number": 36,
+        "type": "drag_drop",
+        "header": "Câu 36:",
+        "content": "Câu 37: Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 ở dưới đây:",
+        "instruction": "Kéo thả các đáp án khớp với các phát biểu dưới đây:",
+        "pairs": [
+          {
+            "id": "target-1",
+            "prompt": "1) Hình thức ___ là hình thức dân chủ đại diện, được thực hiện do nhân dân “ủy quyền”, giao quyền lực của mình cho tổ chức mà nhân dân trực tiếp bầu ra.",
+            "correctAnswer": "dân chủ gián tiếp"
+          },
+          {
+            "id": "target-2",
+            "prompt": "2) Hình thức ___ là hình thức thông qua đó, nhân dân bằng hành động trực tiếp của mình thực hiện quyền làm chủ nhà nước và xã hội.",
+            "correctAnswer": "dân chủ trực tiếp"
+          },
+          {
+            "id": "target-3",
+            "prompt": "3) Chế độ ___ ở nước ta được xác lập sau Cách mạng Tháng Tám năm 1945.",
+            "correctAnswer": "dân chủ nhân dân"
+          }
+        ],
+        "optionsPool": [
+          "dân chủ gián tiếp",
+          "dân chủ trực tiếp",
+          "dân chủ nhân dân"
+        ],
+        "needsReview": false
+      }
+    ]
+  }
+];

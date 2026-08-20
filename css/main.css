@@ -1,0 +1,954 @@
+/* Google Fonts: Roboto (Sans-Serif) for all text + Orbitron for digital timer */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --primary-blue: #1a56db;
+  --primary-blue-hover: #1e40af;
+  --primary-blue-light: #eff6ff;
+  
+  --accent-red: #dc2626;
+  --accent-red-hover: #b91c1c;
+  --accent-red-light: #fef2f2;
+  --accent-red-border: #fca5a5;
+
+  --accent-green: #15803d;
+  --accent-green-hover: #166534;
+  --accent-green-light: #f0fdf4;
+  --accent-green-border: #86efac;
+
+  --accent-orange: #d97706;
+  --accent-orange-light: #fffbeb;
+  --accent-orange-border: #fde68a;
+
+  /* Soft Light Pink & Neumorphic Palette */
+  --bg-page: #fdf5f7;
+  --bg-surface: rgba(255, 255, 255, 0.75);
+  --bg-muted: #fce7f3;
+  --pink-light: #fdf2f5;
+  --pink-soft: #fce7f3;
+  --pink-accent: #ec4899;
+  --pink-accent-hover: #db2777;
+  --pink-glow: rgba(236, 72, 153, 0.25);
+  
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-white: #ffffff;
+
+  --border-light: rgba(255, 255, 255, 0.8);
+  --border-medium: #fbcfe8;
+  --border-dark: #f472b6;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 16px -2px rgba(244, 114, 182, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 20px 30px -8px rgba(244, 114, 182, 0.2), 0 8px 10px -4px rgba(0, 0, 0, 0.03);
+  --shadow-xl: 0 25px 50px -12px rgba(244, 114, 182, 0.25);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  background-color: #fdf5f7;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(253, 226, 236, 0.9) 0px, transparent 55%),
+    radial-gradient(at 85% 15%, rgba(252, 231, 243, 0.85) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(254, 215, 226, 0.8) 0px, transparent 60%),
+    radial-gradient(at 85% 85%, rgba(251, 207, 232, 0.75) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Ambient Glow Orbs for Blur Effect */
+.ambient-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.glow-1 {
+  width: 480px;
+  height: 480px;
+  background: rgba(244, 114, 182, 0.28);
+  top: -80px;
+  left: 5%;
+}
+
+.glow-2 {
+  width: 420px;
+  height: 420px;
+  background: rgba(251, 146, 60, 0.16);
+  bottom: 60px;
+  right: 5%;
+}
+
+.glow-3 {
+  width: 520px;
+  height: 520px;
+  background: rgba(244, 63, 94, 0.15);
+  top: 45%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+/* Top Hazard / Warning Red-White Stripe Bar (Exact match to anhthamkhao) */
+.top-stripe-bar {
+  height: 6px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ef4444,
+    #ef4444 14px,
+    #ffffff 14px,
+    #ffffff 28px
+  );
+  border-bottom: 1px solid #dc2626;
+  position: relative;
+  z-index: 100;
+}
+
+/* App container */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Common button styles */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition);
+  user-select: none;
+}
+
+/* Quiz Mode Background (Clean neutral light gray matching anhthamkhao photos) */
+body.quiz-mode {
+  background-color: #f0f2f5 !important;
+  background-image: none !important;
+}
+
+body.quiz-mode .ambient-glow {
+  display: none !important;
+}
+
+body.quiz-mode .top-navbar {
+  background: #f3f4f6 !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Screen Transitions */
+.screen {
+  display: none;
+  width: 100%;
+  flex: 1;
+}
+
+.screen.active {
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================================================
+   1. TOP NAVBAR (Bám sát ảnh tham khảo)
+   ======================================================= */
+.top-navbar {
+  background: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  height: 54px;
+}
+
+/* Blank Left Spacer */
+.navbar-left-spacer {
+  flex: 1;
+}
+
+/* Digital LED Timer Center */
+.digital-timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.digital-lcd-clock {
+  background: #020617;
+  border: 2.5px solid #1d4ed8;
+  border-radius: 4px;
+  padding: 2px 14px;
+  box-shadow: 0 0 10px rgba(29, 78, 216, 0.4), inset 0 0 6px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.digital-lcd-digits {
+  font-family: 'Orbitron', 'Share Tech Mono', monospace;
+  font-size: 26px;
+  font-weight: 900;
+  color: #38bdf8;
+  letter-spacing: 2.5px;
+  text-shadow: 0 0 8px #38bdf8, 0 0 16px #0284c7;
+  line-height: 1;
+}
+
+.digital-lcd-clock.warning .digital-lcd-digits {
+  color: #f87171;
+  text-shadow: 0 0 8px #ef4444;
+}
+.digital-lcd-clock.warning {
+  border-color: #dc2626;
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+  animation: blinkTimer 1s infinite alternate;
+}
+
+@keyframes blinkTimer {
+  from { opacity: 1; }
+  to { opacity: 0.7; }
+}
+
+/* Top Navbar Right Actions */
+.navbar-right-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex: 1;
+}
+
+.btn-submit-exam {
+  background: #16a34a;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 1px 3px rgba(22, 163, 74, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.btn-submit-exam:hover {
+  background: #15803d;
+}
+
+.btn-nav-home {
+  background: #ffffff;
+  color: #4b5563;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #d1d5db;
+}
+
+.btn-nav-home:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.btn-audio-toggle {
+  background: #f3f4f6;
+  color: #4b5563;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-medium);
+  font-size: 16px;
+}
+
+.btn-audio-toggle:hover {
+  background: #e5e7eb;
+}
+
+/* =======================================================
+   2. QUIZ SCREEN MAIN CONTENT AREA (Bám sát ảnh 1, 2, 3)
+   ======================================================= */
+.quiz-main-container {
+  flex: 1;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 24px 100px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Question Header Section */
+.question-card-wrapper {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.q-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.q-title-group {
+  flex: 1;
+}
+
+.q-number-label {
+  font-weight: 700;
+  font-size: 15.5px;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.q-content-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+/* Flag / Review Later Checkbox (Right top of question) */
+.flag-review-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  padding: 4px 8px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.flag-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.flag-label-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+/* Instruction Banner / Badge (Orange pill) */
+.instruction-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #b45309;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.instruction-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: #ea580c;
+  color: white;
+  border-radius: 50%;
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+/* =======================================================
+   3. ANSWER OPTIONS GRID (Cards A, B, C, D)
+   ======================================================= */
+.options-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .options-grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.answer-option-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.option-key-label {
+  font-weight: 700;
+  font-size: 15px;
+  color: #111827;
+  width: 14px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.answer-card {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+  min-height: 50px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.answer-card:hover {
+  border-color: #9ca3af;
+  background-color: #fafbfc;
+}
+
+.answer-card.selected {
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+/* Option Input Icon (Radio or Checkbox) */
+.option-input-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #ffffff;
+  transition: var(--transition);
+}
+
+.answer-card.multiple .option-input-indicator {
+  border-radius: 2px;
+}
+
+.answer-card.selected .option-input-indicator {
+  border-color: #2563eb;
+  background-color: #ffffff;
+}
+
+.answer-card:not(.multiple).selected .option-input-indicator::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+.answer-card.multiple.selected .option-input-indicator {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.answer-card.multiple.selected .option-input-indicator::after {
+  content: '✓';
+  display: block;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.option-content-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1f2937;
+  flex: 1;
+  line-height: 1.4;
+}
+
+/* Instant check styles (Correct / Wrong feedback) */
+.answer-card.eval-correct {
+  border-color: #16a34a !important;
+  background-color: #f0fdf4 !important;
+}
+.answer-card.eval-correct .option-content-text {
+  color: #15803d !important;
+  font-weight: 600;
+}
+.answer-card.eval-correct .option-input-indicator {
+  border-color: #16a34a !important;
+  background-color: #16a34a !important;
+}
+
+.answer-card.eval-wrong {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+.answer-card.eval-wrong .option-content-text {
+  color: #b91c1c !important;
+}
+.answer-card.eval-wrong .option-input-indicator {
+  border-color: #dc2626 !important;
+  background-color: #dc2626 !important;
+}
+
+/* =======================================================
+   4. TRUE / FALSE GROUP STYLING
+   ======================================================= */
+.tf-group-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tf-item-row {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.tf-item-statement {
+  font-size: 14.5px;
+  color: #1f2937;
+  font-weight: 400;
+  flex: 1;
+}
+
+.tf-item-statement .tf-num {
+  font-weight: 700;
+  color: #111827;
+  margin-right: 6px;
+}
+
+.tf-buttons-group {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-tf {
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #4b5563;
+}
+
+.btn-tf:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.btn-tf.selected-true {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-tf.selected-false {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+/* =======================================================
+   5. DRAG AND DROP STYLING (Bám sát ảnh 1, 2, 15)
+   ======================================================= */
+.dd-standard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.dd-pool-col {
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.dd-pool-header {
+  display: none;
+}
+
+.dd-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.dd-chip {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #1f2937;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: var(--transition);
+  user-select: none;
+}
+
+.dd-chip:hover {
+  border-color: #3b82f6;
+  background-color: #f0f7ff;
+}
+
+.dd-chip.selected {
+  border-color: #2563eb;
+  background-color: #dbeafe;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+.dd-chip.placed {
+  background: #ffffff;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  cursor: default;
+  padding: 6px 10px;
+  font-size: 13px;
+  width: 100%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dd-chip .chip-remove {
+  background: #ef4444;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.dd-statements-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.dd-statement-row {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.dd-statement-text {
+  flex: 1;
+  background: #eef2f6;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+}
+
+.dd-drop-slot {
+  width: 260px;
+  min-height: 42px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background: #fafafa;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.dd-drop-slot.drag-hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.dd-drop-slot.filled {
+  border-style: solid;
+  border-color: #d1d5db;
+  background: #ffffff;
+  padding: 4px 6px;
+}
+
+.dd-slot-placeholder {
+  font-size: 13px;
+  color: #94a3b8;
+  user-select: none;
+}
+
+/* =======================================================
+   6. BOTTOM BAR & PAGINATION (Bám sát 100% ảnh)
+   ======================================================= */
+.bottom-quiz-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f3f4f6;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  z-index: 95;
+}
+
+/* Left Red Banner */
+.bottom-left-banner {
+  background: #c81e1e;
+  color: #ffffff;
+  height: 100%;
+  padding: 6px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 220px;
+}
+
+.bottom-banner-title {
+  font-weight: 800;
+  font-size: 13.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.bottom-banner-sub {
+  font-size: 11.5px;
+  color: #fecaca;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Center Pagination & Actions */
+.bottom-center-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.btn-question-drawer {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-question-drawer:hover {
+  background: #1d4ed8;
+}
+
+/* Number Bubbles */
+.pagination-bubbles-list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 2px;
+}
+
+.q-bubble {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 1px solid #d1d5db;
+  transition: var(--transition);
+  position: relative;
+}
+
+.q-bubble:hover {
+  background: #d1d5db;
+}
+
+/* Answered status: soft pink/red */
+.q-bubble.answered {
+  background: #f87171;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+/* Active current question: solid red */
+.q-bubble.active {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  border-color: #b91c1c !important;
+  box-shadow: 0 0 0 2px #dc2626;
+  font-weight: 700;
+}
+
+/* Flagged indicator */
+.q-bubble.flagged::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #9333ea;
+}
+
+/* Right Navigation Buttons */
+.bottom-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 20px;
+}
+
+.btn-prev-q {
+  background: #ffffff;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #d1d5db;
+}
+
+.btn-prev-q:hover {
+  background: #f3f4f6;
+}
+
+.btn-next-q {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 7px 18px;
+  border-radius: 20px;
+  border: none;
+}
+
+.btn-next-q:hover {
+  background: #1d4ed8;
+}
+
+.btn-check-instant {
+  background: #f59e0b;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.btn-check-instant:hover {
+  background: #d97706;
+}

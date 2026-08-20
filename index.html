@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hệ Thống Ôn Luyện Trắc Nghiệm - Chủ Nghĩa Xã Hội Khoa Học</title>
+  <meta name="description" content="Website ôn luyện trắc nghiệm môn Chủ nghĩa Xã hội Khoa học với đầy đủ 81 câu hỏi thực tế, hỗ trợ chọn đáp án, đúng/sai, kéo thả và ôn câu làm sai.">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Top Red-White Warning Stripe Bar (Matching AnhThamKhao) -->
+    <div class="top-stripe-bar" id="top-stripe-bar"></div>
+
+    <!-- TOP NAVBAR -->
+    <header class="top-navbar" id="top-navbar">
+      <!-- Left: Blank area -->
+      <div class="navbar-left-spacer" id="navbar-left-spacer"></div>
+
+      <!-- Center: Digital LED 7-Segment Timer (Hidden by default, only visible during Quiz) -->
+      <div class="digital-timer-container" id="digital-timer-container" style="display: none;">
+        <div class="digital-lcd-clock" id="digital-lcd-clock">
+          <span class="digital-lcd-digits" id="digital-clock-digits">15:00</span>
+        </div>
+      </div>
+
+      <!-- Right: Action Buttons -->
+      <div class="navbar-right-actions">
+        <button class="btn-nav-home" id="btn-goto-home" title="Về trang chủ chọn bài">Trang chủ</button>
+        <button class="btn-nav-home" id="btn-goto-admin" title="Quản lý ngân hàng câu hỏi">Quản trị</button>
+        <button class="btn-submit-exam" id="btn-top-submit" style="display:none;">
+          <span>NỘP BÀI</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Soft Light Pink Ambient Background Blurs -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- MAIN CONTENT SCREENS -->
+    <main class="main-content-viewport">
+      
+      <!-- SCREEN 1: HOME / DASHBOARD -->
+      <section class="screen active" id="screen-home">
+        <div class="dashboard-container">
+
+          <!-- Exercises Grid Header -->
+          <div class="dashboard-section-header">
+            <h2 class="section-title">Danh Sách Bài Ôn Luyện</h2>
+            <span style="font-size: 13.5px; color: #64748b;">Chọn bài và chế độ để bắt đầu</span>
+          </div>
+
+          <!-- Exercises Cards Grid -->
+          <div class="exercises-grid" id="exercises-list-grid">
+            <!-- Dynamic Exercise Cards rendered by JS -->
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SCREEN 2: QUIZ / TEST TAKING (Bám sát ảnh 1, 2, 3) -->
+      <section class="screen" id="screen-quiz">
+        <div class="quiz-main-container">
+          
+          <!-- Question Card -->
+          <div class="question-card-wrapper">
+            <div class="q-top-row">
+              <div class="q-title-group">
+                <div class="q-number-label" id="current-q-number">Câu 1:</div>
+                <div class="q-content-text" id="current-q-text">Nội dung câu hỏi đang tải...</div>
+              </div>
+              <!-- Checkbox Xem lại câu này -->
+              <div class="flag-review-container" id="flag-review-container" title="Đánh dấu để xem lại câu này sau">
+                <input type="checkbox" id="flag-checkbox" class="flag-checkbox">
+                <label for="flag-checkbox" class="flag-label-text">Xem lại câu này</label>
+              </div>
+            </div>
+
+            <!-- Instruction Badge (if multi select or note) -->
+            <div id="instruction-badge-container"></div>
+          </div>
+
+          <!-- Dynamic Answers Container (Options Grid / True False / Drag Drop) -->
+          <div id="quiz-answers-container"></div>
+
+        </div>
+
+        <!-- Bottom Quiz Bar (Bám sát ảnh tham khảo) -->
+        <div class="bottom-quiz-bar" id="bottom-quiz-bar">
+          <!-- Left Red Banner -->
+          <div class="bottom-left-banner">
+            <div class="bottom-banner-title" id="bottom-banner-title">KIỂM TRA 15 PHÚT - TUẦN 3</div>
+            <div class="bottom-banner-sub" id="bottom-banner-sub">Chủ nghĩa xã hội khoa học</div>
+          </div>
+
+          <!-- Center Navigation with Hamburger and Number Bubbles -->
+          <div class="bottom-center-nav">
+            <button class="btn-question-drawer" id="btn-open-drawer" title="Xem bảng tổng hợp danh sách câu">
+              ≡
+            </button>
+            <div class="pagination-bubbles-list" id="pagination-bubbles-list">
+              <!-- Number bubbles rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Right Action Buttons -->
+          <div class="bottom-right-actions">
+            <button class="btn-check-instant" id="btn-check-instant" style="display:none;">Kiểm tra đáp án</button>
+            <button class="btn-prev-q" id="btn-prev-q">Câu trước</button>
+            <button class="btn-next-q" id="btn-next-q">Câu hỏi tiếp theo</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 3: RESULT SCREEN -->
+      <section class="screen" id="screen-result">
+        <div class="result-container">
+          <!-- Result Hero Card -->
+          <div class="result-hero-card">
+            <div class="result-score-gauge">
+              <svg class="gauge-circle-svg" viewBox="0 0 120 120">
+                <circle class="gauge-bg" cx="60" cy="60" r="50"></circle>
+                <circle class="gauge-val" id="gauge-score-circle" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="0"></circle>
+              </svg>
+              <div class="gauge-text">
+                <span class="gauge-percent" id="result-percent-text">100%</span>
+                <span class="gauge-label">CHÍNH XÁC</span>
+              </div>
+            </div>
+
+            <div class="result-summary-info">
+              <h2 class="result-headline" id="result-headline">Hoàn Thành Bài Ôn Luyện</h2>
+              <p class="result-subhead" id="result-subhead">Xem lại bảng điểm và chi tiết các câu đã làm bên dưới.</p>
+              
+              <div class="result-metrics-grid">
+                <div class="metric-box metric-score">
+                  <div class="metric-num" id="metric-score-val">10/10</div>
+                  <div class="metric-lbl">Điểm quy đổi</div>
+                </div>
+                <div class="metric-box metric-correct">
+                  <div class="metric-num" id="metric-correct-val">41</div>
+                  <div class="metric-lbl">Số câu đúng</div>
+                </div>
+                <div class="metric-box metric-wrong">
+                  <div class="metric-num" id="metric-wrong-val">0</div>
+                  <div class="metric-lbl">Số câu sai</div>
+                </div>
+                <div class="metric-box metric-time">
+                  <div class="metric-num" id="metric-time-val">05:20</div>
+                  <div class="metric-lbl">Thời gian làm</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Result Action Buttons -->
+          <div class="result-actions-bar">
+            <button class="btn-result btn-result-wrong" id="btn-retry-wrong-only">Ôn lại các câu sai</button>
+            <button class="btn-result btn-result-retry" id="btn-retry-same-quiz">Làm lại bài này</button>
+            <button class="btn-result btn-result-home" id="btn-result-back-home">Danh sách bài</button>
+          </div>
+
+          <!-- Review Questions Accordion & Filter -->
+          <div class="review-questions-section">
+            <div class="review-filter-tabs">
+              <button class="review-filter-btn active" data-filter="all">Tất cả câu (<span id="filter-all-cnt">0</span>)</button>
+              <button class="review-filter-btn" data-filter="wrong">Chỉ câu sai (<span id="filter-wrong-cnt">0</span>)</button>
+              <button class="review-filter-btn" data-filter="correct">Chỉ câu đúng (<span id="filter-correct-cnt">0</span>)</button>
+            </div>
+            <div class="review-items-list" id="review-items-list">
+              <!-- Reviewed questions rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 4: ADMIN MANAGEMENT CMS -->
+      <section class="screen" id="screen-admin">
+        <div id="admin-cms-mount"></div>
+      </section>
+
+    </main>
+
+    <!-- MODAL 1: PRACTICE MODE SELECTOR -->
+    <div class="modal-overlay" id="mode-modal-overlay" style="display: none;">
+      <div class="modal-content-card">
+        <div class="modal-header">
+          <h3 class="modal-title" id="mode-modal-title">Chọn Chế Độ Ôn Luyện</h3>
+          <button class="modal-close-btn" id="btn-close-mode-modal">×</button>
+        </div>
+        <div class="mode-options-list">
+          
+          <div class="mode-option-card selected" data-mode="all">
+            <div class="mode-info">
+              <h4>Ôn Toàn Bộ Bài (Theo thứ tự)</h4>
+              <p>Làm lần lượt tất cả câu hỏi, có thể kiểm tra đáp án ngay từng câu.</p>
+            </div>
+          </div>
+
+          <div class="mode-option-card" data-mode="random">
+            <div class="mode-info">
+              <h4>Ôn Ngẫu Nhiên (Trộn đề)</h4>
+              <p>Xáo trộn thứ tự các câu hỏi để rèn luyện phản xạ ghi nhớ sâu.</p>
+            </div>
+          </div>
+
+          <div class="mode-option-card" data-mode="quick">
+            <div class="mode-info">
+              <h4>Luyện Nhanh (10 câu ngẫu nhiên)</h4>
+              <p>Bài luyện tập nhanh phù hợp khi có ít thời gian ôn tập.</p>
+            </div>
+          </div>
+
+          <div class="mode-option-card" data-mode="exam">
+            <div class="mode-info">
+              <h4>Thi Thử Tính Giờ (15 Phút)</h4>
+              <p>Đồng hồ LCD đếm ngược chuẩn bài kiểm tra, chỉ biết điểm sau khi nộp bài.</p>
+            </div>
+          </div>
+
+        </div>
+        <button class="ex-action-btn" id="btn-start-selected-mode">Bắt Đầu Làm Bài</button>
+      </div>
+    </div>
+
+    <!-- MODAL 2: QUESTION DRAWER OVERVIEW -->
+    <div class="modal-overlay" id="drawer-modal-overlay" style="display: none;">
+      <div class="drawer-modal-dialog">
+        <div class="drawer-header">
+          <h3 class="modal-title">Danh Sách Câu Hỏi</h3>
+          <button class="modal-close-btn" id="btn-close-drawer">×</button>
+        </div>
+        <div class="drawer-body">
+          <div class="drawer-legend">
+            <div class="legend-item"><span class="legend-dot" style="background:#dc2626;"></span> Đang làm</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#fecdd3;"></span> Đã trả lời</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#e2e8f0;"></span> Chưa làm</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#a855f7;"></span> Đã gắn cờ xem lại</div>
+          </div>
+          <div class="drawer-grid" id="drawer-questions-grid">
+            <!-- Grid bubbles -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
