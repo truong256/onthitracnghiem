@@ -952,3 +952,228 @@ body.quiz-mode .top-navbar {
 .btn-check-instant:hover {
   background: #d97706;
 }
+
+/* =======================================================
+   7. MOBILE RESPONSIVE OPTIMIZATIONS (MAIN LAYOUT)
+   ======================================================= */
+@media (max-width: 768px) {
+  .top-navbar {
+    padding: 6px 12px;
+    height: 52px;
+  }
+
+  .digital-lcd-clock {
+    padding: 2px 8px;
+    border-width: 2px;
+  }
+
+  .digital-lcd-digits {
+    font-size: 19px;
+    letter-spacing: 1.5px;
+  }
+
+  .navbar-right-actions {
+    gap: 6px;
+  }
+
+  .btn-nav-home {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+
+  .btn-submit-exam {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .quiz-main-container {
+    padding: 14px 12px 90px 12px;
+  }
+
+  .question-card-wrapper {
+    padding: 14px 14px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+  }
+
+  .q-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .flag-review-container {
+    align-self: flex-start;
+    padding: 2px 0;
+  }
+
+  .q-number-label {
+    font-size: 14.5px;
+  }
+
+  .q-content-text {
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  .options-grid-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .answer-option-row {
+    gap: 8px;
+  }
+
+  .answer-card {
+    padding: 11px 12px;
+    min-height: 48px;
+    border-radius: 8px;
+  }
+
+  .option-content-text {
+    font-size: 13.5px;
+  }
+
+  /* True / False Mobile layout */
+  .tf-item-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+
+  .tf-buttons-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .btn-tf {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 0;
+    border-radius: 6px;
+  }
+
+  /* Drag & Drop Mobile layout */
+  .dd-pool-col {
+    justify-content: flex-start;
+  }
+
+  .dd-chips-container {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .dd-chip {
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    min-height: 38px;
+  }
+
+  .dd-statement-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+
+  .dd-statement-text {
+    background: transparent;
+    border: none;
+    padding: 0 0 6px 0;
+    font-size: 13.5px;
+  }
+
+  .dd-drop-slot {
+    width: 100%;
+    min-height: 44px;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  /* Bottom Quiz Bar Mobile */
+  .bottom-quiz-bar {
+    height: 56px;
+    padding: 0 8px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .bottom-left-banner {
+    display: none;
+  }
+
+  .bottom-center-nav {
+    padding: 0 4px;
+    gap: 4px;
+  }
+
+  .btn-question-drawer {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    margin-right: 4px;
+  }
+
+  .q-bubble {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .bottom-right-actions {
+    gap: 6px;
+    padding-right: 4px;
+  }
+
+  .btn-prev-q {
+    padding: 7px 10px;
+    font-size: 12px;
+    border-radius: 16px;
+    white-space: nowrap;
+  }
+
+  .btn-next-q {
+    padding: 7px 12px;
+    font-size: 12.5px;
+    border-radius: 16px;
+    white-space: nowrap;
+  }
+
+  .btn-check-instant {
+    padding: 7px 10px;
+    font-size: 12px;
+    border-radius: 16px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .btn-prev-q {
+    padding: 6px 8px;
+    font-size: 11.5px;
+  }
+
+  .btn-next-q {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .btn-nav-home {
+    padding: 4px 6px;
+    font-size: 11.5px;
+  }
+}
+
