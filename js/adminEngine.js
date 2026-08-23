@@ -223,11 +223,11 @@ export class AdminEngine {
     });
 
     toolbar.querySelector('#btn-reset-default').addEventListener('click', () => {
-      if (confirm('Khôi phục lại toàn bộ dữ liệu gốc từ 2 file docx? Mọi thay đổi chỉnh sửa thủ công sẽ được reset.')) {
+      if (confirm('Khôi phục lại toàn bộ dữ liệu gốc từ các file docx? Mọi thay đổi chỉnh sửa thủ công sẽ được reset.')) {
         store.resetToDefault();
         this.render();
         this.onDataUpdated();
-        alert('Đã khôi phục thành công 81 câu hỏi gốc!');
+        alert('Đã khôi phục thành công toàn bộ dữ liệu câu hỏi gốc!');
       }
     });
 
