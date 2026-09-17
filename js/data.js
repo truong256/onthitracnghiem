@@ -5,7 +5,8 @@
  * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 2 (40 câu)
  * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 3 (36 câu)
  * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 4 (28 câu)
- * Tổng cộng: 145 câu hỏi thực tế.
+ * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 5 (33 câu)
+ * Tổng cộng: 178 câu hỏi thực tế.
  */
 
 export const INITIAL_QUIZ_DATA = [
@@ -4930,5 +4931,1141 @@ export const INITIAL_QUIZ_DATA = [
         "needsReview": false
       }
     ]
+  },
+  {
+      "id": "bai-5",
+      "title": "CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 5",
+      "description": "Bộ câu hỏi ôn tập CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 5: Dân tộc và Tôn giáo trong thời kỳ quá độ lên CNXH",
+      "questions": [
+          {
+              "id": "bai-5-q1",
+              "number": 1,
+              "type": "single_choice",
+              "header": "Câu 1:",
+              "content": "Quan điểm: Không phân biệt dân tộc lớn hay nhỏ, ở trình độ phát triển cao hay thấp, các dân tộc đều có nghĩa vụ và quyền lợi ngang nhau trên tất cả các lĩnh vực của đời sống xã hội - thuộc nội dung nào trong Cương lĩnh dân tộc của V.I. Lênin?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Phải đấu tranh chống chủ nghĩa phân biệt chủng tộc, chủ nghĩa sô vanh",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Các dân tộc hoàn toàn bình đẳng",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "C",
+                      "content": "Liên hiệp công nhân tất cả các dân tộc",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Đoàn kết các dân tộc",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "B"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q2",
+              "number": 2,
+              "type": "multiple_choice",
+              "header": "Câu 2:",
+              "content": "Theo quan điểm của chủ nghĩa Mác – Lênin, để thực hiện được bình đẳng dân tộc cần phải làm gì? (Chọn 2 đáp án)",
+              "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Phải đấu tranh chống chủ nghĩa phân biệt chủng tộc, chủ nghĩa sô vanh",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "B",
+                      "content": "Thủ tiêu tình trạng áp bức giai cấp, trên cơ sở đó xoá bỏ tình trạng áp bức dân tộc",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "C",
+                      "content": "Phải liên kết với các nước đế quốc lớn",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Phải duy trì chế độ tư hữu về tư liệu sản xuất",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "A",
+                  "B"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q3",
+              "number": 3,
+              "type": "single_choice",
+              "header": "Câu 3:",
+              "content": "Thứ tự quá trình phát triển của dân tộc lần lượt trải qua các hình thức nào?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Thị tộc, bộ tộc, bộ lạc, dân tộc",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Bộ lạc, bộ tộc, thị tộc, dân tộc",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Bộ tộc, thị tộc, bộ lạc, dân tộc",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Thị tộc, bộ lạc, bộ tộc, dân tộc",
+                      "isCorrect": true
+                  }
+              ],
+              "correctAnswers": [
+                  "D"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q4",
+              "number": 4,
+              "type": "single_choice",
+              "header": "Câu 4:",
+              "content": "Theo chủ nghĩa Mác – Lênin, nguyên nhân nào dẫn đến các cộng đồng dân cư muốn tách ra để hình thành cộng đồng dân tộc độc lập?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Do chủ nghĩa tư bản đã phát triển thành chủ nghĩa đế quốc",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Do các cộng đồng dân cư muốn độc lập để có thể đi xâm chiếm các dân tộc khác",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Do sự thức tỉnh, sự trưởng thành về ý thức dân tộc, ý thức về quyền sống của mình",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "D",
+                      "content": "Do các cộng đồng dân cư muốn phân chia lại thị trường thế giới",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "C"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q5",
+              "number": 5,
+              "type": "single_choice",
+              "header": "Câu 5:",
+              "content": "Trong những nội dung của quyền dân tộc tự quyết, nội dung nào được coi là cơ bản, trước hết?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Quyền tự quyết về các mối quan hệ quốc tế",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Quyền tự quyết về văn hoá",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Quyền tự quyết về kinh tế",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Quyền tự quyết về chính trị",
+                      "isCorrect": true
+                  }
+              ],
+              "correctAnswers": [
+                  "D"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q6",
+              "number": 6,
+              "type": "single_choice",
+              "header": "Câu 6:",
+              "content": "Hiểu theo nghĩa rộng, dân tộc là:",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Tộc người",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Quốc gia",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "C",
+                      "content": "Thị tộc",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Bộ tộc",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "B"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q7",
+              "number": 7,
+              "type": "single_choice",
+              "header": "Câu 7:",
+              "content": "Đâu là đặc trưng quan trọng nhất, là cơ sở để liên kết các thành viên của dân tộc tạo thành nền tảng vững chắc của cộng đồng dân tộc?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Có chung một phương thức sinh hoạt kinh tế",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "B",
+                      "content": "Có ngôn ngữ riêng và có thể có chữ viết riêng làm công cụ giao tiếp",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Có thể cư trú tập trung trên một vùng lãnh thổ của một quốc gia, hoặc nơi cư trú đan xen với nhiều dân tộc anh em",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Có nét tâm lý riêng (nét tâm lý dân tộc) biểu hiện kết tinh trong nền văn hóa dân tộc và tạo bản sắc văn hóa của dân tộc.",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "A"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q8",
+              "number": 8,
+              "type": "single_choice",
+              "header": "Câu 8:",
+              "content": "Ở Việt Nam hiện nay có khoảng bao nhiêu dân tộc?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "45",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "54",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "C",
+                      "content": "50",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "63",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "B"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q9",
+              "number": 9,
+              "type": "single_choice",
+              "header": "Câu 9:",
+              "content": "Tìm đáp án sai về đặc điểm dân tộc ở Việt Nam:",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Có sự chênh lệch về số dân giữa các tộc người",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Các dân tộc cư trú tập trung tại các trung tâm lớn",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "C",
+                      "content": "Các dân tộc ở Việt Nam có trình độ phát triển không đều",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Các dân tộc thiểu số ở Việt Nam phân bố chủ yếu ở địa bàn có vị trí chiến lược quan trọng",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "B"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q10",
+              "number": 10,
+              "type": "single_choice",
+              "header": "Câu 10:",
+              "content": "Vận dụng kiến thức về vấn đề dân tộc, hãy chỉ ra điểm khác biệt cơ bản trong quá trình hình thành nên dân tộc Việt Nam so với các dân tộc khác là gì?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Do yêu cầu đoàn kết của quá trình đấu tranh chống thiên tai và xâm lược",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "B",
+                      "content": "Do quá trình đồng hóa của các bộ tộc phong kiến",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Do sự phát triển tiến bộ của các bộ lạc",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Do dân tộc Việt Nam có diện tích nhỏ",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "A"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q11",
+              "number": 11,
+              "type": "single_choice",
+              "header": "Câu 11:",
+              "content": "Đối với quốc gia và từng thành viên của dân tộc, yếu tố nào là thiêng liêng nhất mà nếu không có thì không có khái niệm Tổ quốc, quốc gia?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Lãnh thổ",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "B",
+                      "content": "Kinh tế",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Ngôn ngữ",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Truyền thống văn hoá",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "A"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q12",
+              "number": 12,
+              "type": "single_choice",
+              "header": "Câu 12:",
+              "content": "Tôn giáo là một phạm trù thuộc:",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Thế giới quan duy vật",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Thế giới quan siêu hình",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Kiến trúc thượng tầng",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "D",
+                      "content": "Cơ sở hạ tầng",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "C"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q13",
+              "number": 13,
+              "type": "single_choice",
+              "header": "Câu 13:",
+              "content": "Tôn giáo là sản phẩm của ai?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Các thần linh",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Thượng đế",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Lực lượng siêu nhiên",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Con người",
+                      "isCorrect": true
+                  }
+              ],
+              "correctAnswers": [
+                  "D"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q14",
+              "number": 14,
+              "type": "single_choice",
+              "header": "Câu 14:",
+              "content": "Tôn giáo khác với tín ngưỡng ở điểm nào?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Tín ngưỡng tôn giáo có hệ thống giáo lý, giáo luật, có tổ chức và các nghi lễ chặt chẽ",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "B",
+                      "content": "Tín ngưỡng tôn giáo có số lượng tín đồ đông",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Tín ngưỡng tôn giáo ra đời từ rất sớm",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Tín ngưỡng tôn giáo tồn tại ở tất cả các quốc gia trên thế giới",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "A"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q15",
+              "number": 15,
+              "type": "single_choice",
+              "header": "Câu 15:",
+              "content": "Về phương diện thế giới quan, tôn giáo mang bản chất:",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Thế giới quan duy vật",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Thế giới quan siêu hình",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Thế giới quan duy tâm",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "D",
+                      "content": "Thế giới quan biện chứng",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "C"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q16",
+              "number": 16,
+              "type": "single_choice",
+              "header": "Câu 16:",
+              "content": "Niềm tin của con người vào các lực lượng siêu nhiên, thần thánh đến mức độ mê muội, cuồng tín, dẫn đến những hành vi cực đoan, sai lệch quá mức, trái với các giá trị văn hoá, đạo đức, pháp luật – gọi là:",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Ý thức thẩm mỹ",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Ý thức chính trị",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Mê tín dị đoan",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "D",
+                      "content": "Thờ anh hùng dân tộc",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "C"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q17",
+              "number": 17,
+              "type": "single_choice",
+              "header": "Câu 17:",
+              "content": "Sự sợ hãi trước những hiện tượng tự nhiên, xã hội, hay lúc ốm đau, những may rủi, bất ngờ, tâm lý muốn bình yên khi làm việc lớn… khiến con người dễ tìm đến với hình thái ý thức xã hội nào?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Ý thức thẩm mỹ",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Ý thức chính trị",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Ý thức pháp quyền",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Ý thức tôn giáo",
+                      "isCorrect": true
+                  }
+              ],
+              "correctAnswers": [
+                  "D"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q18",
+              "number": 18,
+              "type": "multiple_choice",
+              "header": "Câu 18:",
+              "content": "Tại sao ngày nay khoa học đã phát triển rất mạnh mẽ mà tôn giáo vẫn có xu hướng phát triển? (Chọn 2 đáp án)",
+              "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Do xã hội có xu hướng phát triển ngày càng tụt lùi",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Do lực lượng siêu nhiên thúc đẩy",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Do thế giới mà con người đang sống vẫn còn muôn vàn điều bí ẩn mà khoa học chưa hiểu rõ bản chất của nó",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "D",
+                      "content": "Do nhận thức của con người về tự nhiên, về xã hội và về chính bản thân mình còn có giới hạn",
+                      "isCorrect": true
+                  }
+              ],
+              "correctAnswers": [
+                  "C",
+                  "D"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q19",
+              "number": 19,
+              "type": "single_choice",
+              "header": "Câu 19:",
+              "content": "Vận dụng kiến thức về đặc điểm tôn giáo ở Việt Nam, hãy xác định số lượng tôn giáo đã được công nhận và cấp đăng ký hoạt động ở Việt Nam:",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "5",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "13",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "16",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "43",
+                      "isCorrect": true
+                  }
+              ],
+              "correctAnswers": [
+                  "D"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q20",
+              "number": 20,
+              "type": "single_choice",
+              "header": "Câu 20:",
+              "content": "Vì sao Đảng, Nhà nước Việt Nam chủ trương luôn tôn trọng, bảo đảm quyền tự do tín ngưỡng tôn giáo và không tín ngưỡng tôn giáo của nhân dân?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Vì tín ngưỡng, tôn giáo có số lượng tín đồ đông",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Vì tín ngưỡng, tôn giáo là nhu cầu tinh thần của nhân dân",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "C",
+                      "content": "Vì tín ngưỡng tôn giáo được du nhập từ nước ngoài vào",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Vì lực lượng chức sắc trong các tôn giáo có tiềm lực kinh tế lớn mạnh",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "B"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q21",
+              "number": 21,
+              "type": "single_choice",
+              "header": "Câu 21:",
+              "content": "Tìm đáp án sai về nguồn gốc hình thành của tôn giáo:",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Nguồn gốc kinh tế - xã hội",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Nguồn gốc nhân tạo",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "C",
+                      "content": "Nguồn gốc nhận thức",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Nguồn gốc tâm lý",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "B"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q22",
+              "number": 22,
+              "type": "single_choice",
+              "header": "Câu 22:",
+              "content": "Luận điểm nổi tiếng: “Tôn giáo là tiếng thở dài của chúng sinh bị áp bức, là trái tim của thế giới không có trái tim… Tôn giáo là thuốc phiện của nhân dân” là của ai?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Ph. Ăngghen",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "C. Mác",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "C",
+                      "content": "V.I. Lênin",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Hồ Chí Minh",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "B"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q23",
+              "number": 23,
+              "type": "single_choice",
+              "header": "Câu 23:",
+              "content": "Theo chủ nghĩa Mác – Lênin, xét đến cùng nhân tố quyết định sự tồn tại và phát triển của các hình thái ý thức xã hội, trong đó có tôn giáo là gì?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Các hoạt động văn hoá",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Các hoạt động chính trị và quan hệ chính trị",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Sản xuất vật chất và các quan hệ kinh tế",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "D",
+                      "content": "Các cuộc cách mạng",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "C"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q24",
+              "number": 24,
+              "type": "single_choice",
+              "header": "Câu 24:",
+              "content": "Tôn giáo ra đời từ những nguồn gốc cơ bản nào?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Có nguồn gốc tự nhiên, kinh tế - xã hội, tâm lý, nhận thức",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "B",
+                      "content": "Có nguồn gốc do Thượng đế tạo ra",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Có nguồn gốc do lực lượng siêu nhiên tạo ra",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Có nguồn gốc do chủ nghĩa tư bản tạo ra",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "A"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q25",
+              "number": 25,
+              "type": "single_choice",
+              "header": "Câu 25:",
+              "content": "Đâu là sự giống nhau giữa tôn giáo và tín ngưỡng?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Đều có các giáo sĩ",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Đều có hệ thống kinh điển",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Đều có niềm tin vào đấng siêu nhiên",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "D",
+                      "content": "Đều có giáo chủ",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "C"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q26",
+              "number": 26,
+              "type": "single_choice",
+              "header": "Câu 26:",
+              "content": "Tại sao các tôn giáo ở Việt Nam luôn đồng hành cùng dân tộc và có nhiều đóng góp quan trọng trong quá trình xây dựng và bảo vệ đất nước?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Vì các tôn giáo có vai trò quyết định đến những vấn đề quan trọng của xã hội",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Vì các tôn giáo có quan hệ với các tổ chức nước ngoài",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Vì đa số các tín đồ là nhân dân lao động có lòng yêu nước, chống giặc ngoại xâm",
+                      "isCorrect": true
+                  },
+                  {
+                      "key": "D",
+                      "content": "Vì các tôn giáo thường bị lợi dụng bởi các thế lực phản động",
+                      "isCorrect": false
+                  }
+              ],
+              "correctAnswers": [
+                  "C"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q27",
+              "number": 27,
+              "type": "single_choice",
+              "header": "Câu 27:",
+              "content": "Dân tộc hiểu theo nghĩa hẹp là:",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Quốc gia dân tộc",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Bộ tộc",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Bộ lạc",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Tộc người",
+                      "isCorrect": true
+                  }
+              ],
+              "correctAnswers": [
+                  "D"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q28",
+              "number": 28,
+              "type": "single_choice",
+              "header": "Câu 28:",
+              "content": "Nội dung nào vừa là nội dung chủ yếu vừa là giải pháp quan trọng để liên kết các nội dung của Cương lĩnh dân tộc thành một chỉnh thể?",
+              "instructionNote": "",
+              "options": [
+                  {
+                      "key": "A",
+                      "content": "Các dân tộc có nền phát triển kinh tế ngang nhau",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "B",
+                      "content": "Các dân tộc được quyền tự quyết",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "C",
+                      "content": "Các dân tộc hoàn toàn bình đẳng",
+                      "isCorrect": false
+                  },
+                  {
+                      "key": "D",
+                      "content": "Liên hiệp công nhân tất cả các dân tộc",
+                      "isCorrect": true
+                  }
+              ],
+              "correctAnswers": [
+                  "D"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q29",
+              "number": 29,
+              "type": "true_false_group",
+              "header": "Câu 29:",
+              "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+              "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+              "items": [
+                  {
+                      "order": 1,
+                      "statement": "Đấu tranh chống chủ nghĩa Sô - vanh là giải pháp thực hiện bình đẳng dân tộc",
+                      "correctAnswer": "Đúng"
+                  },
+                  {
+                      "order": 2,
+                      "statement": "Tôn giáo là đặc trưng chính của dân tộc quốc gia",
+                      "correctAnswer": "Sai"
+                  },
+                  {
+                      "order": 3,
+                      "statement": "Tâm lý dân tộc tạo nên bản sắc văn hóa dân tộc",
+                      "correctAnswer": "Đúng"
+                  },
+                  {
+                      "order": 4,
+                      "statement": "Dân tộc (tộc người) có ý thức tự giác tộc người",
+                      "correctAnswer": "Đúng"
+                  }
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q30",
+              "number": 30,
+              "type": "true_false_group",
+              "header": "Câu 30:",
+              "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+              "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+              "items": [
+                  {
+                      "order": 1,
+                      "statement": "Nguồn gốc kinh tế - xã hội dẫn đến sự ra đời của tôn giáo",
+                      "correctAnswer": "Đúng"
+                  },
+                  {
+                      "order": 2,
+                      "statement": "Tôn giáo phản ánh hoang đường, hư ảo hiện thực khách quan",
+                      "correctAnswer": "Đúng"
+                  },
+                  {
+                      "order": 3,
+                      "statement": "Tín ngưỡng có hệ thống giáo lý chặt chẽ",
+                      "correctAnswer": "Sai"
+                  },
+                  {
+                      "order": 4,
+                      "statement": "Mê tín dị đoan là niềm tin mù quáng cần loại bỏ",
+                      "correctAnswer": "Đúng"
+                  }
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q31",
+              "number": 31,
+              "type": "drag_drop_columns",
+              "header": "Câu 31:",
+              "content": "Kéo thả các yếu tố liên quan vào các cột tương ứng:",
+              "instruction": "Kéo thả các yếu tố vào đúng cột tương ứng",
+              "columns": [
+                  {
+                      "id": "col-1",
+                      "title": "Đặc trưng của dân tộc",
+                      "correctItems": [
+                          "Bản sắc văn hóa dân tộc",
+                          "Tâm lý dân tộc riêng",
+                          "Ngôn ngữ riêng",
+                          "Lãnh thổ chung"
+                      ]
+                  },
+                  {
+                      "id": "col-2",
+                      "title": "Nội dung cương lĩnh dân tộc của Mác-Lênin",
+                      "correctItems": [
+                          "Liên hiệp công nhân tất cả các dân tộc",
+                          "Các dân tộc được quyền tự quyết",
+                          "Các dân tộc hoàn toàn bình đẳng"
+                      ]
+                  }
+              ],
+              "allItems": [
+                  "Bản sắc văn hóa dân tộc",
+                  "Tâm lý dân tộc riêng",
+                  "Ngôn ngữ riêng",
+                  "Lãnh thổ chung",
+                  "Liên hiệp công nhân tất cả các dân tộc",
+                  "Các dân tộc được quyền tự quyết",
+                  "Các dân tộc hoàn toàn bình đẳng"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q32",
+              "number": 32,
+              "type": "drag_drop",
+              "header": "Câu 32:",
+              "content": "Kéo thả các đáp án đúng tương ứng với các phát biểu về dân tộc dưới đây:",
+              "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+              "pairs": [
+                  {
+                      "id": "target-1",
+                      "prompt": "Nội dung cơ bản của cương lĩnh dân tộc Mác-Lênin là gì?",
+                      "correctAnswer": "Bình đẳng dân tộc"
+                  },
+                  {
+                      "id": "target-2",
+                      "prompt": "Khái niệm dân tộc theo nghĩa hẹp được gọi là gì?",
+                      "correctAnswer": "Dân tộc tộc người"
+                  },
+                  {
+                      "id": "target-3",
+                      "prompt": "Yếu tố thiêng liêng đối với dân tộc (quốc gia) và từng thành viên dân tộc là gì?",
+                      "correctAnswer": "Lãnh thổ"
+                  },
+                  {
+                      "id": "target-4",
+                      "prompt": "Đặc trưng quan trọng nhất của dân tộc là gì?",
+                      "correctAnswer": "Phương thức sinh hoạt kinh tế chung"
+                  }
+              ],
+              "optionsPool": [
+                  "Bình đẳng dân tộc",
+                  "Dân tộc tộc người",
+                  "Lãnh thổ",
+                  "Phương thức sinh hoạt kinh tế chung"
+              ],
+              "needsReview": false
+          },
+          {
+              "id": "bai-5-q33",
+              "number": 33,
+              "type": "drag_drop",
+              "header": "Câu 33:",
+              "content": "Kéo thả các đáp án đúng khớp với các phát biểu dưới đây:",
+              "instruction": "Kéo thả các đáp án khớp với các phát biểu dưới đây:",
+              "pairs": [
+                  {
+                      "id": "target-1",
+                      "prompt": "Là sự phản ánh niềm tin mù quáng của một số người vào các lực lượng siêu nhiên",
+                      "correctAnswer": "Mê tín dị đoan"
+                  },
+                  {
+                      "id": "target-2",
+                      "prompt": "Là niềm tin và sự ngưỡng mộ của con người vào một lực lượng siêu nhiên, thần bí",
+                      "correctAnswer": "Tín ngưỡng"
+                  },
+                  {
+                      "id": "target-3",
+                      "prompt": "Là sự phản ánh một cách hoang đường, hư ảo hiện thực khách quan",
+                      "correctAnswer": "Tôn giáo"
+                  },
+                  {
+                      "id": "target-4",
+                      "prompt": "Mê tín dị đoan dẫn con người đến điều gì?",
+                      "correctAnswer": "Mê muội"
+                  }
+              ],
+              "optionsPool": [
+                  "Mê tín dị đoan",
+                  "Tín ngưỡng",
+                  "Tôn giáo",
+                  "Mê muội"
+              ],
+              "needsReview": false
+          }
+      ]
   }
 ];

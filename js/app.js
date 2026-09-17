@@ -130,7 +130,8 @@ class App {
       const card = document.createElement('div');
       card.className = 'exercise-card';
 
-      const tagClass = idx === 0 ? 'ex-badge-bai1' : (idx === 1 ? 'ex-badge-bai2' : 'ex-badge-bai3');
+      const badgeClasses = ['ex-badge-bai1', 'ex-badge-bai2', 'ex-badge-bai3', 'ex-badge-bai4', 'ex-badge-bai5'];
+      const tagClass = badgeClasses[idx] || 'ex-badge-bai1';
       card.innerHTML = `
         <div>
           <div class="ex-card-avatar-pill">${idx + 1}</div>
