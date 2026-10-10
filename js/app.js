@@ -7,6 +7,16 @@ import { QuizEngine } from './quizEngine.js';
 import { DragDropEngine } from './dragDropEngine.js';
 import { AdminEngine } from './adminEngine.js';
 
+export function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 class App {
   constructor() {
     this.currentScreen = 'home';
@@ -359,7 +369,7 @@ class App {
 
         card.innerHTML = `
           <span class="option-input-indicator"></span>
-          <span class="option-content-text">${opt.content}</span>
+          <span class="option-content-text">${escapeHtml(opt.content)}</span>
         `;
 
         card.addEventListener('click', () => {
@@ -405,7 +415,7 @@ class App {
         row.innerHTML = `
           <div class="tf-item-statement">
             <span class="tf-num">${it.order}.</span>
-            <span>${it.statement}</span>
+            <span>${escapeHtml(it.statement)}</span>
           </div>
           <div class="tf-buttons-group">
             <button class="btn-tf btn-tf-true ${userChoice === 'Đúng' ? 'selected-true' : ''}" data-ans="Đúng">Đúng</button>
@@ -495,53 +505,84 @@ class App {
     this.switchScreen('result');
 
     // Score & Percentage
-    const percent = summary.percentage;
-    document.getElementById('result-percent-text').textContent = `${percent}%`;
+    const percent = Number(summary.percentage) || 0;
+    const percentEl = document.getElementById('result-percent-text');
+    if (percentEl) percentEl.textContent = `${percent}%`;
     
-    // Animate Circle Gauge
-    const circle = document.getElementById('gauge-score-circle');
-    const circumference = 2 * Math.PI * 50; // ~314.16
-    const offset = circumference - (percent / 100) * circumference;
-    circle.style.strokeDashoffset = offset;
-    circle.className = `gauge-val ${percent < 50 ? 'score-low' : (percent < 80 ? 'score-mid' : 'score-high')}`;
-
-    // Headline & Subhead
-    const headline = document.getElementById('result-headline');
-    const subhead = document.getElementById('result-subhead');
-    if (percent >= 90) {
-      headline.textContent = 'Xuất Sắc! Bạn Đã Nắm Rất Vững Kiến Thức';
-      subhead.textContent = `Bạn đã hoàn thành ${summary.totalQuestions} câu với điểm số gần như tuyệt đối!`;
-    } else if (percent >= 70) {
-      headline.textContent = 'Rất Tốt! Bạn Đã Đạt Chuẩn';
-      subhead.textContent = `Cố gắng ôn lại một số câu chưa chính xác bên dưới để đạt điểm tối đa nhé.`;
-    } else {
-      headline.textContent = 'Cần Cố Gắng Thêm!';
-      subhead.textContent = `Hãy nhấn nút "Ôn lại các câu sai" bên dưới để củng cố lại các câu chưa làm đúng.`;
+    // Animate Circle Gauge safely using SVG setAttribute (prevent SVGAnimatedString readonly crash)
+    try {
+      const circle = document.getElementById('gauge-score-circle');
+      if (circle) {
+        const circumference = 2 * Math.PI * 50; // ~314.16
+        const offset = circumference - (percent / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+        const scoreClass = percent < 50 ? 'score-low' : (percent < 80 ? 'score-mid' : 'score-high');
+        circle.setAttribute('class', `gauge-val ${scoreClass}`);
+      }
+    } catch (err) {
+      console.warn('SVG Gauge animation warning:', err);
     }
 
-    // Metrics
-    const score10 = (summary.score / (summary.maxScore || 1) * 10).toFixed(1);
-    document.getElementById('metric-score-val').textContent = `${score10}/10`;
-    document.getElementById('metric-correct-val').textContent = summary.correctCount;
-    document.getElementById('metric-wrong-val').textContent = summary.wrongCount;
+    // Headline & Subhead (do not say "Xuất sắc" if score is low or questions mostly left blank)
+    const headline = document.getElementById('result-headline');
+    const subhead = document.getElementById('result-subhead');
+    const answered = summary.answeredCount || 0;
+    const total = summary.totalQuestions || 1;
+    const score10Str = summary.score10Formatted || (summary.score10 !== undefined ? Number(summary.score10).toFixed(1) : ((summary.score / total) * 10).toFixed(1));
 
-    const mins = Math.floor(summary.timeSpentSeconds / 60);
-    const secs = summary.timeSpentSeconds % 60;
-    document.getElementById('metric-time-val').textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    if (headline && subhead) {
+      if (percent >= 80 && answered >= total * 0.8) {
+        headline.textContent = 'Xuất Sắc! Bạn Đã Nắm Rất Vững Kiến Thức';
+        subhead.textContent = `Bạn đã hoàn thành ${total} câu với điểm số ${score10Str}/10 (${percent}%).`;
+      } else if (percent >= 50 && answered >= total * 0.5) {
+        headline.textContent = 'Khá Tốt! Bạn Đã Đạt Chuẩn';
+        subhead.textContent = `Bạn đạt ${score10Str}/10. Hãy ôn lại một số câu chưa chính xác hoặc chưa làm bên dưới.`;
+      } else {
+        headline.textContent = 'Cần Cố Gắng Thêm!';
+        subhead.textContent = `Bạn đạt ${score10Str}/10. Có ${summary.correctCount} câu đúng, ${summary.wrongCount} câu sai và ${summary.unansweredCount} câu chưa trả lời.`;
+      }
+    }
 
-    // Retry Wrong button state
+    // Set all metrics safely
+    const setEl = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = val;
+    };
+
+    setEl('metric-score-val', `${score10Str}/10`);
+    setEl('metric-total-val', summary.totalQuestions);
+    setEl('metric-answered-val', summary.answeredCount);
+    setEl('metric-correct-val', summary.correctCount);
+    setEl('metric-wrong-val', summary.wrongCount);
+    setEl('metric-unanswered-val', summary.unansweredCount);
+
+    const timeSpent = summary.timeSpentSeconds || 0;
+    const mins = Math.floor(timeSpent / 60);
+    const secs = timeSpent % 60;
+    setEl('metric-time-val', `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`);
+
+    // Retry Wrong button state (only shown if there are actual wrong answers)
     const btnRetryWrong = document.getElementById('btn-retry-wrong-only');
-    if (summary.wrongCount > 0) {
-      btnRetryWrong.style.display = 'flex';
-      btnRetryWrong.textContent = `Ôn lại ${summary.wrongCount} câu làm sai`;
-    } else {
-      btnRetryWrong.style.display = 'none';
+    if (btnRetryWrong) {
+      if (summary.wrongCount > 0) {
+        btnRetryWrong.style.display = 'flex';
+        btnRetryWrong.textContent = `Ôn lại ${summary.wrongCount} câu làm sai`;
+      } else {
+        btnRetryWrong.style.display = 'none';
+      }
     }
 
     // Counts on filter tabs
-    document.getElementById('filter-all-cnt').textContent = summary.totalQuestions;
-    document.getElementById('filter-wrong-cnt').textContent = summary.wrongCount;
-    document.getElementById('filter-correct-cnt').textContent = summary.correctCount;
+    setEl('filter-all-cnt', summary.totalQuestions);
+    setEl('filter-correct-cnt', summary.correctCount);
+    setEl('filter-wrong-cnt', summary.wrongCount);
+    setEl('filter-unanswered-cnt', summary.unansweredCount);
+
+    // Reset filter tab UI to 'all'
+    document.querySelectorAll('.review-filter-btn').forEach(b => {
+      if (b.dataset.filter === 'all') b.classList.add('active');
+      else b.classList.remove('active');
+    });
 
     this.renderResultQuestionsList('all');
   }
@@ -549,79 +590,143 @@ class App {
   renderResultQuestionsList(filter = 'all') {
     this.resultFilter = filter;
     const listContainer = document.getElementById('review-items-list');
+    if (!listContainer) return;
     listContainer.innerHTML = '';
 
-    if (!this.lastResultSummary) return;
+    if (!this.lastResultSummary || !Array.isArray(this.lastResultSummary.results)) {
+      listContainer.innerHTML = `<div style="text-align: center; color: #64748b; padding: 24px;">Chưa có dữ liệu bài làm.</div>`;
+      return;
+    }
 
     let items = this.lastResultSummary.results;
     if (filter === 'wrong') {
-      items = items.filter(it => !it.isCorrect);
+      items = items.filter(it => it.isAnswered && !it.isCorrect);
     } else if (filter === 'correct') {
       items = items.filter(it => it.isCorrect);
+    } else if (filter === 'unanswered') {
+      items = items.filter(it => it.isUnanswered);
     }
 
     if (items.length === 0) {
-      listContainer.innerHTML = `<div style="text-align: center; color: #64748b; padding: 24px;">Không có câu hỏi nào trong mục này.</div>`;
+      listContainer.innerHTML = `<div style="text-align: center; color: #64748b; padding: 24px; font-size: 14px;">Không có câu hỏi nào trong mục này.</div>`;
       return;
     }
 
     items.forEach((item) => {
       const q = item.question;
+      const isUnanswered = Boolean(item.isUnanswered);
+      const isCorrect = Boolean(item.isCorrect);
+
       const card = document.createElement('div');
-      card.className = `review-item-card ${item.isCorrect ? 'is-correct' : 'is-wrong'}`;
+      const cardStateClass = isUnanswered ? 'is-unanswered' : (isCorrect ? 'is-correct' : 'is-wrong');
+      card.className = `review-item-card ${cardStateClass}`;
+
+      let statusBadge = '';
+      if (isUnanswered) {
+        statusBadge = '<span class="review-status-badge unanswered">Chưa trả lời (0 điểm)</span>';
+      } else if (isCorrect) {
+        const scoreDisplay = Number(item.score).toFixed(1).replace(/\.0$/, '');
+        statusBadge = `<span class="review-status-badge correct">Chính xác (+${scoreDisplay} điểm)</span>`;
+      } else {
+        statusBadge = '<span class="review-status-badge wrong">Trả lời sai (0 điểm)</span>';
+      }
 
       let answersComparisonHtml = '';
       if (q.options) {
         answersComparisonHtml = `
           <div class="admin-options-preview" style="margin-top: 10px;">
             ${q.options.map(opt => {
-              const isUserPick = Array.isArray(item.userAnswer) ? item.userAnswer.includes(opt.key) : item.userAnswer === opt.key;
+              const isUserPick = !isUnanswered && item.userAnswer && (Array.isArray(item.userAnswer) ? item.userAnswer.includes(opt.key) : item.userAnswer === opt.key);
               const isCorrectOpt = opt.isCorrect;
               return `
                 <div class="admin-opt-item ${isCorrectOpt ? 'is-correct-opt' : ''}">
                   <span class="opt-tag">${opt.key}.</span>
-                  <span class="opt-text">${opt.content}</span>
+                  <span class="opt-text">${escapeHtml(opt.content)}</span>
                   ${isUserPick ? '<span style="font-size: 11px; font-weight: 700; color: #2563eb; margin-left: auto;">[Bạn chọn]</span>' : ''}
                   ${isCorrectOpt ? '<span class="correct-badge">✓ Đáp án đúng</span>' : ''}
                 </div>
               `;
             }).join('')}
           </div>
+          ${isUnanswered ? '<div style="margin-top: 8px; font-size: 13px; color: #64748b; font-style: italic;">Bạn đã bỏ trống câu này (chưa chọn phương án nào).</div>' : ''}
         `;
-      } else if (item.evaluation && item.evaluation.itemResults) {
+      } else if (q.items) {
+        const itemResults = item.evaluation?.itemResults || q.items.map(it => ({
+          order: it.order,
+          statement: it.statement,
+          correctAnswer: it.correctAnswer,
+          userAnswer: isUnanswered ? null : (item.userAnswer ? item.userAnswer[it.order] : null),
+          isCorrect: isUnanswered ? false : (item.userAnswer && item.userAnswer[it.order] === it.correctAnswer)
+        }));
+
         answersComparisonHtml = `
           <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 6px;">
-            ${item.evaluation.itemResults.map(r => `
+            ${itemResults.map(r => `
               <div style="font-size: 13.5px; display: flex; align-items: center; justify-content: space-between; background: white; padding: 6px 12px; border-radius: 4px; border: 1px solid #e2e8f0;">
-                <span>${r.order}. ${r.statement}</span>
-                <span>Bạn chọn: <strong>${r.userAnswer || 'Chưa chọn'}</strong> | Đúng: <strong style="color: #16a34a;">${r.correctAnswer}</strong></span>
+                <span>${r.order}. ${escapeHtml(r.statement)}</span>
+                <span>Bạn chọn: <strong>${escapeHtml(r.userAnswer || 'Chưa chọn')}</strong> | Đúng: <strong style="color: #16a34a;">${escapeHtml(r.correctAnswer)}</strong></span>
               </div>
             `).join('')}
           </div>
+          ${isUnanswered ? '<div style="margin-top: 8px; font-size: 13px; color: #64748b; font-style: italic;">Bạn đã bỏ trống câu này (chưa đánh giá nhận định nào).</div>' : ''}
         `;
-      } else if (item.evaluation && item.evaluation.pairResults) {
+      } else if (q.pairs) {
+        const pairResults = item.evaluation?.pairResults || q.pairs.map((p, idx) => ({
+          id: p.id || `pair-${idx + 1}`,
+          prompt: p.prompt,
+          correctAnswer: p.correctAnswer,
+          userAnswer: isUnanswered ? null : (item.userAnswer ? item.userAnswer[p.id || `pair-${idx + 1}`] : null),
+          isCorrect: isUnanswered ? false : (item.userAnswer && item.userAnswer[p.id || `pair-${idx + 1}`] === p.correctAnswer)
+        }));
+
         answersComparisonHtml = `
           <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 6px;">
-            ${item.evaluation.pairResults.map(p => `
+            ${pairResults.map(p => `
               <div style="font-size: 13.5px; background: white; padding: 8px 12px; border-radius: 4px; border: 1px solid #e2e8f0;">
-                <div>${p.prompt}</div>
-                <div style="margin-top: 4px; color: ${p.isCorrect ? '#16a34a' : '#dc2626'}; font-weight: 600;">
-                  ➔ Ghép: [${p.userAnswer || 'Chưa ghép'}] ${p.isCorrect ? '✓ Đúng' : `➔ Đáp án đúng: [${p.correctAnswer}]`}
+                <div>${escapeHtml(p.prompt)}</div>
+                <div style="margin-top: 4px; color: ${p.isCorrect ? '#16a34a' : (p.userAnswer ? '#dc2626' : '#64748b')}; font-weight: 600;">
+                  ➔ Ghép: [${escapeHtml(p.userAnswer || 'Chưa ghép')}] ${p.isCorrect ? '✓ Đúng' : `➔ Đáp án đúng: [${escapeHtml(p.correctAnswer)}]`}
                 </div>
               </div>
             `).join('')}
           </div>
+          ${isUnanswered ? '<div style="margin-top: 8px; font-size: 13px; color: #64748b; font-style: italic;">Bạn đã bỏ trống câu này (chưa ghép thẻ nào).</div>' : ''}
+        `;
+      } else if (q.columns) {
+        const colResults = item.evaluation?.colResults || q.columns.map(col => ({
+          colId: col.id,
+          title: col.title,
+          correctItems: col.correctItems || [],
+          userItems: isUnanswered ? [] : ((item.userAnswer && item.userAnswer[col.id]) || []),
+          isCorrect: false
+        }));
+
+        answersComparisonHtml = `
+          <div style="margin-top: 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px;">
+            ${colResults.map(col => `
+              <div style="font-size: 13.5px; background: white; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0;">
+                <div style="font-weight: 700; margin-bottom: 6px; color: ${col.isCorrect ? '#16a34a' : '#dc2626'};">
+                  ${escapeHtml(col.title)} ${col.isCorrect ? '✓ Đúng' : (isUnanswered ? '' : '✗ Chưa đúng')}
+                </div>
+                <div style="font-size: 12.5px; color: #475569; margin-bottom: 4px;">
+                  Bạn chọn: <strong>${col.userItems && col.userItems.length ? escapeHtml(col.userItems.join(', ')) : 'Chưa xếp mục nào'}</strong>
+                </div>
+                <div style="font-size: 12.5px; color: #16a34a;">
+                  Đáp án đúng: <strong>${escapeHtml((col.correctItems || []).join(', '))}</strong>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+          ${isUnanswered ? '<div style="margin-top: 8px; font-size: 13px; color: #64748b; font-style: italic;">Bạn đã bỏ trống câu này (chưa phân loại mục nào).</div>' : ''}
         `;
       }
 
       card.innerHTML = `
         <div class="review-item-header">
           <span style="font-weight: 800; font-size: 15px; color: #0f172a;">Câu ${q.sessionNumber || (item.questionIndex + 1)}:</span>
-          <span class="review-status-badge ${item.isCorrect ? 'correct' : 'wrong'}">
-            ${item.isCorrect ? 'Chính xác (+1 điểm)' : 'Chưa đúng (0 điểm)'}
-          </span>
+          ${statusBadge}
         </div>
-        <div style="font-size: 15px; font-weight: 600; color: #1e293b;">${q.content}</div>
+        <div style="font-size: 15px; font-weight: 600; color: #1e293b;">${escapeHtml(q.content)}</div>
         ${answersComparisonHtml}
       `;
 
@@ -785,6 +890,8 @@ class App {
 }
 
 // Instantiate on DOM ready
-document.addEventListener('DOMContentLoaded', () => {
-  window.app = new App();
-});
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.app = new App();
+  });
+}

@@ -130,7 +130,7 @@ export class DragDropEngine {
   renderColumnsMode() {
     const q = this.question;
     const columns = q.columns || [];
-    const allItems = [...(q.allItems || [])];
+    const allItems = [...(q.allItems || q.optionsPool || (q.columns ? q.columns.flatMap(c => c.correctItems || []) : []))];
 
     // Current state format for columns: { 'col-1': ['item1', 'item2'], 'col-2': ['item3'] }
     if (typeof this.currentState !== 'object' || Array.isArray(this.currentState)) {

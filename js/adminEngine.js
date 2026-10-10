@@ -5,6 +5,16 @@
 import { store } from './store.js';
 import { INITIAL_QUIZ_DATA } from './data.js';
 
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 export class AdminEngine {
   constructor(containerEl, onDataUpdated) {
     this.container = containerEl;
@@ -112,7 +122,7 @@ export class AdminEngine {
               ${q.options.map(opt => `
                 <div class="admin-opt-item ${opt.isCorrect ? 'is-correct-opt' : ''}">
                   <span class="opt-tag">${opt.key}.</span>
-                  <span class="opt-text">${opt.content}</span>
+                  <span class="opt-text">${escapeHtml(opt.content)}</span>
                   ${opt.isCorrect ? '<span class="correct-badge">✓ Đáp án đúng (Đỏ)</span>' : ''}
                 </div>
               `).join('')}
@@ -124,7 +134,7 @@ export class AdminEngine {
               ${q.items.map(it => `
                 <div class="admin-tf-row">
                   <span class="tf-num">${it.order}.</span>
-                  <span class="tf-stmt">${it.statement}</span>
+                  <span class="tf-stmt">${escapeHtml(it.statement)}</span>
                   <span class="tf-ans ${it.correctAnswer === 'Đúng' ? 'ans-true' : 'ans-false'}">${it.correctAnswer}</span>
                 </div>
               `).join('')}
@@ -135,8 +145,8 @@ export class AdminEngine {
             <div class="admin-dd-preview">
               ${q.pairs.map(p => `
                 <div class="admin-dd-row">
-                  <span class="dd-p-prompt">${p.prompt}</span>
-                  <span class="dd-p-ans">➔ [${p.correctAnswer}]</span>
+                  <span class="dd-p-prompt">${escapeHtml(p.prompt)}</span>
+                  <span class="dd-p-ans">➔ [${escapeHtml(p.correctAnswer)}]</span>
                 </div>
               `).join('')}
             </div>
@@ -146,8 +156,8 @@ export class AdminEngine {
             <div class="admin-dd-cols-preview">
               ${q.columns.map(c => `
                 <div class="dd-col-preview-item">
-                  <strong>${c.title}</strong>
-                  <ul>${(c.correctItems || []).map(ci => `<li>${ci}</li>`).join('')}</ul>
+                  <strong>${escapeHtml(c.title)}</strong>
+                  <ul>${(c.correctItems || []).map(ci => `<li>${escapeHtml(ci)}</li>`).join('')}</ul>
                 </div>
               `).join('')}
             </div>
@@ -167,8 +177,8 @@ export class AdminEngine {
             </div>
           </div>
           <div class="admin-q-body">
-            <h4 class="admin-q-content">${q.content}</h4>
-            ${q.instructionNote ? `<div class="admin-q-note">${q.instructionNote}</div>` : ''}
+            <h4 class="admin-q-content">${escapeHtml(q.content)}</h4>
+            ${q.instructionNote ? `<div class="admin-q-note">${escapeHtml(q.instructionNote)}</div>` : ''}
             ${answersPreviewHtml}
           </div>
         `;
@@ -285,6 +295,7 @@ export class AdminEngine {
               <option value="multiple_choice" ${q.type === 'multiple_choice' ? 'selected' : ''}>Trắc nghiệm chọn nhiều đáp án</option>
               <option value="true_false_group" ${q.type === 'true_false_group' ? 'selected' : ''}>Đúng / Sai theo từng phát biểu</option>
               <option value="drag_drop" ${q.type === 'drag_drop' ? 'selected' : ''}>Kéo thả điền khuyết</option>
+              <option value="drag_drop_columns" ${q.type === 'drag_drop_columns' ? 'selected' : ''}>Kéo thả phân loại cột</option>
             </select>
           </div>
 
@@ -387,6 +398,23 @@ export class AdminEngine {
             `).join('')}
           </div>
         `;
+      } else if (type === 'drag_drop_columns') {
+        const cols = q.columns && q.columns.length === 2 ? q.columns : [
+          { id: 'col-1', title: 'Cột 1', correctItems: [] },
+          { id: 'col-2', title: 'Cột 2', correctItems: [] }
+        ];
+
+        optionsContainer.innerHTML = `
+          <label>Phân loại 2 cột (Nhập các mục của mỗi cột, mỗi dòng 1 mục):</label>
+          <div class="edit-cols-list" style="display: flex; gap: 12px; margin-top: 8px;">
+            ${cols.map((c, i) => `
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                <input type="text" class="admin-input edit-col-title" data-index="${i}" value="${c.title.replace(/"/g, '&quot;')}" placeholder="Tiêu đề Cột ${i+1}">
+                <textarea class="admin-textarea edit-col-items" data-index="${i}" rows="5" placeholder="Các mục đúng (mỗi dòng 1 mục)">${(c.correctItems || []).join('\n')}</textarea>
+              </div>
+            `).join('')}
+          </div>
+        `;
       }
     };
 
@@ -449,6 +477,21 @@ export class AdminEngine {
           });
         });
         q.optionsPool = q.pairs.map(p => p.correctAnswer);
+      } else if (q.type === 'drag_drop_columns') {
+        const titleInputs = modalOverlay.querySelectorAll('.edit-col-title');
+        const itemsAreas = modalOverlay.querySelectorAll('.edit-col-items');
+        q.columns = [];
+        let allPool = [];
+        titleInputs.forEach((inp, idx) => {
+          const rawItems = itemsAreas[idx].value.split('\n').map(s => s.trim()).filter(Boolean);
+          q.columns.push({
+            id: `col-${idx + 1}`,
+            title: inp.value.trim() || `Cột ${idx + 1}`,
+            correctItems: rawItems
+          });
+          allPool = allPool.concat(rawItems);
+        });
+        q.optionsPool = allPool;
       }
 
       if (isNew) {
