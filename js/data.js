@@ -1,12 +1,13 @@
 /**
  * DỮ LIỆU CÂU HỎI TRẮC NGHIỆM CHỦ NGHĨA XÃ HỘI KHOA HỌC
- * Trích xuất 100% từ các file docx trong thư mục dự án:
+ * Trích xuất 100% từ các file Word .docx mới nhất do người dùng chỉnh sửa:
  * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 1 (41 câu)
  * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 2 (40 câu)
- * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 3 (36 câu)
- * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 4 (28 câu)
- * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 5 (33 câu)
- * Tổng cộng: 178 câu hỏi thực tế.
+ * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 3 (40 câu)
+ * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 4 (45 câu)
+ * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 5 (42 câu)
+ * - CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 6 (27 câu)
+ * Tổng cộng: 235 câu hỏi thực tế được đối chiếu xác minh với PDF bài giảng.
  */
 
 export const INITIAL_QUIZ_DATA = [
@@ -47,7 +48,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q2",
@@ -81,7 +83,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q3",
@@ -115,7 +118,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q4",
@@ -149,7 +153,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q5",
@@ -183,7 +188,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q6",
@@ -217,7 +223,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q7",
@@ -230,12 +237,12 @@ export const INITIAL_QUIZ_DATA = [
           {
             "key": "A",
             "content": "Chính trị - xã hội",
-            "isCorrect": true
+            "isCorrect": false
           },
           {
             "key": "B",
             "content": "Giai cấp – xã hội",
-            "isCorrect": false
+            "isCorrect": true
           },
           {
             "key": "C",
@@ -249,9 +256,10 @@ export const INITIAL_QUIZ_DATA = [
           }
         ],
         "correctAnswers": [
-          "A"
+          "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q8",
@@ -285,7 +293,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q9",
@@ -319,7 +328,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q10",
@@ -353,7 +363,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q11",
@@ -387,7 +398,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q12",
@@ -421,7 +433,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q13",
@@ -456,7 +469,8 @@ export const INITIAL_QUIZ_DATA = [
           "B",
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q14",
@@ -491,7 +505,8 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q15",
@@ -526,7 +541,8 @@ export const INITIAL_QUIZ_DATA = [
           "B",
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q16",
@@ -560,7 +576,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q17",
@@ -594,7 +611,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q18",
@@ -628,7 +646,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q19",
@@ -662,7 +681,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q20",
@@ -696,7 +716,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q21",
@@ -730,7 +751,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q22",
@@ -765,7 +787,8 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q23",
@@ -799,7 +822,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q24",
@@ -833,7 +857,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q25",
@@ -867,7 +892,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q26",
@@ -901,7 +927,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q27",
@@ -936,7 +963,8 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q28",
@@ -970,7 +998,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q29",
@@ -1005,15 +1034,16 @@ export const INITIAL_QUIZ_DATA = [
           "C",
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q30",
         "number": 30,
         "type": "multiple_choice",
         "header": "Câu 30:",
-        "content": "Chủ nghĩa xã hội khoa học ra đời dựa trên cơ sở của những tiền đề nào? (Chọn nhiều đáp án) Sinh viên chọn 2 phương án đúng nhất",
-        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "content": "Chủ nghĩa xã hội khoa học ra đời dựa trên cơ sở của những tiền đề nào? (Chọn nhiều đáp án)",
+        "instructionNote": "Sinh viên chọn các phương án đúng nhất",
         "options": [
           {
             "key": "A",
@@ -1040,7 +1070,8 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q31",
@@ -1076,7 +1107,8 @@ export const INITIAL_QUIZ_DATA = [
           "C",
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q32",
@@ -1110,15 +1142,16 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q33",
         "number": 33,
         "type": "true_false_group",
         "header": "Câu 33:",
-        "content": "Câu 33. Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -1141,15 +1174,16 @@ export const INITIAL_QUIZ_DATA = [
             "correctAnswer": "Đúng"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q34",
         "number": 34,
         "type": "true_false_group",
         "header": "Câu 34:",
-        "content": "Câu 34. Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -1172,15 +1206,16 @@ export const INITIAL_QUIZ_DATA = [
             "correctAnswer": "Đúng"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q35",
         "number": 35,
         "type": "true_false_group",
         "header": "Câu 35:",
-        "content": "Câu 35. Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -1203,15 +1238,16 @@ export const INITIAL_QUIZ_DATA = [
             "correctAnswer": "Đúng"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q36",
         "number": 36,
         "type": "true_false_group",
         "header": "Câu 36:",
-        "content": "Câu 36. Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -1234,15 +1270,16 @@ export const INITIAL_QUIZ_DATA = [
             "correctAnswer": "Đúng"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q37",
         "number": 37,
         "type": "true_false_group",
         "header": "Câu 37:",
-        "content": "Câu 37. Chọn Đúng hoặc Sai với từng phát biểu:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn Đúng hoặc Sai với từng phát biểu:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -1265,15 +1302,16 @@ export const INITIAL_QUIZ_DATA = [
             "correctAnswer": "Đúng"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-1-q38",
         "number": 38,
         "type": "drag_drop_columns",
         "header": "Câu 38:",
-        "content": "Câu 38. Kéo thả các yếu tố sau đây vào cột tương ứng:",
-        "instruction": "Kéo thả các yếu tố vào đúng cột tương ứng",
+        "content": "Kéo thả các yếu tố sau đây vào cột tương ứng:",
+        "instructionNote": "Kéo thả các mục vào đúng cột phân loại",
         "columns": [
           {
             "id": "col-1",
@@ -1292,7 +1330,7 @@ export const INITIAL_QUIZ_DATA = [
             ]
           }
         ],
-        "allItems": [
+        "optionsPool": [
           "Địa vị kinh tế của giai cấp công nhân",
           "Địa vị chính trị - xã hội của giai cấp công nhân",
           "Sự phát triển của bản thân giai cấp công nhân cả về số lượng và chất lượng",
@@ -1305,21 +1343,21 @@ export const INITIAL_QUIZ_DATA = [
         "number": 39,
         "type": "drag_drop",
         "header": "Câu 39:",
-        "content": "Câu 39: Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
-        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
         "pairs": [
           {
-            "id": "target-1",
+            "id": "pair-1",
             "prompt": "Giai cấp công nhân Việt Nam là lực lượng nòng cốt của ____ Việt Nam",
             "correctAnswer": "Đảng Cộng Sản"
           },
           {
-            "id": "target-2",
+            "id": "pair-2",
             "prompt": "Giai cấp công nhân Việt Nam gắn bó mật thiết với các ____ trong xã hội",
             "correctAnswer": "tầng lớp nhân dân"
           },
           {
-            "id": "target-3",
+            "id": "pair-3",
             "prompt": "Giai cấp công nhân Việt Nam có mối quan hệ mật thiết với giai cấp nông dân và _____",
             "correctAnswer": "tầng lớp tri thức"
           }
@@ -1327,8 +1365,7 @@ export const INITIAL_QUIZ_DATA = [
         "optionsPool": [
           "Đảng Cộng Sản",
           "tầng lớp nhân dân",
-          "tầng lớp tri thức",
-          "giai cấp tầng lớp"
+          "tầng lớp tri thức"
         ],
         "needsReview": false
       },
@@ -1337,26 +1374,26 @@ export const INITIAL_QUIZ_DATA = [
         "number": 40,
         "type": "drag_drop",
         "header": "Câu 40:",
-        "content": "Câu 40. Kéo thả các đáp án khớp với các phát biểu từ 1 – 4 về trái dưới đây:",
-        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 4 về trái dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
         "pairs": [
           {
-            "id": "target-1",
+            "id": "pair-1",
             "prompt": "Đảng Cộng sản là _____ quan trọng nhất để giai cấp công nhân thực hiện thắng lợi sứ mệnh lịch sử của mình.",
             "correctAnswer": "nhân tố chủ quan"
           },
           {
-            "id": "target-2",
+            "id": "pair-2",
             "prompt": "Giai cấp công nhân là ___ của quá trình sản xuất vật chất hiện đại.",
             "correctAnswer": "chủ thể"
           },
           {
-            "id": "target-3",
+            "id": "pair-3",
             "prompt": "Giai cấp công nhân đại diện cho ____ tiên tiến.",
             "correctAnswer": "phương thức sản xuất"
           },
           {
-            "id": "target-4",
+            "id": "pair-4",
             "prompt": "Giai cấp công nhân đại diện cho ___ hiện đại.",
             "correctAnswer": "lực lượng sản xuất"
           }
@@ -1374,21 +1411,21 @@ export const INITIAL_QUIZ_DATA = [
         "number": 41,
         "type": "drag_drop",
         "header": "Câu 41:",
-        "content": "Câu 41: Kéo thả các đáp án khớp với các phát biểu từ 1 - 3 vế trái dưới đây:",
-        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 - 3 vế trái dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
         "pairs": [
           {
-            "id": "target-1",
+            "id": "pair-1",
             "prompt": "Giai cấp công nhân là ____ và có tinh thần cách mạng triệt để",
             "correctAnswer": "giai cấp cách mạng"
           },
           {
-            "id": "target-2",
+            "id": "pair-2",
             "prompt": "Sứ mệnh lịch sử của giai cấp công nhân là_____ khỏi áp bức, bất công, bóc lột",
             "correctAnswer": "giải phóng con người"
           },
           {
-            "id": "target-3",
+            "id": "pair-3",
             "prompt": "Thực hiện sự nghiệp giải phóng thế giới ấy, đó là sứ mệnh lịch sử của ____ hiện đại",
             "correctAnswer": "giai cấp vô sản"
           }
@@ -1396,8 +1433,7 @@ export const INITIAL_QUIZ_DATA = [
         "optionsPool": [
           "giai cấp cách mạng",
           "giải phóng con người",
-          "giai cấp vô sản",
-          "giai cấp công nhân"
+          "giai cấp vô sản"
         ],
         "needsReview": false
       }
@@ -1440,7 +1476,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q2",
@@ -1474,7 +1511,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q3",
@@ -1508,7 +1546,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q4",
@@ -1542,7 +1581,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q5",
@@ -1576,7 +1616,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q6",
@@ -1610,7 +1651,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q7",
@@ -1644,7 +1686,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q8",
@@ -1678,7 +1721,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q9",
@@ -1712,7 +1756,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q10",
@@ -1746,7 +1791,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q11",
@@ -1781,7 +1827,8 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q12",
@@ -1816,7 +1863,8 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q13",
@@ -1850,7 +1898,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q14",
@@ -1884,7 +1933,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q15",
@@ -1918,7 +1968,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q16",
@@ -1952,7 +2003,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q17",
@@ -1986,7 +2038,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q18",
@@ -2020,7 +2073,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q19",
@@ -2054,7 +2108,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q20",
@@ -2088,7 +2143,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q21",
@@ -2122,7 +2178,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q22",
@@ -2156,7 +2213,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q23",
@@ -2190,7 +2248,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q24",
@@ -2224,7 +2283,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q25",
@@ -2258,7 +2318,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q26",
@@ -2293,7 +2354,8 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q27",
@@ -2328,15 +2390,16 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q28",
         "number": 28,
         "type": "true_false_group",
         "header": "Câu 28:",
-        "content": "Câu 28: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -2359,15 +2422,16 @@ export const INITIAL_QUIZ_DATA = [
             "correctAnswer": "Đúng"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q29",
         "number": 29,
         "type": "true_false_group",
         "header": "Câu 29:",
-        "content": "Câu 29: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -2390,15 +2454,16 @@ export const INITIAL_QUIZ_DATA = [
             "correctAnswer": "Sai"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q30",
         "number": 30,
         "type": "true_false_group",
         "header": "Câu 30:",
-        "content": "Câu 30: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -2421,15 +2486,16 @@ export const INITIAL_QUIZ_DATA = [
             "correctAnswer": "Sai"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q31",
         "number": 31,
         "type": "true_false_group",
         "header": "Câu 31:",
-        "content": "Câu 31: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -2445,22 +2511,18 @@ export const INITIAL_QUIZ_DATA = [
             "order": 3,
             "statement": "Quá độ trực tiếp từ chủ nghĩa tư bản lên chủ nghĩa cộng sản đối với những nước đã trải qua chủ nghĩa tư bản phát triển",
             "correctAnswer": "Đúng"
-          },
-          {
-            "order": 4,
-            "statement": "Học thuyết hình thái kinh tế - xã hội của chủ nghĩa Mác - Lênin đã chỉ rõ: Lịch sử xã hội đã trải qua 4 hình thái kinh tế - xã hội",
-            "correctAnswer": "Đúng"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q32",
         "number": 32,
         "type": "true_false_group",
         "header": "Câu 32:",
-        "content": "Câu 32: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -2483,28 +2545,29 @@ export const INITIAL_QUIZ_DATA = [
             "correctAnswer": "Đúng"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q33",
         "number": 33,
         "type": "drag_drop",
         "header": "Câu 33:",
-        "content": "Câu 33: Kéo thả các đáp án khớp với các phát biểu từ 1–3:",
-        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "content": "Kéo thả các đáp án khớp với các phát biểu từ 1–3:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
         "pairs": [
           {
-            "id": "target-1",
+            "id": "pair-1",
             "prompt": "____ từ chủ nghĩa tư bản lên chủ nghĩa cộng sản đối với những nước đã trải qua chủ nghĩa tư bản phát triển.",
             "correctAnswer": "Quá độ trực tiếp"
           },
           {
-            "id": "target-2",
+            "id": "pair-2",
             "prompt": "____ từ chủ nghĩa tư bản lên chủ nghĩa cộng sản đối với những nước chưa trải qua chủ nghĩa tư bản phát triển.",
             "correctAnswer": "Quá độ gián tiếp"
           },
           {
-            "id": "target-3",
+            "id": "pair-3",
             "prompt": "Thực chất của ____ lên chủ nghĩa xã hội là thời kỳ cải biến cách mạng từ xã hội tiền tư bản chủ nghĩa và tư bản chủ nghĩa sang xã hội xã hội chủ nghĩa.",
             "correctAnswer": "Thời kỳ quá độ"
           }
@@ -2512,8 +2575,7 @@ export const INITIAL_QUIZ_DATA = [
         "optionsPool": [
           "Quá độ trực tiếp",
           "Quá độ gián tiếp",
-          "Thời kỳ quá độ",
-          "Con đường"
+          "Thời kỳ quá độ"
         ],
         "needsReview": false
       },
@@ -2522,21 +2584,21 @@ export const INITIAL_QUIZ_DATA = [
         "number": 34,
         "type": "drag_drop",
         "header": "Câu 34:",
-        "content": "Câu 34: Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
-        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
         "pairs": [
           {
-            "id": "target-1",
+            "id": "pair-1",
             "prompt": "Việt Nam thực hiện______ đi lên chủ nghĩa xã hội",
             "correctAnswer": "quá độ gián tiếp"
           },
           {
-            "id": "target-2",
+            "id": "pair-2",
             "prompt": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa, tức là bỏ qua việc xác lập______ của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa.",
             "correctAnswer": "vị trí thống trị"
           },
           {
-            "id": "target-3",
+            "id": "pair-3",
             "prompt": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa là con đường cách mạng______",
             "correctAnswer": "tất yếu khách quan"
           }
@@ -2544,8 +2606,7 @@ export const INITIAL_QUIZ_DATA = [
         "optionsPool": [
           "quá độ gián tiếp",
           "vị trí thống trị",
-          "tất yếu khách quan",
-          "quá độ trực tiếp"
+          "tất yếu khách quan"
         ],
         "needsReview": false
       },
@@ -2582,28 +2643,29 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q36",
         "number": 36,
         "type": "drag_drop",
         "header": "Câu 36:",
-        "content": "Câu 36: Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
-        "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
+        "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
         "pairs": [
           {
-            "id": "target-1",
+            "id": "pair-1",
             "prompt": "Việt Nam xây dựng nền ______ có sự điều tiết của nhà nước.",
             "correctAnswer": "kinh tế thị trường"
           },
           {
-            "id": "target-2",
-            "prompt": "Một đặc trưng chính trị của chủ nghĩa xã hội là xây dựng _____ xã hội chủ nghĩa của nhân dân, do nhân dân, vì nhân dân.",
+            "id": "pair-2",
+            "prompt": "Một đặc trưng chính trị của chủ nghĩa xã hội là xây dựng _____  xã hội chủ nghĩa của nhân dân, do nhân dân, vì nhân dân.",
             "correctAnswer": "nhà nước pháp quyền"
           },
           {
-            "id": "target-3",
+            "id": "pair-3",
             "prompt": "Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam tôn trọng, bảo vệ và bảo đảm ______",
             "correctAnswer": "quyền con người"
           }
@@ -2611,8 +2673,7 @@ export const INITIAL_QUIZ_DATA = [
         "optionsPool": [
           "kinh tế thị trường",
           "nhà nước pháp quyền",
-          "quyền con người",
-          "chế độ chính trị"
+          "quyền con người"
         ],
         "needsReview": false
       },
@@ -2648,7 +2709,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q38",
@@ -2656,7 +2718,7 @@ export const INITIAL_QUIZ_DATA = [
         "type": "multiple_choice",
         "header": "Câu 38:",
         "content": "Hai loại quá độ từ chủ nghĩa tư bản lên chủ nghĩa cộng sản đó là: (Chọn nhiều đáp án)",
-        "instructionNote": "Hãy chọn 2 đáp án đúng nhất !",
+        "instructionNote": "Sinh viên chọn các phương án đúng nhất",
         "options": [
           {
             "key": "A",
@@ -2683,7 +2745,8 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q39",
@@ -2691,7 +2754,7 @@ export const INITIAL_QUIZ_DATA = [
         "type": "multiple_choice",
         "header": "Câu 39:",
         "content": "Những đặc điểm nổi bật trong thời kỳ quá độ lên chủ nghĩa xã hội gồm: (Chọn 2 đáp án đúng)",
-        "instructionNote": "Hãy chọn 2 đáp án đúng nhất!",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
         "options": [
           {
             "key": "A",
@@ -2718,19 +2781,20 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-2-q40",
         "number": 40,
         "type": "multiple_choice",
         "header": "Câu 40:",
-        "content": "Đặc điểm cơ bản của thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là gì? (Chọn 2 đáp án đúng) A Chuyển thẳng từ chế độ phong kiến lên chủ nghĩa xã hội",
-        "instructionNote": "Hãy chọn 2 đấp án đúng nhất !",
+        "content": "Đặc điểm cơ bản của thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là gì? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
         "options": [
           {
             "key": "B",
-            "content": "Bò qua chế độ phong kiển",
+            "content": "Bò qua chế độ phong kiến",
             "isCorrect": false
           },
           {
@@ -2748,7 +2812,8 @@ export const INITIAL_QUIZ_DATA = [
           "C",
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       }
     ]
   },
@@ -2789,7 +2854,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q2",
@@ -2823,7 +2889,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q3",
@@ -2857,7 +2924,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q4",
@@ -2891,7 +2959,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q5",
@@ -2925,7 +2994,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q6",
@@ -2959,7 +3029,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q7",
@@ -2993,7 +3064,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q8",
@@ -3027,7 +3099,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q9",
@@ -3061,7 +3134,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q10",
@@ -3095,7 +3169,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q11",
@@ -3129,7 +3204,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q12",
@@ -3163,7 +3239,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q13",
@@ -3197,7 +3274,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q14",
@@ -3232,7 +3310,8 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q15",
@@ -3267,7 +3346,8 @@ export const INITIAL_QUIZ_DATA = [
           "C",
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q16",
@@ -3280,7 +3360,7 @@ export const INITIAL_QUIZ_DATA = [
           {
             "key": "A",
             "content": "Dân chủ là một giá trị phản ánh những quyền tối thiểu của con người, là một hình thức tổ chức nhà nước thừa nhận quyền làm chủ của nhân dân; là một giá trị xã hội phản ánh sự nghiệp đấu tranh của con người",
-            "isCorrect": true
+            "isCorrect": false
           },
           {
             "key": "B",
@@ -3290,7 +3370,7 @@ export const INITIAL_QUIZ_DATA = [
           {
             "key": "C",
             "content": "Dân chủ là một giá trị phản ánh những quyền cơ bản của con người, là một hình thức tổ chức nhà nước của giai cấp cầm quyền; có quá trình ra đời, phát triển cùng với lịch sử xã hội nhân loại",
-            "isCorrect": false
+            "isCorrect": true
           },
           {
             "key": "D",
@@ -3299,9 +3379,10 @@ export const INITIAL_QUIZ_DATA = [
           }
         ],
         "correctAnswers": [
-          "A"
+          "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q17",
@@ -3335,7 +3416,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q18",
@@ -3369,7 +3451,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q19",
@@ -3403,7 +3486,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q20",
@@ -3416,12 +3500,12 @@ export const INITIAL_QUIZ_DATA = [
           {
             "key": "A",
             "content": "Giai cấp công nhân đấu tranh đòi tăng lương, giảm giờ làm, cải thiện điều kiện lao động",
-            "isCorrect": true
+            "isCorrect": false
           },
           {
             "key": "B",
             "content": "Giai cấp công nhân lật đổ nhà nước của giai cấp bóc lột, giành được chính quyền",
-            "isCorrect": false
+            "isCorrect": true
           },
           {
             "key": "C",
@@ -3435,9 +3519,10 @@ export const INITIAL_QUIZ_DATA = [
           }
         ],
         "correctAnswers": [
-          "A"
+          "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q21",
@@ -3455,12 +3540,12 @@ export const INITIAL_QUIZ_DATA = [
           {
             "key": "B",
             "content": "Nền dân chủ xã hội chủ nghĩa đại biểu cho trí tuệ, lợi ích của riêng giai cấp công nhân và tầng lớp trí thức",
-            "isCorrect": true
+            "isCorrect": false
           },
           {
             "key": "C",
             "content": "Nền dân chủ xã hội chủ nghĩa do Đảng Cộng sản lãnh đạo – đại biểu cho trí tuệ, lợi ích của giai cấp công nhân, nhân dân lao động và toàn dân tộc",
-            "isCorrect": false
+            "isCorrect": true
           },
           {
             "key": "D",
@@ -3469,9 +3554,10 @@ export const INITIAL_QUIZ_DATA = [
           }
         ],
         "correctAnswers": [
-          "B"
+          "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q22",
@@ -3484,12 +3570,12 @@ export const INITIAL_QUIZ_DATA = [
           {
             "key": "A",
             "content": "Phát triển kinh tế thị trường tự do",
-            "isCorrect": true
+            "isCorrect": false
           },
           {
             "key": "B",
             "content": "Phục vụ lợi ích của giai cấp công nhân và nhân dân lao động",
-            "isCorrect": false
+            "isCorrect": true
           },
           {
             "key": "C",
@@ -3503,9 +3589,10 @@ export const INITIAL_QUIZ_DATA = [
           }
         ],
         "correctAnswers": [
-          "A"
+          "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q23",
@@ -3518,29 +3605,30 @@ export const INITIAL_QUIZ_DATA = [
           {
             "key": "A",
             "content": "Nền dân chủ mang tính cá nhân",
-            "isCorrect": true
+            "isCorrect": false
           },
           {
             "key": "B",
             "content": "Nền dân chủ của số nhân dân lao động",
-            "isCorrect": false
+            "isCorrect": true
           },
           {
             "key": "C",
             "content": "Nền dân chủ của giai cấp tư sản",
-            "isCorrect": true
+            "isCorrect": false
           },
           {
             "key": "D",
             "content": "Nền dân chủ mang tính tập thể",
-            "isCorrect": false
+            "isCorrect": true
           }
         ],
         "correctAnswers": [
-          "A",
-          "C"
+          "B",
+          "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q24",
@@ -3548,12 +3636,12 @@ export const INITIAL_QUIZ_DATA = [
         "type": "multiple_choice",
         "header": "Câu 24:",
         "content": "Dân chủ xã hội chủ nghĩa ở Việt Nam là: (Chọn 2 đáp án đúng)",
-        "instructionNote": "Sinh viên chọn 1 phương án đúng nhất",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
         "options": [
           {
             "key": "A",
             "content": "Nền dân chủ gắn liền với sự lãnh đạo của Đảng Cộng sản Việt Nam",
-            "isCorrect": false
+            "isCorrect": true
           },
           {
             "key": "B",
@@ -3563,18 +3651,20 @@ export const INITIAL_QUIZ_DATA = [
           {
             "key": "C",
             "content": "Chế độ dân chủ không phụ thuộc vào nhà nước",
-            "isCorrect": true
+            "isCorrect": false
           },
           {
             "key": "D",
             "content": "Nền dân chủ bảo đảm quyền lực thuộc về nhân dân",
-            "isCorrect": false
+            "isCorrect": true
           }
         ],
         "correctAnswers": [
-          "C"
+          "A",
+          "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q25",
@@ -3608,7 +3698,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q26",
@@ -3642,7 +3733,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q27",
@@ -3676,7 +3768,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q28",
@@ -3711,44 +3804,14 @@ export const INITIAL_QUIZ_DATA = [
           "C",
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q29",
         "number": 29,
-        "type": "drag_drop",
-        "header": "Câu 29:",
-        "content": "Câu 30: Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 ở dưới đây:",
-        "instruction": "Kéo thả các đáp án khớp với các phát biểu dưới đây:",
-        "pairs": [
-          {
-            "id": "target-1",
-            "prompt": "1) Nền dân chủ xã hội chủ nghĩa là nền dân chủ mang bản chất của ______",
-            "correctAnswer": "giai cấp công nhân"
-          },
-          {
-            "id": "target-2",
-            "prompt": "2) Dân chủ xã hội chủ nghĩa là sự kết hợp giữa hình thức dân chủ đại diện và ______",
-            "correctAnswer": "dân chủ trực tiếp"
-          },
-          {
-            "id": "target-3",
-            "prompt": "3) Dân chủ xã hội chủ nghĩa bảo đảm phát huy đầy đủ ______ của nhân dân trên tất cả các lĩnh vực",
-            "correctAnswer": "quyền làm chủ"
-          }
-        ],
-        "optionsPool": [
-          "giai cấp công nhân",
-          "dân chủ trực tiếp",
-          "quyền làm chủ"
-        ],
-        "needsReview": false
-      },
-      {
-        "id": "bai-3-q30",
-        "number": 30,
         "type": "single_choice",
-        "header": "Câu 30:",
+        "header": "Câu 29:",
         "content": "Căn cứ vào tính chất của quyền lực nhà nước, chức năng của nhà nước được chia thành:",
         "instructionNote": "",
         "options": [
@@ -3771,81 +3834,14 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
-        "id": "bai-3-q31",
-        "number": 31,
-        "type": "true_false_group",
-        "header": "Câu 31:",
-        "content": "Câu 32: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
-        "items": [
-          {
-            "order": 1,
-            "statement": "Bản chất dân chủ xã hội chủ nghĩa ở Việt Nam được thực hiện thông qua các thức dân chủ gián tiếp và dân chủ trực tiếp",
-            "correctAnswer": "Đúng"
-          },
-          {
-            "order": 2,
-            "statement": "Đảng ta khẳng định một trong những đặc trưng của chủ nghĩa xã hội Việt Nam là do nhân dân làm chủ",
-            "correctAnswer": "Đúng"
-          },
-          {
-            "order": 3,
-            "statement": "Quốc hội là cơ quan quyền lực nhà nước cao nhất hoạt động theo nhiệm kỳ 3 năm",
-            "correctAnswer": "Sai"
-          },
-          {
-            "order": 4,
-            "statement": "Trong hoạt động của nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam, các cơ quan của nhà nước không được phân quyền rõ ràng",
-            "correctAnswer": "Sai"
-          }
-        ],
-        "needsReview": false
-      },
-      {
-        "id": "bai-3-q32",
-        "number": 32,
-        "type": "drag_drop",
-        "header": "Câu 32:",
-        "content": "Câu 33: Kéo thả các đáp án khớp với các phát biểu từ 1 – 4 ở dưới đây:",
-        "instruction": "Kéo thả các đáp án khớp với các phát biểu dưới đây:",
-        "pairs": [
-          {
-            "id": "target-1",
-            "prompt": "1) Dân chủ đại diện được thể hiện qua việc ______",
-            "correctAnswer": "Bầu cử Quốc hội"
-          },
-          {
-            "id": "target-2",
-            "prompt": "2) Một nguyên tắc cốt lõi của nhà nước pháp quyền là ______",
-            "correctAnswer": "Thượng tôn pháp luật"
-          },
-          {
-            "id": "target-3",
-            "prompt": "3) Nhân dân là ______ tối cao trong Nhà nước pháp quyền",
-            "correctAnswer": "Dân chủ đại diện"
-          },
-          {
-            "id": "target-4",
-            "prompt": "4) Hình thức dân chủ gián tiếp là hình thức ______",
-            "correctAnswer": "Chủ thể quyền lực"
-          }
-        ],
-        "optionsPool": [
-          "Bầu cử Quốc hội",
-          "Thượng tôn pháp luật",
-          "Dân chủ đại diện",
-          "Chủ thể quyền lực"
-        ],
-        "needsReview": false
-      },
-      {
-        "id": "bai-3-q33",
-        "number": 33,
+        "id": "bai-3-q30",
+        "number": 30,
         "type": "multiple_choice",
-        "header": "Câu 33:",
+        "header": "Câu 30:",
         "content": "Bản chất của dân chủ là gì?",
         "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
         "options": [
@@ -3874,15 +3870,118 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-3-q31",
+        "number": 31,
+        "type": "single_choice",
+        "header": "Câu 31:",
+        "content": "Ở Việt Nam bản chất dân chủ xã hội chủ nghĩa là dựa vào:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nhà nước xã hội chủ nghĩa và sự ủng hộ, giúp đỡ của nhân dân",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Sự quản lý của Nhà nước",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Nhân dân",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Giai cấp công nhân",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-3-q32",
+        "number": 32,
+        "type": "single_choice",
+        "header": "Câu 32:",
+        "content": "Vận dụng những kiến thức đã học hãy chọn phương án đúng về mối quan hệ giữa dân chủ xã hội chủ nghĩa và nhà nước xã hội chủ nghĩa?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Dận chủ xã hội chủ nghĩa là mục tiêu cho việc xây dựng và hoạt động của nhà nước xã hội chủ nghĩa còn nhà nước xã hội chủ nghĩa là công cụ quan trọng cho việc thực thi quyền làm chủ của người dân",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Dân chủ xã hội chủ nghĩa là cơ sở, nền tảng cho việc xây dựng và hoạt động của nhà nước xã hội chủ nghĩa còn nhà nước xã hội chủ nghĩa là công cụ quan trọng cho việc thực thi quyền làm chủ của người dân",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Dân chủ xã hội chủ nghĩa là mục đích cho việc xây dựng và hoạt động của nhà nước xã hội chủ nghĩa còn nhà nước xã hội chủ nghĩa là diều kiện cho sự ra đời của dân chủ xã hội chủ nghĩa",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Dân chủ xã hội chủ nghĩa là mục đích cho việc xây dựng và hoạt động của nhà nước xã hội chủ nghĩa còn nhà nước xã hội chủ nghĩa quyết định bản chất của dân chủ",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-3-q33",
+        "number": 33,
+        "type": "true_false_group",
+        "header": "Câu 33:",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Bản chất dân chủ xã hội chủ nghĩa ở Việt Nam được thực hiện thông qua các thức dân chủ gián tiếp và dân chủ trực tiếp",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Đảng ta khẳng định một trong những đặc trưng của chủ nghĩa xã hội Việt Nam là do nhân dân làm chủ",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Quốc hội là cơ quan quyền lực nhà nước cao nhất hoạt động theo nhiệm kỳ 3 năm",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Trong hoạt động của nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam, các cơ quan của nhà nước không được phân quyền rõ ràng",
+            "correctAnswer": "Sai"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q34",
         "number": 34,
         "type": "true_false_group",
         "header": "Câu 34:",
-        "content": "Câu 35: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -3905,15 +4004,16 @@ export const INITIAL_QUIZ_DATA = [
             "correctAnswer": "Sai"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q35",
         "number": 35,
         "type": "true_false_group",
         "header": "Câu 35:",
-        "content": "Câu 36: Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-        "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
@@ -3936,29 +4036,135 @@ export const INITIAL_QUIZ_DATA = [
             "correctAnswer": "Đúng"
           }
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-3-q36",
         "number": 36,
         "type": "drag_drop",
         "header": "Câu 36:",
-        "content": "Câu 37: Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 ở dưới đây:",
-        "instruction": "Kéo thả các đáp án khớp với các phát biểu dưới đây:",
+        "content": "Ghép các đáp án khớp với các phát biểu từ 1 - 4 vế trái dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
         "pairs": [
           {
-            "id": "target-1",
-            "prompt": "1) Hình thức ___ là hình thức dân chủ đại diện, được thực hiện do nhân dân “ủy quyền”, giao quyền lực của mình cho tổ chức mà nhân dân trực tiếp bầu ra.",
-            "correctAnswer": "dân chủ gián tiếp"
+            "id": "pair-1",
+            "prompt": "___ là hình thức dân chủ ra đời từ cách mạng tư sản",
+            "correctAnswer": "dân chủ tư sản"
           },
           {
-            "id": "target-2",
-            "prompt": "2) Hình thức ___ là hình thức thông qua đó, nhân dân bằng hành động trực tiếp của mình thực hiện quyền làm chủ nhà nước và xã hội.",
+            "id": "pair-2",
+            "prompt": "Mỗi kiểu dân chủ trong lịch sử đều mang ___ nhất định.",
+            "correctAnswer": "bản chất giai cấp"
+          },
+          {
+            "id": "pair-3",
+            "prompt": "Nền dân chủ chủ nô, gắn với chế độ ___",
+            "correctAnswer": "chiếm hữu nô lệ"
+          },
+          {
+            "id": "pair-4",
+            "prompt": "___ là nền dân chủ cao hơn về chất so với nền dân chủ có trong lịch sử nhân loại",
+            "correctAnswer": "dân chủ xã hội chủ nghĩa"
+          }
+        ],
+        "optionsPool": [
+          "dân chủ tư sản",
+          "bản chất giai cấp",
+          "chiếm hữu nô lệ",
+          "dân chủ xã hội chủ nghĩa"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q37",
+        "number": 37,
+        "type": "drag_drop",
+        "header": "Câu 37:",
+        "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 ở dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "prompt": "Nền dân chủ xã hội chủ nghĩa là nền dân chủ mang bản chất của ______",
+            "correctAnswer": "giai cấp công nhân"
+          },
+          {
+            "id": "pair-2",
+            "prompt": "Dân chủ xã hội chủ nghĩa là sự kết hợp giữa hình thức dân chủ đại diện và ______",
             "correctAnswer": "dân chủ trực tiếp"
           },
           {
-            "id": "target-3",
-            "prompt": "3) Chế độ ___ ở nước ta được xác lập sau Cách mạng Tháng Tám năm 1945.",
+            "id": "pair-3",
+            "prompt": "Dân chủ xã hội chủ nghĩa bảo đảm phát huy đầy đủ ______ của nhân dân trên tất cả các lĩnh vực",
+            "correctAnswer": "quyền làm chủ"
+          }
+        ],
+        "optionsPool": [
+          "giai cấp công nhân",
+          "dân chủ trực tiếp",
+          "quyền làm chủ"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q38",
+        "number": 38,
+        "type": "drag_drop",
+        "header": "Câu 38:",
+        "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 4 ở dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "prompt": "Dân chủ đại diện được thể hiện qua việc ______",
+            "correctAnswer": "Bầu cử Quốc hội"
+          },
+          {
+            "id": "pair-2",
+            "prompt": "Một nguyên tắc cốt lõi của nhà nước pháp quyền là ______",
+            "correctAnswer": "Thượng tôn pháp luật"
+          },
+          {
+            "id": "pair-3",
+            "prompt": "Nhân dân là ______ tối cao trong Nhà nước pháp quyền",
+            "correctAnswer": "Chủ thể quyền lực"
+          },
+          {
+            "id": "pair-4",
+            "prompt": "Hình thức dân chủ gián tiếp là hình thức ______",
+            "correctAnswer": "Dân chủ đại diện"
+          }
+        ],
+        "optionsPool": [
+          "Bầu cử Quốc hội",
+          "Thượng tôn pháp luật",
+          "Chủ thể quyền lực",
+          "Dân chủ đại diện"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-3-q39",
+        "number": 39,
+        "type": "drag_drop",
+        "header": "Câu 39:",
+        "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 ở dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "prompt": "Hình thức ___ là hình thức dân chủ đại diện, được thực hiện do nhân dân “ủy quyền”, giao quyền lực của mình cho tổ chức mà nhân dân trực tiếp bầu ra.",
+            "correctAnswer": "dân chủ gián tiếp"
+          },
+          {
+            "id": "pair-2",
+            "prompt": "Hình thức ___ là hình thức thông qua đó, nhân dân bằng hành động trực tiếp của mình thực hiện quyền làm chủ nhà nước và xã hội.",
+            "correctAnswer": "dân chủ trực tiếp"
+          },
+          {
+            "id": "pair-3",
+            "prompt": "Chế độ ___ ở nước ta được xác lập sau Cách mạng Tháng Tám năm 1945.",
             "correctAnswer": "dân chủ nhân dân"
           }
         ],
@@ -3968,6 +4174,38 @@ export const INITIAL_QUIZ_DATA = [
           "dân chủ nhân dân"
         ],
         "needsReview": false
+      },
+      {
+        "id": "bai-3-q40",
+        "number": 40,
+        "type": "true_false_group",
+        "header": "Câu 40:",
+        "content": "Chọn đáp án Đúng hoặc Sai với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Phát triển dân chủ trực tiếp là hình thức dân chủ để đại diện, được thực hiện do nhân dân ủy quyền, trao quyền lực của mình cho nhà nước trực tiếp bầu ra.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 2,
+            "statement": "Cách mạng dân tộc dân chủ nhân dân ở nước ta được xác lập sau Cách mạng Tháng Tám năm 1945.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Hình thức dân chủ gián tiếp là hình thức thông qua đó, nhân dân bằng hành động trực tiếp của mình thực hiện quyền làm chủ nhà nước và xã hội.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Năm 1976, tên nước được đổi thành Cộng hòa xã hội chủ nghĩa Việt Nam.",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
       }
     ]
   },
@@ -4008,7 +4246,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q2",
@@ -4042,7 +4281,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q3",
@@ -4077,7 +4317,8 @@ export const INITIAL_QUIZ_DATA = [
           "A",
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q4",
@@ -4111,7 +4352,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q5",
@@ -4145,7 +4387,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q6",
@@ -4179,14 +4422,15 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q7",
         "number": 7,
         "type": "single_choice",
         "header": "Câu 7:",
-        "content": "Chọn phương án trả lời đúng nhất để điền vào chỗ trống cho câu sau: “Trước sự liên minh của các đại biểu khoa học…, giới kỹ thuật không một thế lực đen tối nào đứng vững được”.",
+        "content": "Chọn phương án trả lời đúng nhất để điền vào chỗ trống cho câu sau:",
         "instructionNote": "",
         "options": [
           {
@@ -4213,7 +4457,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q8",
@@ -4247,7 +4492,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q9",
@@ -4282,7 +4528,8 @@ export const INITIAL_QUIZ_DATA = [
           "C",
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q10",
@@ -4316,7 +4563,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q11",
@@ -4350,7 +4598,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q12",
@@ -4384,7 +4633,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q13",
@@ -4418,7 +4668,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q14",
@@ -4452,7 +4703,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q15",
@@ -4486,7 +4738,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "C"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q16",
@@ -4520,7 +4773,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q17",
@@ -4533,7 +4787,7 @@ export const INITIAL_QUIZ_DATA = [
           {
             "key": "A",
             "content": "Giai cấp công nhân với giai cấp nông dân và các tầng lớp xã hội khác",
-            "isCorrect": false
+            "isCorrect": true
           },
           {
             "key": "B",
@@ -4548,13 +4802,14 @@ export const INITIAL_QUIZ_DATA = [
           {
             "key": "D",
             "content": "Giai cấp công nhân với giai cấp nông dân và tầng lớp trí thức",
-            "isCorrect": true
+            "isCorrect": false
           }
         ],
         "correctAnswers": [
-          "D"
+          "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q18",
@@ -4588,7 +4843,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q19",
@@ -4622,7 +4878,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q20",
@@ -4656,7 +4913,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q21",
@@ -4690,7 +4948,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q22",
@@ -4724,7 +4983,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q23",
@@ -4758,7 +5018,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q24",
@@ -4792,7 +5053,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q25",
@@ -4826,7 +5088,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q26",
@@ -4860,7 +5123,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "B"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q27",
@@ -4894,7 +5158,8 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "A"
         ],
-        "needsReview": false
+        "needsReview": false,
+        "reviewReason": ""
       },
       {
         "id": "bai-4-q28",
@@ -4928,1144 +5193,3055 @@ export const INITIAL_QUIZ_DATA = [
         "correctAnswers": [
           "D"
         ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q29",
+        "number": 29,
+        "type": "single_choice",
+        "header": "Câu 29:",
+        "content": "Trong cơ cấu xã hội của thời kỳ quá độ lên chủ nghĩa xã hội, cơ cấu xã hội nào giữ vị trí quan trọng hàng đầu, chi phối các loại hình cơ cấu xã hội khác?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Cơ cấu xã hội - giai cấp",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Cơ cấu xã hội - dân tộc",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Cơ cấu xã hội - nghề nghiệp",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Cơ cấu xã hội - tôn giáo",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q30",
+        "number": 30,
+        "type": "multiple_choice",
+        "header": "Câu 30:",
+        "content": "Những tầng lớp nào sau đây tham gia cơ cấu xã hội - giai cấp ở Việt Nam? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Phụ nữ",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Thanh niên",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Tín đồ tôn giáo",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Nhóm học sinh",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q31",
+        "number": 31,
+        "type": "single_choice",
+        "header": "Câu 31:",
+        "content": "Trong thời kỳ quá độ lên chủ nghĩa xã hội, cơ cấu xã hội - giai cấp biến đổi trong mối quan hệ nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Vừa đấu tranh, vừa bài xích lẫn nhau",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Vừa đấu tranh, vừa liên minh, từng bước xóa bỏ bất bình đẳng xã hội dẫn đến sự xích lại gần nhau",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Vừa thống nhất, vừa bình đẳng với nhau",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Vừa liên minh, cấu kết các giai cấp, tầng lớp quy mô để đàn áp các lớn giai cấp, tầng lớp quy mô nhỏ",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q32",
+        "number": 32,
+        "type": "multiple_choice",
+        "header": "Câu 32:",
+        "content": "Những phương hướng nào sau đây nhằm phát triển cơ cấu xã hội – giai cấp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội?  (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tăng dân số ở khu công nghiệp",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Xây dựng và hoàn thiện chính sách xã hội tổng thể",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Giảm giáo dục ở những vùng không có điều kiện kinh tế",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Đẩy mạnh công nghiệp hóa, hiện đại hóa",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "B",
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q33",
+        "number": 33,
+        "type": "multiple_choice",
+        "header": "Câu 33:",
+        "content": "Những nội dung nào sau đây là nội dung cơ bản của liên minh giai cấp, tầng lớp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội?   (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nội dung giáo dục",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Nội dung tôn giáo",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Nội dung kinh tế",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Nội dung chính trị",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "C",
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q34",
+        "number": 34,
+        "type": "multiple_choice",
+        "header": "Câu 34:",
+        "content": "Những phương hướng nào sau đây củng cố liên minh giai cấp, tầng lớp ở Việt Nam",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Giảm vai trò kinh tế trong xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Tạo sự đồng thuận giữa các lực lượng",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Tăng vai trò tôn giáo đối với các giai cấp, tầng lớp",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Phát huy tinh thần đoàn kết",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "B",
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q35",
+        "number": 35,
+        "type": "multiple_choice",
+        "header": "Câu 35:",
+        "content": "Những chính sách nào sau đây hỗ trợ xây dựng cơ cấu xã hội - giai cấp ở Việt Nam?",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Phát huy sự thống nhất trong các giai cấp, tầng lớp, tạo sự đồng thuận xã hội",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Ưu tiên phát triển những giai cấp lớn trong xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Thúc đẩy phát triển các tổ chức tín ngưỡng, tôn giáo",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Giải quyết tốt các mâu thuẫn, các khác biệt trong cácgiai cấp, tầng lớp",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q36",
+        "number": 36,
+        "type": "multiple_choice",
+        "header": "Câu 36:",
+        "content": "Những lực lượng nào sau đây là trung tâm trong cơ cấu xã hội - giai cấp ở Việt Nam",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nhóm tín đồ tôn giáo",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Giai cấp công nhân",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Giai cấp nông dân",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Nhóm người cao tuổi",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B",
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q37",
+        "number": 37,
+        "type": "true_false_group",
+        "header": "Câu 37:",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Đội ngũ trí thức đóng vai trò quan trọng trong cơ cấu xã hội – giai cấp.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Tầng lớp phụ nữ không tham gia cơ cấu xã hội – giai cấp.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 3,
+            "statement": "Chính sách tôn giáo là chính sách chính hỗ trợ cơ cấu xã hội – giai cấp.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Giai cấp công nhân là trung tâm trong cơ cấu xã hội – giai cấp ở Việt Nam.",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q38",
+        "number": 38,
+        "type": "true_false_group",
+        "header": "Câu 38:",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Nội dung tôn giáo là nội dung chính của liên minh giai cấp, tầng lớp.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 2,
+            "statement": "Đội ngũ doanh nhân không tham gia liên minh giai cấp, tầng lớp.",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 3,
+            "statement": "Xây dựng Nhà nước pháp quyền xã hội chủ nghĩa của nhân dân, do nhân dân, vì nhân dân là nội dung vận hành của liên minh giai cấp, tầng lớp ở Việt Nam.",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 4,
+            "statement": "Đồng thuận xã hội là mục tiêu của liên minh giai cấp, tầng lớp ở Việt Nam.",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q39",
+        "number": 39,
+        "type": "true_false_group",
+        "header": "Câu 39:",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Đổi mới hoạt động của Đảng, nhà nước, mặt trận Tổ quốc Việt Nam nhằm tăng cường khối liên minh giai cấp, tầng lớp ở Việt Nam",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Tạo sức mạnh tổng hợp là mục tiêu của liên minh giai cấp, tầng lớp ở Việt Nam",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Nội dung văn hóa không liên quan đến nội dung của liên minh giai cấp, tầng lớp",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Nội dung kinh tế là nội dung cơ bản quyết định nhất, là cơ sở vật chất kỹ thuật của liên minh",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q40",
+        "number": 40,
+        "type": "true_false_group",
+        "header": "Câu 40:",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Đội ngũ doanh nhân là tầng lớp mới trong cơ cấu xã hội - giai cấp",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Nâng cao dân trí là chính sách hỗ trợ cơ cấu xã hội - giai cấp",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Chính sách việc làm không hỗ trợ cơ cấu xã hội - giai cấp",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Cơ cấu xã hội - giai cấp ở Việt Nam không biến đổi",
+            "correctAnswer": "Sai"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-4-q41",
+        "number": 41,
+        "type": "drag_drop_columns",
+        "header": "Câu 41:",
+        "content": "Kéo thả các yếu tố liên quan đến liên minh giai cấp, tầng lớp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội vào các cột tương ứng.",
+        "instructionNote": "Kéo thả các mục vào đúng cột phân loại",
+        "columns": [
+          {
+            "id": "col-1",
+            "title": "Thành phần/yếu tố của liên minh",
+            "correctItems": [
+              "Giai cấp công nhân",
+              "Giai cấp nông dân",
+              "Tầng lớp phụ nữ",
+              "Đảng Cộng sản"
+            ]
+          },
+          {
+            "id": "col-2",
+            "title": "Nội dung/phương hướng của liên minh",
+            "correctItems": [
+              "Nội dung kinh tế",
+              "Nội dung chính trị",
+              "Xóa đói giảm nghèo",
+              "Tăng cường liên minh"
+            ]
+          }
+        ],
+        "optionsPool": [
+          "Giai cấp công nhân",
+          "Giai cấp nông dân",
+          "Tầng lớp phụ nữ",
+          "Đảng Cộng sản",
+          "Nội dung kinh tế",
+          "Nội dung chính trị",
+          "Xóa đói giảm nghèo",
+          "Tăng cường liên minh"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-4-q42",
+        "number": 42,
+        "type": "drag_drop",
+        "header": "Câu 42:",
+        "content": "Kéo thả các khái niệm khớp với các phát biểu về cơ cấu xã hội - giai cấp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "prompt": "Giai cấp trung tâm trong cơ cấu xã hội – giai cấp",
+            "correctAnswer": "Giai cấp công nhân"
+          },
+          {
+            "id": "pair-2",
+            "prompt": "Chính sách hỗ trợ cơ cấu xã hội - giai cấp",
+            "correctAnswer": "Chính sách an sinh xã hội"
+          },
+          {
+            "id": "pair-3",
+            "prompt": "Lực lượng quan trọng trong cơ cấu xã hội - giai cấp",
+            "correctAnswer": "Đội ngũ trí thức"
+          },
+          {
+            "id": "pair-4",
+            "prompt": "Lực lượng mới trong cơ cấu xã hội – giai cấp",
+            "correctAnswer": "Đội ngũ doanh nhân"
+          }
+        ],
+        "optionsPool": [
+          "Giai cấp công nhân",
+          "Chính sách an sinh xã hội",
+          "Đội ngũ trí thức",
+          "Đội ngũ doanh nhân"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-4-q43",
+        "number": 43,
+        "type": "drag_drop",
+        "header": "Câu 43:",
+        "content": "Kéo thả các đáp án đúng ứng với từng phát biểu sau đây về vị trí, vai trò của các giai cấp, tầng lớp trong cơ cấu xã hội – giai cấp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "prompt": "Giai cấp nông dân cùng với nông nghiệp, nông thôn có vị trí ______",
+            "correctAnswer": "chiến lược quan trọng"
+          },
+          {
+            "id": "pair-2",
+            "prompt": "Đội ngũ doanh nhân được Đảng ta chủ trương xây dựng thành một ______",
+            "correctAnswer": "đội ngũ vững mạnh"
+          },
+          {
+            "id": "pair-3",
+            "prompt": "Giai cấp công nhân Việt Nam có vai trò ______",
+            "correctAnswer": "đặc biệt quan trọng"
+          },
+          {
+            "id": "pair-4",
+            "prompt": "Đội ngũ trí thức là lực lượng ______",
+            "correctAnswer": "sáng tạo đặc biệt"
+          }
+        ],
+        "optionsPool": [
+          "chiến lược quan trọng",
+          "đội ngũ vững mạnh",
+          "đặc biệt quan trọng",
+          "sáng tạo đặc biệt"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-4-q44",
+        "number": 44,
+        "type": "drag_drop_columns",
+        "header": "Câu 44:",
+        "content": "Kéo thả các yếu tố liên quan đến cơ cấu xã hội - giai cấp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội vào các cột tương ứng:",
+        "instructionNote": "Kéo thả các mục vào đúng cột phân loại",
+        "columns": [
+          {
+            "id": "col-1",
+            "title": "Giai cấp/tầng lớp trong cơ cấu xã hội",
+            "correctItems": [
+              "Giai cấp nông dân",
+              "Giai cấp công nhân",
+              "Đội ngũ trí thức"
+            ]
+          },
+          {
+            "id": "col-2",
+            "title": "Chính sách hỗ trợ",
+            "correctItems": [
+              "Phát triển nông thôn mới",
+              "Chính sách an sinh xã hội",
+              "Nâng cao dân trí",
+              "Bảo vệ quyền lợi"
+            ]
+          }
+        ],
+        "optionsPool": [
+          "Giai cấp nông dân",
+          "Giai cấp công nhân",
+          "Đội ngũ trí thức",
+          "Phát triển nông thôn mới",
+          "Chính sách an sinh xã hội",
+          "Nâng cao dân trí",
+          "Bảo vệ quyền lợi"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-4-q45",
+        "number": 45,
+        "type": "drag_drop",
+        "header": "Câu 45:",
+        "content": "Kéo thả",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "prompt": "Phương hướng cơ bản để xây dựng liên minh giai cấp, tầng lớp",
+            "correctAnswer": "Hoàn thiện thể chế kinh tế thị trường định hướng xã hội chủ nghĩa"
+          },
+          {
+            "id": "pair-2",
+            "prompt": "Nội dung cơ bản quyết định của liên minh",
+            "correctAnswer": "Nội dung kinh tế"
+          },
+          {
+            "id": "pair-3",
+            "prompt": "Tầng lớp tham gia liên minh",
+            "correctAnswer": "Tầng lớp phụ nữ"
+          },
+          {
+            "id": "pair-4",
+            "prompt": "Yếu tố cốt lõi của liên minh giai cấp",
+            "correctAnswer": "Liên minh công - nông"
+          }
+        ],
+        "optionsPool": [
+          "Hoàn thiện thể chế kinh tế thị trường định hướng xã hội chủ nghĩa",
+          "Nội dung kinh tế",
+          "Tầng lớp phụ nữ",
+          "Liên minh công - nông"
+        ],
         "needsReview": false
       }
     ]
   },
   {
-      "id": "bai-5",
-      "title": "CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 5",
-      "description": "Bộ câu hỏi ôn tập CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 5: Dân tộc và Tôn giáo trong thời kỳ quá độ lên CNXH",
-      "questions": [
+    "id": "bai-5",
+    "title": "CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 5",
+    "description": "Bộ câu hỏi ôn tập CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 5",
+    "questions": [
+      {
+        "id": "bai-5-q1",
+        "number": 1,
+        "type": "single_choice",
+        "header": "Câu 1:",
+        "content": "Quan điểm: Không phân biệt dân tộc lớn hay nhỏ, ở trình độ phát triển cao hay thấp, các dân tộc đều có nghĩa vụ và quyền lợi ngang nhau trên tất cả các lĩnh vực của đời sống xã hội - thuộc nội dung nào trong Cương lĩnh dân tộc của V.I. Lênin?",
+        "instructionNote": "",
+        "options": [
           {
-              "id": "bai-5-q1",
-              "number": 1,
-              "type": "single_choice",
-              "header": "Câu 1:",
-              "content": "Quan điểm: Không phân biệt dân tộc lớn hay nhỏ, ở trình độ phát triển cao hay thấp, các dân tộc đều có nghĩa vụ và quyền lợi ngang nhau trên tất cả các lĩnh vực của đời sống xã hội - thuộc nội dung nào trong Cương lĩnh dân tộc của V.I. Lênin?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Phải đấu tranh chống chủ nghĩa phân biệt chủng tộc, chủ nghĩa sô vanh",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Các dân tộc hoàn toàn bình đẳng",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "C",
-                      "content": "Liên hiệp công nhân tất cả các dân tộc",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Đoàn kết các dân tộc",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "B"
-              ],
-              "needsReview": false
+            "key": "A",
+            "content": "Phải đấu tranh chống chủ nghĩa phân biệt chủng tộc, chủ nghĩa sô vanh",
+            "isCorrect": false
           },
           {
-              "id": "bai-5-q2",
-              "number": 2,
-              "type": "multiple_choice",
-              "header": "Câu 2:",
-              "content": "Theo quan điểm của chủ nghĩa Mác – Lênin, để thực hiện được bình đẳng dân tộc cần phải làm gì? (Chọn 2 đáp án)",
-              "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Phải đấu tranh chống chủ nghĩa phân biệt chủng tộc, chủ nghĩa sô vanh",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "B",
-                      "content": "Thủ tiêu tình trạng áp bức giai cấp, trên cơ sở đó xoá bỏ tình trạng áp bức dân tộc",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "C",
-                      "content": "Phải liên kết với các nước đế quốc lớn",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Phải duy trì chế độ tư hữu về tư liệu sản xuất",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "A",
-                  "B"
-              ],
-              "needsReview": false
+            "key": "B",
+            "content": "Các dân tộc hoàn toàn bình đẳng",
+            "isCorrect": true
           },
           {
-              "id": "bai-5-q3",
-              "number": 3,
-              "type": "single_choice",
-              "header": "Câu 3:",
-              "content": "Thứ tự quá trình phát triển của dân tộc lần lượt trải qua các hình thức nào?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Thị tộc, bộ tộc, bộ lạc, dân tộc",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Bộ lạc, bộ tộc, thị tộc, dân tộc",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Bộ tộc, thị tộc, bộ lạc, dân tộc",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Thị tộc, bộ lạc, bộ tộc, dân tộc",
-                      "isCorrect": true
-                  }
-              ],
-              "correctAnswers": [
-                  "D"
-              ],
-              "needsReview": false
+            "key": "C",
+            "content": "Liên hiệp công nhân tất cả các dân tộc",
+            "isCorrect": false
           },
           {
-              "id": "bai-5-q4",
-              "number": 4,
-              "type": "single_choice",
-              "header": "Câu 4:",
-              "content": "Theo chủ nghĩa Mác – Lênin, nguyên nhân nào dẫn đến các cộng đồng dân cư muốn tách ra để hình thành cộng đồng dân tộc độc lập?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Do chủ nghĩa tư bản đã phát triển thành chủ nghĩa đế quốc",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Do các cộng đồng dân cư muốn độc lập để có thể đi xâm chiếm các dân tộc khác",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Do sự thức tỉnh, sự trưởng thành về ý thức dân tộc, ý thức về quyền sống của mình",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "D",
-                      "content": "Do các cộng đồng dân cư muốn phân chia lại thị trường thế giới",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "C"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q5",
-              "number": 5,
-              "type": "single_choice",
-              "header": "Câu 5:",
-              "content": "Trong những nội dung của quyền dân tộc tự quyết, nội dung nào được coi là cơ bản, trước hết?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Quyền tự quyết về các mối quan hệ quốc tế",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Quyền tự quyết về văn hoá",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Quyền tự quyết về kinh tế",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Quyền tự quyết về chính trị",
-                      "isCorrect": true
-                  }
-              ],
-              "correctAnswers": [
-                  "D"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q6",
-              "number": 6,
-              "type": "single_choice",
-              "header": "Câu 6:",
-              "content": "Hiểu theo nghĩa rộng, dân tộc là:",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Tộc người",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Quốc gia",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "C",
-                      "content": "Thị tộc",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Bộ tộc",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "B"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q7",
-              "number": 7,
-              "type": "single_choice",
-              "header": "Câu 7:",
-              "content": "Đâu là đặc trưng quan trọng nhất, là cơ sở để liên kết các thành viên của dân tộc tạo thành nền tảng vững chắc của cộng đồng dân tộc?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Có chung một phương thức sinh hoạt kinh tế",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "B",
-                      "content": "Có ngôn ngữ riêng và có thể có chữ viết riêng làm công cụ giao tiếp",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Có thể cư trú tập trung trên một vùng lãnh thổ của một quốc gia, hoặc nơi cư trú đan xen với nhiều dân tộc anh em",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Có nét tâm lý riêng (nét tâm lý dân tộc) biểu hiện kết tinh trong nền văn hóa dân tộc và tạo bản sắc văn hóa của dân tộc.",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "A"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q8",
-              "number": 8,
-              "type": "single_choice",
-              "header": "Câu 8:",
-              "content": "Ở Việt Nam hiện nay có khoảng bao nhiêu dân tộc?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "45",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "54",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "C",
-                      "content": "50",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "63",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "B"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q9",
-              "number": 9,
-              "type": "single_choice",
-              "header": "Câu 9:",
-              "content": "Tìm đáp án sai về đặc điểm dân tộc ở Việt Nam:",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Có sự chênh lệch về số dân giữa các tộc người",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Các dân tộc cư trú tập trung tại các trung tâm lớn",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "C",
-                      "content": "Các dân tộc ở Việt Nam có trình độ phát triển không đều",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Các dân tộc thiểu số ở Việt Nam phân bố chủ yếu ở địa bàn có vị trí chiến lược quan trọng",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "B"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q10",
-              "number": 10,
-              "type": "single_choice",
-              "header": "Câu 10:",
-              "content": "Vận dụng kiến thức về vấn đề dân tộc, hãy chỉ ra điểm khác biệt cơ bản trong quá trình hình thành nên dân tộc Việt Nam so với các dân tộc khác là gì?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Do yêu cầu đoàn kết của quá trình đấu tranh chống thiên tai và xâm lược",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "B",
-                      "content": "Do quá trình đồng hóa của các bộ tộc phong kiến",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Do sự phát triển tiến bộ của các bộ lạc",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Do dân tộc Việt Nam có diện tích nhỏ",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "A"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q11",
-              "number": 11,
-              "type": "single_choice",
-              "header": "Câu 11:",
-              "content": "Đối với quốc gia và từng thành viên của dân tộc, yếu tố nào là thiêng liêng nhất mà nếu không có thì không có khái niệm Tổ quốc, quốc gia?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Lãnh thổ",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "B",
-                      "content": "Kinh tế",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Ngôn ngữ",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Truyền thống văn hoá",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "A"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q12",
-              "number": 12,
-              "type": "single_choice",
-              "header": "Câu 12:",
-              "content": "Tôn giáo là một phạm trù thuộc:",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Thế giới quan duy vật",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Thế giới quan siêu hình",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Kiến trúc thượng tầng",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "D",
-                      "content": "Cơ sở hạ tầng",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "C"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q13",
-              "number": 13,
-              "type": "single_choice",
-              "header": "Câu 13:",
-              "content": "Tôn giáo là sản phẩm của ai?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Các thần linh",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Thượng đế",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Lực lượng siêu nhiên",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Con người",
-                      "isCorrect": true
-                  }
-              ],
-              "correctAnswers": [
-                  "D"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q14",
-              "number": 14,
-              "type": "single_choice",
-              "header": "Câu 14:",
-              "content": "Tôn giáo khác với tín ngưỡng ở điểm nào?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Tín ngưỡng tôn giáo có hệ thống giáo lý, giáo luật, có tổ chức và các nghi lễ chặt chẽ",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "B",
-                      "content": "Tín ngưỡng tôn giáo có số lượng tín đồ đông",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Tín ngưỡng tôn giáo ra đời từ rất sớm",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Tín ngưỡng tôn giáo tồn tại ở tất cả các quốc gia trên thế giới",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "A"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q15",
-              "number": 15,
-              "type": "single_choice",
-              "header": "Câu 15:",
-              "content": "Về phương diện thế giới quan, tôn giáo mang bản chất:",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Thế giới quan duy vật",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Thế giới quan siêu hình",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Thế giới quan duy tâm",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "D",
-                      "content": "Thế giới quan biện chứng",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "C"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q16",
-              "number": 16,
-              "type": "single_choice",
-              "header": "Câu 16:",
-              "content": "Niềm tin của con người vào các lực lượng siêu nhiên, thần thánh đến mức độ mê muội, cuồng tín, dẫn đến những hành vi cực đoan, sai lệch quá mức, trái với các giá trị văn hoá, đạo đức, pháp luật – gọi là:",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Ý thức thẩm mỹ",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Ý thức chính trị",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Mê tín dị đoan",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "D",
-                      "content": "Thờ anh hùng dân tộc",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "C"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q17",
-              "number": 17,
-              "type": "single_choice",
-              "header": "Câu 17:",
-              "content": "Sự sợ hãi trước những hiện tượng tự nhiên, xã hội, hay lúc ốm đau, những may rủi, bất ngờ, tâm lý muốn bình yên khi làm việc lớn… khiến con người dễ tìm đến với hình thái ý thức xã hội nào?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Ý thức thẩm mỹ",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Ý thức chính trị",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Ý thức pháp quyền",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Ý thức tôn giáo",
-                      "isCorrect": true
-                  }
-              ],
-              "correctAnswers": [
-                  "D"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q18",
-              "number": 18,
-              "type": "multiple_choice",
-              "header": "Câu 18:",
-              "content": "Tại sao ngày nay khoa học đã phát triển rất mạnh mẽ mà tôn giáo vẫn có xu hướng phát triển? (Chọn 2 đáp án)",
-              "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Do xã hội có xu hướng phát triển ngày càng tụt lùi",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Do lực lượng siêu nhiên thúc đẩy",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Do thế giới mà con người đang sống vẫn còn muôn vàn điều bí ẩn mà khoa học chưa hiểu rõ bản chất của nó",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "D",
-                      "content": "Do nhận thức của con người về tự nhiên, về xã hội và về chính bản thân mình còn có giới hạn",
-                      "isCorrect": true
-                  }
-              ],
-              "correctAnswers": [
-                  "C",
-                  "D"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q19",
-              "number": 19,
-              "type": "single_choice",
-              "header": "Câu 19:",
-              "content": "Vận dụng kiến thức về đặc điểm tôn giáo ở Việt Nam, hãy xác định số lượng tôn giáo đã được công nhận và cấp đăng ký hoạt động ở Việt Nam:",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "5",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "13",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "16",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "43",
-                      "isCorrect": true
-                  }
-              ],
-              "correctAnswers": [
-                  "D"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q20",
-              "number": 20,
-              "type": "single_choice",
-              "header": "Câu 20:",
-              "content": "Vì sao Đảng, Nhà nước Việt Nam chủ trương luôn tôn trọng, bảo đảm quyền tự do tín ngưỡng tôn giáo và không tín ngưỡng tôn giáo của nhân dân?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Vì tín ngưỡng, tôn giáo có số lượng tín đồ đông",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Vì tín ngưỡng, tôn giáo là nhu cầu tinh thần của nhân dân",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "C",
-                      "content": "Vì tín ngưỡng tôn giáo được du nhập từ nước ngoài vào",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Vì lực lượng chức sắc trong các tôn giáo có tiềm lực kinh tế lớn mạnh",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "B"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q21",
-              "number": 21,
-              "type": "single_choice",
-              "header": "Câu 21:",
-              "content": "Tìm đáp án sai về nguồn gốc hình thành của tôn giáo:",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Nguồn gốc kinh tế - xã hội",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Nguồn gốc nhân tạo",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "C",
-                      "content": "Nguồn gốc nhận thức",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Nguồn gốc tâm lý",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "B"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q22",
-              "number": 22,
-              "type": "single_choice",
-              "header": "Câu 22:",
-              "content": "Luận điểm nổi tiếng: “Tôn giáo là tiếng thở dài của chúng sinh bị áp bức, là trái tim của thế giới không có trái tim… Tôn giáo là thuốc phiện của nhân dân” là của ai?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Ph. Ăngghen",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "C. Mác",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "C",
-                      "content": "V.I. Lênin",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Hồ Chí Minh",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "B"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q23",
-              "number": 23,
-              "type": "single_choice",
-              "header": "Câu 23:",
-              "content": "Theo chủ nghĩa Mác – Lênin, xét đến cùng nhân tố quyết định sự tồn tại và phát triển của các hình thái ý thức xã hội, trong đó có tôn giáo là gì?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Các hoạt động văn hoá",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Các hoạt động chính trị và quan hệ chính trị",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Sản xuất vật chất và các quan hệ kinh tế",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "D",
-                      "content": "Các cuộc cách mạng",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "C"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q24",
-              "number": 24,
-              "type": "single_choice",
-              "header": "Câu 24:",
-              "content": "Tôn giáo ra đời từ những nguồn gốc cơ bản nào?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Có nguồn gốc tự nhiên, kinh tế - xã hội, tâm lý, nhận thức",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "B",
-                      "content": "Có nguồn gốc do Thượng đế tạo ra",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Có nguồn gốc do lực lượng siêu nhiên tạo ra",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Có nguồn gốc do chủ nghĩa tư bản tạo ra",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "A"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q25",
-              "number": 25,
-              "type": "single_choice",
-              "header": "Câu 25:",
-              "content": "Đâu là sự giống nhau giữa tôn giáo và tín ngưỡng?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Đều có các giáo sĩ",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Đều có hệ thống kinh điển",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Đều có niềm tin vào đấng siêu nhiên",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "D",
-                      "content": "Đều có giáo chủ",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "C"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q26",
-              "number": 26,
-              "type": "single_choice",
-              "header": "Câu 26:",
-              "content": "Tại sao các tôn giáo ở Việt Nam luôn đồng hành cùng dân tộc và có nhiều đóng góp quan trọng trong quá trình xây dựng và bảo vệ đất nước?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Vì các tôn giáo có vai trò quyết định đến những vấn đề quan trọng của xã hội",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Vì các tôn giáo có quan hệ với các tổ chức nước ngoài",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Vì đa số các tín đồ là nhân dân lao động có lòng yêu nước, chống giặc ngoại xâm",
-                      "isCorrect": true
-                  },
-                  {
-                      "key": "D",
-                      "content": "Vì các tôn giáo thường bị lợi dụng bởi các thế lực phản động",
-                      "isCorrect": false
-                  }
-              ],
-              "correctAnswers": [
-                  "C"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q27",
-              "number": 27,
-              "type": "single_choice",
-              "header": "Câu 27:",
-              "content": "Dân tộc hiểu theo nghĩa hẹp là:",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Quốc gia dân tộc",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Bộ tộc",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Bộ lạc",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Tộc người",
-                      "isCorrect": true
-                  }
-              ],
-              "correctAnswers": [
-                  "D"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q28",
-              "number": 28,
-              "type": "single_choice",
-              "header": "Câu 28:",
-              "content": "Nội dung nào vừa là nội dung chủ yếu vừa là giải pháp quan trọng để liên kết các nội dung của Cương lĩnh dân tộc thành một chỉnh thể?",
-              "instructionNote": "",
-              "options": [
-                  {
-                      "key": "A",
-                      "content": "Các dân tộc có nền phát triển kinh tế ngang nhau",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "B",
-                      "content": "Các dân tộc được quyền tự quyết",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "C",
-                      "content": "Các dân tộc hoàn toàn bình đẳng",
-                      "isCorrect": false
-                  },
-                  {
-                      "key": "D",
-                      "content": "Liên hiệp công nhân tất cả các dân tộc",
-                      "isCorrect": true
-                  }
-              ],
-              "correctAnswers": [
-                  "D"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q29",
-              "number": 29,
-              "type": "true_false_group",
-              "header": "Câu 29:",
-              "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-              "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
-              "items": [
-                  {
-                      "order": 1,
-                      "statement": "Đấu tranh chống chủ nghĩa Sô - vanh là giải pháp thực hiện bình đẳng dân tộc",
-                      "correctAnswer": "Đúng"
-                  },
-                  {
-                      "order": 2,
-                      "statement": "Tôn giáo là đặc trưng chính của dân tộc quốc gia",
-                      "correctAnswer": "Sai"
-                  },
-                  {
-                      "order": 3,
-                      "statement": "Tâm lý dân tộc tạo nên bản sắc văn hóa dân tộc",
-                      "correctAnswer": "Đúng"
-                  },
-                  {
-                      "order": 4,
-                      "statement": "Dân tộc (tộc người) có ý thức tự giác tộc người",
-                      "correctAnswer": "Đúng"
-                  }
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q30",
-              "number": 30,
-              "type": "true_false_group",
-              "header": "Câu 30:",
-              "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
-              "instruction": "Sinh viên chọn Đúng hoặc Sai cho mỗi nhận định",
-              "items": [
-                  {
-                      "order": 1,
-                      "statement": "Nguồn gốc kinh tế - xã hội dẫn đến sự ra đời của tôn giáo",
-                      "correctAnswer": "Đúng"
-                  },
-                  {
-                      "order": 2,
-                      "statement": "Tôn giáo phản ánh hoang đường, hư ảo hiện thực khách quan",
-                      "correctAnswer": "Đúng"
-                  },
-                  {
-                      "order": 3,
-                      "statement": "Tín ngưỡng có hệ thống giáo lý chặt chẽ",
-                      "correctAnswer": "Sai"
-                  },
-                  {
-                      "order": 4,
-                      "statement": "Mê tín dị đoan là niềm tin mù quáng cần loại bỏ",
-                      "correctAnswer": "Đúng"
-                  }
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q31",
-              "number": 31,
-              "type": "drag_drop_columns",
-              "header": "Câu 31:",
-              "content": "Kéo thả các yếu tố liên quan vào các cột tương ứng:",
-              "instruction": "Kéo thả các yếu tố vào đúng cột tương ứng",
-              "columns": [
-                  {
-                      "id": "col-1",
-                      "title": "Đặc trưng của dân tộc",
-                      "correctItems": [
-                          "Bản sắc văn hóa dân tộc",
-                          "Tâm lý dân tộc riêng",
-                          "Ngôn ngữ riêng",
-                          "Lãnh thổ chung"
-                      ]
-                  },
-                  {
-                      "id": "col-2",
-                      "title": "Nội dung cương lĩnh dân tộc của Mác-Lênin",
-                      "correctItems": [
-                          "Liên hiệp công nhân tất cả các dân tộc",
-                          "Các dân tộc được quyền tự quyết",
-                          "Các dân tộc hoàn toàn bình đẳng"
-                      ]
-                  }
-              ],
-              "allItems": [
-                  "Bản sắc văn hóa dân tộc",
-                  "Tâm lý dân tộc riêng",
-                  "Ngôn ngữ riêng",
-                  "Lãnh thổ chung",
-                  "Liên hiệp công nhân tất cả các dân tộc",
-                  "Các dân tộc được quyền tự quyết",
-                  "Các dân tộc hoàn toàn bình đẳng"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q32",
-              "number": 32,
-              "type": "drag_drop",
-              "header": "Câu 32:",
-              "content": "Kéo thả các đáp án đúng tương ứng với các phát biểu về dân tộc dưới đây:",
-              "instruction": "Kéo thả các đáp án khớp với các phát biểu về vế trái dưới đây:",
-              "pairs": [
-                  {
-                      "id": "target-1",
-                      "prompt": "Nội dung cơ bản của cương lĩnh dân tộc Mác-Lênin là gì?",
-                      "correctAnswer": "Bình đẳng dân tộc"
-                  },
-                  {
-                      "id": "target-2",
-                      "prompt": "Khái niệm dân tộc theo nghĩa hẹp được gọi là gì?",
-                      "correctAnswer": "Dân tộc tộc người"
-                  },
-                  {
-                      "id": "target-3",
-                      "prompt": "Yếu tố thiêng liêng đối với dân tộc (quốc gia) và từng thành viên dân tộc là gì?",
-                      "correctAnswer": "Lãnh thổ"
-                  },
-                  {
-                      "id": "target-4",
-                      "prompt": "Đặc trưng quan trọng nhất của dân tộc là gì?",
-                      "correctAnswer": "Phương thức sinh hoạt kinh tế chung"
-                  }
-              ],
-              "optionsPool": [
-                  "Bình đẳng dân tộc",
-                  "Dân tộc tộc người",
-                  "Lãnh thổ",
-                  "Phương thức sinh hoạt kinh tế chung"
-              ],
-              "needsReview": false
-          },
-          {
-              "id": "bai-5-q33",
-              "number": 33,
-              "type": "drag_drop",
-              "header": "Câu 33:",
-              "content": "Kéo thả các đáp án đúng khớp với các phát biểu dưới đây:",
-              "instruction": "Kéo thả các đáp án khớp với các phát biểu dưới đây:",
-              "pairs": [
-                  {
-                      "id": "target-1",
-                      "prompt": "Là sự phản ánh niềm tin mù quáng của một số người vào các lực lượng siêu nhiên",
-                      "correctAnswer": "Mê tín dị đoan"
-                  },
-                  {
-                      "id": "target-2",
-                      "prompt": "Là niềm tin và sự ngưỡng mộ của con người vào một lực lượng siêu nhiên, thần bí",
-                      "correctAnswer": "Tín ngưỡng"
-                  },
-                  {
-                      "id": "target-3",
-                      "prompt": "Là sự phản ánh một cách hoang đường, hư ảo hiện thực khách quan",
-                      "correctAnswer": "Tôn giáo"
-                  },
-                  {
-                      "id": "target-4",
-                      "prompt": "Mê tín dị đoan dẫn con người đến điều gì?",
-                      "correctAnswer": "Mê muội"
-                  }
-              ],
-              "optionsPool": [
-                  "Mê tín dị đoan",
-                  "Tín ngưỡng",
-                  "Tôn giáo",
-                  "Mê muội"
-              ],
-              "needsReview": false
+            "key": "D",
+            "content": "Đoàn kết các dân tộc",
+            "isCorrect": false
           }
-      ]
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q2",
+        "number": 2,
+        "type": "multiple_choice",
+        "header": "Câu 2:",
+        "content": "Theo quan điểm của chủ nghĩa Mác – Lênin, để thực hiện được bình đẳng dân tộc cần phải làm gì? (Chọn 2 đáp án)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Phải đấu tranh chống chủ nghĩa phân biệt chủng tộc, chủ nghĩa sô vanh",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Thủ tiêu tình trạng áp bức giai cấp, trên cơ sở đó xoá bỏ tình trạng áp bức dân tộc",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Phải liên kết với các nước đế quốc lớn",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Phải duy trì chế độ tư hữu về tư liệu sản xuất",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q3",
+        "number": 3,
+        "type": "single_choice",
+        "header": "Câu 3:",
+        "content": "Thứ tự quá trình phát triển của dân tộc lần lượt trải qua các hình thức nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Thị tộc, bộ tộc, bộ lạc, dân tộc",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Bộ lạc, bộ tộc, thị tộc, dân tộc",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Bộ tộc, thị tộc, bộ lạc, dân tộc",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Thị tộc, bộ lạc, bộ tộc, dân tộc",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q4",
+        "number": 4,
+        "type": "single_choice",
+        "header": "Câu 4:",
+        "content": "Theo chủ nghĩa Mác – Lênin, nguyên nhân nào dẫn đến các cộng đồng dân cư muốn tách ra để hình thành cộng đồng dân tộc độc lập?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Do chủ nghĩa tư bản đã phát triển thành chủ nghĩa đế quốc",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Do các cộng đồng dân cư muốn độc lập để có thể đi xâm chiếm các dân tộc khác",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Do sự thức tỉnh, sự trưởng thành về ý thức dân tộc, ý thức về quyền sống của mình",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Do các cộng đồng dân cư muốn phân chia lại thị trường thế giới",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q5",
+        "number": 5,
+        "type": "single_choice",
+        "header": "Câu 5:",
+        "content": "Trong những nội dung của quyền dân tộc tự quyết, nội dung nào được coi là cơ bản, trước hết?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Quyền tự quyết về các mối quan hệ quốc tế",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Quyền tự quyết về văn hoá",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Quyền tự quyết về kinh tế",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Quyền tự quyết về chính trị",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q6",
+        "number": 6,
+        "type": "single_choice",
+        "header": "Câu 6:",
+        "content": "Hiểu theo nghĩa rộng, dân tộc là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tộc người",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Quốc gia",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Thị tộc",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Bộ tộc",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q7",
+        "number": 7,
+        "type": "single_choice",
+        "header": "Câu 7:",
+        "content": "Đâu là đặc trưng quan trọng nhất, là cơ sở để liên kết các thành viên của dân tộc tạo thành nền tảng vững chắc của cộng đồng dân tộc?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Có chung một phương thức sinh hoạt kinh tế",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Có ngôn ngữ riêng và có thể có chữ viết riêng làm công cụ giao tiếp",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Có thể cư trú tập trung trên một vùng lãnh thổ của một quốc gia, hoặc nơi cư trú đan xen với nhiều dân tộc anh em",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Có nét tâm lý riêng (nét tâm lý dân tộc) biểu hiện kết tinh trong nền văn hóa dân tộc và tạo bản sắc văn hóa của dân tộc.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q8",
+        "number": 8,
+        "type": "single_choice",
+        "header": "Câu 8:",
+        "content": "Ở Việt Nam hiện nay có khoảng bao nhiêu dân tộc?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "45",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "54",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "50",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "63",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q9",
+        "number": 9,
+        "type": "single_choice",
+        "header": "Câu 9:",
+        "content": "Tìm đáp án sai về đặc điểm dân tộc ở Việt Nam:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Có sự chênh lệch về số dân giữa các tộc người",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Các dân tộc cư trú tập trung tại các trung tâm lớn",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Các dân tộc ở Việt Nam có trình độ phát triển không đều",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Các dân tộc thiểu số ở Việt Nam phân bố chủ yếu ở địa bàn có vị trí chiến lược quan trọng",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q10",
+        "number": 10,
+        "type": "single_choice",
+        "header": "Câu 10:",
+        "content": "Vận dụng kiến thức về vấn đề dân tộc, hãy chỉ ra điểm khác biệt cơ bản trong quá trình hình thành nên dân tộc Việt Nam so với các dân tộc khác là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Do yêu cầu đoàn kết của quá trình đấu tranh chống thiên tai và xâm lược",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Do quá trình đồng hóa của các bộ tộc phong kiến",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Do sự phát triển tiến bộ của các bộ lạc",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Do dân tộc Việt Nam có diện tích nhỏ",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q11",
+        "number": 11,
+        "type": "single_choice",
+        "header": "Câu 11:",
+        "content": "Đối với quốc gia và từng thành viên của dân tộc, yếu tố nào là thiêng liêng nhất mà nếu không có thì không có khái niệm Tổ quốc, quốc gia?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Lãnh thổ",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Kinh tế",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Ngôn ngữ",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Truyền thống văn hoá",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q12",
+        "number": 12,
+        "type": "single_choice",
+        "header": "Câu 12:",
+        "content": "Tôn giáo là một phạm trù thuộc:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Thế giới quan duy vật",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Thế giới quan siêu hình",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Kiến trúc thượng tầng",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Cơ sở hạ tầng",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q13",
+        "number": 13,
+        "type": "single_choice",
+        "header": "Câu 13:",
+        "content": "Tôn giáo là sản phẩm của ai?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Các thần linh",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Thượng đế",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Lực lượng siêu nhiên",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Con người",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q14",
+        "number": 14,
+        "type": "single_choice",
+        "header": "Câu 14:",
+        "content": "Tôn giáo khác với tín ngưỡng ở điểm nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tín ngưỡng tôn giáo có hệ thống giáo lý, giáo luật, có tổ chức và các nghi lễ chặt chẽ",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Tín ngưỡng tôn giáo có số lượng tín đồ đông",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Tín ngưỡng tôn giáo ra đời từ rất sớm",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Tín ngưỡng tôn giáo tồn tại ở tất cả các quốc gia trên thế giới",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q15",
+        "number": 15,
+        "type": "single_choice",
+        "header": "Câu 15:",
+        "content": "Về phương diện thế giới quan, tôn giáo mang bản chất:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Thế giới quan duy vật",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Thế giới quan siêu hình",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Thế giới quan duy tâm",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Thế giới quan biện chứng",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q16",
+        "number": 16,
+        "type": "single_choice",
+        "header": "Câu 16:",
+        "content": "Niềm tin của con người vào các lực lượng siêu nhiên, thần thánh đến mức độ mê muội, cuồng tín, dẫn đến những hành vi cực đoan, sai lệch quá mức, trái với các giá trị văn hoá, đạo đức, pháp luật – gọi là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Ý thức thẩm mỹ",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Ý thức chính trị",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Mê tín dị đoan",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Thờ anh hùng dân tộc",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q17",
+        "number": 17,
+        "type": "single_choice",
+        "header": "Câu 17:",
+        "content": "Sự sợ hãi trước những hiện tượng tự nhiên, xã hội, hay lúc ốm đau, những may rủi, bất ngờ, tâm lý muốn bình yên khi làm việc lớn… khiến con người dễ tìm đến với hình thái ý thức xã hội nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Ý thức thẩm mỹ",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Ý thức chính trị",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Ý thức pháp quyền",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Ý thức tôn giáo",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q18",
+        "number": 18,
+        "type": "multiple_choice",
+        "header": "Câu 18:",
+        "content": "Tại sao ngày nay khoa học đã phát triển rất mạnh mẽ mà tôn giáo vẫn có xu hướng phát triển? (Chọn 2 đáp án)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Do xã hội có xu hướng phát triển ngày càng tụt lùi",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Do lực lượng siêu nhiên thúc đẩy",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Do thế giới mà con người đang sống vẫn còn muôn vàn điều bí ẩn mà khoa học chưa hiểu rõ bản chất của nó",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Do nhận thức của con người về tự nhiên, về xã hội và về chính bản thân mình còn có giới hạn",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "C",
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q19",
+        "number": 19,
+        "type": "single_choice",
+        "header": "Câu 19:",
+        "content": "Vận dụng kiến thức về đặc điểm tôn giáo ở Việt Nam, hãy xác định số lượng tôn giáo đã được công nhận và cấp đăng ký hoạt động ở Việt Nam:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "5",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "13",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "16",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "43",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q20",
+        "number": 20,
+        "type": "single_choice",
+        "header": "Câu 20:",
+        "content": "Vì sao Đảng, Nhà nước Việt Nam chủ trương luôn tôn trọng, bảo đảm quyền tự do tín ngưỡng tôn giáo và không tín ngưỡng tôn giáo của nhân dân?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Vì tín ngưỡng, tôn giáo có số lượng tín đồ đông",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Vì tín ngưỡng, tôn giáo là nhu cầu tinh thần của nhân dân",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Vì tín ngưỡng tôn giáo được du nhập từ nước ngoài vào",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Vì lực lượng chức sắc trong các tôn giáo có tiềm lực kinh tế lớn mạnh",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q21",
+        "number": 21,
+        "type": "single_choice",
+        "header": "Câu 21:",
+        "content": "Tìm đáp án sai về nguồn gốc hình thành của tôn giáo:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Nguồn gốc kinh tế - xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Nguồn gốc nhân tạo",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Nguồn gốc nhận thức",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Nguồn gốc tâm lý",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q22",
+        "number": 22,
+        "type": "single_choice",
+        "header": "Câu 22:",
+        "content": "Luận điểm nổi tiếng: “Tôn giáo là tiếng thở dài của chúng sinh bị áp bức, là trái tim của thế giới không có trái tim… Tôn giáo là thuốc phiện của nhân dân” là của ai?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Ph. Ăngghen",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "C. Mác",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "V.I. Lênin",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Hồ Chí Minh",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q23",
+        "number": 23,
+        "type": "single_choice",
+        "header": "Câu 23:",
+        "content": "Theo chủ nghĩa Mác – Lênin, xét đến cùng nhân tố quyết định sự tồn tại và phát triển của các hình thái ý thức xã hội, trong đó có tôn giáo là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Các hoạt động văn hoá",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Các hoạt động chính trị và quan hệ chính trị",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Sản xuất vật chất và các quan hệ kinh tế",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Các cuộc cách mạng",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q24",
+        "number": 24,
+        "type": "single_choice",
+        "header": "Câu 24:",
+        "content": "Tôn giáo ra đời từ những nguồn gốc cơ bản nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Có nguồn gốc tự nhiên, kinh tế - xã hội, tâm lý, nhận thức",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Có nguồn gốc do Thượng đế tạo ra",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Có nguồn gốc do lực lượng siêu nhiên tạo ra",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Có nguồn gốc do chủ nghĩa tư bản tạo ra",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q25",
+        "number": 25,
+        "type": "single_choice",
+        "header": "Câu 25:",
+        "content": "Đâu là sự giống nhau giữa tôn giáo và tín ngưỡng?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Đều có các giáo sĩ",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Đều có hệ thống kinh điển",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Đều có niềm tin vào đấng siêu nhiên",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Đều có giáo chủ",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q26",
+        "number": 26,
+        "type": "single_choice",
+        "header": "Câu 26:",
+        "content": "Tại sao các tôn giáo ở Việt Nam luôn đồng hành cùng dân tộc và có nhiều đóng góp quan trọng trong quá trình xây dựng và bảo vệ đất nước?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Vì các tôn giáo có vai trò quyết định đến những vấn đề quan trọng của xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Vì các tôn giáo có quan hệ với các tổ chức nước ngoài",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Vì đa số các tín đồ là nhân dân lao động có lòng yêu nước, chống giặc ngoại xâm",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Vì các tôn giáo thường bị lợi dụng bởi các thế lực phản động",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q27",
+        "number": 27,
+        "type": "single_choice",
+        "header": "Câu 27:",
+        "content": "Dân tộc hiểu theo nghĩa hẹp là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Quốc gia dân tộc",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Bộ tộc",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Bộ lạc",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Tộc người",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q28",
+        "number": 28,
+        "type": "single_choice",
+        "header": "Câu 28:",
+        "content": "Nội dung nào vừa là nội dung chủ yếu vừa là giải pháp quan trọng để liên kết các nội dung của Cương lĩnh dân tộc thành một chỉnh thể?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Các dân tộc có nền phát triển kinh tế ngang nhau",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Các dân tộc được quyền tự quyết",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Các dân tộc hoàn toàn bình đẳng",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Liên hiệp công nhân tất cả các dân tộc",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q29",
+        "number": 29,
+        "type": "multiple_choice",
+        "header": "Câu 29:",
+        "content": "Hãy chỉ ra đâu là nguyên tắc, tôn trọng của Tôn giáo? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Do giai cấp của nhà nước",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Do các lực lượng siêu nhiên thúc đẩy",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Do vấn đề tại xã hội cung cấp",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Do khoa học chưa giải thích hết được các hiện tượng tự nhiên và xã hội",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "C",
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q30",
+        "number": 30,
+        "type": "multiple_choice",
+        "header": "Câu 30:",
+        "content": "Nội dung quyền bình đẳng dân tộc của Chủ nghĩa Mác – Lênin bao gồm: (Chọn 3 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 3 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Các dân tộc bị áp bức có quyền tự quyết và có quyền đứng lên tách khỏi dân tộc mình",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Xóa bỏ tình trạng áp bức dân tộc",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Không phân biệt dân tộc lớn hay nhỏ, trình độ cao hay thấp",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Các dân tộc đều có nghĩa vụ và quyền lợi ngang nhau trên tất cả các lĩnh vực của đời sống xã hội",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "B",
+          "C",
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q31",
+        "number": 31,
+        "type": "single_choice",
+        "header": "Câu 31:",
+        "content": "Quá trình phát triển của dân tộc trải qua mấy hình thức cộng đồng người?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "3",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "4",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "5",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "2",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q32",
+        "number": 32,
+        "type": "true_false_group",
+        "header": "Câu 32:",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Đấu tranh chống chủ nghĩa Sô - vanh là giải pháp thực hiện bình đẳng dân tộc",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Tôn giáo là đặc trưng chính của dân tộc quốc gia",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 3,
+            "statement": "Tâm lý dân tộc tạo nên bản sắc văn hóa dân tộc",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 4,
+            "statement": "Dân tộc (tộc người) có ý thức tự giác tộc người",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q33",
+        "number": 33,
+        "type": "true_false_group",
+        "header": "Câu 33:",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Nguồn gốc kinh tế - xã hội dẫn đến sự ra đời của tôn giáo",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Tôn giáo phản ánh hoang đường, hư ảo hiện thực khách quan",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Tín ngưỡng có hệ thống giáo lý chặt chẽ",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Mê tín dị đoan là niềm tin mù quáng cần loại bỏ",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q34",
+        "number": 34,
+        "type": "true_false_group",
+        "header": "Câu 34:",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Tín ngưỡng là niềm tín vào lực lượng siêu nhiên",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Nguồn gốc nhận thức của tôn giáo là sự hạn chế hiểu biết của con người",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
+            "statement": "Tôn giáo phản ánh chân thực hiện thực khách quan",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 4,
+            "statement": "Khoa học chưa giải thích hết được các hiện tượng là lý do tôn giáo phát triển .",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q35",
+        "number": 35,
+        "type": "true_false_group",
+        "header": "Câu 35:",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Quyền tự quyết dân tộc bao gồm quyền phân lập thành quốc gia độc lập",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 2,
+            "statement": "Dân tộc (quốc gia) không cần lãnh thổ chung",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 3,
+            "statement": "Dân tộc là cộng đồng người có ngôn ngữ riêng và văn hóa đặc thù",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 4,
+            "statement": "Bình đẳng dân tộc là nội dung cương lĩnh dân tộc của Mác-Lênin",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-5-q36",
+        "number": 36,
+        "type": "drag_drop_columns",
+        "header": "Câu 36:",
+        "content": "Kéo thả các yếu tố liên quan vào các cột tương ứng:",
+        "instructionNote": "Kéo thả các mục vào đúng cột phân loại",
+        "columns": [
+          {
+            "id": "col-1",
+            "title": "Đặc trưng của dân tộc",
+            "correctItems": [
+              "Bản sắc văn hóa dân tộc",
+              "Tâm lý dân tộc riêng",
+              "Ngôn ngữ riêng",
+              "Lãnh thổ chung"
+            ]
+          },
+          {
+            "id": "col-2",
+            "title": "Nội dung cương lĩnh dân tộc của Mác-Lênin",
+            "correctItems": [
+              "Liên hiệp công nhân tất cả các dân tộc",
+              "Các dân tộc được quyền tự quyết",
+              "Các dân tộc hoàn toàn bình đẳng"
+            ]
+          }
+        ],
+        "optionsPool": [
+          "Bản sắc văn hóa dân tộc",
+          "Tâm lý dân tộc riêng",
+          "Ngôn ngữ riêng",
+          "Lãnh thổ chung",
+          "Liên hiệp công nhân tất cả các dân tộc",
+          "Các dân tộc được quyền tự quyết",
+          "Các dân tộc hoàn toàn bình đẳng"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-5-q37",
+        "number": 37,
+        "type": "drag_drop",
+        "header": "Câu 37:",
+        "content": "Kéo thả các đáp án đúng tương ứng với các phát biểu về dân tộc dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "prompt": "Nội dung cơ bản của cương lĩnh dân tộc Mác-Lênin là gì?",
+            "correctAnswer": "Bình đẳng dân tộc"
+          },
+          {
+            "id": "pair-2",
+            "prompt": "Khái niệm dân tộc theo nghĩa hẹp được gọi là gì?",
+            "correctAnswer": "Dân tộc tộc người"
+          },
+          {
+            "id": "pair-3",
+            "prompt": "Yếu tố thiêng liêng đối với dân tộc (quốc gia) và từng thành viên dân tộc là gì?",
+            "correctAnswer": "Lãnh thổ"
+          },
+          {
+            "id": "pair-4",
+            "prompt": "Đặc trưng quan trọng nhất của dân tộc là gì?",
+            "correctAnswer": "Phương thức sinh hoạt kinh tế chung"
+          }
+        ],
+        "optionsPool": [
+          "Bình đẳng dân tộc",
+          "Dân tộc tộc người",
+          "Lãnh thổ",
+          "Phương thức sinh hoạt kinh tế chung"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-5-q38",
+        "number": 38,
+        "type": "drag_drop",
+        "header": "Câu 38:",
+        "content": "Kéo thả các đáp án đúng khớp với các phát biểu dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "prompt": "Là sự phản ánh niềm tin mù quáng của một số người vào các lực lượng siêu nhiên",
+            "correctAnswer": "Mê tín dị đoan"
+          },
+          {
+            "id": "pair-2",
+            "prompt": "Là niềm tin và sự ngưỡng mộ của con người vào một lực lượng siêu nhiên, thần bí",
+            "correctAnswer": "Tín ngưỡng"
+          },
+          {
+            "id": "pair-3",
+            "prompt": "Là sự phản ánh một cách hoang đường, hư ảo hiện thực khách quan",
+            "correctAnswer": "Tôn giáo"
+          },
+          {
+            "id": "pair-4",
+            "prompt": "Mê tín dị đoan dẫn con người đến điều gì?",
+            "correctAnswer": "Mê muội"
+          }
+        ],
+        "optionsPool": [
+          "Mê tín dị đoan",
+          "Tín ngưỡng",
+          "Tôn giáo",
+          "Mê muội"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-5-q39",
+        "number": 39,
+        "type": "drag_drop_columns",
+        "header": "Câu 39:",
+        "content": "Kéo thả các yếu tố liên quan vào các cột tương ứng:",
+        "instructionNote": "Kéo thả các mục vào đúng cột phân loại",
+        "columns": [
+          {
+            "id": "col-1",
+            "title": "Đặc trưng của dân tộc (tộc người)",
+            "correctItems": [
+              "Ngôn ngữ tộc người",
+              "Ý thức tự giác tộc người",
+              "Văn hóa đặc thù"
+            ]
+          },
+          {
+            "id": "col-2",
+            "title": "Đặc trưng của dân tộc (quốc gia)",
+            "correctItems": [
+              "Ngôn ngữ chung",
+              "Lãnh thổ chung",
+              "Tâm lý dân tộc"
+            ]
+          }
+        ],
+        "optionsPool": [
+          "Ngôn ngữ tộc người",
+          "Ý thức tự giác tộc người",
+          "Văn hóa đặc thù",
+          "Ngôn ngữ chung",
+          "Lãnh thổ chung",
+          "Tâm lý dân tộc"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-5-q40",
+        "number": 40,
+        "type": "drag_drop_columns",
+        "header": "Câu 40:",
+        "content": "Kéo thả các yếu tố liên quan đến tôn giáo vào các cột tương ứng:",
+        "instructionNote": "Kéo thả các mục vào đúng cột phân loại",
+        "columns": [
+          {
+            "id": "col-1",
+            "title": "Yếu tố liên quan đến tôn giáo",
+            "correctItems": [
+              "Niềm tin",
+              "Hệ thống tín đồ",
+              "Cơ sở thờ tự"
+            ]
+          },
+          {
+            "id": "col-2",
+            "title": "Nguồn gốc của tôn giáo",
+            "correctItems": [
+              "Nhận thức",
+              "Kinh tế",
+              "Tâm lý"
+            ]
+          }
+        ],
+        "optionsPool": [
+          "Niềm tin",
+          "Hệ thống tín đồ",
+          "Cơ sở thờ tự",
+          "Nhận thức",
+          "Kinh tế",
+          "Tâm lý"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-5-q41",
+        "number": 41,
+        "type": "drag_drop",
+        "header": "Câu 41:",
+        "content": "Kéo thả các đáp án khớp với các phát biểu sau đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "prompt": "Yếu tố thúc đẩy bình đẳng dân tộc là gì?",
+            "correctAnswer": "Cơ sở pháp lý"
+          },
+          {
+            "id": "pair-2",
+            "prompt": "Giải pháp quan trọng để liên kết các nội dung của Cương lĩnh dân tộc thành một chỉnh thể",
+            "correctAnswer": "Liên hiệp công nhân các dân tộc lại"
+          },
+          {
+            "id": "pair-3",
+            "prompt": "Đây là quyền thiêng liêng của các dân tộc, không phân biệt dân tộc lớn hay nhỏ",
+            "correctAnswer": "Quyền bình đẳng dân tộc"
+          },
+          {
+            "id": "pair-4",
+            "prompt": "Thực hiện quyền tự quyết dân tộc phải đứng vững trên lập trường của giai cấp nào?",
+            "correctAnswer": "Giai cấp công nhân"
+          }
+        ],
+        "optionsPool": [
+          "Cơ sở pháp lý",
+          "Liên hiệp công nhân các dân tộc lại",
+          "Quyền bình đẳng dân tộc",
+          "Giai cấp công nhân"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-5-q42",
+        "number": 42,
+        "type": "drag_drop",
+        "header": "Câu 42:",
+        "content": "Kéo thả các đáp án khớp với các phát biểu về tôn giáo, tín ngưỡng dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "prompt": "Quan điểm của chủ nghĩa Mác - Lênin về tôn giáo là gì?",
+            "correctAnswer": "Tôn trọng tự do tôn giáo"
+          },
+          {
+            "id": "pair-2",
+            "prompt": "Niềm tin và sự ngưỡng mộ của con người vào một lực lượng siêu nhiên, thần bí được gọi là gì?",
+            "correctAnswer": "Tín ngưỡng"
+          },
+          {
+            "id": "pair-3",
+            "prompt": "Chủ nghĩa Mác-Lênin coi tín ngưỡng, tôn giáo là một phạm trù thuộc lĩnh nào của xã hội?",
+            "correctAnswer": "Hình thái ý thức xã hội"
+          },
+          {
+            "id": "pair-4",
+            "prompt": "Bản chất của tôn giáo theo chủ nghĩa Mác - Lênin là gì?",
+            "correctAnswer": "Phản ánh hư ảo hiện thực khách quan"
+          }
+        ],
+        "optionsPool": [
+          "Tôn trọng tự do tôn giáo",
+          "Tín ngưỡng",
+          "Hình thái ý thức xã hội",
+          "Phản ánh hư ảo hiện thực khách quan"
+        ],
+        "needsReview": false
+      }
+    ]
+  },
+  {
+    "id": "bai-6",
+    "title": "BÀI 6 – VẤN ĐỀ GIA ĐÌNH TRONG THỜI KỲ QUÁ ĐỘ LÊN CHỦ NGHĨA XÃ HỘI",
+    "description": "Bộ câu hỏi ôn tập CHỦ NGHĨA XÃ HỘI KHOA HỌC - BÀI 6: Vấn đề gia đình trong thời kỳ quá độ lên chủ nghĩa xã hội",
+    "questions": [
+      {
+        "id": "bai-6-q1",
+        "number": 1,
+        "type": "multiple_choice",
+        "header": "Câu 1:",
+        "content": "Hai mối quan hệ cơ bản hình thành gia đình là: (chọn nhiều đáp án)",
+        "instructionNote": "Sinh viên chọn các phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Quan hệ hôn nhân",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Quan hệ kinh tế",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Quan hệ huyết thống",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Quan hệ quần tụ trong một không gian sinh tồn",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q2",
+        "number": 2,
+        "type": "single_choice",
+        "header": "Câu 2:",
+        "content": "Vị trí của gia đình trong xã hội là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Mạch máu",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Bộ não",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Xương sống",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Tế bào",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q3",
+        "number": 3,
+        "type": "single_choice",
+        "header": "Câu 3:",
+        "content": "Tình yêu giữa nam và nữ trở thành quan hệ hôn nhân được thể hiện bằng:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Lời hứa giữa nam và nữ",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Thủ tục pháp lý",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Lễ cưới",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Lễ đính hôn",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q4",
+        "number": 4,
+        "type": "single_choice",
+        "header": "Câu 4:",
+        "content": "Chọn đáp án đúng điền vào chỗ trống trong luận điểm sau: \"Hằng ngày tái tạo ra đời sống của bản thân mình, con người bắt đầu tạo ra những người khác, sinh sôi nẩy nở - đó là quan hệ giữa chồng và vợ, cha mẹ và con cái, đó là....\"",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Gia đình",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Làng xóm",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Tập thể",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Xã hội",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q5",
+        "number": 5,
+        "type": "single_choice",
+        "header": "Câu 5:",
+        "content": "Quan hệ nào được coi là cơ sở, nền tảng hình thành nên các mối quan hệ khác trong gia đình?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Quan hệ quần tụ trong một không gian sinh tồn",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Quan hệ hôn nhân",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Quan hệ nuôi dưỡng",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Quan hệ hôn nhân và huyết thống",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q6",
+        "number": 6,
+        "type": "single_choice",
+        "header": "Câu 6:",
+        "content": "Gia đình phải thực hiện chức năng nào để đảm bảo nguồn sinh sống, đáp ứng nhu cầu vật chất, tinh thần của các thành viên trong gia đình?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Chức năng kinh tế, tổ chức tiêu dùng",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Chức năng tái sản xuất ra con người",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Chức năng thoả mãn các nhu cầu tâm sinh lý, duy trì tình cảm",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Chức năng nuôi dưỡng, giáo dục",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q7",
+        "number": 7,
+        "type": "single_choice",
+        "header": "Câu 7:",
+        "content": "Chỉ ra chức năng đảm bảo tái sản xuất nguồn lao động và sức lao động cho xã hội của gia đình:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Chức năng tái sản xuất ra con người",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Chức năng kinh tế",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Chức năng thoả mãn các nhu cầu tâm sinh lý, duy trì tình cảm",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Chức năng nuôi dưỡng, giáo dục",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q8",
+        "number": 8,
+        "type": "single_choice",
+        "header": "Câu 8:",
+        "content": "Thực hiện chức năng nào của gia đình nhằm góp phần to lớn vào việc đào tạo thế hệ trẻ, thế hệ tương lai của xã hội?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Chức năng tái sản xuất ra con người",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Chức năng nuôi dưỡng, giáo dục",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Chức năng thỏa mãn nhu cầu tâm sinh lý, duy trì tình cảm gia đình",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Chắc năng kinh tế và tổ chức tiêu dùng",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q9",
+        "number": 9,
+        "type": "single_choice",
+        "header": "Câu 9:",
+        "content": "Với chức năng chính trị, gia đình là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Có trách nhiệm nuôi dưỡng, dạy dỗ con cái trở thành người có ích cho gia đình, cộng đồng và xã hội",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Là nơi đáp ứng nhu cầu tâm, sinh lý tự nhiên của con người, đáp ứng nhu cầu duy trì nòi giống",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Là cầu nối của mối quan hệ giữa nhà nước với công dân",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Nơi lưu giữ truyền thống văn hoá của dân tộc cũng như tộc người",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q10",
+        "number": 10,
+        "type": "single_choice",
+        "header": "Câu 10:",
+        "content": "Gia đình Việt Nam ngày nay có thể được coi là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Gia đình lạc hậu",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Gia đình hiện đại",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Gia đình truyền thống",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Gia đình quá độ",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q11",
+        "number": 11,
+        "type": "multiple_choice",
+        "header": "Câu 11:",
+        "content": "Sự thay đổi quy mô của gia đình hiện nay ở Việt Nam có tác động như thế nào đối với xã hội? (Chọn nhiều đáp án)",
+        "instructionNote": "Sinh viên chọn các phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Làm cho xã hội trở nên thích nghi và phù hợp hơn với tình hình mới, thời đại mới",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Sự bình đẳng nam nữ được đề cao hơn, cuộc sống riêng tư của con người được tôn trọng hơn",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Làm cho kinh tế của đất nước chậm phát triển",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Không có tác động gì đối với sự phát triển của xã hội",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q12",
+        "number": 12,
+        "type": "single_choice",
+        "header": "Câu 12:",
+        "content": "Quan điểm sau đây của ai: \"Nhiều gia đình cộng lại mới thành xã hội, xã hội tốt thì gia đình càng tốt, gia đình tốt thì xã hội mới tốt. Hạt nhân của xã hội chính là gia đình\"?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "C. Mác",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "V.I. Lênin",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Ph. Ăngghen",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Hồ Chí Minh",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q13",
+        "number": 13,
+        "type": "single_choice",
+        "header": "Câu 13:",
+        "content": "Chức năng của gia đình là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Chức năng lãnh đạo cách mạng",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Chức năng kinh tế và tổ chức tiêu dùng",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Chức năng làm các hoạt động từ thiện",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Chức năng tổ chức các sự kiện",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "B"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q14",
+        "number": 14,
+        "type": "single_choice",
+        "header": "Câu 14:",
+        "content": "So với các chế độ xã hội trước thì quan hệ gia đình trong thời kỳ quá độ lên chủ nghĩa xã hội có đặc điểm khác biệt gì về chất?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Quan hệ bình đẳng trong gia đình, giải phóng phụ nữ",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Phụ nữ chỉ lo việc nội trợ",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Đàn ông là người quyết định mọi việc trong gia đình",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Duy trì quan hệ gia trưởng, độc đoán",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q15",
+        "number": 15,
+        "type": "single_choice",
+        "header": "Câu 15:",
+        "content": "Chọn đáp án sai về mô hình gia đình Việt Nam hiện đại ngày nay?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Ông bà là người làm chủ gia đình",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Người phụ nữ - người vợ làm chủ gia đình",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Cả hai vợ chồng cùng làm chủ gia đình",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Người đàn ông - người chồng làm chủ gia đình",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q16",
+        "number": 16,
+        "type": "multiple_choice",
+        "header": "Câu 16:",
+        "content": "Chức năng tái sản xuất của gia đình Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội có những biến đổi như thế nào? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tăng nhu cầu có con trai",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Tăng sản xuất hàng hóa",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Chủ động trong việc sinh con",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Giảm số con mong muốn",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "C",
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q17",
+        "number": 17,
+        "type": "single_choice",
+        "header": "Câu 17:",
+        "content": "Gia đình là:",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Tập đoàn xã hội ổn định",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Một tộc người",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Hình thức cộng đồng xã hội đặc biệt",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Một nhóm người",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q18",
+        "number": 18,
+        "type": "single_choice",
+        "header": "Câu 18:",
+        "content": "Trong gia đình Việt Nam hiện đại ngày nay, nhu cầu về con cái đã có những thay đổi căn bản như thế nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Phải có con, càng đông con càng tốt và nhất thiết phải có con trai nối dõi",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Tỷ lệ sinh thấp, nhu cầu phải có con trai tăng",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Các gia đình không muốn có con để không bị gánh nặng kinh tế",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Giảm mức sinh của phụ nữ, giảm số con mong muốn và giảm nhu cầu nhất thiết phải có con trai của các cặp vợ chồng",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q19",
+        "number": 19,
+        "type": "single_choice",
+        "header": "Câu 19:",
+        "content": "Sự biến đổi quan hệ giữa các thế hệ, các giá trị, chuẩn mực văn hóa của gia đình hạt nhân ngày nay có tác động tiêu cực như thế nào đối với người cao tuổi?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Người cao tuổi được đáp ứng đầy đủ nhu cầu về tâm lý, tình cảm",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Người cao tuổi được sống trong gia đình có nhiều thế hệ",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Người cao tuổi phải đối mặt với sự cô đơn thiếu thốn về tình cảm",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Người cao tuổi được con cái dành nhiều thời gian quan tâm, chăm sóc",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q20",
+        "number": 20,
+        "type": "single_choice",
+        "header": "Câu 20:",
+        "content": "Sự biến đổi trong việc thực hiện chức năng giáo dục của gia đình Việt Nam hiện nay là gì?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Sự đầu tư tài chính của gia đình cho giáo dục con cái tăng lên",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Chi giáo dục đạo đức mà không hướng tới giáo dục kiến thức khoa học hiện đại",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Không hướng tới giáo dục đạo đức, lối sống.",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Giảm chi tiêu cho giáo dục",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "A"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q21",
+        "number": 21,
+        "type": "multiple_choice",
+        "header": "Câu 21:",
+        "content": "Quy mô của gia đình Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội có những biến đổi như thế nào? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Ngày càng thu nhỏ",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "content": "Kinh tế tự cấp",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Quy mô lớn",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Gia đình hạt nhân tăng lên",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "A",
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q22",
+        "number": 22,
+        "type": "single_choice",
+        "header": "Câu 22:",
+        "content": "Xu hướng phát triển của quy mô gia đình Việt Nam ngày nay như thế nào?",
+        "instructionNote": "",
+        "options": [
+          {
+            "key": "A",
+            "content": "Có xu hướng vừa tăng lên vừa thu nhỏ lại",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Có xu hướng ổn định không thay đổi so với trước đây",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "content": "Ngày càng được thu nhỏ lại",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "content": "Ngày càng được mở rộng ra",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswers": [
+          "C"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q23",
+        "number": 23,
+        "type": "multiple_choice",
+        "header": "Câu 23:",
+        "content": "Những vấn đề xã hội nào có dấu hiệu gia tăng đối với gia đình Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "options": [
+          {
+            "key": "A",
+            "content": "Sản xuất hàng hóa",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "content": "Ly hôn",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "content": "Giáo dục đạo đức",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Bạo lực gia đình",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswers": [
+          "B",
+          "D"
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q24",
+        "number": 24,
+        "type": "true_false_group",
+        "header": "Câu 24:",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Tăng số con mong muốn và tăng nhu cầu nhất thiết phải có con trai của các cặp vợ chồng",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 2,
+            "statement": "Trong gia đình hiện đại, sự bền vững của hôn nhân không phụ thuộc vào các yếu tố tâm lý, tình cảm, kinh tế",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 3,
+            "statement": "Gia đình từ đơn vị kinh tế tự cung tự cấp sang đơn vị kinh tế hàng hoá",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 4,
+            "statement": "Hiện nay việc sinh đẻ được các gia đình tiến hành một cách chủ động, tự giác",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q25",
+        "number": 25,
+        "type": "true_false_group",
+        "header": "Câu 25:",
+        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
+        "items": [
+          {
+            "order": 1,
+            "statement": "Nội dung giáo dục trong gia đình hiện nay chỉ tập trung giáo dục đạo đức",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 2,
+            "statement": "Hiện nay, độ bền vững của gia đình không bị chi phối bởi các mối quan hệ hòa hợp tình cảm giữa chồng và vợ, cha mẹ và con cái",
+            "correctAnswer": "Sai"
+          },
+          {
+            "order": 3,
+            "statement": "Giáo dục gia đình tiếp tục nhấn mạnh sự hy sinh của cá nhân cho cộng đồng",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 4,
+            "statement": "Hiện nay, kinh tế gia đình đang trở thành một bộ phận quan trọng trong nền kinh tế quốc dân",
+            "correctAnswer": "Đúng"
+          }
+        ],
+        "needsReview": false,
+        "reviewReason": ""
+      },
+      {
+        "id": "bai-6-q26",
+        "number": 26,
+        "type": "drag_drop_columns",
+        "header": "Câu 26:",
+        "content": "Kéo thả các yếu tố liên quan đến biến đổi gia đình Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội vào các cột tương ứng:",
+        "instructionNote": "Kéo thả các mục vào đúng cột phân loại",
+        "columns": [
+          {
+            "id": "col-1",
+            "title": "Biến đổi về chức năng gia đình:",
+            "correctItems": [
+              "Đầu tư tài chính của gia đình cho giáo dục con cái tăng lên",
+              "Hướng đến giáo dục kiến thức khoa học hiện đại",
+              "Vai trò giáo dục của các chủ thể trong gia đình có xu hướng giảm"
+            ]
+          },
+          {
+            "id": "col-2",
+            "title": "Biến đổi về quy mô gia đình:",
+            "correctItems": [
+              "Xu hướng thu nhỏ",
+              "Gia đình hạt nhân",
+              "Gia đình đơn thân"
+            ]
+          }
+        ],
+        "optionsPool": [
+          "Đầu tư tài chính của gia đình cho giáo dục con cái tăng lên",
+          "Hướng đến giáo dục kiến thức khoa học hiện đại",
+          "Vai trò giáo dục của các chủ thể trong gia đình có xu hướng giảm",
+          "Xu hướng thu nhỏ",
+          "Gia đình hạt nhân",
+          "Gia đình đơn thân"
+        ],
+        "needsReview": false
+      },
+      {
+        "id": "bai-6-q27",
+        "number": 27,
+        "type": "drag_drop",
+        "header": "Câu 27:",
+        "content": "Kéo thả các khái niệm khớp với các phát biểu về biến đổi gia đình Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội dưới đây:",
+        "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "prompt": "Biến đổi về quy mô gia đình",
+            "correctAnswer": "Gia đình hạt nhân"
+          },
+          {
+            "id": "pair-2",
+            "prompt": "Biến đổi về chức năng tái sản xuất",
+            "correctAnswer": "Giảm số con"
+          },
+          {
+            "id": "pair-3",
+            "prompt": "Biến đổi về quan hệ gia đình",
+            "correctAnswer": "Mâu thuẫn giữa các thế hệ"
+          },
+          {
+            "id": "pair-4",
+            "prompt": "Biến đổi về chức năng kinh tế",
+            "correctAnswer": "Kinh tế hàng hóa"
+          }
+        ],
+        "optionsPool": [
+          "Gia đình hạt nhân",
+          "Giảm số con",
+          "Mâu thuẫn giữa các thế hệ",
+          "Kinh tế hàng hóa"
+        ],
+        "needsReview": false
+      }
+    ]
   }
 ];
