@@ -155,6 +155,7 @@ export class QuizEngine {
 
   // --- Answers & Flagging ---
   setAnswer(qId, answerValue) {
+    if (this.isSubmitted) return;
     this.userAnswers[qId] = answerValue;
     // When answer changes, if instant check wasn't triggered, notify
     this.notifyStateChanged();
@@ -191,6 +192,7 @@ export class QuizEngine {
 
   // --- Instant Check Mode ---
   checkCurrentQuestion() {
+    if (this.isSubmitted) return null;
     const q = this.getCurrentQuestion();
     if (!q) return null;
 
@@ -325,8 +327,9 @@ export class QuizEngine {
         const colResults = [];
 
         columns.forEach(col => {
-          const userItems = new Set((userAnswer[col.id] || []).map(s => s.trim().toLowerCase()));
-          const correctItems = new Set((col.correctItems || []).map(s => s.trim().toLowerCase()));
+          const colItems = (userAnswer && typeof userAnswer === 'object' && Array.isArray(userAnswer[col.id])) ? userAnswer[col.id] : [];
+          const userItems = new Set(colItems.map(s => String(s).trim().toLowerCase()));
+          const correctItems = new Set((col.correctItems || []).map(s => String(s).trim().toLowerCase()));
 
           let matched = 0;
           userItems.forEach(it => {
@@ -339,8 +342,8 @@ export class QuizEngine {
           colResults.push({
             colId: col.id,
             title: col.title,
-            correctItems: col.correctItems,
-            userItems: userAnswer[col.id] || [],
+            correctItems: col.correctItems || [],
+            userItems: colItems,
             isCorrect: isColCorrect
           });
         });
@@ -363,12 +366,16 @@ export class QuizEngine {
 
   // --- Submit Quiz ---
   submitQuiz(isTimeout = false) {
+    if (this.isSubmitted) {
+      return this._lastSummary || this.calculateSummary();
+    }
     this.clearTimer();
     this.isSubmitted = true;
     this.endTime = new Date();
 
     const summary = this.calculateSummary();
     summary.isTimeout = isTimeout;
+    this._lastSummary = summary;
 
     // Save each wrong/correct question into Store
     summary.results.forEach(res => {

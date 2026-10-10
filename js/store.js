@@ -45,6 +45,51 @@ export function getStorage() {
  * - Adds any newly added official exercises (e.g., bai-6) and newly added questions.
  * - Preserves custom exercises and custom questions created by the user.
  */
+export function validateExercisesSchema(exercises) {
+  if (!Array.isArray(exercises) || exercises.length === 0) {
+    return { valid: false, error: 'Danh sách bài học phải là một mảng không rỗng.' };
+  }
+  const seenQIds = new Set();
+  for (let eIdx = 0; eIdx < exercises.length; eIdx++) {
+    const ex = exercises[eIdx];
+    if (!ex || typeof ex !== 'object' || !ex.id || !ex.title || !Array.isArray(ex.questions)) {
+      return { valid: false, error: `Bài học thứ ${eIdx + 1} thiếu thông tin id, title hoặc danh sách câu hỏi.` };
+    }
+    for (let qIdx = 0; qIdx < ex.questions.length; qIdx++) {
+      const q = ex.questions[qIdx];
+      if (!q || typeof q !== 'object' || !q.id || !q.type || !q.content) {
+        return { valid: false, error: `Bài ${ex.id} có câu hỏi thứ ${qIdx + 1} thiếu id, type hoặc nội dung.` };
+      }
+      if (seenQIds.has(q.id)) {
+        return { valid: false, error: `Trùng lặp ID câu hỏi: ${q.id} trong bài ${ex.id}` };
+      }
+      seenQIds.add(q.id);
+      if (q.type === 'single_choice') {
+        if (!Array.isArray(q.options) || q.options.length < 2 || !Array.isArray(q.correctAnswers) || q.correctAnswers.length !== 1) {
+          return { valid: false, error: `Câu ${q.id} (single_choice) thiếu options hoặc đúng 1 đáp án đúng.` };
+        }
+      } else if (q.type === 'multiple_choice') {
+        if (!Array.isArray(q.options) || q.options.length < 2 || !Array.isArray(q.correctAnswers) || q.correctAnswers.length < 2) {
+          return { valid: false, error: `Câu ${q.id} (multiple_choice) thiếu options hoặc có ít hơn 2 đáp án đúng.` };
+        }
+      } else if (q.type === 'true_false_group') {
+        if (!Array.isArray(q.items) || q.items.length < 2) {
+          return { valid: false, error: `Câu ${q.id} (true_false_group) thiếu các phát biểu.` };
+        }
+      } else if (q.type === 'drag_drop') {
+        if (!Array.isArray(q.pairs) || q.pairs.length < 2) {
+          return { valid: false, error: `Câu ${q.id} (drag_drop) thiếu các cặp kéo thả.` };
+        }
+      } else if (q.type === 'drag_drop_columns') {
+        if (!Array.isArray(q.columns) || q.columns.length < 2) {
+          return { valid: false, error: `Câu ${q.id} (drag_drop_columns) thiếu các cột phân loại.` };
+        }
+      }
+    }
+  }
+  return { valid: true };
+}
+
 export function migrateExercisesData(storedExercises, officialExercises) {
   if (!Array.isArray(storedExercises) || storedExercises.length === 0) {
     return JSON.parse(JSON.stringify(officialExercises));
@@ -144,6 +189,9 @@ class Store {
     } else {
       try {
         const parsed = JSON.parse(stored);
+        if (!Array.isArray(parsed) || parsed.length === 0) {
+          throw new Error('Dữ liệu storedExercises không phải là mảng hợp lệ');
+        }
         if (storedVersion !== CURRENT_DATA_VERSION) {
           // Backup existing data before migration so nothing is ever lost
           try {
@@ -193,7 +241,9 @@ class Store {
     try {
       const storage = getStorage();
       const data = storage.getItem(STORAGE_KEYS.EXERCISES);
-      return data ? JSON.parse(data) : INITIAL_QUIZ_DATA;
+      if (!data) return INITIAL_QUIZ_DATA;
+      const parsed = JSON.parse(data);
+      return (Array.isArray(parsed) && parsed.length > 0) ? parsed : INITIAL_QUIZ_DATA;
     } catch (e) {
       console.error('Failed to load exercises from storage', e);
       return INITIAL_QUIZ_DATA;
@@ -441,20 +491,35 @@ class Store {
   importAllData(jsonString) {
     const storage = getStorage();
     try {
-      const data = JSON.parse(jsonString);
-      if (data.exercises && Array.isArray(data.exercises)) {
-        this.saveExercises(data.exercises);
+      if (!jsonString || typeof jsonString !== 'string') {
+        return { success: false, error: 'Dữ liệu file JSON trống hoặc không hợp lệ.' };
       }
+      const data = JSON.parse(jsonString);
+      if (!data || typeof data !== 'object') {
+        return { success: false, error: 'Nội dung file JSON phải là một đối tượng.' };
+      }
+      if (!data.exercises || !Array.isArray(data.exercises)) {
+        return { success: false, error: 'File JSON thiếu danh sách bài học (trường "exercises").' };
+      }
+
+      // Strict schema validation
+      const validation = validateExercisesSchema(data.exercises);
+      if (!validation.valid) {
+        return { success: false, error: `Cấu trúc dữ liệu không hợp lệ: ${validation.error}` };
+      }
+
+      // Safe saving only after schema verified
+      this.saveExercises(data.exercises);
       if (data.wrongQuestions && Array.isArray(data.wrongQuestions)) {
         storage.setItem(STORAGE_KEYS.WRONG_QUESTIONS, JSON.stringify(data.wrongQuestions));
       }
-      if (data.profile) {
+      if (data.profile && typeof data.profile === 'object' && data.profile.name) {
         this.saveProfile(data.profile);
       }
-      return { success: true, count: data.exercises ? data.exercises.length : 0 };
+      return { success: true, count: data.exercises.length };
     } catch (e) {
-      console.error('Import error', e);
-      return { success: false, error: e.message };
+      console.warn('Import parse error:', e.message);
+      return { success: false, error: 'Lỗi phân tích JSON: ' + e.message };
     }
   }
 }

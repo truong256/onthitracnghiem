@@ -7,6 +7,16 @@ import { QuizEngine } from './quizEngine.js';
 import { DragDropEngine } from './dragDropEngine.js';
 import { AdminEngine } from './adminEngine.js';
 
+export function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 class App {
   constructor() {
     this.currentScreen = 'home';
@@ -359,7 +369,7 @@ class App {
 
         card.innerHTML = `
           <span class="option-input-indicator"></span>
-          <span class="option-content-text">${opt.content}</span>
+          <span class="option-content-text">${escapeHtml(opt.content)}</span>
         `;
 
         card.addEventListener('click', () => {
@@ -405,7 +415,7 @@ class App {
         row.innerHTML = `
           <div class="tf-item-statement">
             <span class="tf-num">${it.order}.</span>
-            <span>${it.statement}</span>
+            <span>${escapeHtml(it.statement)}</span>
           </div>
           <div class="tf-buttons-group">
             <button class="btn-tf btn-tf-true ${userChoice === 'Đúng' ? 'selected-true' : ''}" data-ans="Đúng">Đúng</button>
@@ -580,7 +590,7 @@ class App {
               return `
                 <div class="admin-opt-item ${isCorrectOpt ? 'is-correct-opt' : ''}">
                   <span class="opt-tag">${opt.key}.</span>
-                  <span class="opt-text">${opt.content}</span>
+                  <span class="opt-text">${escapeHtml(opt.content)}</span>
                   ${isUserPick ? '<span style="font-size: 11px; font-weight: 700; color: #2563eb; margin-left: auto;">[Bạn chọn]</span>' : ''}
                   ${isCorrectOpt ? '<span class="correct-badge">✓ Đáp án đúng</span>' : ''}
                 </div>
@@ -593,8 +603,8 @@ class App {
           <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 6px;">
             ${item.evaluation.itemResults.map(r => `
               <div style="font-size: 13.5px; display: flex; align-items: center; justify-content: space-between; background: white; padding: 6px 12px; border-radius: 4px; border: 1px solid #e2e8f0;">
-                <span>${r.order}. ${r.statement}</span>
-                <span>Bạn chọn: <strong>${r.userAnswer || 'Chưa chọn'}</strong> | Đúng: <strong style="color: #16a34a;">${r.correctAnswer}</strong></span>
+                <span>${r.order}. ${escapeHtml(r.statement)}</span>
+                <span>Bạn chọn: <strong>${escapeHtml(r.userAnswer || 'Chưa chọn')}</strong> | Đúng: <strong style="color: #16a34a;">${escapeHtml(r.correctAnswer)}</strong></span>
               </div>
             `).join('')}
           </div>
@@ -604,9 +614,27 @@ class App {
           <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 6px;">
             ${item.evaluation.pairResults.map(p => `
               <div style="font-size: 13.5px; background: white; padding: 8px 12px; border-radius: 4px; border: 1px solid #e2e8f0;">
-                <div>${p.prompt}</div>
+                <div>${escapeHtml(p.prompt)}</div>
                 <div style="margin-top: 4px; color: ${p.isCorrect ? '#16a34a' : '#dc2626'}; font-weight: 600;">
-                  ➔ Ghép: [${p.userAnswer || 'Chưa ghép'}] ${p.isCorrect ? '✓ Đúng' : `➔ Đáp án đúng: [${p.correctAnswer}]`}
+                  ➔ Ghép: [${escapeHtml(p.userAnswer || 'Chưa ghép')}] ${p.isCorrect ? '✓ Đúng' : `➔ Đáp án đúng: [${escapeHtml(p.correctAnswer)}]`}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      } else if (item.evaluation && item.evaluation.colResults) {
+        answersComparisonHtml = `
+          <div style="margin-top: 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px;">
+            ${item.evaluation.colResults.map(col => `
+              <div style="font-size: 13.5px; background: white; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0;">
+                <div style="font-weight: 700; margin-bottom: 6px; color: ${col.isCorrect ? '#16a34a' : '#dc2626'};">
+                  ${escapeHtml(col.title)} ${col.isCorrect ? '✓ Đúng' : '✗ Chưa đúng'}
+                </div>
+                <div style="font-size: 12.5px; color: #475569; margin-bottom: 4px;">
+                  Bạn chọn: <strong>${col.userItems && col.userItems.length ? escapeHtml(col.userItems.join(', ')) : 'Chưa xếp mục nào'}</strong>
+                </div>
+                <div style="font-size: 12.5px; color: #16a34a;">
+                  Đáp án đúng: <strong>${escapeHtml((col.correctItems || []).join(', '))}</strong>
                 </div>
               </div>
             `).join('')}
@@ -621,7 +649,7 @@ class App {
             ${item.isCorrect ? 'Chính xác (+1 điểm)' : 'Chưa đúng (0 điểm)'}
           </span>
         </div>
-        <div style="font-size: 15px; font-weight: 600; color: #1e293b;">${q.content}</div>
+        <div style="font-size: 15px; font-weight: 600; color: #1e293b;">${escapeHtml(q.content)}</div>
         ${answersComparisonHtml}
       `;
 
@@ -785,6 +813,8 @@ class App {
 }
 
 // Instantiate on DOM ready
-document.addEventListener('DOMContentLoaded', () => {
-  window.app = new App();
-});
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.app = new App();
+  });
+}
