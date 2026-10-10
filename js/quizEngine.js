@@ -168,12 +168,20 @@ export class QuizEngine {
   hasAnswered(qId) {
     const ans = this.userAnswers[qId];
     if (ans === undefined || ans === null) return false;
+    if (typeof ans === 'string') return ans.trim() !== '';
     if (Array.isArray(ans)) return ans.length > 0;
     if (typeof ans === 'object') {
       const keys = Object.keys(ans);
-      return keys.length > 0 && keys.some(k => ans[k] !== undefined && ans[k] !== null && ans[k] !== '');
+      if (keys.length === 0) return false;
+      return keys.some(k => {
+        const v = ans[k];
+        if (v === undefined || v === null) return false;
+        if (typeof v === 'string') return v.trim() !== '';
+        if (Array.isArray(v)) return v.length > 0;
+        return true;
+      });
     }
-    return ans !== '';
+    return Boolean(ans);
   }
 
   toggleFlag(qId) {
@@ -377,9 +385,11 @@ export class QuizEngine {
     summary.isTimeout = isTimeout;
     this._lastSummary = summary;
 
-    // Save each wrong/correct question into Store
+    // Save each answered wrong/correct question into Store (unanswered questions are not recorded as wrong)
     summary.results.forEach(res => {
-      store.recordQuestionResult(res.question.id, res.isCorrect, res.question);
+      if (res.isAnswered) {
+        store.recordQuestionResult(res.question.id, res.isCorrect, res.question);
+      }
     });
 
     // Save attempt record
@@ -388,12 +398,15 @@ export class QuizEngine {
       exerciseTitle: this.exercise ? this.exercise.title : 'Bài kiểm tra',
       mode: this.mode,
       totalQuestions: summary.totalQuestions,
+      answeredCount: summary.answeredCount,
       correctCount: summary.correctCount,
       wrongCount: summary.wrongCount,
+      unansweredCount: summary.unansweredCount,
       score: summary.score,
+      score10: summary.score10,
       maxScore: summary.maxScore,
       percentage: summary.percentage,
-      timeSpentSeconds: this.timeLimitSeconds - this.timeRemaining
+      timeSpentSeconds: summary.timeSpentSeconds
     });
 
     sounds.playFinish();
@@ -408,26 +421,32 @@ export class QuizEngine {
     let correctCount = 0;
     let wrongCount = 0;
     let unansweredCount = 0;
+    let answeredCount = 0;
     const results = [];
 
     this.questions.forEach((q, idx) => {
+      const isAnswered = this.hasAnswered(q.id);
       const uAns = this.userAnswers[q.id];
       const evalRes = this.evaluateQuestion(q, uAns);
       totalScore += evalRes.score;
 
-      if (!this.hasAnswered(q.id)) {
+      if (!isAnswered) {
         unansweredCount++;
-        wrongCount++;
-      } else if (evalRes.isCorrect) {
-        correctCount++;
       } else {
-        wrongCount++;
+        answeredCount++;
+        if (evalRes.isCorrect) {
+          correctCount++;
+        } else {
+          wrongCount++;
+        }
       }
 
       results.push({
         questionIndex: idx,
         question: q,
         userAnswer: uAns,
+        isAnswered,
+        isUnanswered: !isAnswered,
         isCorrect: evalRes.isCorrect,
         score: evalRes.score,
         evaluation: evalRes,
@@ -435,17 +454,22 @@ export class QuizEngine {
       });
     });
 
+    const rawScore10 = maxScore > 0 ? (totalScore / maxScore) * 10 : 0;
+    const score10 = Number(rawScore10.toFixed(1));
     const percentage = maxScore > 0 ? Math.round((totalScore / maxScore) * 100) : 0;
-    const timeSpentSeconds = this.startTime ? Math.round((new Date() - this.startTime) / 1000) : (this.timeLimitSeconds - this.timeRemaining);
+    const timeSpentSeconds = this.startTime ? Math.max(1, Math.round((new Date() - this.startTime) / 1000)) : (this.timeLimitSeconds - this.timeRemaining);
 
     return {
       exercise: this.exercise,
       mode: this.mode,
       totalQuestions: this.questions.length,
+      answeredCount,
       correctCount,
       wrongCount,
       unansweredCount,
       score: totalScore,
+      score10,
+      score10Formatted: score10.toFixed(1),
       maxScore,
       percentage,
       timeSpentSeconds,

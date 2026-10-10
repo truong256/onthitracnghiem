@@ -127,33 +127,45 @@
             <div class="result-score-gauge">
               <svg class="gauge-circle-svg" viewBox="0 0 120 120">
                 <circle class="gauge-bg" cx="60" cy="60" r="50"></circle>
-                <circle class="gauge-val" id="gauge-score-circle" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="0"></circle>
+                <circle class="gauge-val" id="gauge-score-circle" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="314.16"></circle>
               </svg>
               <div class="gauge-text">
-                <span class="gauge-percent" id="result-percent-text">100%</span>
-                <span class="gauge-label">CHÍNH XÁC</span>
+                <span class="gauge-percent" id="result-percent-text">0%</span>
+                <span class="gauge-label">ĐIỂM ĐẠT</span>
               </div>
             </div>
 
             <div class="result-summary-info">
-              <h2 class="result-headline" id="result-headline">Hoàn Thành Bài Ôn Luyện</h2>
-              <p class="result-subhead" id="result-subhead">Xem lại bảng điểm và chi tiết các câu đã làm bên dưới.</p>
+              <h2 class="result-headline" id="result-headline">Kết Quả Bài Làm</h2>
+              <p class="result-subhead" id="result-subhead">Xem lại chi tiết bảng điểm và bài làm bên dưới.</p>
               
               <div class="result-metrics-grid">
                 <div class="metric-box metric-score">
-                  <div class="metric-num" id="metric-score-val">10/10</div>
+                  <div class="metric-num" id="metric-score-val">--/10</div>
                   <div class="metric-lbl">Điểm quy đổi</div>
                 </div>
+                <div class="metric-box metric-total">
+                  <div class="metric-num" id="metric-total-val">--</div>
+                  <div class="metric-lbl">Tổng số câu</div>
+                </div>
+                <div class="metric-box metric-answered">
+                  <div class="metric-num" id="metric-answered-val">--</div>
+                  <div class="metric-lbl">Đã trả lời</div>
+                </div>
                 <div class="metric-box metric-correct">
-                  <div class="metric-num" id="metric-correct-val">41</div>
+                  <div class="metric-num" id="metric-correct-val">--</div>
                   <div class="metric-lbl">Số câu đúng</div>
                 </div>
                 <div class="metric-box metric-wrong">
-                  <div class="metric-num" id="metric-wrong-val">0</div>
+                  <div class="metric-num" id="metric-wrong-val">--</div>
                   <div class="metric-lbl">Số câu sai</div>
                 </div>
+                <div class="metric-box metric-unanswered">
+                  <div class="metric-num" id="metric-unanswered-val">--</div>
+                  <div class="metric-lbl">Chưa trả lời</div>
+                </div>
                 <div class="metric-box metric-time">
-                  <div class="metric-num" id="metric-time-val">05:20</div>
+                  <div class="metric-num" id="metric-time-val">--:--</div>
                   <div class="metric-lbl">Thời gian làm</div>
                 </div>
               </div>
@@ -162,7 +174,7 @@
 
           <!-- Result Action Buttons -->
           <div class="result-actions-bar">
-            <button class="btn-result btn-result-wrong" id="btn-retry-wrong-only">Ôn lại các câu sai</button>
+            <button class="btn-result btn-result-wrong" id="btn-retry-wrong-only" style="display:none;">Ôn lại các câu sai</button>
             <button class="btn-result btn-result-retry" id="btn-retry-same-quiz">Làm lại bài này</button>
             <button class="btn-result btn-result-home" id="btn-result-back-home">Danh sách bài</button>
           </div>
@@ -171,8 +183,9 @@
           <div class="review-questions-section">
             <div class="review-filter-tabs">
               <button class="review-filter-btn active" data-filter="all">Tất cả câu (<span id="filter-all-cnt">0</span>)</button>
-              <button class="review-filter-btn" data-filter="wrong">Chỉ câu sai (<span id="filter-wrong-cnt">0</span>)</button>
-              <button class="review-filter-btn" data-filter="correct">Chỉ câu đúng (<span id="filter-correct-cnt">0</span>)</button>
+              <button class="review-filter-btn" data-filter="correct">Câu đúng (<span id="filter-correct-cnt">0</span>)</button>
+              <button class="review-filter-btn" data-filter="wrong">Câu sai (<span id="filter-wrong-cnt">0</span>)</button>
+              <button class="review-filter-btn" data-filter="unanswered">Chưa trả lời (<span id="filter-unanswered-cnt">0</span>)</button>
             </div>
             <div class="review-items-list" id="review-items-list">
               <!-- Reviewed questions rendered by JS -->

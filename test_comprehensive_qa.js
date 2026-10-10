@@ -550,6 +550,237 @@ runTest('ADMIN-EXPORT-IMPORT', 'Admin', 'Xuất JSON và Nhập JSON hợp lệ 
 });
 
 // =============================================================================
+// TEST GROUP 12: HỆ THỐNG CHẤM ĐIỂM & KẾT QUẢ THEO YÊU CẦU (RESULT-01 -> RESULT-12)
+// =============================================================================
+console.log('\n--- TEST GROUP 12: Regression Tests Chấm điểm & Hiển thị kết quả ---');
+
+runTest('RESULT-01', 'Scoring', 'Bài 41 câu, chỉ trả lời đúng 1 câu: điểm ~0.2/10, đúng 1, sai 0, chưa trả lời 40', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'bai-1', mode: 'all' });
+  assert(engine.questions.length === 41, 'Bài 1 phải có 41 câu');
+
+  // Answer only question 0 correctly
+  const q0 = engine.questions[0];
+  engine.setAnswer(q0.id, q0.correctAnswers ? q0.correctAnswers[0] : 'B');
+
+  const summary = engine.calculateSummary();
+  assert(summary.totalQuestions === 41, 'Tổng số câu là 41');
+  assert(summary.answeredCount === 1, `Số câu đã trả lời phải là 1 (thực tế: ${summary.answeredCount})`);
+  assert(summary.correctCount === 1, `Số câu đúng phải là 1 (thực tế: ${summary.correctCount})`);
+  assert(summary.wrongCount === 0, `Số câu sai phải là 0 (thực tế: ${summary.wrongCount})`);
+  assert(summary.unansweredCount === 40, `Số câu chưa trả lời phải là 40 (thực tế: ${summary.unansweredCount})`);
+  assert(summary.score10 === 0.2, `Điểm quy đổi thang 10 phải là 0.2 (thực tế: ${summary.score10})`);
+  assert(summary.percentage === 2, `Tỷ lệ điểm phải là 2% (thực tế: ${summary.percentage}%)`);
+});
+
+runTest('RESULT-02', 'Scoring', 'Bài 41 câu, chỉ trả lời sai 1 câu: điểm 0/10, đúng 0, sai 1, chưa trả lời 40', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'bai-1', mode: 'all' });
+
+  // Answer question 0 wrongly
+  const q0 = engine.questions[0];
+  const wrongKey = (q0.options && q0.options.find(o => !o.isCorrect)) ? q0.options.find(o => !o.isCorrect).key : 'INCORRECT_KEY';
+  engine.setAnswer(q0.id, wrongKey);
+
+  const summary = engine.calculateSummary();
+  assert(summary.totalQuestions === 41, 'Tổng số câu là 41');
+  assert(summary.answeredCount === 1, 'Số câu đã trả lời là 1');
+  assert(summary.correctCount === 0, 'Số câu đúng là 0');
+  assert(summary.wrongCount === 1, 'Số câu sai là 1');
+  assert(summary.unansweredCount === 40, 'Số câu chưa trả lời là 40');
+  assert(summary.score10 === 0, `Điểm quy đổi thang 10 phải là 0/10 (thực tế: ${summary.score10})`);
+  assert(summary.percentage === 0, 'Tỷ lệ điểm là 0%');
+});
+
+runTest('RESULT-03', 'Scoring', 'Bài 41 câu, bỏ trống toàn bộ: điểm 0/10, đúng 0, sai 0, chưa trả lời 41', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'bai-1', mode: 'all' });
+
+  const summary = engine.calculateSummary();
+  assert(summary.totalQuestions === 41, 'Tổng số câu là 41');
+  assert(summary.answeredCount === 0, 'Số câu đã trả lời là 0');
+  assert(summary.correctCount === 0, 'Số câu đúng là 0');
+  assert(summary.wrongCount === 0, 'Số câu sai là 0');
+  assert(summary.unansweredCount === 41, 'Số câu chưa trả lời là 41');
+  assert(summary.score10 === 0, `Điểm quy đổi thang 10 phải là 0/10 (thực tế: ${summary.score10})`);
+  assert(summary.percentage === 0, 'Tỷ lệ điểm là 0%');
+});
+
+runTest('RESULT-04', 'Scoring', 'Bài 41 câu, trả lời đúng tất cả: điểm 10/10, đúng 41, sai 0, chưa trả lời 0', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'bai-1', mode: 'all' });
+
+  engine.questions.forEach(q => {
+    if (q.type === 'single_choice') {
+      engine.setAnswer(q.id, q.correctAnswers[0]);
+    } else if (q.type === 'multiple_choice') {
+      engine.setAnswer(q.id, q.correctAnswers);
+    } else if (q.type === 'true_false_group') {
+      const tfAns = {};
+      q.items.forEach(it => tfAns[it.order] = it.correctAnswer);
+      engine.setAnswer(q.id, tfAns);
+    } else if (q.type === 'drag_drop') {
+      const ddAns = {};
+      q.pairs.forEach((p, i) => ddAns[p.id || `pair-${i+1}`] = p.correctAnswer);
+      engine.setAnswer(q.id, ddAns);
+    } else if (q.type === 'drag_drop_columns') {
+      const colAns = {};
+      q.columns.forEach(c => colAns[c.id] = c.correctItems);
+      engine.setAnswer(q.id, colAns);
+    }
+  });
+
+  const summary = engine.calculateSummary();
+  assert(summary.totalQuestions === 41, 'Tổng số câu là 41');
+  assert(summary.answeredCount === 41, 'Đã trả lời 41');
+  assert(summary.correctCount === 41, 'Đúng 41');
+  assert(summary.wrongCount === 0, 'Sai 0');
+  assert(summary.unansweredCount === 0, 'Chưa trả lời 0');
+  assert(summary.score10 === 10, 'Điểm quy đổi 10/10');
+  assert(summary.percentage === 100, 'Tỷ lệ 100%');
+});
+
+runTest('RESULT-05', 'Scoring', 'Bài 41 câu, đúng 20 và sai 21: điểm 4.9/10, đúng 20, sai 21, chưa trả lời 0', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'bai-1', mode: 'all' });
+
+  engine.questions.forEach((q, idx) => {
+    if (idx < 20) {
+      // Correct
+      if (q.type === 'single_choice') engine.setAnswer(q.id, q.correctAnswers[0]);
+      else if (q.type === 'multiple_choice') engine.setAnswer(q.id, q.correctAnswers);
+      else if (q.type === 'true_false_group') {
+        const tfAns = {};
+        q.items.forEach(it => tfAns[it.order] = it.correctAnswer);
+        engine.setAnswer(q.id, tfAns);
+      } else if (q.type === 'drag_drop') {
+        const ddAns = {};
+        q.pairs.forEach((p, i) => ddAns[p.id || `pair-${i+1}`] = p.correctAnswer);
+        engine.setAnswer(q.id, ddAns);
+      } else if (q.type === 'drag_drop_columns') {
+        const colAns = {};
+        q.columns.forEach(c => colAns[c.id] = c.correctItems);
+        engine.setAnswer(q.id, colAns);
+      }
+    } else {
+      // Wrong
+      engine.setAnswer(q.id, 'INTENTIONALLY_WRONG');
+    }
+  });
+
+  const summary = engine.calculateSummary();
+  assert(summary.answeredCount === 41, 'Đã trả lời 41');
+  assert(summary.correctCount === 20, 'Đúng 20');
+  assert(summary.wrongCount === 21, 'Sai 21');
+  assert(summary.unansweredCount === 0, 'Chưa trả lời 0');
+  assert(summary.score10 === 4.9, `Điểm thang 10 là 4.9 (thực tế: ${summary.score10})`);
+  assert(summary.percentage === 49, `Tỷ lệ phần trăm là 49% (thực tế: ${summary.percentage}%)`);
+});
+
+runTest('RESULT-06', 'Submission', 'Nộp bài nhiều lần liên tiếp: chỉ tạo 1 kết quả (Idempotency)', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'bai-1', mode: 'all' });
+  const q0 = engine.questions[0];
+  engine.setAnswer(q0.id, 'B');
+
+  const historyLenBefore = store.getAttempts().length;
+  const res1 = engine.submitQuiz(false);
+  const res2 = engine.submitQuiz(false);
+  const res3 = engine.submitQuiz(false);
+
+  const historyLenAfter = store.getAttempts().length;
+  assert(historyLenAfter === historyLenBefore + 1, 'Chỉ tạo duy nhất 1 lần lưu attempt');
+  assert(res1 === res2 && res2 === res3, 'Các lần submit sau trả về cùng 1 kết quả đã chốt');
+});
+
+runTest('RESULT-07', 'Submission', 'Hết giờ tự động nộp bài chính xác', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'bai-1', mode: 'exam' });
+  engine.timeRemaining = 0;
+  const summary = engine.submitQuiz(true);
+  assert(summary.isTimeout === true, 'Đánh dấu hết giờ nộp bài thành công');
+  assert(engine.isSubmitted === true, 'Đã nộp bài');
+  assert(engine.timerInterval === null, 'Dừng interval đếm ngược');
+});
+
+runTest('RESULT-08', 'ReviewFilters', 'Lọc câu đúng/sai/chưa trả lời hiển thị đúng danh sách và số lượng', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'bai-1', mode: 'all' });
+
+  // Answer 1 correct (q0), 2 wrong (q1, q2), leave 38 unanswered
+  engine.setAnswer(engine.questions[0].id, engine.questions[0].correctAnswers[0]);
+  engine.setAnswer(engine.questions[1].id, 'WRONG_1');
+  engine.setAnswer(engine.questions[2].id, 'WRONG_2');
+
+  const summary = engine.calculateSummary();
+  const correctItems = summary.results.filter(r => r.isCorrect);
+  const wrongItems = summary.results.filter(r => r.isAnswered && !r.isCorrect);
+  const unansweredItems = summary.results.filter(r => r.isUnanswered);
+
+  assert(correctItems.length === 1, `Lọc đúng có 1 câu (có: ${correctItems.length})`);
+  assert(wrongItems.length === 2, `Lọc sai có 2 câu (có: ${wrongItems.length})`);
+  assert(unansweredItems.length === 38, `Lọc chưa trả lời có 38 câu (có: ${unansweredItems.length})`);
+  assert(summary.results.length === 41, 'Tổng là 41');
+});
+
+runTest('RESULT-09', 'Session', 'Làm lại bài: reset phiên làm bài đúng (userAnswers rỗng, isSubmitted = false)', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'bai-1', mode: 'all' });
+  engine.setAnswer(engine.questions[0].id, 'A');
+  engine.submitQuiz(false);
+  assert(engine.isSubmitted === true, 'Đã submit');
+
+  // Restart session
+  engine.startQuiz({ exerciseId: 'bai-1', mode: 'all' });
+  assert(engine.isSubmitted === false, 'Phiên mới isSubmitted = false');
+  assert(Object.keys(engine.userAnswers).length === 0, 'Đáp án phải được reset');
+  assert(engine.currentIndex === 0, 'Vị trí câu hỏi quay về câu 0');
+});
+
+runTest('RESULT-10', 'Placeholders', 'Dữ liệu HTML mẫu không hiển thị giả mạo (được đồng bộ từ kết quả)', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'bai-1', mode: 'all' });
+  const summary = engine.calculateSummary();
+  // With 0 answered:
+  assert(summary.score10 === 0, 'Điểm phải là 0/10');
+  assert(summary.percentage === 0, 'Phần trăm phải là 0%');
+  assert(summary.unansweredCount === 41, 'Chưa trả lời 41');
+});
+
+runTest('RESULT-11', 'Scoring', 'Câu nhiều đáp án và Đúng/Sai tính điểm thành phần đúng', () => {
+  const engine = new QuizEngine();
+  // True/False with 4 items: correct 3 out of 4 = 0.75 points
+  const qTF = {
+    id: 'test-tf-sub',
+    type: 'true_false_group',
+    items: [
+      { order: 1, correctAnswer: 'Đúng' },
+      { order: 2, correctAnswer: 'Sai' },
+      { order: 3, correctAnswer: 'Đúng' },
+      { order: 4, correctAnswer: 'Sai' }
+    ]
+  };
+  const evalTF = engine.evaluateQuestion(qTF, { 1: 'Đúng', 2: 'Sai', 3: 'Đúng', 4: 'Đúng' });
+  assert(Math.abs(evalTF.score - 0.75) < 0.001, 'Đúng 3/4 câu Đúng/Sai được 0.75 điểm');
+});
+
+runTest('RESULT-12', 'Scoring', 'Câu kéo thả cả điền khuyết và 2 cột tính điểm và phần xem lại đúng', () => {
+  const engine = new QuizEngine();
+  const qCols = {
+    id: 'test-col-sub',
+    type: 'drag_drop_columns',
+    columns: [
+      { id: 'c1', title: 'C1', correctItems: ['A', 'B'] },
+      { id: 'c2', title: 'C2', correctItems: ['C', 'D'] }
+    ]
+  };
+  // Answer only column 1 correctly
+  const evalCol = engine.evaluateQuestion(qCols, { c1: ['A', 'B'], c2: [] });
+  assert(Math.abs(evalCol.score - 0.5) < 0.001, 'Đúng 1/2 cột được 0.5 điểm');
+  assert(evalCol.colResults.length === 2, 'Có đủ 2 cột kết quả để xem lại');
+});
+
+// =============================================================================
 // TỔNG KẾT BÁO CÁO AUTOMATION
 // =============================================================================
 console.log('\n================================================================');
