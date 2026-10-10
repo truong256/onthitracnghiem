@@ -130,7 +130,7 @@ class App {
       const card = document.createElement('div');
       card.className = 'exercise-card';
 
-      const badgeClasses = ['ex-badge-bai1', 'ex-badge-bai2', 'ex-badge-bai3', 'ex-badge-bai4', 'ex-badge-bai5'];
+      const badgeClasses = ['ex-badge-bai1', 'ex-badge-bai2', 'ex-badge-bai3', 'ex-badge-bai4', 'ex-badge-bai5', 'ex-badge-bai6'];
       const tagClass = badgeClasses[idx] || 'ex-badge-bai1';
       card.innerHTML = `
         <div>

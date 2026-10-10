@@ -1,0 +1,3944 @@
+{
+  "bai-1": [
+    {
+      "lesson": "bai-1",
+      "number": 1,
+      "id": "bai-1-q1",
+      "type": "single_choice",
+      "content": "Những nhà tư tưởng tiêu biểu của chủ nghĩa xã hội không tưởng phê phán đầu thế kỷ XIX là ai?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 2,
+      "id": "bai-1-q2",
+      "type": "single_choice",
+      "content": "Tác phẩm nào đánh dấu sự ra đời của chủ nghĩa xã hội khoa học?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 3,
+      "id": "bai-1-q3",
+      "type": "single_choice",
+      "content": "Đối tượng nghiên cứu của chủ nghĩa xã hội khoa học là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 4,
+      "id": "bai-1-q4",
+      "type": "single_choice",
+      "content": "Phát kiến nào của C.Mác và Ph.Ăngghen chỉ ra sự diệt vong về kinh tế của chủ nghĩa tư bản?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 5,
+      "id": "bai-1-q5",
+      "type": "single_choice",
+      "content": "Ph.Ăngghen đã đánh giá: \"Hai phát hiện vĩ đại này đã đưa chủ nghĩa xã hội trở thành một khoa học\". Hai phát kiến đó là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 6,
+      "id": "bai-1-q6",
+      "type": "single_choice",
+      "content": "Phạm trù nào được coi là cơ bản nhất và là xuất phát điểm của chủ nghĩa xã hội khoa học?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 7,
+      "id": "bai-1-q7",
+      "type": "single_choice",
+      "content": "Điền từ còn thiếu vào chỗ trống: Giai cấp công nhân và nhân dân lao động là cơ sở..., cơ sở... của Đảng cộng sản, là nguồn bổ sung lực lượng phong phú cho Đảng.",
+      "status": "FIXED",
+      "details": [
+        "Đáp án đổi từ ['A'] sang ['B']"
+      ],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 8,
+      "id": "bai-1-q8",
+      "type": "single_choice",
+      "content": "Giai cấp công nhân Việt Nam ra đời vào thời gian nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 9,
+      "id": "bai-1-q9",
+      "type": "single_choice",
+      "content": "Điền từ còn thiếu vào chỗ trống “Giai cấp công nhân Việt Nam thực hiện lãnh đạo cách mạng thông qua đội tiên phong của nó là (...)”",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 10,
+      "id": "bai-1-q10",
+      "type": "single_choice",
+      "content": "Hạn chế cơ bản lớn nhất mà giai cấp công nhân Việt Nam hiện nay cần khắc phục là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 11,
+      "id": "bai-1-q11",
+      "type": "single_choice",
+      "content": "Điểm then chốt để giúp giai cấp công nhân Việt Nam hiện nay thực hiện thành công sứ mệnh lịch sử của mình là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 12,
+      "id": "bai-1-q12",
+      "type": "multiple_choice",
+      "content": "Theo Ph. Ắngghen: “Thực hiện nhiệm vụ giải phóng thế giới ấy, đó là sứ mệnh lịch sử của........” Hãy chọn đáp án đúng điền vào chỗ trống?",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ single_choice sang multiple_choice"
+      ],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 13,
+      "id": "bai-1-q13",
+      "type": "multiple_choice",
+      "content": "Điều kiện chủ quan để giai cấp công nhân thực hiện được sứ mệnh lịch sử của mình là: (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B",
+        "C"
+      ],
+      "new_answers": [
+        "B",
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 14,
+      "id": "bai-1-q14",
+      "type": "multiple_choice",
+      "content": "Đặc điểm nào sau đây thể hiện đúng bản chất của giai cấp công nhân? (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "D"
+      ],
+      "new_answers": [
+        "A",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 15,
+      "id": "bai-1-q15",
+      "type": "multiple_choice",
+      "content": "Giai cấp công nhân Việt Nam có đặc điểm gì khác với giai cấp công nhân ở các nước tư bản? (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B",
+        "C"
+      ],
+      "new_answers": [
+        "B",
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 16,
+      "id": "bai-1-q16",
+      "type": "single_choice",
+      "content": "Phát kiến nào của C.Mác và Ph.Ăngghen chỉ ra những hạn chế có tính lịch sử của chủ nghĩa xã hội không tưởng?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 17,
+      "id": "bai-1-q17",
+      "type": "single_choice",
+      "content": "Đâu là nhân tố chủ quan quan trọng nhất để giai cấp công nhân thực hiện thắng lợi sứ mệnh lịch sử của mình?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 18,
+      "id": "bai-1-q18",
+      "type": "single_choice",
+      "content": "Tìm ý đúng để hoàn thiện luận điểm sau: Cùng với sự phát triển của khoa học và công nghệ ngày càng hiện đại, giai cấp công nhân:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 19,
+      "id": "bai-1-q19",
+      "type": "single_choice",
+      "content": "Dấu hiệu đánh dấu sự trưởng thành vượt bậc của giai cấp công nhân với tư cách là giai cấp cách mạng là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 20,
+      "id": "bai-1-q20",
+      "type": "single_choice",
+      "content": "Trong các nội dung sau đây thì nội dung nào thuộc về giải pháp xây dựng giai cấp công nhân Việt Nam hiện nay?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 21,
+      "id": "bai-1-q21",
+      "type": "single_choice",
+      "content": "Vấn đề nổi bật nhất đối với việc thực hiện sứ mệnh lịch sử của giai cấp công nhân Việt Nam hiện nay là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 22,
+      "id": "bai-1-q22",
+      "type": "multiple_choice",
+      "content": "Theo C.Mác và Ph.Ăngghen thì đặc điểm nổi bật của giai cấp công nhân là: (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "B"
+      ],
+      "new_answers": [
+        "A",
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 23,
+      "id": "bai-1-q23",
+      "type": "single_choice",
+      "content": "Xét về phương thức lao động, phương thức sản xuất, giai cấp công nhân mang thuộc tính cơ bản nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 24,
+      "id": "bai-1-q24",
+      "type": "single_choice",
+      "content": "Đặc điểm sứ mệnh lịch sử của giai cấp công nhân là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 25,
+      "id": "bai-1-q25",
+      "type": "single_choice",
+      "content": "Nội dung trực tiếp về văn hoá tư tưởng thể hiện sứ mệnh lịch sử của giai cấp công nhân Việt Nam là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 26,
+      "id": "bai-1-q26",
+      "type": "single_choice",
+      "content": "Trong các nội dung sau đây thì nội dung nào thuộc về giải pháp xây dựng giai cấp công nhân Việt Nam hiện nay?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 27,
+      "id": "bai-1-q27",
+      "type": "multiple_choice",
+      "content": "Giai cấp công nhân Việt Nam chủ yếu xuất thân từ tầng lớp nào? (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "C"
+      ],
+      "new_answers": [
+        "A",
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 28,
+      "id": "bai-1-q28",
+      "type": "single_choice",
+      "content": "Xét trong quan hệ sản xuất tư bản chủ nghĩa giai cấp công nhân là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 29,
+      "id": "bai-1-q29",
+      "type": "multiple_choice",
+      "content": "Trong thời kỳ thuộc địa, giai cấp công nhân Việt Nam chủ yếu làm việc trong: (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C",
+        "D"
+      ],
+      "new_answers": [
+        "C",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 30,
+      "id": "bai-1-q30",
+      "type": "multiple_choice",
+      "content": "Chủ nghĩa xã hội khoa học ra đời dựa trên cơ sở của những tiền đề nào? (Chọn nhiều đáp án)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "C"
+      ],
+      "new_answers": [
+        "A",
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 31,
+      "id": "bai-1-q31",
+      "type": "multiple_choice",
+      "content": "Nội dung sứ mệnh lịch sử của giai cấp công nhân Việt Nam hiện nay bao gồm: (Chọn 3 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "new_answers": [
+        "A",
+        "C",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 32,
+      "id": "bai-1-q32",
+      "type": "single_choice",
+      "content": "Câu nói sau đây được viết trong tác phẩm nào: \"Giai cấp tư sản, trong quá trình thống trị giai cấp chưa đầy một thế kỷ, đã tạo ra những lực lượng sản xuất nhiều hơn và đồ sộ hơn lực lượng sản xuất của tất cả các thế hệ trước gộp lại\"?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 33,
+      "id": "bai-1-q33",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "new_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 34,
+      "id": "bai-1-q34",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "Sai",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "new_answers": [
+        "Sai",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 35,
+      "id": "bai-1-q35",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "Sai",
+        "Đúng",
+        "Đúng",
+        "Đúng"
+      ],
+      "new_answers": [
+        "Sai",
+        "Đúng",
+        "Đúng",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 36,
+      "id": "bai-1-q36",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "new_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 37,
+      "id": "bai-1-q37",
+      "type": "true_false_group",
+      "content": "Chọn Đúng hoặc Sai với từng phát biểu:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "Đúng",
+        "Sai",
+        "Đúng",
+        "Đúng"
+      ],
+      "new_answers": [
+        "Đúng",
+        "Sai",
+        "Đúng",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 38,
+      "id": "bai-1-q38",
+      "type": "drag_drop_columns",
+      "content": "Kéo thả các yếu tố sau đây vào cột tương ứng:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [],
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 39,
+      "id": "bai-1-q39",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [],
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 40,
+      "id": "bai-1-q40",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 4 về trái dưới đây:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [],
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-1",
+      "number": 41,
+      "id": "bai-1-q41",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 - 3 vế trái dưới đây:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [],
+      "new_answers": [],
+      "pdf_basis": ""
+    }
+  ],
+  "bai-2": [
+    {
+      "lesson": "bai-2",
+      "number": 1,
+      "id": "bai-2-q1",
+      "type": "single_choice",
+      "content": "Theo C. Mác và Ph. Ăngghen thì giai đoạn đầu của hình thái kinh tế – xã hội cộng sản chủ nghĩa là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 2,
+      "id": "bai-2-q2",
+      "type": "single_choice",
+      "content": "Chủ nghĩa xã hội có mấy đặc trưng cơ bản?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 3,
+      "id": "bai-2-q3",
+      "type": "single_choice",
+      "content": "Hình thái kinh tế – xã hội cộng sản chủ nghĩa bắt đầu và hoàn thiện khi nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 4,
+      "id": "bai-2-q4",
+      "type": "single_choice",
+      "content": "Đặc trưng về kinh tế của chủ nghĩa xã hội là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 5,
+      "id": "bai-2-q5",
+      "type": "single_choice",
+      "content": "Nguyên nhân sâu xa dẫn đến sự thay thế hình thái kinh tế – xã hội tư bản chủ nghĩa bằng hình thái kinh tế – xã hội cộng sản chủ nghĩa là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 6,
+      "id": "bai-2-q6",
+      "type": "single_choice",
+      "content": "Chọn cụm từ còn thiếu điền vào dấu “…”: “Giữa xã hội tư bản chủ nghĩa và xã hội cộng sản chủ nghĩa là một thời kỳ … từ xã hội nọ sang xã hội kia” (C. Mác).",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 7,
+      "id": "bai-2-q7",
+      "type": "single_choice",
+      "content": "Kiểu quá độ lên chủ nghĩa xã hội ở Việt Nam là kiểu quá độ nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 8,
+      "id": "bai-2-q8",
+      "type": "single_choice",
+      "content": "Cương lĩnh xây dựng đất nước trong thời kỳ quá độ lên chủ nghĩa xã hội (Bổ sung và phát triển năm 2011) được Đảng ta thông qua ở Đại hội lần thứ mấy?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 9,
+      "id": "bai-2-q9",
+      "type": "single_choice",
+      "content": "Tìm đáp án sai. Đặc trưng bản chất của chủ nghĩa xã hội Việt Nam theo tinh thần của Đại hội XI:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 10,
+      "id": "bai-2-q10",
+      "type": "single_choice",
+      "content": "Thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là bước quá độ:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 11,
+      "id": "bai-2-q11",
+      "type": "multiple_choice",
+      "content": "Đặc điểm về chính trị trong thời kỳ quá độ được thể hiện ở điểm nào? (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "C"
+      ],
+      "new_answers": [
+        "A",
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 12,
+      "id": "bai-2-q12",
+      "type": "multiple_choice",
+      "content": "Đặc điểm nổi bật của thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là gì? (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "D"
+      ],
+      "new_answers": [
+        "A",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 13,
+      "id": "bai-2-q13",
+      "type": "single_choice",
+      "content": "Câu “Cần phải có thời kỳ quá độ khá lâu dài từ chủ nghĩa tư bản lên chủ nghĩa xã hội” là của ai?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 14,
+      "id": "bai-2-q14",
+      "type": "single_choice",
+      "content": "Đặc điểm nổi bật của thời kỳ quá độ đó là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 15,
+      "id": "bai-2-q15",
+      "type": "single_choice",
+      "content": "Về nội dung, thời kỳ quá độ lên chủ nghĩa xã hội là thời kỳ cải tạo cách mạng sâu sắc, triệt để xã hội tư bản chủ nghĩa trên các lĩnh vực:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 16,
+      "id": "bai-2-q16",
+      "type": "single_choice",
+      "content": "Phát triển bỏ qua chế độ tư bản chủ nghĩa ở Việt Nam được hiểu như thế nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 17,
+      "id": "bai-2-q17",
+      "type": "single_choice",
+      "content": "Chọn từ đúng điền vào chỗ trống để hoàn thành mục tiêu của Đảng xác định trong thời kỳ quá độ lên chủ nghĩa xã hội ở nước ta: Độc lập dân tộc gắn liền với chủ nghĩa xã hội; dân giàu, nước mạnh, dân chủ, .... , văn minh",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 18,
+      "id": "bai-2-q18",
+      "type": "single_choice",
+      "content": "Theo quan điểm của chủ nghĩa Mác - Lênin mốc bắt đầu của thời kỳ quá độ lên chủ nghĩa xã hội từ khi nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 19,
+      "id": "bai-2-q19",
+      "type": "single_choice",
+      "content": "Đặc điểm của thời kỳ quá độ lên chủ nghĩa trên lĩnh vực kinh tế là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 20,
+      "id": "bai-2-q20",
+      "type": "single_choice",
+      "content": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa ở nước ta, được hiểu là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 21,
+      "id": "bai-2-q21",
+      "type": "single_choice",
+      "content": "Trong cuốn sách “Một số vấn đề lý luận và thực tiễn về chủ nghĩa xã hội và con đường đi lên chủ nghĩa xã hội ở Việt Nam\", Tổng Bí thư Nguyễn Phú Trọng khẳng định: đường lối cơ bản, xuyên suốt của cách mạng Việt Nam và cũng là điểm cốt yếu trong di sản tư tưởng của Chủ tịch Hồ Chí Minh là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 22,
+      "id": "bai-2-q22",
+      "type": "multiple_choice",
+      "content": "Chọn phương án sai",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ single_choice sang multiple_choice"
+      ],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 23,
+      "id": "bai-2-q23",
+      "type": "single_choice",
+      "content": "Tại sao cho rằng con đường cách mạng Việt Nam là quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa là một tất yếu?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 24,
+      "id": "bai-2-q24",
+      "type": "single_choice",
+      "content": "Căn cứ vào giáo trình Chủ nghĩa xã hội khoa học, hãy xác định khái niệm dùng để chỉ một chế độ xã hội tốt đẹp, giai đoạn đầu của hình thái kinh tế - xã hội cộng sản chủ nghĩa",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 25,
+      "id": "bai-2-q25",
+      "type": "single_choice",
+      "content": "Theo chủ nghĩa Mác – Lênin có mấy hình thức quá độ lên chủ nghĩa xã hội?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 26,
+      "id": "bai-2-q26",
+      "type": "multiple_choice",
+      "content": "Thời kỳ quá độ lên chủ nghĩa xã hội có những mâu thuẫn nào cần giải quyết? (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "D"
+      ],
+      "new_answers": [
+        "A",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 27,
+      "id": "bai-2-q27",
+      "type": "multiple_choice",
+      "content": "Việc \"bỏ qua chế độ tư bản chủ nghĩa\" ở Việt Nam có nghĩa là: (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "B"
+      ],
+      "new_answers": [
+        "A",
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 28,
+      "id": "bai-2-q28",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "Sai",
+        "Đúng",
+        "Đúng",
+        "Đúng"
+      ],
+      "new_answers": [
+        "Sai",
+        "Đúng",
+        "Đúng",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 29,
+      "id": "bai-2-q29",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Sai"
+      ],
+      "new_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Sai"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 30,
+      "id": "bai-2-q30",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Sai"
+      ],
+      "new_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Sai"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 31,
+      "id": "bai-2-q31",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "FIXED",
+      "details": [
+        "Đáp án đổi từ ['Đúng', 'Đúng', 'Đúng', 'Đúng'] sang ['Đúng', 'Đúng', 'Đúng']"
+      ],
+      "old_answers": [
+        "Đúng",
+        "Đúng",
+        "Đúng",
+        "Đúng"
+      ],
+      "new_answers": [
+        "Đúng",
+        "Đúng",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 32,
+      "id": "bai-2-q32",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "Sai",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "new_answers": [
+        "Sai",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 33,
+      "id": "bai-2-q33",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án khớp với các phát biểu từ 1–3:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [],
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 34,
+      "id": "bai-2-q34",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [],
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 35,
+      "id": "bai-2-q35",
+      "type": "multiple_choice",
+      "content": "Đặc điểm về kinh tế của thời kỳ quá độ lên chủ nghĩa xã hội gồm: (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "D"
+      ],
+      "new_answers": [
+        "A",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 36,
+      "id": "bai-2-q36",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 về trái dưới đây:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [],
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 37,
+      "id": "bai-2-q37",
+      "type": "single_choice",
+      "content": "Cuộc cách mạng của giai cấp công nhân và nhân dân lao động dưới sự lãnh đạo của Đảng cộng sản chống lại giai cấp tư sản, là cuộc cách mạng:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 38,
+      "id": "bai-2-q38",
+      "type": "multiple_choice",
+      "content": "Hai loại quá độ từ chủ nghĩa tư bản lên chủ nghĩa cộng sản đó là: (Chọn nhiều đáp án)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "B"
+      ],
+      "new_answers": [
+        "A",
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 39,
+      "id": "bai-2-q39",
+      "type": "multiple_choice",
+      "content": "Những đặc điểm nổi bật trong thời kỳ quá độ lên chủ nghĩa xã hội gồm: (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "D"
+      ],
+      "new_answers": [
+        "A",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-2",
+      "number": 40,
+      "id": "bai-2-q40",
+      "type": "multiple_choice",
+      "content": "Đặc điểm cơ bản của thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là gì? (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [
+        "Phương án B được cập nhật nội dung"
+      ],
+      "old_answers": [
+        "C",
+        "D"
+      ],
+      "new_answers": [
+        "C",
+        "D"
+      ],
+      "pdf_basis": ""
+    }
+  ],
+  "bai-3": [
+    {
+      "lesson": "bai-3",
+      "number": 1,
+      "id": "bai-3-q1",
+      "type": "single_choice",
+      "content": "Theo nguyên nghĩa tiếng Hy Lạp thì \"Dân chủ\" là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 2,
+      "id": "bai-3-q2",
+      "type": "single_choice",
+      "content": "Bản chất kinh tế của nền dân chủ xã hội chủ nghĩa là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 3,
+      "id": "bai-3-q3",
+      "type": "single_choice",
+      "content": "Chọn ý không đúng về điểm khác biệt của nền dân chủ xã hội chủ nghĩa so với nền dân chủ tư sản:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 4,
+      "id": "bai-3-q4",
+      "type": "single_choice",
+      "content": "Lịch sử loài người đã từng xuất hiện các nền dân chủ nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 5,
+      "id": "bai-3-q5",
+      "type": "single_choice",
+      "content": "So với các nền dân chủ trước đây, dân chủ xã hội chủ nghĩa có điểm khác biệt cơ bản nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 6,
+      "id": "bai-3-q6",
+      "type": "single_choice",
+      "content": "Nhà nước pháp quyền XHCN quản lý mọi mặt của đời sống xã hội chủ yếu bằng gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 7,
+      "id": "bai-3-q7",
+      "type": "single_choice",
+      "content": "Kiểu nhà nước nào sau đây được V.I. Lênin gọi là nhà nước \"nửa nhà nước\"?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 8,
+      "id": "bai-3-q8",
+      "type": "single_choice",
+      "content": "Căn cứ vào phạm vi tác động của quyền lực nhà nước, chức năng của nhà nước được chia thành:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 9,
+      "id": "bai-3-q9",
+      "type": "single_choice",
+      "content": "Chế độ dân chủ nhân dân ở Việt Nam được xác lập từ khi nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 10,
+      "id": "bai-3-q10",
+      "type": "single_choice",
+      "content": "Nền dân chủ xã hội chủ nghĩa ở Việt Nam có điểm khác biệt cơ bản nào so với các nền dân chủ trước đây?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 11,
+      "id": "bai-3-q11",
+      "type": "single_choice",
+      "content": "Tại sao quyền lực nhà nước ở Việt Nam được tổ chức theo nguyên tắc thống nhất?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 12,
+      "id": "bai-3-q12",
+      "type": "single_choice",
+      "content": "Hãy xác định biện pháp để nâng cao hiệu quả hoạt động của Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam.",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 13,
+      "id": "bai-3-q13",
+      "type": "single_choice",
+      "content": "Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam có đặc điểm như thế nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 14,
+      "id": "bai-3-q14",
+      "type": "multiple_choice",
+      "content": "Dân chủ trong xã hội nguyên thủy được thể hiện như thế nào? (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "B"
+      ],
+      "new_answers": [
+        "A",
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 15,
+      "id": "bai-3-q15",
+      "type": "multiple_choice",
+      "content": "Đặc điểm nổi bật của nền dân chủ xã hội chủ nghĩa là gì? (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C",
+        "D"
+      ],
+      "new_answers": [
+        "C",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 16,
+      "id": "bai-3-q16",
+      "type": "single_choice",
+      "content": "Đâu là định nghĩa đúng và đầy đủ về dân chủ?",
+      "status": "FIXED",
+      "details": [
+        "Đáp án đổi từ ['A'] sang ['C']"
+      ],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 17,
+      "id": "bai-3-q17",
+      "type": "single_choice",
+      "content": "Bản chất tư tưởng - văn hoá - xã hội của nền dân chủ xã hội chủ nghĩa được thể hiện ở nội dung nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 18,
+      "id": "bai-3-q18",
+      "type": "single_choice",
+      "content": "Đặc điểm của nhà nước pháp quyền xã hội chủ nghĩa là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 19,
+      "id": "bai-3-q19",
+      "type": "single_choice",
+      "content": "So với các mô hình nhà nước khác trong lịch sử thì nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam có sự khác biệt về chất như thế nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 20,
+      "id": "bai-3-q20",
+      "type": "single_choice",
+      "content": "Sự ra đời của nhà nước xã hội chủ nghĩa gắn với sự kiện nào?",
+      "status": "FIXED",
+      "details": [
+        "Đáp án đổi từ ['A'] sang ['B']"
+      ],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 21,
+      "id": "bai-3-q21",
+      "type": "single_choice",
+      "content": "Dân chủ xã hội chủ nghĩa mang tính nhất nguyên về chính trị, được hiểu là:",
+      "status": "FIXED",
+      "details": [
+        "Đáp án đổi từ ['B'] sang ['C']"
+      ],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 22,
+      "id": "bai-3-q22",
+      "type": "single_choice",
+      "content": "Hãy xác định mục tiêu chính của việc xây dựng Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam.",
+      "status": "FIXED",
+      "details": [
+        "Đáp án đổi từ ['A'] sang ['B']"
+      ],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 23,
+      "id": "bai-3-q23",
+      "type": "multiple_choice",
+      "content": "Bản chất của nền dân chủ xã hội chủ nghĩa là: (Chọn 2 đáp án đúng)",
+      "status": "FIXED",
+      "details": [
+        "Đáp án đổi từ ['A', 'C'] sang ['B', 'D']"
+      ],
+      "old_answers": [
+        "A",
+        "C"
+      ],
+      "new_answers": [
+        "B",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 24,
+      "id": "bai-3-q24",
+      "type": "multiple_choice",
+      "content": "Dân chủ xã hội chủ nghĩa ở Việt Nam là: (Chọn 2 đáp án đúng)",
+      "status": "FIXED",
+      "details": [
+        "Đáp án đổi từ ['C'] sang ['A', 'D']"
+      ],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "A",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 25,
+      "id": "bai-3-q25",
+      "type": "single_choice",
+      "content": "Bản chất chính trị của nền dân chủ xã hội chủ nghĩa thể hiện như thế nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 26,
+      "id": "bai-3-q26",
+      "type": "single_choice",
+      "content": "Bản chất dân chủ xã hội chủ nghĩa ở Việt Nam được thực hiện thông qua:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 27,
+      "id": "bai-3-q27",
+      "type": "single_choice",
+      "content": "Bằng hiểu biết của bản thân, hãy cho biết đâu là hình thức dân chủ gián tiếp?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 28,
+      "id": "bai-3-q28",
+      "type": "multiple_choice",
+      "content": "Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam được xây dựng dựa trên những nguyên tắc nào sau đây? (Chọn 2 đáp án đúng)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C",
+        "D"
+      ],
+      "new_answers": [
+        "C",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 29,
+      "id": "bai-3-q29",
+      "type": "single_choice",
+      "content": "Căn cứ vào tính chất của quyền lực nhà nước, chức năng của nhà nước được chia thành:",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ drag_drop sang single_choice",
+        "Đáp án đổi từ [] sang ['B']"
+      ],
+      "old_answers": [],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 30,
+      "id": "bai-3-q30",
+      "type": "multiple_choice",
+      "content": "Bản chất của dân chủ là gì?",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ single_choice sang multiple_choice",
+        "Đáp án đổi từ ['B'] sang ['A', 'B']",
+        "Số phương án thay đổi: 3 -> 4"
+      ],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "A",
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 31,
+      "id": "bai-3-q31",
+      "type": "single_choice",
+      "content": "Ở Việt Nam bản chất dân chủ xã hội chủ nghĩa là dựa vào:",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ true_false_group sang single_choice",
+        "Đáp án đổi từ ['Đúng', 'Đúng', 'Sai', 'Sai'] sang ['A']"
+      ],
+      "old_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Sai"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 32,
+      "id": "bai-3-q32",
+      "type": "multiple_choice",
+      "content": "Vận dụng những kiến thức đã học hãy chọn phương án đúng về mối quan hệ giữa dân chủ xã hội chủ nghĩa và nhà nước xã hội chủ nghĩa?",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ drag_drop sang multiple_choice",
+        "Đáp án đổi từ [] sang ['B']"
+      ],
+      "old_answers": [],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 33,
+      "id": "bai-3-q33",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ multiple_choice sang true_false_group",
+        "Đáp án đổi từ ['A', 'B'] sang ['Đúng', 'Đúng', 'Sai', 'Sai']"
+      ],
+      "old_answers": [
+        "A",
+        "B"
+      ],
+      "new_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Sai"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 34,
+      "id": "bai-3-q34",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "Đúng",
+        "Sai",
+        "Đúng",
+        "Sai"
+      ],
+      "new_answers": [
+        "Đúng",
+        "Sai",
+        "Đúng",
+        "Sai"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 35,
+      "id": "bai-3-q35",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "new_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 36,
+      "id": "bai-3-q36",
+      "type": "drag_drop",
+      "content": "Ghép các đáp án khớp với các phát biểu từ 1 - 4 vế trái dưới đây:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [],
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 37,
+      "id": "bai-3-q37",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 ở dưới đây:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 38,
+      "id": "bai-3-q38",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 4 ở dưới đây:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 39,
+      "id": "bai-3-q39",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án khớp với các phát biểu từ 1 – 3 ở dưới đây:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-3",
+      "number": 40,
+      "id": "bai-3-q40",
+      "type": "true_false_group",
+      "content": "Chọn đáp án Đúng hoặc Sai với từng phát biểu sau:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "Sai",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    }
+  ],
+  "bai-4": [
+    {
+      "lesson": "bai-4",
+      "number": 1,
+      "id": "bai-4-q1",
+      "type": "single_choice",
+      "content": "Trong cơ cấu xã hội – giai cấp của thời kỳ quá độ lên chủ nghĩa xã hội, lực lượng tiêu biểu cho phương thức sản xuất mới gọi vai trò chủ đạo, tiên phong trong quá trình công nghiệp hóa, hiện đại hóa đất nước là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 2,
+      "id": "bai-4-q2",
+      "type": "single_choice",
+      "content": "Xét về mặt kinh tế, trong thời kỳ quá độ lên chủ nghĩa xã hội, cơ cấu xã hội – giai cấp biến đổi phức tạp, đa dạng, làm xuất hiện các tầng lớp mới là do:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 3,
+      "id": "bai-4-q3",
+      "type": "multiple_choice",
+      "content": "Vì sao cơ cấu xã hội – giai cấp có vị trí quan trọng hàng đầu, chi phối các loại hình cơ cấu xã hội khác? (Chọn 2 đáp án)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "B"
+      ],
+      "new_answers": [
+        "A",
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 4,
+      "id": "bai-4-q4",
+      "type": "single_choice",
+      "content": "Yếu tố quyết định sự liên minh giữa giai cấp công nhân, giai cấp nông dân và tầng lớp trí thức là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 5,
+      "id": "bai-4-q5",
+      "type": "single_choice",
+      "content": "Trong cách mạng xã hội chủ nghĩa, dưới sự lãnh đạo của Đảng Cộng sản, giai cấp công nhân phải liên minh với giai cấp, tầng lớp nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 6,
+      "id": "bai-4-q6",
+      "type": "single_choice",
+      "content": "Theo quan điểm của chủ nghĩa Mác – Lênin, trong thời kỳ quá độ lên chủ nghĩa xã hội, giai cấp công nhân, giai cấp nông dân và tầng lớp lao động khác được coi là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 7,
+      "id": "bai-4-q7",
+      "type": "single_choice",
+      "content": "Chọn phương án trả lời đúng nhất để điền vào chỗ trống cho câu sau:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 8,
+      "id": "bai-4-q8",
+      "type": "single_choice",
+      "content": "Xét dưới góc độ chính trị, trong cuộc đấu tranh giai cấp của các giai cấp có lợi ích đối lập nhau đặt ra nhu cầu tất yếu khách quan mỗi giai cấp đứng ở vị trí trung tâm đều phải:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 9,
+      "id": "bai-4-q9",
+      "type": "multiple_choice",
+      "content": "Vì sao giai cấp công nhân, nông dân và đội ngũ trí thức cần liên minh với nhau trong thời kỳ quá độ lên chủ nghĩa xã hội? (Chọn 2 đáp án)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C",
+        "D"
+      ],
+      "new_answers": [
+        "C",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 10,
+      "id": "bai-4-q10",
+      "type": "single_choice",
+      "content": "Hiện nay ở Việt Nam, lực lượng xã hội đặc biệt được Đảng ta chú trọng xây dựng thành một đội ngũ vững mạnh là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 11,
+      "id": "bai-4-q11",
+      "type": "single_choice",
+      "content": "Trong thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam, sự biến đổi của cơ cấu xã hội – giai cấp bị chi phối bởi biến đổi của cơ cấu nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 12,
+      "id": "bai-4-q12",
+      "type": "single_choice",
+      "content": "Lực lượng nào là lực lượng lao động sáng tạo đặc biệt quan trọng trong tiến trình đẩy mạnh công nghiệp hóa, hiện đại hóa đất nước và hội nhập quốc tế, xây dựng kinh tế tri thức, phát triển nền văn hóa Việt Nam tiên tiến, đậm đà bản sắc dân tộc?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 13,
+      "id": "bai-4-q13",
+      "type": "single_choice",
+      "content": "Nội dung chính trị của liên minh giai cấp, tầng lớp trong thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam thể hiện việc giữ vững lập trường chính trị - tư tưởng của giai cấp, tầng lớp nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 14,
+      "id": "bai-4-q14",
+      "type": "single_choice",
+      "content": "Nội dung kinh tế của liên minh giai cấp, tầng lớp trong thời kỳ quả độ lên chủ nghĩa xã hội ở Việt Nam là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 15,
+      "id": "bai-4-q15",
+      "type": "single_choice",
+      "content": "Vận dụng kiến thức về vai trò của thể hệ trẻ, hãy xác định mục tiêu chính của việc giáo dục chính trị, tư tưởng cho thanh niên trong giai đoạn hiện nay ở Việt Nam là gi?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 16,
+      "id": "bai-4-q16",
+      "type": "single_choice",
+      "content": "Theo C.Mác và Ph.Ăngghen, nhiều cuộc đấu tranh của giai cấp công nhân ở châu Âu, nhất là ở nước Anh và Pháp từ giữa thế ký XIX thất bại là do:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 17,
+      "id": "bai-4-q17",
+      "type": "single_choice",
+      "content": "V.I. Lênin đã xem liên minh giữa giai cấp, tầng lớp nào là một hình thức \"liên minh đặc biệt” trong giai đoạn giành chính quyền và xây dựng chủ nghĩa xã hội?",
+      "status": "FIXED",
+      "details": [
+        "Đáp án đổi từ ['D'] sang ['A']"
+      ],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 18,
+      "id": "bai-4-q18",
+      "type": "single_choice",
+      "content": "Cơ cấu xã hội - giai cấp ở Việt Nam thời kỳ quá độ lên chủ nghĩa xã hội bao gồm mấy giai cấp, tầng lớp?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 19,
+      "id": "bai-4-q19",
+      "type": "single_choice",
+      "content": "Trong thời kỳ quả độ lên chủ nghĩa xã hội ở Việt Nam, giai cấp nào là lực lượng đi đầu thực hiện nhiệm vụ trung tâm phát triển kinh tế, tiến hành công nghiệp hóa, hiện đại hóa đất nước?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 20,
+      "id": "bai-4-q20",
+      "type": "single_choice",
+      "content": "Nội dung cơ bản quyết định nhất, là cơ sở vật chất - kỹ thuật của liên minh giai cấp, tầng lớp trong thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là nội dung nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 21,
+      "id": "bai-4-q21",
+      "type": "multiple_choice",
+      "content": "Chọn cụm từ thích hợp điền vào chỗ trống của câu sau: \"Cơ cấu xã hội là những ..... cùng toàn bộ những mối quan hệ xã hội do sự tác động lẫn nhau của các cộng đồng ấy tạo nên\"",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ single_choice sang multiple_choice"
+      ],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 22,
+      "id": "bai-4-q22",
+      "type": "single_choice",
+      "content": "Trong thời kỳ quá độ lên chủ nghĩa xã hội, cơ cấu xã hội - giai cấp thường xuyên biến đổi theo mấy quy luật cơ bản?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 23,
+      "id": "bai-4-q23",
+      "type": "single_choice",
+      "content": "Theo C. Mác - Ph. Ăngnghen, “người bạn đồng minh tự nhiên\" của giai cấp công nhân là ai?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 24,
+      "id": "bai-4-q24",
+      "type": "single_choice",
+      "content": "Trong thời kỳ quá độ lên chủ nghĩa xã hội, cơ cấu xã hội - giai cấp gồm mấy giai cấp, tầng lớp cơ bản?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 25,
+      "id": "bai-4-q25",
+      "type": "multiple_choice",
+      "content": "Chọn ý sai về nội dung kinh tế của liên minh giữa giai cấp công nhân với giai cấp nông dân và các tầng lớp lao động khác trong trong cách mạng xã hội chủ nghĩa:",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ single_choice sang multiple_choice"
+      ],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 26,
+      "id": "bai-4-q26",
+      "type": "single_choice",
+      "content": "Theo V.I.Lênin, đâu là vấn đề mang tính nguyên tắc để đảm bảo cho thắng lợi của cuộc cách mạng xã hội chủ nghĩa tháng Mười Nga năm 1917?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 27,
+      "id": "bai-4-q27",
+      "type": "multiple_choice",
+      "content": "Chọn đáp án đúng điền vào chỗ trống cho câu sau: \"Cơ cấu xã hội - giai cấp là hệ thống các .. , ...tồn tại khách quan trong một chế độ xã hội nhất định,..'",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ single_choice sang multiple_choice"
+      ],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 28,
+      "id": "bai-4-q28",
+      "type": "single_choice",
+      "content": "Dưới góc độ chính trị - xã hội, môn Chủ nghĩa xã hội khoa học tập trung nghiên cứu cơ cấu xã hội nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 29,
+      "id": "bai-4-q29",
+      "type": "single_choice",
+      "content": "Trong cơ cấu xã hội của thời kỳ quá độ lên chủ nghĩa xã hội, cơ cấu xã hội nào giữ vị trí quan trọng hàng đầu, chi phối các loại hình cơ cấu xã hội khác?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 30,
+      "id": "bai-4-q30",
+      "type": "multiple_choice",
+      "content": "Những tầng lớp nào sau đây tham gia cơ cấu xã hội - giai cấp ở Việt Nam? (Chọn 2 đáp án đúng)",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A",
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 31,
+      "id": "bai-4-q31",
+      "type": "single_choice",
+      "content": "Trong thời kỳ quá độ lên chủ nghĩa xã hội, cơ cấu xã hội - giai cấp biến đổi trong mối quan hệ nào?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 32,
+      "id": "bai-4-q32",
+      "type": "multiple_choice",
+      "content": "Những phương hướng nào sau đây nhằm phát triển cơ cấu xã hội – giai cấp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội?  (Chọn 2 đáp án đúng)",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "B",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 33,
+      "id": "bai-4-q33",
+      "type": "multiple_choice",
+      "content": "Những nội dung nào sau đây là nội dung cơ bản của liên minh giai cấp, tầng lớp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội?   (Chọn 2 đáp án đúng)",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "C",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 34,
+      "id": "bai-4-q34",
+      "type": "multiple_choice",
+      "content": "Những phương hướng nào sau đây củng cố liên minh giai cấp, tầng lớp ở Việt Nam",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "B",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 35,
+      "id": "bai-4-q35",
+      "type": "multiple_choice",
+      "content": "Những chính sách nào sau đây hỗ trợ xây dựng cơ cấu xã hội - giai cấp ở Việt Nam?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 36,
+      "id": "bai-4-q36",
+      "type": "multiple_choice",
+      "content": "Những lực lượng nào sau đây là trung tâm trong cơ cấu xã hội - giai cấp ở Việt Nam",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "B",
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 37,
+      "id": "bai-4-q37",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "Đúng",
+        "Sai",
+        "Sai",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 38,
+      "id": "bai-4-q38",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "Sai",
+        "Sai",
+        "Đúng",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 39,
+      "id": "bai-4-q39",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 40,
+      "id": "bai-4-q40",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Sai"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 41,
+      "id": "bai-4-q41",
+      "type": "drag_drop_columns",
+      "content": "Kéo thả các yếu tố liên quan đến liên minh giai cấp, tầng lớp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội vào các cột tương ứng.",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 42,
+      "id": "bai-4-q42",
+      "type": "drag_drop",
+      "content": "Kéo thả các khái niệm khớp với các phát biểu về cơ cấu xã hội - giai cấp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội dưới đây:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 43,
+      "id": "bai-4-q43",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án đúng ứng với từng phát biểu sau đây về vị trí, vai trò của các giai cấp, tầng lớp trong cơ cấu xã hội – giai cấp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 44,
+      "id": "bai-4-q44",
+      "type": "drag_drop_columns",
+      "content": "Kéo thả các yếu tố liên quan đến cơ cấu xã hội - giai cấp ở Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội vào các cột tương ứng:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-4",
+      "number": 45,
+      "id": "bai-4-q45",
+      "type": "drag_drop",
+      "content": "Kéo thả",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    }
+  ],
+  "bai-5": [
+    {
+      "lesson": "bai-5",
+      "number": 1,
+      "id": "bai-5-q1",
+      "type": "single_choice",
+      "content": "Quan điểm: Không phân biệt dân tộc lớn hay nhỏ, ở trình độ phát triển cao hay thấp, các dân tộc đều có nghĩa vụ và quyền lợi ngang nhau trên tất cả các lĩnh vực của đời sống xã hội - thuộc nội dung nào trong Cương lĩnh dân tộc của V.I. Lênin?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 2,
+      "id": "bai-5-q2",
+      "type": "multiple_choice",
+      "content": "Theo quan điểm của chủ nghĩa Mác – Lênin, để thực hiện được bình đẳng dân tộc cần phải làm gì? (Chọn 2 đáp án)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A",
+        "B"
+      ],
+      "new_answers": [
+        "A",
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 3,
+      "id": "bai-5-q3",
+      "type": "single_choice",
+      "content": "Thứ tự quá trình phát triển của dân tộc lần lượt trải qua các hình thức nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 4,
+      "id": "bai-5-q4",
+      "type": "single_choice",
+      "content": "Theo chủ nghĩa Mác – Lênin, nguyên nhân nào dẫn đến các cộng đồng dân cư muốn tách ra để hình thành cộng đồng dân tộc độc lập?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 5,
+      "id": "bai-5-q5",
+      "type": "single_choice",
+      "content": "Trong những nội dung của quyền dân tộc tự quyết, nội dung nào được coi là cơ bản, trước hết?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 6,
+      "id": "bai-5-q6",
+      "type": "single_choice",
+      "content": "Hiểu theo nghĩa rộng, dân tộc là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 7,
+      "id": "bai-5-q7",
+      "type": "single_choice",
+      "content": "Đâu là đặc trưng quan trọng nhất, là cơ sở để liên kết các thành viên của dân tộc tạo thành nền tảng vững chắc của cộng đồng dân tộc?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 8,
+      "id": "bai-5-q8",
+      "type": "single_choice",
+      "content": "Ở Việt Nam hiện nay có khoảng bao nhiêu dân tộc?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 9,
+      "id": "bai-5-q9",
+      "type": "single_choice",
+      "content": "Tìm đáp án sai về đặc điểm dân tộc ở Việt Nam:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 10,
+      "id": "bai-5-q10",
+      "type": "single_choice",
+      "content": "Vận dụng kiến thức về vấn đề dân tộc, hãy chỉ ra điểm khác biệt cơ bản trong quá trình hình thành nên dân tộc Việt Nam so với các dân tộc khác là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 11,
+      "id": "bai-5-q11",
+      "type": "single_choice",
+      "content": "Đối với quốc gia và từng thành viên của dân tộc, yếu tố nào là thiêng liêng nhất mà nếu không có thì không có khái niệm Tổ quốc, quốc gia?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 12,
+      "id": "bai-5-q12",
+      "type": "single_choice",
+      "content": "Tôn giáo là một phạm trù thuộc:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 13,
+      "id": "bai-5-q13",
+      "type": "single_choice",
+      "content": "Tôn giáo là sản phẩm của ai?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 14,
+      "id": "bai-5-q14",
+      "type": "single_choice",
+      "content": "Tôn giáo khác với tín ngưỡng ở điểm nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 15,
+      "id": "bai-5-q15",
+      "type": "single_choice",
+      "content": "Về phương diện thế giới quan, tôn giáo mang bản chất:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 16,
+      "id": "bai-5-q16",
+      "type": "single_choice",
+      "content": "Niềm tin của con người vào các lực lượng siêu nhiên, thần thánh đến mức độ mê muội, cuồng tín, dẫn đến những hành vi cực đoan, sai lệch quá mức, trái với các giá trị văn hoá, đạo đức, pháp luật – gọi là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 17,
+      "id": "bai-5-q17",
+      "type": "single_choice",
+      "content": "Sự sợ hãi trước những hiện tượng tự nhiên, xã hội, hay lúc ốm đau, những may rủi, bất ngờ, tâm lý muốn bình yên khi làm việc lớn… khiến con người dễ tìm đến với hình thái ý thức xã hội nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 18,
+      "id": "bai-5-q18",
+      "type": "multiple_choice",
+      "content": "Tại sao ngày nay khoa học đã phát triển rất mạnh mẽ mà tôn giáo vẫn có xu hướng phát triển? (Chọn 2 đáp án)",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C",
+        "D"
+      ],
+      "new_answers": [
+        "C",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 19,
+      "id": "bai-5-q19",
+      "type": "single_choice",
+      "content": "Vận dụng kiến thức về đặc điểm tôn giáo ở Việt Nam, hãy xác định số lượng tôn giáo đã được công nhận và cấp đăng ký hoạt động ở Việt Nam:",
+      "status": "FIXED",
+      "details": [
+        "Đáp án đổi từ ['D'] sang ['C']"
+      ],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 20,
+      "id": "bai-5-q20",
+      "type": "single_choice",
+      "content": "Vì sao Đảng, Nhà nước Việt Nam chủ trương luôn tôn trọng, bảo đảm quyền tự do tín ngưỡng tôn giáo và không tín ngưỡng tôn giáo của nhân dân?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 21,
+      "id": "bai-5-q21",
+      "type": "single_choice",
+      "content": "Tìm đáp án sai về nguồn gốc hình thành của tôn giáo:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 22,
+      "id": "bai-5-q22",
+      "type": "single_choice",
+      "content": "Luận điểm nổi tiếng: “Tôn giáo là tiếng thở dài của chúng sinh bị áp bức, là trái tim của thế giới không có trái tim… Tôn giáo là thuốc phiện của nhân dân” là của ai?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "B"
+      ],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 23,
+      "id": "bai-5-q23",
+      "type": "single_choice",
+      "content": "Theo chủ nghĩa Mác – Lênin, xét đến cùng nhân tố quyết định sự tồn tại và phát triển của các hình thái ý thức xã hội, trong đó có tôn giáo là gì?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 24,
+      "id": "bai-5-q24",
+      "type": "single_choice",
+      "content": "Tôn giáo ra đời từ những nguồn gốc cơ bản nào?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "A"
+      ],
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 25,
+      "id": "bai-5-q25",
+      "type": "single_choice",
+      "content": "Đâu là sự giống nhau giữa tôn giáo và tín ngưỡng?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 26,
+      "id": "bai-5-q26",
+      "type": "single_choice",
+      "content": "Tại sao các tôn giáo ở Việt Nam luôn đồng hành cùng dân tộc và có nhiều đóng góp quan trọng trong quá trình xây dựng và bảo vệ đất nước?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "C"
+      ],
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 27,
+      "id": "bai-5-q27",
+      "type": "single_choice",
+      "content": "Dân tộc hiểu theo nghĩa hẹp là:",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 28,
+      "id": "bai-5-q28",
+      "type": "single_choice",
+      "content": "Nội dung nào vừa là nội dung chủ yếu vừa là giải pháp quan trọng để liên kết các nội dung của Cương lĩnh dân tộc thành một chỉnh thể?",
+      "status": "PASS",
+      "details": [],
+      "old_answers": [
+        "D"
+      ],
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 29,
+      "id": "bai-5-q29",
+      "type": "multiple_choice",
+      "content": "Hãy chỉ ra đâu là nguyên tắc, tôn trọng của Tôn giáo? (Chọn 2 đáp án đúng)",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ true_false_group sang multiple_choice",
+        "Đáp án đổi từ ['Đúng', 'Sai', 'Đúng', 'Đúng'] sang ['C', 'D']"
+      ],
+      "old_answers": [
+        "Đúng",
+        "Sai",
+        "Đúng",
+        "Đúng"
+      ],
+      "new_answers": [
+        "C",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 30,
+      "id": "bai-5-q30",
+      "type": "multiple_choice",
+      "content": "Nội dung quyền bình đẳng dân tộc của Chủ nghĩa Mác – Lênin bao gồm: (Chọn 3 đáp án đúng)",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ true_false_group sang multiple_choice",
+        "Đáp án đổi từ ['Đúng', 'Đúng', 'Sai', 'Đúng'] sang ['B', 'C', 'D']"
+      ],
+      "old_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "new_answers": [
+        "B",
+        "C",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 31,
+      "id": "bai-5-q31",
+      "type": "single_choice",
+      "content": "Quá trình phát triển của dân tộc trải qua mấy hình thức cộng đồng người?",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ drag_drop_columns sang single_choice",
+        "Đáp án đổi từ [] sang ['B']"
+      ],
+      "old_answers": [],
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 32,
+      "id": "bai-5-q32",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ drag_drop sang true_false_group",
+        "Đáp án đổi từ [] sang ['Đúng', 'Sai', 'Đúng', 'Đúng']"
+      ],
+      "old_answers": [],
+      "new_answers": [
+        "Đúng",
+        "Sai",
+        "Đúng",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 33,
+      "id": "bai-5-q33",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "FIXED",
+      "details": [
+        "Loại câu hỏi đổi từ drag_drop sang true_false_group",
+        "Đáp án đổi từ [] sang ['Đúng', 'Đúng', 'Sai', 'Đúng']"
+      ],
+      "old_answers": [],
+      "new_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 34,
+      "id": "bai-5-q34",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "Đúng",
+        "Đúng",
+        "Sai",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 35,
+      "id": "bai-5-q35",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "Đúng",
+        "Sai",
+        "Đúng",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 36,
+      "id": "bai-5-q36",
+      "type": "drag_drop_columns",
+      "content": "Kéo thả các yếu tố liên quan vào các cột tương ứng:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 37,
+      "id": "bai-5-q37",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án đúng tương ứng với các phát biểu về dân tộc dưới đây:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 38,
+      "id": "bai-5-q38",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án đúng khớp với các phát biểu dưới đây:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 39,
+      "id": "bai-5-q39",
+      "type": "drag_drop_columns",
+      "content": "Kéo thả các yếu tố liên quan vào các cột tương ứng:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 40,
+      "id": "bai-5-q40",
+      "type": "drag_drop_columns",
+      "content": "Kéo thả các yếu tố liên quan đến tôn giáo vào các cột tương ứng:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 41,
+      "id": "bai-5-q41",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án khớp với các phát biểu sau đây:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-5",
+      "number": 42,
+      "id": "bai-5-q42",
+      "type": "drag_drop",
+      "content": "Kéo thả các đáp án khớp với các phát biểu về tôn giáo, tín ngưỡng dưới đây:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    }
+  ],
+  "bai-6": [
+    {
+      "lesson": "bai-6",
+      "number": 1,
+      "id": "bai-6-q1",
+      "type": "multiple_choice",
+      "content": "Hai mối quan hệ cơ bản hình thành gia đình là: (chọn nhiều đáp án)",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A",
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 2,
+      "id": "bai-6-q2",
+      "type": "single_choice",
+      "content": "Vị trí của gia đình trong xã hội là:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 3,
+      "id": "bai-6-q3",
+      "type": "single_choice",
+      "content": "Tình yêu giữa nam và nữ trở thành quan hệ hôn nhân được thể hiện bằng:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 4,
+      "id": "bai-6-q4",
+      "type": "single_choice",
+      "content": "Chọn đáp án đúng điền vào chỗ trống trong luận điểm sau: \"Hằng ngày tái tạo ra đời sống của bản thân mình, con người bắt đầu tạo ra những người khác, sinh sôi nẩy nở - đó là quan hệ giữa chồng và vợ, cha mẹ và con cái, đó là....\"",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 5,
+      "id": "bai-6-q5",
+      "type": "single_choice",
+      "content": "Quan hệ nào được coi là cơ sở, nền tảng hình thành nên các mối quan hệ khác trong gia đình?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 6,
+      "id": "bai-6-q6",
+      "type": "single_choice",
+      "content": "Gia đình phải thực hiện chức năng nào để đảm bảo nguồn sinh sống, đáp ứng nhu cầu vật chất, tinh thần của các thành viên trong gia đình?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 7,
+      "id": "bai-6-q7",
+      "type": "single_choice",
+      "content": "Chỉ ra chức năng đảm bảo tái sản xuất nguồn lao động và sức lao động cho xã hội của gia đình:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 8,
+      "id": "bai-6-q8",
+      "type": "single_choice",
+      "content": "Thực hiện chức năng nào của gia đình nhằm góp phần to lớn vào việc đào tạo thế hệ trẻ, thế hệ tương lai của xã hội?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 9,
+      "id": "bai-6-q9",
+      "type": "single_choice",
+      "content": "Với chức năng chính trị, gia đình là:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 10,
+      "id": "bai-6-q10",
+      "type": "single_choice",
+      "content": "Gia đình Việt Nam ngày nay có thể được coi là:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 11,
+      "id": "bai-6-q11",
+      "type": "multiple_choice",
+      "content": "Sự thay đổi quy mô của gia đình hiện nay ở Việt Nam có tác động như thế nào đối với xã hội? (Chọn nhiều đáp án)",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A",
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 12,
+      "id": "bai-6-q12",
+      "type": "single_choice",
+      "content": "Quan điểm sau đây của ai: \"Nhiều gia đình cộng lại mới thành xã hội, xã hội tốt thì gia đình càng tốt, gia đình tốt thì xã hội mới tốt. Hạt nhân của xã hội chính là gia đình\"?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 13,
+      "id": "bai-6-q13",
+      "type": "single_choice",
+      "content": "Chức năng của gia đình là:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "B"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 14,
+      "id": "bai-6-q14",
+      "type": "single_choice",
+      "content": "So với các chế độ xã hội trước thì quan hệ gia đình trong thời kỳ quá độ lên chủ nghĩa xã hội có đặc điểm khác biệt gì về chất?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 15,
+      "id": "bai-6-q15",
+      "type": "single_choice",
+      "content": "Chọn đáp án sai về mô hình gia đình Việt Nam hiện đại ngày nay?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 16,
+      "id": "bai-6-q16",
+      "type": "multiple_choice",
+      "content": "Chức năng tái sản xuất của gia đình Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội có những biến đổi như thế nào? (Chọn 2 đáp án đúng)",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "C",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 17,
+      "id": "bai-6-q17",
+      "type": "single_choice",
+      "content": "Gia đình là:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 18,
+      "id": "bai-6-q18",
+      "type": "single_choice",
+      "content": "Trong gia đình Việt Nam hiện đại ngày nay, nhu cầu về con cái đã có những thay đổi căn bản như thế nào?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 19,
+      "id": "bai-6-q19",
+      "type": "single_choice",
+      "content": "Sự biến đổi quan hệ giữa các thế hệ, các giá trị, chuẩn mực văn hóa của gia đình hạt nhân ngày nay có tác động tiêu cực như thế nào đối với người cao tuổi?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 20,
+      "id": "bai-6-q20",
+      "type": "single_choice",
+      "content": "Sự biến đổi trong việc thực hiện chức năng giáo dục của gia đình Việt Nam hiện nay là gì?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 21,
+      "id": "bai-6-q21",
+      "type": "multiple_choice",
+      "content": "Quy mô của gia đình Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội có những biến đổi như thế nào? (Chọn 2 đáp án đúng)",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "A",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 22,
+      "id": "bai-6-q22",
+      "type": "single_choice",
+      "content": "Xu hướng phát triển của quy mô gia đình Việt Nam ngày nay như thế nào?",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "C"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 23,
+      "id": "bai-6-q23",
+      "type": "multiple_choice",
+      "content": "Những vấn đề xã hội nào có dấu hiệu gia tăng đối với gia đình Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội? (Chọn 2 đáp án đúng)",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "B",
+        "D"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 24,
+      "id": "bai-6-q24",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "Sai",
+        "Sai",
+        "Đúng",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 25,
+      "id": "bai-6-q25",
+      "type": "true_false_group",
+      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [
+        "Sai",
+        "Sai",
+        "Đúng",
+        "Đúng"
+      ],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 26,
+      "id": "bai-6-q26",
+      "type": "drag_drop_columns",
+      "content": "Kéo thả các yếu tố liên quan đến biến đổi gia đình Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội vào các cột tương ứng:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    },
+    {
+      "lesson": "bai-6",
+      "number": 27,
+      "id": "bai-6-q27",
+      "type": "drag_drop",
+      "content": "Kéo thả các khái niệm khớp với các phát biểu về biến đổi gia đình Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội dưới đây:",
+      "status": "ADDED",
+      "details": [
+        "Câu hỏi mới bổ sung từ tài liệu Word"
+      ],
+      "old_answers": null,
+      "new_answers": [],
+      "pdf_basis": ""
+    }
+  ]
+}

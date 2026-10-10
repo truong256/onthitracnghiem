@@ -4,3 +4,5 @@ dist/
 *.log
 .gemini/
 .agents/
+__pycache__/
+*.pyc
