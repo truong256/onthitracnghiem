@@ -405,10 +405,16 @@ class App {
         const row = document.createElement('div');
         row.className = 'tf-item-row';
 
+        let tfFeedbackHtml = '';
         if (isChecked && evalRes && evalRes.itemResults) {
           const itRes = evalRes.itemResults.find(r => r.order === it.order);
           if (itRes) {
             row.classList.add(itRes.isCorrect ? 'eval-correct' : 'eval-wrong');
+            if (itRes.isCorrect) {
+              tfFeedbackHtml = `<span class="tf-eval-tag correct">✓ Đúng</span>`;
+            } else {
+              tfFeedbackHtml = `<span class="tf-eval-tag wrong">✗ Sai (Đáp án đúng: ${it.correctAnswer})</span>`;
+            }
           }
         }
 
@@ -416,6 +422,7 @@ class App {
           <div class="tf-item-statement">
             <span class="tf-num">${it.order}.</span>
             <span>${escapeHtml(it.statement)}</span>
+            ${tfFeedbackHtml ? `<div style="margin-top: 4px;">${tfFeedbackHtml}</div>` : ''}
           </div>
           <div class="tf-buttons-group">
             <button class="btn-tf btn-tf-true ${userChoice === 'Đúng' ? 'selected-true' : ''}" data-ans="Đúng">Đúng</button>
@@ -452,7 +459,11 @@ class App {
         if (isLocked) return;
         sounds.playClick();
         this.quizEngine.setAnswer(question.id, updatedState);
-      }, { isReadOnly: isLocked });
+      }, {
+        isReadOnly: isLocked,
+        isChecked: isChecked,
+        evalRes: isChecked ? evalRes : null
+      });
 
       this.dragDropEngine.render(question, userAnswer);
     }

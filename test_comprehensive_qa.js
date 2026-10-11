@@ -323,6 +323,104 @@ runTest('TC05-03', 'TC05', 'DragDropEngine khởi tạo cấu trúc 2 cột, h�
   }
 });
 
+runTest('TC05-04', 'TC05', 'DragDropEngine hiển thị đầy đủ banner kết quả, màu sắc Đúng/Sai và đáp án khi bấm Kiểm tra', () => {
+  class MockElement {
+    constructor(tag) {
+      this.tagName = tag;
+      this.children = [];
+      this.classList = new Set();
+      this.dataset = {};
+      this.listeners = {};
+      this._innerHTML = '';
+    }
+    set className(val) {
+      this.classList = new Set((val || '').split(' ').filter(Boolean));
+    }
+    get className() {
+      return Array.from(this.classList).join(' ');
+    }
+    set innerHTML(val) {
+      this._innerHTML = val;
+    }
+    get innerHTML() {
+      return this._innerHTML;
+    }
+    appendChild(child) {
+      this.children.push(child);
+    }
+    addEventListener(evt, fn) {
+      this.listeners[evt] = fn;
+    }
+    querySelector() { return new MockElement('mock'); }
+    querySelectorAll() { return []; }
+  }
+
+  const prevDoc = global.document;
+  global.document = {
+    createElement(tag) { return new MockElement(tag); }
+  };
+
+  try {
+    const mount = new MockElement('div');
+    const qDD = {
+      id: 'bai-1-q39-test',
+      type: 'drag_drop',
+      pairs: [
+        { id: 'p1', prompt: 'Prompt 1', correctAnswer: 'Đảng Cộng Sản' },
+        { id: 'p2', prompt: 'Prompt 2', correctAnswer: 'tầng lớp nhân dân' }
+      ]
+    };
+
+    // User answered: p1 correctly, p2 incorrectly
+    const evalRes = {
+      isCorrect: false,
+      score: 0.5,
+      correctPairs: 1,
+      totalPairs: 2,
+      pairResults: [
+        { id: 'p1', prompt: 'Prompt 1', correctAnswer: 'Đảng Cộng Sản', userAnswer: 'Đảng Cộng Sản', isCorrect: true },
+        { id: 'p2', prompt: 'Prompt 2', correctAnswer: 'tầng lớp nhân dân', userAnswer: 'tầng lớp tri thức', isCorrect: false }
+      ]
+    };
+
+    const engine = new DragDropEngine(mount, () => {}, {
+      isReadOnly: true,
+      isChecked: true,
+      evalRes
+    });
+
+    engine.render(qDD, { p1: 'Đảng Cộng Sản', p2: 'tầng lớp tri thức' });
+
+    const wrapper = mount.children[0];
+    assert(wrapper, 'Wrapper được tạo');
+    // Top banner should exist
+    const hasBanner = wrapper.children.some(c => c.classList.has('dd-eval-banner') && c.classList.has('eval-wrong'));
+    assert(hasBanner, 'Banner đánh giá Chưa chính xác xuất hiện ở đầu');
+
+    // Statements column should have feedback
+    const statementsCol = wrapper.children.find(c => c.classList.has('dd-statements-col'));
+    assert(statementsCol, 'Cột statements tồn tại');
+    assert(statementsCol.children.length === 2, 'Có 2 dòng phát biểu');
+
+    // Row 1 has eval-correct slot, Row 2 has eval-wrong slot
+    const row1 = statementsCol.children[0];
+    const slotWrapper1 = row1.children[1];
+    const dropSlot1 = slotWrapper1.children[0];
+    assert(dropSlot1.classList.has('eval-correct'), 'Vị trí 1 được đánh dấu eval-correct');
+
+    const row2 = statementsCol.children[1];
+    const slotWrapper2 = row2.children[1];
+    const dropSlot2 = slotWrapper2.children[0];
+    assert(dropSlot2.classList.has('eval-wrong'), 'Vị trí 2 được đánh dấu eval-wrong');
+
+    // Row 2 should show correct answer hint
+    const hasCorrectHint = slotWrapper2.children.some(c => c.classList.has('dd-pair-correct-feedback') && c.innerHTML.includes('tầng lớp nhân dân'));
+    assert(hasCorrectHint, 'Hiển thị đối chiếu đáp án đúng cho vị trí ghép sai');
+  } finally {
+    global.document = prevDoc;
+  }
+});
+
 // =============================================================================
 // TC06: ĐIỀU HƯỚNG CÂU HỎI & LƯU TRẠNG THÁI PHIÊN
 // =============================================================================

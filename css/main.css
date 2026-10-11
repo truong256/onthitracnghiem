@@ -618,6 +618,24 @@ body.quiz-mode .top-navbar {
   color: #ffffff;
 }
 
+.tf-item-row.eval-correct {
+  border-color: #16a34a !important;
+  background-color: #f0fdf4 !important;
+}
+
+.tf-item-row.eval-correct .tf-item-statement {
+  color: #15803d;
+}
+
+.tf-item-row.eval-wrong {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+
+.tf-item-row.eval-wrong .tf-item-statement {
+  color: #b91c1c;
+}
+
 /* =======================================================
    5. DRAG AND DROP STYLING (Bám sát ảnh 1, 2, 15)
    ======================================================= */
@@ -979,6 +997,228 @@ body.quiz-mode .top-navbar {
 }
 
 /* =======================================================
+   5C. DRAG & DROP EVALUATION STYLES (Instant Check & Review)
+   ======================================================= */
+/* Evaluation Banners */
+.dd-eval-banner {
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+  animation: fadeIn 0.25s ease;
+}
+
+.dd-eval-banner.eval-correct {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  color: #15803d;
+}
+
+.dd-eval-banner.eval-wrong {
+  background: #fef2f2;
+  border: 1.5px solid #fca5a5;
+  color: #b91c1c;
+}
+
+.dd-eval-banner-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.dd-eval-icon {
+  font-size: 13px;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.dd-eval-banner.eval-correct .dd-eval-icon {
+  background: #16a34a;
+}
+
+.dd-eval-banner.eval-wrong .dd-eval-icon {
+  background: #dc2626;
+}
+
+.dd-eval-title {
+  font-weight: 700;
+  font-size: 14.5px;
+}
+
+.dd-eval-score {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.dd-eval-note {
+  font-size: 12.5px;
+  margin-left: 30px;
+  opacity: 0.88;
+}
+
+/* Slot & Pair Evaluation Styles */
+.dd-slot-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.dd-drop-slot.eval-correct {
+  border-color: #16a34a !important;
+  background-color: #f0fdf4 !important;
+  border-style: solid !important;
+}
+
+.dd-drop-slot.eval-wrong {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+  border-style: solid !important;
+}
+
+.dd-chip.placed.eval-correct {
+  border-color: #16a34a !important;
+  background-color: #ffffff !important;
+  color: #15803d !important;
+}
+
+.dd-chip.placed.eval-wrong {
+  border-color: #dc2626 !important;
+  background-color: #ffffff !important;
+  color: #b91c1c !important;
+}
+
+.chip-eval-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.chip-eval-tag.correct {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.chip-eval-tag.wrong {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.dd-pair-correct-feedback {
+  font-size: 12.5px;
+  padding: 6px 10px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  color: #92400e;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  line-height: 1.4;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  animation: fadeIn 0.2s ease;
+}
+
+.dd-feedback-arrow {
+  font-weight: 800;
+  color: #d97706;
+}
+
+.dd-feedback-label {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dd-feedback-val {
+  font-weight: 700;
+  color: #15803d;
+}
+
+/* Columns Mode Evaluation */
+.dd-col-box.eval-correct {
+  border-color: #16a34a !important;
+}
+
+.dd-col-box.eval-wrong {
+  border-color: #dc2626 !important;
+}
+
+.dd-col-eval-status {
+  margin-left: auto;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.dd-col-eval-status.correct {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.dd-col-eval-status.wrong {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.dd-col-missing-box {
+  margin-top: 6px;
+  padding: 8px 10px;
+  background: #f0fdf4;
+  border: 1px dashed #86efac;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: fadeIn 0.2s ease;
+}
+
+.dd-missing-header {
+  font-size: 12px;
+  font-weight: 700;
+  color: #166534;
+}
+
+.dd-missing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dd-chip-missing {
+  font-size: 12.5px;
+  color: #15803d;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.missing-bullet {
+  font-weight: 800;
+  color: #16a34a;
+}
+
+/* =======================================================
    6. BOTTOM BAR & PAGINATION (Bám sát 100% ảnh)
    ======================================================= */
 .bottom-quiz-bar {
@@ -1312,6 +1552,10 @@ body.quiz-mode .top-navbar {
     min-height: 44px;
     padding: 6px 10px;
     border-radius: 6px;
+  }
+
+  .dd-slot-wrapper {
+    width: 100%;
   }
 
   /* Drag & Drop Columns Mobile layout */
