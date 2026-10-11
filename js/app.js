@@ -447,10 +447,12 @@ class App {
       ddMount.id = 'dd-interactive-mount';
       this.quizAnswersContainer.appendChild(ddMount);
 
+      const isLocked = state.isSubmitted || state.checkedQuestions.includes(question.id);
       this.dragDropEngine = new DragDropEngine(ddMount, (updatedState) => {
+        if (isLocked) return;
         sounds.playClick();
         this.quizEngine.setAnswer(question.id, updatedState);
-      });
+      }, { isReadOnly: isLocked });
 
       this.dragDropEngine.render(question, userAnswer);
     }
