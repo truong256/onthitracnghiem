@@ -1,19 +1,31 @@
 /**
  * Drag & Drop Engine supporting Desktop HTML5 Drag and Mobile Tap-to-Place
+ * Supports both Standard (statement -> slot) and Multi-Columns categorization modes.
  */
 
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 export class DragDropEngine {
-  constructor(containerEl, onAnswerChanged) {
+  constructor(containerEl, onAnswerChanged, options = {}) {
     this.container = containerEl;
     this.onAnswerChanged = onAnswerChanged;
+    this.isReadOnly = Boolean(options.isReadOnly);
     this.selectedChip = null; // for tap-to-place on mobile/click
     this.draggedValue = null; // for HTML5 drag
-    this.draggedFrom = null; // slot id or 'pool'
+    this.draggedFrom = null; // slot id, col id, or 'pool'
   }
 
   render(question, savedState = null) {
     this.question = question;
-    this.currentState = savedState || {}; // mapping targetId -> placedText
+    this.currentState = savedState || {}; // mapping targetId -> placedText or colId -> [items]
     this.container.innerHTML = '';
 
     if (question.type === 'drag_drop_columns') {
@@ -39,6 +51,9 @@ export class DragDropEngine {
 
     const wrapper = document.createElement('div');
     wrapper.className = 'dd-standard-wrapper';
+    if (this.selectedChip) {
+      wrapper.classList.add('has-selection');
+    }
 
     // 1. TOP: Draggable Chips Pool (Below question, above statements)
     const poolCol = document.createElement('div');
@@ -53,28 +68,32 @@ export class DragDropEngine {
     chipsContainer.className = 'dd-chips-container';
 
     if (availablePool.length === 0) {
-      chipsContainer.innerHTML = `<div class="dd-empty-pool">Đã xếp hết tất cả các thẻ vào vị trí!</div>`;
+      chipsContainer.innerHTML = `<div class="dd-empty-pool"><span style="color: #16a34a; font-weight: 700; margin-right: 6px;">✓</span>Đã xếp hết tất cả các thẻ vào vị trí!</div>`;
     } else {
       availablePool.forEach((chipText) => {
         const chip = document.createElement('div');
-        chip.className = `dd-chip ${this.selectedChip === chipText ? 'selected' : ''}`;
-        chip.draggable = true;
+        const isSelected = this.selectedChip === chipText;
+        chip.className = `dd-chip ${isSelected ? 'selected' : ''}`;
+        chip.draggable = !this.isReadOnly;
         chip.dataset.value = chipText;
-        chip.innerHTML = `<span class="chip-text">${chipText}</span>`;
+        chip.innerHTML = `<span class="chip-text">${escapeHtml(chipText)}</span>`;
 
-        this.attachChipDragEvents(chip, chipText, 'pool');
-        
-        // Tap to select (mobile / click support)
-        chip.addEventListener('click', (e) => {
-          e.stopPropagation();
-          this.toggleChipSelection(chipText);
-        });
+        if (!this.isReadOnly) {
+          this.attachChipDragEvents(chip, chipText, 'pool');
+          chip.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleChipSelection(chipText);
+          });
+        }
 
         chipsContainer.appendChild(chip);
       });
     }
 
     poolCol.appendChild(chipsContainer);
+    if (!this.isReadOnly) {
+      this.attachPoolDropEvents(poolCol);
+    }
 
     // 2. BOTTOM: Statements list with drop slots
     const statementsCol = document.createElement('div');
@@ -98,29 +117,36 @@ export class DragDropEngine {
       if (placedVal) {
         const filledChip = document.createElement('div');
         filledChip.className = 'dd-chip placed';
-        filledChip.draggable = true;
-        filledChip.innerHTML = `<span class="chip-text">${placedVal}</span><span class="chip-remove" title="Bỏ chọn">×</span>`;
+        filledChip.draggable = !this.isReadOnly;
+        filledChip.innerHTML = `
+          <span class="chip-text">${escapeHtml(placedVal)}</span>
+          ${!this.isReadOnly ? `<button type="button" class="chip-remove" title="Bỏ chọn (trả về danh sách)">×</button>` : ''}
+        `;
         
-        filledChip.querySelector('.chip-remove').addEventListener('click', (e) => {
-          e.stopPropagation();
-          this.removePlacedItem(targetId);
-        });
-
-        // Allow dragging back out
-        this.attachChipDragEvents(filledChip, placedVal, targetId);
+        if (!this.isReadOnly) {
+          const removeBtn = filledChip.querySelector('.chip-remove');
+          if (removeBtn) {
+            removeBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              this.removePlacedItem(targetId);
+            });
+          }
+          this.attachChipDragEvents(filledChip, placedVal, targetId);
+        }
         dropSlot.appendChild(filledChip);
       } else {
         dropSlot.innerHTML = `<span class="dd-slot-placeholder">Kéo và thả đáp án vào đây</span>`;
       }
 
-      this.attachSlotEvents(dropSlot, targetId);
+      if (!this.isReadOnly) {
+        this.attachSlotEvents(dropSlot, targetId);
+      }
 
       itemRow.appendChild(textSpan);
       itemRow.appendChild(dropSlot);
       statementsCol.appendChild(itemRow);
     });
 
-    // Append chips pool at top, statements below
     wrapper.appendChild(poolCol);
     wrapper.appendChild(statementsCol);
     this.container.appendChild(wrapper);
@@ -151,34 +177,55 @@ export class DragDropEngine {
 
     const wrapper = document.createElement('div');
     wrapper.className = 'dd-columns-wrapper';
+    if (this.selectedChip) {
+      wrapper.classList.add('has-selection');
+    }
 
-    // Top: Draggable Chips Pool
+    // Top: Draggable Chips Pool Section
     const poolContainer = document.createElement('div');
     poolContainer.className = 'dd-col-pool-section';
 
     const poolHeader = document.createElement('div');
-    poolHeader.className = 'dd-pool-header';
-    poolHeader.innerHTML = `<span>Các yếu tố cần phân loại:</span>`;
+    poolHeader.className = 'dd-col-pool-header';
+    poolHeader.innerHTML = `
+      <div class="dd-pool-title">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>Danh sách các thẻ cần phân loại:</span>
+      </div>
+      <div class="dd-pool-hint">Kéo thả hoặc nhấp chọn thẻ rồi chọn cột tương ứng</div>
+    `;
 
     const chipsContainer = document.createElement('div');
-    chipsContainer.className = 'dd-chips-container';
+    chipsContainer.className = 'dd-chips-container dd-pool-chips';
 
     if (availablePool.length === 0) {
-      chipsContainer.innerHTML = `<div class="dd-empty-pool">Đã phân loại xong tất cả các yếu tố!</div>`;
+      chipsContainer.innerHTML = `
+        <div class="dd-empty-pool">
+          <span style="color: #16a34a; font-weight: 700; margin-right: 6px;">✓</span>
+          Đã xếp hết tất cả các thẻ vào vị trí! Nhấp dấu × trên thẻ trong cột nếu bạn muốn xếp lại.
+        </div>
+      `;
     } else {
       availablePool.forEach((itemText) => {
         const chip = document.createElement('div');
-        chip.className = `dd-chip ${this.selectedChip === itemText ? 'selected' : ''}`;
-        chip.draggable = true;
+        const isSelected = this.selectedChip === itemText;
+        chip.className = `dd-chip ${isSelected ? 'selected' : ''}`;
+        chip.draggable = !this.isReadOnly;
         chip.dataset.value = itemText;
-        chip.innerHTML = `<span class="chip-text">${itemText}</span>`;
+        chip.innerHTML = `<span class="chip-text">${escapeHtml(itemText)}</span>`;
 
-        this.attachChipDragEvents(chip, itemText, 'pool');
-
-        chip.addEventListener('click', (e) => {
-          e.stopPropagation();
-          this.toggleChipSelection(itemText);
-        });
+        if (!this.isReadOnly) {
+          this.attachChipDragEvents(chip, itemText, 'pool');
+          chip.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleChipSelection(itemText);
+          });
+        }
 
         chipsContainer.appendChild(chip);
       });
@@ -186,19 +233,25 @@ export class DragDropEngine {
 
     poolContainer.appendChild(poolHeader);
     poolContainer.appendChild(chipsContainer);
+    if (!this.isReadOnly) {
+      this.attachPoolDropEvents(poolContainer);
+    }
 
     // Columns container
     const colsGrid = document.createElement('div');
     colsGrid.className = 'dd-columns-grid';
 
-    columns.forEach(col => {
+    columns.forEach((col, cIdx) => {
       const colBox = document.createElement('div');
       colBox.className = 'dd-col-box';
       colBox.dataset.colId = col.id;
 
       const colHeader = document.createElement('div');
       colHeader.className = 'dd-col-header';
-      colHeader.textContent = col.title;
+      colHeader.innerHTML = `
+        <span class="dd-col-badge">Cột ${cIdx + 1}</span>
+        <span class="dd-col-title-text">${escapeHtml(col.title)}</span>
+      `;
 
       const colDropZone = document.createElement('div');
       colDropZone.className = 'dd-col-dropzone';
@@ -206,32 +259,68 @@ export class DragDropEngine {
 
       const itemsInCol = this.currentState[col.id] || [];
       if (itemsInCol.length === 0) {
-        colDropZone.innerHTML = `<div class="dd-col-placeholder">Kéo hoặc chạm thẻ để đưa vào cột này</div>`;
+        colDropZone.innerHTML = `
+          <div class="dd-col-placeholder">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="dd-placeholder-icon">
+              <path d="M12 3v12m0 0l-4-4m4 4l4-4"/>
+              <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>
+            </svg>
+            <span>Kéo hoặc chạm thẻ để đưa vào cột này</span>
+          </div>
+        `;
       } else {
         itemsInCol.forEach((itemText, idx) => {
           const placedChip = document.createElement('div');
           placedChip.className = 'dd-chip placed';
-          placedChip.draggable = true;
-          placedChip.innerHTML = `<span class="chip-text">${itemText}</span><span class="chip-remove">×</span>`;
+          placedChip.draggable = !this.isReadOnly;
+          placedChip.innerHTML = `
+            <span class="chip-text">${escapeHtml(itemText)}</span>
+            ${!this.isReadOnly ? `<button type="button" class="chip-remove" title="Bỏ chọn (trả về danh sách)">×</button>` : ''}
+          `;
 
-          placedChip.querySelector('.chip-remove').addEventListener('click', (e) => {
-            e.stopPropagation();
-            this.removeColumnItem(col.id, idx);
-          });
+          if (!this.isReadOnly) {
+            const removeBtn = placedChip.querySelector('.chip-remove');
+            if (removeBtn) {
+              removeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.removeColumnItem(col.id, idx);
+              });
+            }
+            this.attachChipDragEvents(placedChip, itemText, col.id);
+          }
 
-          this.attachChipDragEvents(placedChip, itemText, col.id);
           colDropZone.appendChild(placedChip);
         });
       }
 
-      this.attachColumnDropEvents(colDropZone, col.id);
+      if (!this.isReadOnly) {
+        this.attachColumnDropEvents(colDropZone, col.id);
+
+        // Clicking anywhere on colBox (including header) places the selected chip
+        colBox.addEventListener('click', (e) => {
+          if (e.target.closest('.chip-remove')) return;
+          if (this.selectedChip) {
+            this.addItemToColumn(col.id, this.selectedChip);
+            this.selectedChip = null;
+          }
+        });
+      }
 
       colBox.appendChild(colHeader);
       colBox.appendChild(colDropZone);
       colsGrid.appendChild(colBox);
     });
 
-    // Append pool at top, then columns below
+    // Deselect chip if user clicks outside
+    wrapper.addEventListener('click', (e) => {
+      if (!e.target.closest('.dd-chip') && !e.target.closest('.dd-col-box') && !e.target.closest('.dd-drop-slot')) {
+        if (this.selectedChip) {
+          this.selectedChip = null;
+          this.render(this.question, this.currentState);
+        }
+      }
+    });
+
     wrapper.appendChild(poolContainer);
     wrapper.appendChild(colsGrid);
     this.container.appendChild(wrapper);
@@ -261,8 +350,10 @@ export class DragDropEngine {
       slotEl.classList.add('drag-hover');
     });
 
-    slotEl.addEventListener('dragleave', () => {
-      slotEl.classList.remove('drag-hover');
+    slotEl.addEventListener('dragleave', (e) => {
+      if (!slotEl.contains(e.relatedTarget)) {
+        slotEl.classList.remove('drag-hover');
+      }
     });
 
     slotEl.addEventListener('drop', (e) => {
@@ -275,7 +366,8 @@ export class DragDropEngine {
     });
 
     // Tap to place support
-    slotEl.addEventListener('click', () => {
+    slotEl.addEventListener('click', (e) => {
+      if (e.target.closest('.chip-remove')) return;
       if (this.selectedChip) {
         this.placeItemInSlot(targetId, this.selectedChip);
         this.selectedChip = null;
@@ -290,8 +382,10 @@ export class DragDropEngine {
       dropZoneEl.classList.add('drag-hover');
     });
 
-    dropZoneEl.addEventListener('dragleave', () => {
-      dropZoneEl.classList.remove('drag-hover');
+    dropZoneEl.addEventListener('dragleave', (e) => {
+      if (!dropZoneEl.contains(e.relatedTarget)) {
+        dropZoneEl.classList.remove('drag-hover');
+      }
     });
 
     dropZoneEl.addEventListener('drop', (e) => {
@@ -304,10 +398,38 @@ export class DragDropEngine {
     });
 
     // Tap to place support
-    dropZoneEl.addEventListener('click', () => {
+    dropZoneEl.addEventListener('click', (e) => {
+      if (e.target.closest('.chip-remove')) return;
       if (this.selectedChip) {
         this.addItemToColumn(colId, this.selectedChip);
         this.selectedChip = null;
+      }
+    });
+  }
+
+  attachPoolDropEvents(poolEl) {
+    poolEl.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      poolEl.classList.add('drag-hover');
+    });
+
+    poolEl.addEventListener('dragleave', (e) => {
+      if (!poolEl.contains(e.relatedTarget)) {
+        poolEl.classList.remove('drag-hover');
+      }
+    });
+
+    poolEl.addEventListener('drop', (e) => {
+      e.preventDefault();
+      poolEl.classList.remove('drag-hover');
+      const val = e.dataTransfer.getData('text/plain') || this.draggedValue;
+      if (val && this.draggedFrom && this.draggedFrom !== 'pool') {
+        if (this.question.type === 'drag_drop_columns') {
+          this.removeColumnItemByValue(this.draggedFrom, val);
+        } else {
+          this.removePlacedItem(this.draggedFrom);
+        }
       }
     });
   }
@@ -360,6 +482,16 @@ export class DragDropEngine {
   removeColumnItem(colId, index) {
     if (this.currentState[colId]) {
       this.currentState[colId].splice(index, 1);
+      this.render(this.question, this.currentState);
+      if (this.onAnswerChanged) {
+        this.onAnswerChanged(this.currentState);
+      }
+    }
+  }
+
+  removeColumnItemByValue(colId, val) {
+    if (this.currentState[colId]) {
+      this.currentState[colId] = this.currentState[colId].filter(v => v !== val);
       this.render(this.question, this.currentState);
       if (this.onAnswerChanged) {
         this.onAnswerChanged(this.currentState);

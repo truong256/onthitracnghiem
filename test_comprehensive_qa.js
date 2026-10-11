@@ -8,6 +8,7 @@ import { INITIAL_QUIZ_DATA } from './js/data.js';
 import { store, migrateExercisesData, validateExercisesSchema, STORAGE_KEYS, CURRENT_DATA_VERSION } from './js/store.js';
 import { QuizEngine } from './js/quizEngine.js';
 import { escapeHtml } from './js/app.js';
+import { DragDropEngine } from './js/dragDropEngine.js';
 
 console.log('================================================================');
 console.log('       BỘ KIỂM THỬ TOÀN DIỆN QA AUTOMATION — ONTHITRACNGHIEM    ');
@@ -254,6 +255,72 @@ runTest('TC05-02', 'TC05', 'Kéo thả phân loại 2 cột chấm chính xác t
   });
   assert(evalPartial.isCorrect === false, 'Thiếu yếu tố ở cột 2 không được coi là hoàn toàn đúng');
   assert(Math.abs(evalPartial.score - 0.5) < 0.001, 'Đúng 1/2 cột được 0.5 điểm');
+});
+
+runTest('TC05-03', 'TC05', 'DragDropEngine khởi tạo cấu trúc 2 cột, hỗ trợ thêm, chuyển cột và xóa thẻ', () => {
+  class MockElement {
+    constructor(tag) {
+      this.tagName = tag;
+      this.children = [];
+      this.classList = new Set();
+      this.dataset = {};
+      this.listeners = {};
+    }
+    set className(val) {
+      this.classList = new Set((val || '').split(' ').filter(Boolean));
+    }
+    get className() {
+      return Array.from(this.classList).join(' ');
+    }
+    appendChild(child) {
+      this.children.push(child);
+    }
+    addEventListener(evt, fn) {
+      this.listeners[evt] = fn;
+    }
+    querySelector() { return new MockElement('mock'); }
+    querySelectorAll() { return []; }
+  }
+
+  const prevDoc = global.document;
+  global.document = {
+    createElement(tag) { return new MockElement(tag); }
+  };
+
+  try {
+    const mount = new MockElement('div');
+    let capturedState = null;
+    const engine = new DragDropEngine(mount, (st) => { capturedState = st; });
+    const qCols = {
+      id: 'test-cols-dd',
+      type: 'drag_drop_columns',
+      columns: [
+        { id: 'col-1', title: 'Khách quan', correctItems: ['Yếu tố A', 'Yếu tố B'] },
+        { id: 'col-2', title: 'Chủ quan', correctItems: ['Yếu tố C', 'Yếu tố D'] }
+      ],
+      optionsPool: ['Yếu tố A', 'Yếu tố B', 'Yếu tố C', 'Yếu tố D']
+    };
+
+    engine.render(qCols);
+    const wrapper = mount.children[0];
+    assert(wrapper && wrapper.classList.has('dd-columns-wrapper'), 'Cấu trúc wrapper dd-columns-wrapper được khởi tạo');
+
+    // Add item to column 1
+    engine.addItemToColumn('col-1', 'Yếu tố A');
+    assert(capturedState['col-1'].includes('Yếu tố A'), 'Yếu tố A đã được thêm vào cột 1');
+    assert(capturedState['col-2'].length === 0, 'Cột 2 vẫn rỗng');
+
+    // Move item to column 2
+    engine.addItemToColumn('col-2', 'Yếu tố A');
+    assert(!capturedState['col-1'].includes('Yếu tố A'), 'Yếu tố A đã tự động rời cột 1 khi sang cột 2');
+    assert(capturedState['col-2'].includes('Yếu tố A'), 'Yếu tố A nằm trong cột 2');
+
+    // Remove item by value
+    engine.removeColumnItemByValue('col-2', 'Yếu tố A');
+    assert(!capturedState['col-2'].includes('Yếu tố A'), 'Yếu tố A đã được xóa trả về pool');
+  } finally {
+    global.document = prevDoc;
+  }
 });
 
 // =============================================================================
