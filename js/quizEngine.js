@@ -4,9 +4,30 @@
 import { store } from './store.js';
 import { sounds } from './audio.js';
 
+// Create session-only options with new labels. Keep correctness attached to content.
+export function shuffleQuestionOptions(question, random = Math.random) {
+  const copy = JSON.parse(JSON.stringify(question));
+  if (!['single_choice', 'multiple_choice'].includes(copy.type) || !Array.isArray(copy.options)) return copy;
+
+  const correctKeys = new Set(copy.correctAnswers || copy.options.filter(option => option.isCorrect).map(option => option.key));
+  const options = [...copy.options];
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [options[i], options[j]] = [options[j], options[i]];
+  }
+  copy.options = options.map((option, index) => ({
+    ...option,
+    key: String.fromCharCode(65 + index),
+    isCorrect: correctKeys.has(option.key)
+  }));
+  copy.correctAnswers = copy.options.filter(option => option.isCorrect).map(option => option.key);
+  return copy;
+}
+
 export class QuizEngine {
   constructor(options = {}) {
     this.options = options;
+    this.random = options.random || Math.random;
     this.exercise = null;
     this.questions = [];
     this.currentIndex = 0;
@@ -31,7 +52,7 @@ export class QuizEngine {
   startQuiz(config = {}) {
     this.clearTimer();
     this.mode = config.mode || 'all';
-    this.instantCheck = config.instantCheck !== undefined ? config.instantCheck : (this.mode !== 'exam');
+    this.instantCheck = this.mode !== 'exam' && config.instantCheck !== false;
     this.userAnswers = {};
     this.flaggedQuestions = new Set();
     this.checkedQuestions = new Set();
@@ -74,6 +95,11 @@ export class QuizEngine {
       }
     }
 
+    // Shuffle answer choices once per session, never while navigating or rendering.
+    if (['random', 'quick', 'exam'].includes(this.mode)) {
+      baseQuestions = baseQuestions.map(q => shuffleQuestionOptions(q, this.random));
+    }
+
     // Set numbers
     this.questions = baseQuestions.map((q, idx) => ({
       ...q,
@@ -94,7 +120,7 @@ export class QuizEngine {
   shuffleArray(arr) {
     const copy = [...arr];
     for (let i = copy.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      const j = Math.floor(this.random() * (i + 1));
       [copy[i], copy[j]] = [copy[j], copy[i]];
     }
     return copy;
@@ -155,7 +181,7 @@ export class QuizEngine {
 
   // --- Answers & Flagging ---
   setAnswer(qId, answerValue) {
-    if (this.isSubmitted) return;
+    if (this.isSubmitted || this.checkedQuestions.has(qId)) return;
     this.userAnswers[qId] = answerValue;
     // When answer changes, if instant check wasn't triggered, notify
     this.notifyStateChanged();
@@ -200,9 +226,9 @@ export class QuizEngine {
 
   // --- Instant Check Mode ---
   checkCurrentQuestion() {
-    if (this.isSubmitted) return null;
+    if (this.isSubmitted || !this.instantCheck) return null;
     const q = this.getCurrentQuestion();
-    if (!q) return null;
+    if (!q || !this.hasAnswered(q.id) || this.checkedQuestions.has(q.id)) return null;
 
     this.checkedQuestions.add(q.id);
     const evalResult = this.evaluateQuestion(q, this.userAnswers[q.id]);
@@ -387,7 +413,7 @@ export class QuizEngine {
 
     // Save each answered wrong/correct question into Store (unanswered questions are not recorded as wrong)
     summary.results.forEach(res => {
-      if (res.isAnswered) {
+      if (res.isAnswered && !this.checkedQuestions.has(res.question.id)) {
         store.recordQuestionResult(res.question.id, res.isCorrect, res.question);
       }
     });

@@ -28,7 +28,7 @@ export class DragDropEngine {
 
   render(question, savedState = null) {
     this.question = question;
-    this.currentState = savedState || {}; // mapping targetId -> placedText or colId -> [items]
+    this.currentState = savedState ? JSON.parse(JSON.stringify(savedState)) : {}; // render never mutates saved answers
     this.container.innerHTML = '';
 
     if (question.type === 'drag_drop_columns') {
@@ -46,10 +46,12 @@ export class DragDropEngine {
     
     // Determine which chips are currently placed
     const placedValues = Object.values(this.currentState).filter(Boolean);
+    const remainingPlaced = [...placedValues];
     const availablePool = pool.filter(chip => {
-      const placedCount = placedValues.filter(v => v === chip).length;
-      const totalInPool = pool.filter(v => v === chip).length;
-      return placedCount < totalInPool;
+      const index = remainingPlaced.indexOf(chip);
+      if (index === -1) return true;
+      remainingPlaced.splice(index, 1);
+      return false;
     });
 
     const wrapper = document.createElement('div');
@@ -227,17 +229,13 @@ export class DragDropEngine {
     if (typeof this.currentState !== 'object' || Array.isArray(this.currentState)) {
       this.currentState = {};
     }
-    columns.forEach(col => {
-      if (!Array.isArray(this.currentState[col.id])) {
-        this.currentState[col.id] = [];
-      }
-    });
-
     const placedItems = Object.values(this.currentState).flat();
+    const remainingPlaced = [...placedItems];
     const availablePool = allItems.filter(item => {
-      const placedCount = placedItems.filter(v => v === item).length;
-      const totalCount = allItems.filter(v => v === item).length;
-      return placedCount < totalCount;
+      const index = remainingPlaced.indexOf(item);
+      if (index === -1) return true;
+      remainingPlaced.splice(index, 1);
+      return false;
     });
 
     const wrapper = document.createElement('div');
@@ -609,9 +607,10 @@ export class DragDropEngine {
   }
 
   addItemToColumn(colId, value) {
-    if (!this.currentState[colId]) {
-      this.currentState[colId] = [];
-    }
+    // Initialize column arrays only when the user actually changes an answer.
+    (this.question.columns || []).forEach(col => {
+      if (!Array.isArray(this.currentState[col.id])) this.currentState[col.id] = [];
+    });
     // Remove from other columns if it was moved
     Object.keys(this.currentState).forEach(cId => {
       this.currentState[cId] = this.currentState[cId].filter(v => v !== value);
