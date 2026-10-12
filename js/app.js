@@ -17,7 +17,7 @@ export function escapeHtml(str) {
     .replace(/'/g, '&#039;');
 }
 
-class App {
+export class App {
   constructor() {
     this.currentScreen = 'home';
     this.selectedExerciseId = 'bai-1';
@@ -378,12 +378,8 @@ class App {
         `;
 
         card.addEventListener('click', () => {
-          if (state.isSubmitted) return;
+          if (isChecked) return;
           this.quizEngine.setAnswer(question.id, opt.key);
-          // In practice mode (instantCheck), check immediately upon clicking!
-          if (state.instantCheck) {
-            this.quizEngine.checkCurrentQuestion();
-          }
         });
 
         optionRow.appendChild(keyLabel);
@@ -441,7 +437,7 @@ class App {
         `;
 
         card.addEventListener('click', () => {
-          if (state.isSubmitted) return;
+          if (isChecked) return;
 
           let nextKeys = [...userSelectedKeys];
           if (nextKeys.includes(opt.key)) {
@@ -459,7 +455,7 @@ class App {
 
       this.quizAnswersContainer.appendChild(grid);
 
-      // Inline action bar for Multiple Choice in Practice Mode
+      // Show selection count; the main check button handles every question type.
       if (state.instantCheck && !state.isSubmitted) {
         const targetCount = question.correctAnswers ? question.correctAnswers.length : 2;
         const actionBar = document.createElement('div');
@@ -469,18 +465,7 @@ class App {
         counter.className = 'mc-status-counter';
         counter.innerHTML = `<span>Đã chọn: <strong>${userSelectedKeys.length}</strong> / <strong>${targetCount}</strong> phương án</span>`;
 
-        const checkBtn = document.createElement('button');
-        checkBtn.className = `btn-check-inline ${isChecked ? 'checked' : ''}`;
-        checkBtn.textContent = isChecked ? '✓ Đã kiểm tra' : 'Kiểm tra đáp án câu này';
-        checkBtn.disabled = isChecked || userSelectedKeys.length === 0;
-        checkBtn.addEventListener('click', () => {
-          if (!isChecked && userSelectedKeys.length > 0) {
-            this.quizEngine.checkCurrentQuestion();
-          }
-        });
-
         actionBar.appendChild(counter);
-        actionBar.appendChild(checkBtn);
         this.quizAnswersContainer.appendChild(actionBar);
       }
 
@@ -511,7 +496,7 @@ class App {
         const row = document.createElement('div');
         row.className = 'tf-item-row';
 
-        const shouldShowItemEval = (isChecked && evalRes) || (state.instantCheck && isItemAnswered && !state.isSubmitted);
+        const shouldShowItemEval = isChecked && evalRes;
 
         let tfFeedbackHtml = '';
         let btnTrueClass = '';
@@ -568,37 +553,15 @@ class App {
         `;
 
         row.querySelector('.btn-tf-true').addEventListener('click', () => {
-          if (state.isSubmitted) return;
+          if (isChecked) return;
           const nextTF = { ...currentTF, [it.order]: 'Đúng' };
-          const isCorrectChoice = ('đúng' === (it.correctAnswer || '').trim().toLowerCase());
-          if (isCorrectChoice) {
-            sounds.playCorrect();
-          } else {
-            sounds.playWrong();
-          }
           this.quizEngine.setAnswer(question.id, nextTF);
-
-          // If practice mode and all items are answered, auto-check and record
-          if (state.instantCheck && question.items.every(item => Boolean(nextTF[item.order]))) {
-            this.quizEngine.checkCurrentQuestion();
-          }
         });
 
         row.querySelector('.btn-tf-false').addEventListener('click', () => {
-          if (state.isSubmitted) return;
+          if (isChecked) return;
           const nextTF = { ...currentTF, [it.order]: 'Sai' };
-          const isCorrectChoice = ('sai' === (it.correctAnswer || '').trim().toLowerCase());
-          if (isCorrectChoice) {
-            sounds.playCorrect();
-          } else {
-            sounds.playWrong();
-          }
           this.quizEngine.setAnswer(question.id, nextTF);
-
-          // If practice mode and all items are answered, auto-check and record
-          if (state.instantCheck && question.items.every(item => Boolean(nextTF[item.order]))) {
-            this.quizEngine.checkCurrentQuestion();
-          }
         });
 
         container.appendChild(row);
@@ -615,18 +578,7 @@ class App {
         counter.className = 'mc-status-counter';
         counter.innerHTML = `<span>Đã đánh giá: <strong>${answeredItemsCount}</strong> / <strong>${totalItemsCount}</strong> nhận định</span>`;
 
-        const checkBtn = document.createElement('button');
-        checkBtn.className = `btn-check-inline ${isChecked ? 'checked' : ''}`;
-        checkBtn.textContent = isChecked ? '✓ Đã kiểm tra' : 'Kiểm tra tất cả nhận định';
-        checkBtn.disabled = isChecked || answeredItemsCount === 0;
-        checkBtn.addEventListener('click', () => {
-          if (!isChecked && answeredItemsCount > 0) {
-            this.quizEngine.checkCurrentQuestion();
-          }
-        });
-
         actionBar.appendChild(counter);
-        actionBar.appendChild(checkBtn);
         this.quizAnswersContainer.appendChild(actionBar);
       }
 
