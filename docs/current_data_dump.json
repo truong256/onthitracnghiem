@@ -2438,7 +2438,7 @@
           {
             "order": 4,
             "statement": "Học thuyết hình thái kinh tế - xã hội của chủ nghĩa Mác - Lênin đã chỉ rõ: Lịch sử xã hội đã trải qua 4 hình thái kinh tế - xã hội",
-            "correctAnswer": "Đúng"
+            "correctAnswer": "Sai"
           }
         ],
         "needsReview": false
@@ -2714,22 +2714,27 @@
         "number": 40,
         "type": "multiple_choice",
         "header": "Câu 40:",
-        "content": "Đặc điểm cơ bản của thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là gì? (Chọn 2 đáp án đúng) A Chuyển thẳng từ chế độ phong kiến lên chủ nghĩa xã hội",
-        "instructionNote": "Hãy chọn 2 đấp án đúng nhất !",
+        "content": "Đặc điểm cơ bản của thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là gì? (Chọn 2 đáp án đúng)",
+        "instructionNote": "Hãy chọn 2 đáp án đúng nhất!",
         "options": [
           {
+            "key": "A",
+            "content": "Chuyển thẳng từ chế độ phong kiến lên chủ nghĩa xã hội",
+            "isCorrect": false
+          },
+          {
             "key": "B",
-            "content": "Bò qua chế độ phong kiển",
+            "content": "Bỏ qua chế độ phong kiến",
             "isCorrect": false
           },
           {
             "key": "C",
-            "content": "Xây dựng nên kinh tế thị trường định hướng xã hội chủ nghĩa",
+            "content": "Xây dựng nền kinh tế thị trường định hướng xã hội chủ nghĩa",
             "isCorrect": true
           },
           {
             "key": "D",
-            "content": "Bò qua chế độ tư bản chủ nghĩa",
+            "content": "Bỏ qua chế độ tư bản chủ nghĩa",
             "isCorrect": true
           }
         ],

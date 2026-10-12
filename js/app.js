@@ -336,14 +336,68 @@ class App {
       evalRes = this.quizEngine.evaluateQuestion(question, userAnswer);
     }
 
-    if (question.type === 'single_choice' || question.type === 'multiple_choice') {
-      const isMulti = question.type === 'multiple_choice';
+    if (question.type === 'single_choice') {
       const grid = document.createElement('div');
       grid.className = 'options-grid-container';
 
-      const userSelectedKeys = isMulti 
-        ? (Array.isArray(userAnswer) ? userAnswer : (userAnswer ? [userAnswer] : []))
-        : [userAnswer];
+      (question.options || []).forEach(opt => {
+        const isSelected = userAnswer === opt.key;
+        
+        const optionRow = document.createElement('div');
+        optionRow.className = 'answer-option-row';
+
+        const keyLabel = document.createElement('span');
+        keyLabel.className = 'option-key-label';
+        keyLabel.textContent = opt.key;
+
+        const card = document.createElement('div');
+        card.className = `answer-card ${isSelected ? 'selected' : ''}`;
+
+        // Color coding if evaluated
+        if (isChecked && evalRes) {
+          if (opt.isCorrect) {
+            card.classList.add('eval-correct');
+          } else if (isSelected && !opt.isCorrect) {
+            card.classList.add('eval-wrong');
+          }
+        }
+
+        let feedbackBadge = '';
+        if (isChecked && evalRes) {
+          if (opt.isCorrect) {
+            feedbackBadge = '<span style="margin-left: auto; font-size: 12px; font-weight: 700; color: #16a34a; white-space: nowrap;">✓ Đáp án đúng</span>';
+          } else if (isSelected) {
+            feedbackBadge = '<span style="margin-left: auto; font-size: 12px; font-weight: 700; color: #dc2626; white-space: nowrap;">✗ Lựa chọn sai</span>';
+          }
+        }
+
+        card.innerHTML = `
+          <span class="option-input-indicator"></span>
+          <span class="option-content-text">${escapeHtml(opt.content)}</span>
+          ${feedbackBadge}
+        `;
+
+        card.addEventListener('click', () => {
+          if (state.isSubmitted) return;
+          this.quizEngine.setAnswer(question.id, opt.key);
+          // In practice mode (instantCheck), check immediately upon clicking!
+          if (state.instantCheck) {
+            this.quizEngine.checkCurrentQuestion();
+          }
+        });
+
+        optionRow.appendChild(keyLabel);
+        optionRow.appendChild(card);
+        grid.appendChild(optionRow);
+      });
+
+      this.quizAnswersContainer.appendChild(grid);
+
+    } else if (question.type === 'multiple_choice') {
+      const grid = document.createElement('div');
+      grid.className = 'options-grid-container';
+
+      const userSelectedKeys = Array.isArray(userAnswer) ? userAnswer : (userAnswer ? [userAnswer] : []);
 
       (question.options || []).forEach(opt => {
         const isSelected = userSelectedKeys.includes(opt.key);
@@ -356,36 +410,46 @@ class App {
         keyLabel.textContent = opt.key;
 
         const card = document.createElement('div');
-        card.className = `answer-card ${isMulti ? 'multiple' : ''} ${isSelected ? 'selected' : ''}`;
+        card.className = `answer-card multiple ${isSelected ? 'selected' : ''}`;
 
         // Color coding if evaluated
         if (isChecked && evalRes) {
-          if (opt.isCorrect) {
+          if (opt.isCorrect && isSelected) {
             card.classList.add('eval-correct');
-          } else if (isSelected && !opt.isCorrect) {
+          } else if (!opt.isCorrect && isSelected) {
             card.classList.add('eval-wrong');
+          } else if (opt.isCorrect && !isSelected) {
+            card.classList.add('eval-missed');
+          }
+        }
+
+        let extraTag = '';
+        if (isChecked) {
+          if (opt.isCorrect && isSelected) {
+            extraTag = '<span style="margin-left: auto; font-size: 12px; font-weight: 700; color: #16a34a; white-space: nowrap;">✓ Chọn đúng</span>';
+          } else if (!opt.isCorrect && isSelected) {
+            extraTag = '<span style="margin-left: auto; font-size: 12px; font-weight: 700; color: #dc2626; white-space: nowrap;">✗ Chọn sai</span>';
+          } else if (opt.isCorrect && !isSelected) {
+            extraTag = '<span style="margin-left: auto; font-size: 12px; font-weight: 700; color: #15803d; white-space: nowrap;">✓ Đáp án đúng bị bỏ sót</span>';
           }
         }
 
         card.innerHTML = `
           <span class="option-input-indicator"></span>
           <span class="option-content-text">${escapeHtml(opt.content)}</span>
+          ${extraTag}
         `;
 
         card.addEventListener('click', () => {
           if (state.isSubmitted) return;
 
-          if (isMulti) {
-            let nextKeys = [...userSelectedKeys];
-            if (nextKeys.includes(opt.key)) {
-              nextKeys = nextKeys.filter(k => k !== opt.key);
-            } else {
-              nextKeys.push(opt.key);
-            }
-            this.quizEngine.setAnswer(question.id, nextKeys);
+          let nextKeys = [...userSelectedKeys];
+          if (nextKeys.includes(opt.key)) {
+            nextKeys = nextKeys.filter(k => k !== opt.key);
           } else {
-            this.quizEngine.setAnswer(question.id, opt.key);
+            nextKeys.push(opt.key);
           }
+          this.quizEngine.setAnswer(question.id, nextKeys);
         });
 
         optionRow.appendChild(keyLabel);
@@ -395,26 +459,95 @@ class App {
 
       this.quizAnswersContainer.appendChild(grid);
 
+      // Inline action bar for Multiple Choice in Practice Mode
+      if (state.instantCheck && !state.isSubmitted) {
+        const targetCount = question.correctAnswers ? question.correctAnswers.length : 2;
+        const actionBar = document.createElement('div');
+        actionBar.className = 'mc-action-bar';
+
+        const counter = document.createElement('div');
+        counter.className = 'mc-status-counter';
+        counter.innerHTML = `<span>Đã chọn: <strong>${userSelectedKeys.length}</strong> / <strong>${targetCount}</strong> phương án</span>`;
+
+        const checkBtn = document.createElement('button');
+        checkBtn.className = `btn-check-inline ${isChecked ? 'checked' : ''}`;
+        checkBtn.textContent = isChecked ? '✓ Đã kiểm tra' : 'Kiểm tra đáp án câu này';
+        checkBtn.disabled = isChecked || userSelectedKeys.length === 0;
+        checkBtn.addEventListener('click', () => {
+          if (!isChecked && userSelectedKeys.length > 0) {
+            this.quizEngine.checkCurrentQuestion();
+          }
+        });
+
+        actionBar.appendChild(counter);
+        actionBar.appendChild(checkBtn);
+        this.quizAnswersContainer.appendChild(actionBar);
+      }
+
+      // If evaluated, show clear banner
+      if (isChecked && evalRes) {
+        const banner = document.createElement('div');
+        banner.className = `mc-eval-banner ${evalRes.isCorrect ? 'correct' : 'wrong'}`;
+        if (evalRes.isCorrect) {
+          banner.innerHTML = `<span>✓ Chính xác! Bạn đã chọn đúng ${userSelectedKeys.length}/${userSelectedKeys.length} đáp án (+1 điểm)</span>`;
+        } else {
+          banner.innerHTML = `<span>✗ Chưa chính xác. Đáp án đúng là: <strong>${(question.correctAnswers || []).join(', ')}</strong></span>`;
+        }
+        this.quizAnswersContainer.appendChild(banner);
+      }
+
     } else if (question.type === 'true_false_group') {
       const container = document.createElement('div');
       container.className = 'tf-group-container';
       const currentTF = userAnswer || {};
+      const totalItemsCount = (question.items || []).length;
+      let answeredItemsCount = 0;
 
       (question.items || []).forEach(it => {
         const userChoice = currentTF[it.order];
+        const isItemAnswered = Boolean(userChoice);
+        if (isItemAnswered) answeredItemsCount++;
+
         const row = document.createElement('div');
         row.className = 'tf-item-row';
 
+        const shouldShowItemEval = (isChecked && evalRes) || (state.instantCheck && isItemAnswered && !state.isSubmitted);
+
         let tfFeedbackHtml = '';
-        if (isChecked && evalRes && evalRes.itemResults) {
-          const itRes = evalRes.itemResults.find(r => r.order === it.order);
-          if (itRes) {
-            row.classList.add(itRes.isCorrect ? 'eval-correct' : 'eval-wrong');
-            if (itRes.isCorrect) {
+        let btnTrueClass = '';
+        let btnFalseClass = '';
+
+        if (userChoice === 'Đúng') {
+          btnTrueClass = 'selected-true';
+        } else if (userChoice === 'Sai') {
+          btnFalseClass = 'selected-false';
+        }
+
+        if (shouldShowItemEval) {
+          const correctAns = (it.correctAnswer || '').trim();
+          const isItemCorrect = userChoice && (userChoice.trim().toLowerCase() === correctAns.toLowerCase());
+
+          if (isItemAnswered) {
+            row.classList.add(isItemCorrect ? 'eval-correct' : 'eval-wrong');
+            if (isItemCorrect) {
               tfFeedbackHtml = `<span class="tf-eval-tag correct">✓ Đúng</span>`;
+              if (userChoice === 'Đúng') btnTrueClass = 'eval-btn-correct';
+              if (userChoice === 'Sai') btnFalseClass = 'eval-btn-correct';
             } else {
-              tfFeedbackHtml = `<span class="tf-eval-tag wrong">✗ Sai (Đáp án đúng: ${it.correctAnswer})</span>`;
+              tfFeedbackHtml = `<span class="tf-eval-tag wrong">✗ Sai (Đáp án đúng: ${escapeHtml(correctAns)})</span>`;
+              if (userChoice === 'Đúng') {
+                btnTrueClass = 'eval-btn-wrong';
+                btnFalseClass = 'eval-btn-hint';
+              } else {
+                btnFalseClass = 'eval-btn-wrong';
+                btnTrueClass = 'eval-btn-hint';
+              }
             }
+          } else if (isChecked) {
+            row.classList.add('eval-wrong');
+            tfFeedbackHtml = `<span class="tf-eval-tag wrong">✗ Chưa chọn (Đáp án đúng: ${escapeHtml(correctAns)})</span>`;
+            if (correctAns.toLowerCase() === 'đúng') btnTrueClass = 'eval-btn-hint';
+            if (correctAns.toLowerCase() === 'sai') btnFalseClass = 'eval-btn-hint';
           }
         }
 
@@ -422,32 +555,92 @@ class App {
           <div class="tf-item-statement">
             <span class="tf-num">${it.order}.</span>
             <span>${escapeHtml(it.statement)}</span>
-            ${tfFeedbackHtml ? `<div style="margin-top: 4px;">${tfFeedbackHtml}</div>` : ''}
+            ${tfFeedbackHtml ? `<div>${tfFeedbackHtml}</div>` : ''}
           </div>
           <div class="tf-buttons-group">
-            <button class="btn-tf btn-tf-true ${userChoice === 'Đúng' ? 'selected-true' : ''}" data-ans="Đúng">Đúng</button>
-            <button class="btn-tf btn-tf-false ${userChoice === 'Sai' ? 'selected-false' : ''}" data-ans="Sai">Sai</button>
+            <button class="btn-tf btn-tf-true ${btnTrueClass}" data-ans="Đúng">
+              ${btnTrueClass === 'eval-btn-correct' ? '✓ Đúng' : (btnTrueClass === 'eval-btn-wrong' ? '✗ Đúng' : 'Đúng')}
+            </button>
+            <button class="btn-tf btn-tf-false ${btnFalseClass}" data-ans="Sai">
+              ${btnFalseClass === 'eval-btn-correct' ? '✓ Sai' : (btnFalseClass === 'eval-btn-wrong' ? '✗ Sai' : 'Sai')}
+            </button>
           </div>
         `;
 
         row.querySelector('.btn-tf-true').addEventListener('click', () => {
           if (state.isSubmitted) return;
-          sounds.playClick();
           const nextTF = { ...currentTF, [it.order]: 'Đúng' };
+          const isCorrectChoice = ('đúng' === (it.correctAnswer || '').trim().toLowerCase());
+          if (isCorrectChoice) {
+            sounds.playCorrect();
+          } else {
+            sounds.playWrong();
+          }
           this.quizEngine.setAnswer(question.id, nextTF);
+
+          // If practice mode and all items are answered, auto-check and record
+          if (state.instantCheck && question.items.every(item => Boolean(nextTF[item.order]))) {
+            this.quizEngine.checkCurrentQuestion();
+          }
         });
 
         row.querySelector('.btn-tf-false').addEventListener('click', () => {
           if (state.isSubmitted) return;
-          sounds.playClick();
           const nextTF = { ...currentTF, [it.order]: 'Sai' };
+          const isCorrectChoice = ('sai' === (it.correctAnswer || '').trim().toLowerCase());
+          if (isCorrectChoice) {
+            sounds.playCorrect();
+          } else {
+            sounds.playWrong();
+          }
           this.quizEngine.setAnswer(question.id, nextTF);
+
+          // If practice mode and all items are answered, auto-check and record
+          if (state.instantCheck && question.items.every(item => Boolean(nextTF[item.order]))) {
+            this.quizEngine.checkCurrentQuestion();
+          }
         });
 
         container.appendChild(row);
       });
 
       this.quizAnswersContainer.appendChild(container);
+
+      // Inline action bar for True/False in Practice Mode
+      if (state.instantCheck && !state.isSubmitted) {
+        const actionBar = document.createElement('div');
+        actionBar.className = 'mc-action-bar';
+
+        const counter = document.createElement('div');
+        counter.className = 'mc-status-counter';
+        counter.innerHTML = `<span>Đã đánh giá: <strong>${answeredItemsCount}</strong> / <strong>${totalItemsCount}</strong> nhận định</span>`;
+
+        const checkBtn = document.createElement('button');
+        checkBtn.className = `btn-check-inline ${isChecked ? 'checked' : ''}`;
+        checkBtn.textContent = isChecked ? '✓ Đã kiểm tra' : 'Kiểm tra tất cả nhận định';
+        checkBtn.disabled = isChecked || answeredItemsCount === 0;
+        checkBtn.addEventListener('click', () => {
+          if (!isChecked && answeredItemsCount > 0) {
+            this.quizEngine.checkCurrentQuestion();
+          }
+        });
+
+        actionBar.appendChild(counter);
+        actionBar.appendChild(checkBtn);
+        this.quizAnswersContainer.appendChild(actionBar);
+      }
+
+      // If evaluated, show clear banner
+      if (isChecked && evalRes) {
+        const banner = document.createElement('div');
+        banner.className = `mc-eval-banner ${evalRes.isCorrect ? 'correct' : 'wrong'}`;
+        if (evalRes.isCorrect) {
+          banner.innerHTML = `<span>✓ Chính xác! Bạn đã đánh giá đúng tất cả ${evalRes.totalItems || totalItemsCount}/${evalRes.totalItems || totalItemsCount} nhận định (+1 điểm)</span>`;
+        } else {
+          banner.innerHTML = `<span>✗ Chưa chính xác. Đã đánh giá đúng: <strong>${evalRes.correctItems || 0}/${evalRes.totalItems || totalItemsCount}</strong> nhận định</span>`;
+        }
+        this.quizAnswersContainer.appendChild(banner);
+      }
 
     } else if (question.type === 'drag_drop' || question.type === 'drag_drop_columns') {
       const ddMount = document.createElement('div');

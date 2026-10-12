@@ -2511,6 +2511,11 @@ export const INITIAL_QUIZ_DATA = [
             "order": 3,
             "statement": "Quá độ trực tiếp từ chủ nghĩa tư bản lên chủ nghĩa cộng sản đối với những nước đã trải qua chủ nghĩa tư bản phát triển",
             "correctAnswer": "Đúng"
+          },
+          {
+            "order": 4,
+            "statement": "Học thuyết hình thái kinh tế - xã hội của chủ nghĩa Mác - Lênin đã chỉ rõ: Lịch sử xã hội đã trải qua 4 hình thái kinh tế - xã hội",
+            "correctAnswer": "Sai"
           }
         ],
         "needsReview": false,
@@ -2790,21 +2795,26 @@ export const INITIAL_QUIZ_DATA = [
         "type": "multiple_choice",
         "header": "Câu 40:",
         "content": "Đặc điểm cơ bản của thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là gì? (Chọn 2 đáp án đúng)",
-        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
+        "instructionNote": "Hãy chọn 2 đáp án đúng nhất!",
         "options": [
           {
+            "key": "A",
+            "content": "Chuyển thẳng từ chế độ phong kiến lên chủ nghĩa xã hội",
+            "isCorrect": false
+          },
+          {
             "key": "B",
-            "content": "Bò qua chế độ phong kiến",
+            "content": "Bỏ qua chế độ phong kiến",
             "isCorrect": false
           },
           {
             "key": "C",
-            "content": "Xây dựng nên kinh tế thị trường định hướng xã hội chủ nghĩa",
+            "content": "Xây dựng nền kinh tế thị trường định hướng xã hội chủ nghĩa",
             "isCorrect": true
           },
           {
             "key": "D",
-            "content": "Bò qua chế độ tư bản chủ nghĩa",
+            "content": "Bỏ qua chế độ tư bản chủ nghĩa",
             "isCorrect": true
           }
         ],

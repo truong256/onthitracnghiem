@@ -4,7 +4,7 @@
  */
 import { INITIAL_QUIZ_DATA } from './data.js';
 
-export const CURRENT_DATA_VERSION = '2.0.0-20261010';
+export const CURRENT_DATA_VERSION = '2.0.1-20261012';
 
 export const STORAGE_KEYS = {
   EXERCISES: 'onthi_exercises_v1',
