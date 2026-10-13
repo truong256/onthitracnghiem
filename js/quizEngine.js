@@ -1,8 +1,49 @@
 /**
  * Quiz Engine: Session State, Navigation, Timer, Evaluation & Scoring
+ * Supports Fisher-Yates randomization, stable-key option shuffling,
+ * persistent session states, and rich question types:
+ * - single_choice
+ * - multiple_choice
+ * - fill_blank
+ * - matching
+ * - table_completion
+ * - true_false_group
+ * - drag_drop
+ * - drag_drop_columns
  */
 import { store } from './store.js';
 import { sounds } from './audio.js';
+
+/**
+ * Fisher-Yates array shuffling algorithm
+ */
+export function shuffleArray(arr) {
+  if (!Array.isArray(arr)) return [];
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+/**
+ * Checks if question or option content depends on the visual order of options
+ * (e.g. "Tất cả các đáp án trên", "Cả A và B", "Ý A và C", "Không có đáp án nào đúng ở trên")
+ */
+export function isOptionOrderDependent(question) {
+  if (!question) return false;
+  const orderDependentRegex = /(tất cả|cả|các phương án|phương án|đáp án|ý)\s+(trên|dưới|a\s*,\s*b|a\s*và\s*b|b\s*và\s*c|a\s*và\s*c|cả\s*ba|cả\s*bốn)/i;
+
+  if (orderDependentRegex.test(question.content || '')) return true;
+
+  if (Array.isArray(question.options)) {
+    for (const opt of question.options) {
+      if (orderDependentRegex.test(opt.content || '')) return true;
+    }
+  }
+  return false;
+}
 
 export class QuizEngine {
   constructor(options = {}) {
@@ -14,13 +55,14 @@ export class QuizEngine {
     this.flaggedQuestions = new Set();
     this.checkedQuestions = new Set(); // qId -> boolean for instant check
     this.mode = 'all'; // 'all' | 'random' | 'wrong_only' | 'quick' | 'exam'
-    this.instantCheck = true; // default practice mode allows checking immediately
+    this.instantCheck = true; // default practice mode allows checking
     this.timeLimitSeconds = 15 * 60; // 15 mins default
     this.timeRemaining = this.timeLimitSeconds;
     this.timerInterval = null;
     this.isSubmitted = false;
     this.startTime = null;
     this.endTime = null;
+    this.config = {};
 
     // Callbacks
     this.onStateChanged = options.onStateChanged || (() => {});
@@ -30,6 +72,7 @@ export class QuizEngine {
 
   startQuiz(config = {}) {
     this.clearTimer();
+    this.config = config;
     this.mode = config.mode || 'all';
     this.instantCheck = config.instantCheck !== undefined ? config.instantCheck : (this.mode !== 'exam');
     this.userAnswers = {};
@@ -42,7 +85,14 @@ export class QuizEngine {
 
     // Load exercise questions
     let baseQuestions = [];
-    if (this.mode === 'wrong_only') {
+    if (config.questionsList && Array.isArray(config.questionsList)) {
+      baseQuestions = JSON.parse(JSON.stringify(config.questionsList));
+      this.exercise = config.exercise || {
+        id: 'custom',
+        title: 'BÀI ÔN TẬP TÙY BIẾN',
+        description: `Tập hợp ${baseQuestions.length} câu hỏi tùy biến`
+      };
+    } else if (this.mode === 'wrong_only') {
       baseQuestions = store.getWrongQuestionObjects();
       if (baseQuestions.length === 0) {
         throw new Error('Bạn chưa có câu trả lời sai nào được lưu!');
@@ -52,6 +102,17 @@ export class QuizEngine {
         title: 'ÔN TẬP CÁC CÂU LÀM SAI',
         description: `Luyện tập lại ${baseQuestions.length} câu đã trả lời sai`
       };
+    } else if (config.exerciseId === 'all') {
+      const allEx = store.getExercises();
+      baseQuestions = [];
+      allEx.forEach(ex => {
+        baseQuestions.push(...JSON.parse(JSON.stringify(ex.questions)));
+      });
+      this.exercise = {
+        id: 'all',
+        title: 'TẤT CẢ CÁC BÀI ÔN TẬP',
+        description: `Bộ đề tổng hợp toàn bộ ${baseQuestions.length} câu hỏi`
+      };
     } else {
       const ex = store.getExercise(config.exerciseId || 'bai-1');
       if (!ex) throw new Error('Không tìm thấy bài ôn tập!');
@@ -59,27 +120,97 @@ export class QuizEngine {
       baseQuestions = JSON.parse(JSON.stringify(ex.questions));
     }
 
-    // Apply mode filtering / shuffling
-    if (this.mode === 'random') {
-      baseQuestions = this.shuffleArray(baseQuestions);
-      if (config.questionCount && config.questionCount < baseQuestions.length) {
-        baseQuestions = baseQuestions.slice(0, config.questionCount);
-      }
-    } else if (this.mode === 'quick') {
-      baseQuestions = this.shuffleArray(baseQuestions).slice(0, config.questionCount || 10);
-    } else if (this.mode === 'exam') {
-      baseQuestions = this.shuffleArray(baseQuestions);
-      if (config.questionCount && config.questionCount < baseQuestions.length) {
-        baseQuestions = baseQuestions.slice(0, config.questionCount);
+    // Filter by question type if requested
+    if (config.questionFilter && config.questionFilter !== 'all') {
+      const qFilter = config.questionFilter;
+      baseQuestions = baseQuestions.filter(q => {
+        if (qFilter === 'drag_drop') {
+          return q.type === 'drag_drop' || q.type === 'drag_drop_columns';
+        }
+        return q.type === qFilter;
+      });
+      if (baseQuestions.length === 0) {
+        throw new Error('Không có câu hỏi nào thuộc dạng đã chọn trong bài học này!');
       }
     }
 
-    // Set numbers
-    this.questions = baseQuestions.map((q, idx) => ({
-      ...q,
-      sessionIndex: idx,
-      sessionNumber: idx + 1
-    }));
+    // Determine whether to shuffle question order
+    const shouldShuffleQuestions = config.shuffleQuestions !== undefined
+      ? Boolean(config.shuffleQuestions)
+      : (this.mode === 'random' || this.mode === 'quick' || this.mode === 'exam');
+
+    if (shouldShuffleQuestions) {
+      baseQuestions = shuffleArray(baseQuestions);
+    }
+
+    // Slice question count if needed
+    if (config.questionCount && config.questionCount > 0 && config.questionCount < baseQuestions.length) {
+      baseQuestions = baseQuestions.slice(0, config.questionCount);
+    } else if (this.mode === 'quick') {
+      baseQuestions = baseQuestions.slice(0, config.questionCount || 10);
+    }
+
+    // Determine whether to shuffle option positions
+    const shouldShuffleOptions = config.shuffleOptions !== undefined
+      ? Boolean(config.shuffleOptions)
+      : true;
+
+    // Process questions: assign session index and shuffle options/columns
+    this.questions = baseQuestions.map((q, idx) => {
+      const qCopy = {
+        ...q,
+        sessionIndex: idx,
+        sessionNumber: idx + 1
+      };
+
+      // Shuffling options for single/multiple choice
+      if (shouldShuffleOptions && (qCopy.type === 'single_choice' || qCopy.type === 'multiple_choice')) {
+        if (!isOptionOrderDependent(qCopy) && Array.isArray(qCopy.options) && qCopy.options.length > 1) {
+          const optsWithOrig = qCopy.options.map((opt, oIdx) => ({
+            ...opt,
+            origKey: opt.origKey || opt.key || String.fromCharCode(65 + oIdx),
+            id: opt.id || opt.origKey || opt.key || `opt-${oIdx + 1}`
+          }));
+
+          const shuffled = shuffleArray(optsWithOrig);
+          // Assign visual keys A, B, C, D in order of display
+          qCopy.options = shuffled.map((opt, oIdx) => ({
+            ...opt,
+            visualKey: String.fromCharCode(65 + oIdx),
+            displayKey: String.fromCharCode(65 + oIdx)
+          }));
+        } else {
+          // Keep original order, ensure visualKey matches key
+          qCopy.options = (qCopy.options || []).map(opt => ({
+            ...opt,
+            origKey: opt.origKey || opt.key,
+            visualKey: opt.key,
+            displayKey: opt.key
+          }));
+        }
+      } else if (Array.isArray(qCopy.options)) {
+        qCopy.options = qCopy.options.map(opt => ({
+          ...opt,
+          origKey: opt.origKey || opt.key,
+          visualKey: opt.key,
+          displayKey: opt.key
+        }));
+      }
+
+      // Shuffling columns for matching
+      if (qCopy.type === 'matching' && Array.isArray(qCopy.pairs)) {
+        qCopy.pairs = qCopy.pairs.map((p, pIdx) => ({
+          ...p,
+          id: p.id || `pair-${pIdx + 1}`
+        }));
+        const leftItems = qCopy.pairs.map(p => ({ id: p.id, text: p.left }));
+        const rightItems = qCopy.pairs.map(p => ({ id: p.id, text: p.right }));
+        qCopy.sessionColumnA = shuffleArray(leftItems);
+        qCopy.sessionColumnB = shuffleArray(rightItems);
+      }
+
+      return qCopy;
+    });
 
     // Setup Timer
     const durationMinutes = config.timeLimitMinutes || (this.mode === 'exam' ? 15 : (this.questions.length * 1.5));
@@ -87,17 +218,62 @@ export class QuizEngine {
     this.timeRemaining = this.timeLimitSeconds;
     this.startTimer();
 
+    this.persistActiveSession();
     this.notifyStateChanged();
     return this.questions;
   }
 
-  shuffleArray(arr) {
-    const copy = [...arr];
-    for (let i = copy.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
+  // --- Session Persistence ---
+  persistActiveSession() {
+    if (this.isSubmitted) {
+      store.clearActiveSession();
+      return;
     }
-    return copy;
+    store.saveActiveSession({
+      exercise: this.exercise,
+      questions: this.questions,
+      currentIndex: this.currentIndex,
+      userAnswers: this.userAnswers,
+      flaggedQuestions: Array.from(this.flaggedQuestions),
+      checkedQuestions: Array.from(this.checkedQuestions),
+      isSubmitted: this.isSubmitted,
+      mode: this.mode,
+      instantCheck: this.instantCheck,
+      timeLimitSeconds: this.timeLimitSeconds,
+      timeRemaining: this.timeRemaining,
+      startTime: this.startTime ? this.startTime.toISOString() : null,
+      config: this.config
+    });
+  }
+
+  restoreSession(saved) {
+    if (!saved || !Array.isArray(saved.questions) || saved.questions.length === 0) {
+      return false;
+    }
+    this.clearTimer();
+    this.exercise = saved.exercise;
+    this.questions = saved.questions;
+    this.currentIndex = saved.currentIndex || 0;
+    this.userAnswers = saved.userAnswers || {};
+    this.flaggedQuestions = new Set(saved.flaggedQuestions || []);
+    this.checkedQuestions = new Set(saved.checkedQuestions || []);
+    this.isSubmitted = Boolean(saved.isSubmitted);
+    this.mode = saved.mode || 'all';
+    this.instantCheck = saved.instantCheck !== undefined ? saved.instantCheck : true;
+    this.timeLimitSeconds = saved.timeLimitSeconds || 900;
+    this.timeRemaining = saved.timeRemaining !== undefined ? saved.timeRemaining : this.timeLimitSeconds;
+    this.startTime = saved.startTime ? new Date(saved.startTime) : new Date();
+    this.config = saved.config || {};
+
+    if (!this.isSubmitted && this.timeRemaining > 0) {
+      this.startTimer();
+    }
+    this.notifyStateChanged();
+    return true;
+  }
+
+  shuffleArray(arr) {
+    return shuffleArray(arr);
   }
 
   // --- Timer ---
@@ -137,6 +313,7 @@ export class QuizEngine {
     if (index >= 0 && index < this.questions.length) {
       this.currentIndex = index;
       sounds.playClick();
+      this.persistActiveSession();
       this.notifyStateChanged();
     }
   }
@@ -157,12 +334,16 @@ export class QuizEngine {
   setAnswer(qId, answerValue) {
     if (this.isSubmitted) return;
     this.userAnswers[qId] = answerValue;
-    // When answer changes, if instant check wasn't triggered, notify
+    this.persistActiveSession();
     this.notifyStateChanged();
   }
 
   getAnswer(qId) {
     return this.userAnswers[qId];
+  }
+
+  getUserAnswer(qId) {
+    return this.getAnswer(qId);
   }
 
   hasAnswered(qId) {
@@ -191,6 +372,7 @@ export class QuizEngine {
     } else {
       this.flaggedQuestions.add(qId);
     }
+    this.persistActiveSession();
     this.notifyStateChanged();
   }
 
@@ -215,6 +397,7 @@ export class QuizEngine {
       store.recordQuestionResult(q.id, false, q);
     }
 
+    this.persistActiveSession();
     this.notifyStateChanged();
     return evalResult;
   }
@@ -225,25 +408,35 @@ export class QuizEngine {
 
   // --- Evaluation Logic ---
   evaluateQuestion(question, userAnswer) {
-    if (!userAnswer) {
+    if (userAnswer === undefined || userAnswer === null || userAnswer === '') {
       return { isCorrect: false, score: 0, maxScore: 1, unanswered: true, details: null };
     }
 
     switch (question.type) {
       case 'single_choice': {
-        const correctKey = question.correctAnswers ? question.correctAnswers[0] : (question.options.find(o => o.isCorrect) || {}).key;
+        const correctKey = question.correctAnswers
+          ? question.correctAnswers[0]
+          : ((question.options || []).find(o => o.isCorrect) || {}).origKey || ((question.options || []).find(o => o.isCorrect) || {}).key;
+
+        const selectedOpt = (question.options || []).find(o => o.origKey === userAnswer || o.key === userAnswer);
+        const correctOpt = (question.options || []).find(o => o.origKey === correctKey || o.key === correctKey || o.isCorrect);
+
         const isCorrect = String(userAnswer).toUpperCase() === String(correctKey).toUpperCase();
         return {
           isCorrect,
           score: isCorrect ? 1 : 0,
           maxScore: 1,
           correctAnswers: [correctKey],
-          userAnswer
+          userAnswer,
+          correctVisualKey: correctOpt ? (correctOpt.visualKey || correctOpt.displayKey || correctOpt.key) : correctKey,
+          userVisualKey: selectedOpt ? (selectedOpt.visualKey || selectedOpt.displayKey || selectedOpt.key) : userAnswer,
+          explanation: question.explanation || ''
         };
       }
 
       case 'multiple_choice': {
-        const correctSet = new Set((question.correctAnswers || question.options.filter(o => o.isCorrect).map(o => o.key)).map(k => String(k).toUpperCase()));
+        const correctKeys = question.correctAnswers || (question.options || []).filter(o => o.isCorrect).map(o => o.origKey || o.key);
+        const correctSet = new Set(correctKeys.map(k => String(k).toUpperCase()));
         const userSet = new Set((Array.isArray(userAnswer) ? userAnswer : [userAnswer]).map(k => String(k).toUpperCase()));
 
         let matched = 0;
@@ -257,32 +450,155 @@ export class QuizEngine {
           score: isExact ? 1 : 0,
           maxScore: 1,
           correctAnswers: Array.from(correctSet),
-          userAnswer: Array.from(userSet)
+          userAnswer: Array.from(userSet),
+          explanation: question.explanation || ''
+        };
+      }
+
+      case 'fill_blank': {
+        const blanks = question.blanks || [];
+        const totalBlanks = blanks.length;
+        let correctCount = 0;
+        const blankResults = [];
+
+        blanks.forEach((b, bIdx) => {
+          const bId = b.id || `blank-${bIdx + 1}`;
+          const uVal = (typeof userAnswer === 'object' && userAnswer !== null)
+            ? (userAnswer[bId] || '')
+            : (typeof userAnswer === 'string' && bIdx === 0 ? userAnswer : '');
+
+          const normUser = String(uVal || '').trim().replace(/\s+/g, ' ').toLowerCase();
+
+          const accepted = Array.isArray(b.acceptedAnswers)
+            ? b.acceptedAnswers
+            : [String(b.acceptedAnswer || '')];
+          const normAccepted = accepted.map(a => String(a || '').trim().replace(/\s+/g, ' ').toLowerCase());
+
+          const isItemCorrect = normUser !== '' && normAccepted.includes(normUser);
+          if (isItemCorrect) correctCount++;
+
+          blankResults.push({
+            id: bId,
+            order: b.order || bIdx + 1,
+            userAnswer: uVal,
+            acceptedAnswers: accepted,
+            isCorrect: isItemCorrect
+          });
+        });
+
+        const isFullyCorrect = totalBlanks > 0 && correctCount === totalBlanks;
+        return {
+          isCorrect: isFullyCorrect,
+          score: totalBlanks > 0 ? (correctCount / totalBlanks) : 0,
+          maxScore: 1,
+          blankResults,
+          correctCount,
+          totalBlanks,
+          explanation: question.explanation || ''
+        };
+      }
+
+      case 'matching': {
+        const pairs = question.pairs || [];
+        const totalPairs = pairs.length;
+        let correctCount = 0;
+        const pairResults = [];
+
+        pairs.forEach((p, pIdx) => {
+          const pairId = p.id || `pair-${pIdx + 1}`;
+          const uRightId = (typeof userAnswer === 'object' && userAnswer !== null) ? userAnswer[pairId] : null;
+
+          const isItemCorrect = uRightId === pairId;
+          if (isItemCorrect) correctCount++;
+
+          const chosenRight = pairs.find(item => item.id === uRightId);
+          pairResults.push({
+            id: pairId,
+            left: p.left,
+            correctRight: p.right,
+            chosenRight: chosenRight ? chosenRight.right : null,
+            isCorrect: isItemCorrect
+          });
+        });
+
+        const isFullyCorrect = totalPairs > 0 && correctCount === totalPairs;
+        return {
+          isCorrect: isFullyCorrect,
+          score: totalPairs > 0 ? (correctCount / totalPairs) : 0,
+          maxScore: 1,
+          pairResults,
+          correctCount,
+          totalPairs,
+          explanation: question.explanation || ''
+        };
+      }
+
+      case 'table_completion': {
+        const rows = question.rows || [];
+        const inputCells = [];
+        rows.forEach(r => {
+          (r || []).forEach(cell => {
+            if (cell && cell.isInput) inputCells.push(cell);
+          });
+        });
+
+        const totalCells = inputCells.length;
+        let correctCount = 0;
+        const cellResults = [];
+
+        inputCells.forEach((c, cIdx) => {
+          const cId = c.id || `cell-${cIdx + 1}`;
+          const uVal = (typeof userAnswer === 'object' && userAnswer !== null) ? (userAnswer[cId] || '') : '';
+          const normUser = String(uVal || '').trim().replace(/\s+/g, ' ').toLowerCase();
+
+          const accepted = Array.isArray(c.acceptedAnswers)
+            ? c.acceptedAnswers
+            : [String(c.acceptedAnswer || '')];
+          const normAccepted = accepted.map(a => String(a || '').trim().replace(/\s+/g, ' ').toLowerCase());
+
+          const isItemCorrect = normUser !== '' && normAccepted.includes(normUser);
+          if (isItemCorrect) correctCount++;
+
+          cellResults.push({
+            id: cId,
+            userAnswer: uVal,
+            acceptedAnswers: accepted,
+            isCorrect: isItemCorrect
+          });
+        });
+
+        const isFullyCorrect = totalCells > 0 && correctCount === totalCells;
+        return {
+          isCorrect: isFullyCorrect,
+          score: totalCells > 0 ? (correctCount / totalCells) : 0,
+          maxScore: 1,
+          cellResults,
+          correctCount,
+          totalCells,
+          explanation: question.explanation || ''
         };
       }
 
       case 'true_false_group': {
-        // Items: [{ order, statement, correctAnswer: 'Đúng'|'Sai' }]
-        // UserAnswer: { 1: 'Đúng', 2: 'Sai', ... }
         const items = question.items || [];
-        let totalItems = items.length;
+        const totalItems = items.length;
         let correctItems = 0;
         const itemResults = [];
 
         items.forEach(it => {
-          const uAns = userAnswer[it.order];
-          const isItemCorrect = uAns && (uAns.toLowerCase().trim() === it.correctAnswer.toLowerCase().trim());
+          const uAns = (userAnswer && typeof userAnswer === 'object') ? userAnswer[it.order] : null;
+          const isItemCorrect = uAns && (String(uAns).toLowerCase().trim() === String(it.correctAnswer).toLowerCase().trim());
           if (isItemCorrect) correctItems++;
           itemResults.push({
             order: it.order,
             statement: it.statement,
             correctAnswer: it.correctAnswer,
             userAnswer: uAns || null,
-            isCorrect: isItemCorrect
+            isCorrect: Boolean(isItemCorrect)
           });
         });
 
-        const isFullyCorrect = correctItems === totalItems;
+        const isFullyCorrect = totalItems > 0 && correctItems === totalItems;
         return {
           isCorrect: isFullyCorrect,
           score: totalItems > 0 ? (correctItems / totalItems) : 0,
@@ -294,28 +610,26 @@ export class QuizEngine {
       }
 
       case 'drag_drop': {
-        // Pairs: [{ id, prompt, correctAnswer }]
-        // UserAnswer: { targetId: 'placedText' }
         const pairs = question.pairs || [];
-        let totalPairs = pairs.length;
+        const totalPairs = pairs.length;
         let correctPairs = 0;
         const pairResults = [];
 
         pairs.forEach((p, idx) => {
           const targetId = p.id || `pair-${idx + 1}`;
-          const uAns = userAnswer[targetId];
-          const isPairCorrect = uAns && (uAns.trim().toLowerCase() === p.correctAnswer.trim().toLowerCase());
+          const uAns = (userAnswer && typeof userAnswer === 'object') ? userAnswer[targetId] : null;
+          const isPairCorrect = uAns && (String(uAns).trim().toLowerCase() === String(p.correctAnswer).trim().toLowerCase());
           if (isPairCorrect) correctPairs++;
           pairResults.push({
             id: targetId,
             prompt: p.prompt,
             correctAnswer: p.correctAnswer,
             userAnswer: uAns || null,
-            isCorrect: isPairCorrect
+            isCorrect: Boolean(isPairCorrect)
           });
         });
 
-        const isFullyCorrect = correctPairs === totalPairs;
+        const isFullyCorrect = totalPairs > 0 && correctPairs === totalPairs;
         return {
           isCorrect: isFullyCorrect,
           score: totalPairs > 0 ? (correctPairs / totalPairs) : 0,
@@ -327,10 +641,8 @@ export class QuizEngine {
       }
 
       case 'drag_drop_columns': {
-        // Columns: [{ id, title, correctItems: [...] }]
-        // UserAnswer: { colId: ['item1', 'item2'] }
         const columns = question.columns || [];
-        let totalCols = columns.length;
+        const totalCols = columns.length;
         let correctCols = 0;
         const colResults = [];
 
@@ -356,7 +668,7 @@ export class QuizEngine {
           });
         });
 
-        const isFullyCorrect = correctCols === totalCols;
+        const isFullyCorrect = totalCols > 0 && correctCols === totalCols;
         return {
           isCorrect: isFullyCorrect,
           score: totalCols > 0 ? (correctCols / totalCols) : 0,
@@ -385,7 +697,10 @@ export class QuizEngine {
     summary.isTimeout = isTimeout;
     this._lastSummary = summary;
 
-    // Save each answered wrong/correct question into Store (unanswered questions are not recorded as wrong)
+    // Clear active session once submitted
+    store.clearActiveSession();
+
+    // Save each answered wrong/correct question into Store
     summary.results.forEach(res => {
       if (res.isAnswered) {
         store.recordQuestionResult(res.question.id, res.isCorrect, res.question);
@@ -417,7 +732,7 @@ export class QuizEngine {
 
   calculateSummary() {
     let totalScore = 0;
-    let maxScore = this.questions.length;
+    const maxScore = this.questions.length;
     let correctCount = 0;
     let wrongCount = 0;
     let unansweredCount = 0;

@@ -111,6 +111,9 @@ export class AdminEngine {
         
         let typeLabel = 'Trắc nghiệm 1 đáp án';
         if (q.type === 'multiple_choice') typeLabel = 'Chọn nhiều đáp án';
+        else if (q.type === 'fill_blank') typeLabel = 'Điền từ vào chỗ trống';
+        else if (q.type === 'matching') typeLabel = 'Nối cột khái niệm';
+        else if (q.type === 'table_completion') typeLabel = 'Điền đáp án vào bảng';
         else if (q.type === 'true_false_group') typeLabel = 'Đúng / Sai theo nhóm';
         else if (q.type === 'drag_drop') typeLabel = 'Kéo thả điền khuyết';
         else if (q.type === 'drag_drop_columns') typeLabel = 'Kéo thả phân loại cột';
@@ -124,6 +127,40 @@ export class AdminEngine {
                   <span class="opt-tag">${opt.key}.</span>
                   <span class="opt-text">${escapeHtml(opt.content)}</span>
                   ${opt.isCorrect ? '<span class="correct-badge">✓ Đáp án đúng (Đỏ)</span>' : ''}
+                </div>
+              `).join('')}
+            </div>
+          `;
+        } else if (q.type === 'fill_blank' || q.blanks) {
+          answersPreviewHtml = `
+            <div class="admin-tf-preview">
+              ${(q.blanks || []).map(b => `
+                <div class="admin-tf-row">
+                  <span class="tf-num">${b.order}.</span>
+                  <span class="tf-stmt">${escapeHtml(b.label || 'Chỗ trống')}</span>
+                  <span class="tf-ans ans-true">${escapeHtml((b.acceptedAnswers || []).join(', '))}</span>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        } else if (q.type === 'matching') {
+          answersPreviewHtml = `
+            <div class="admin-dd-preview">
+              ${(q.pairs || []).map(p => `
+                <div class="admin-dd-row">
+                  <span class="dd-p-prompt">${escapeHtml(p.left)}</span>
+                  <span class="dd-p-ans">➔ [${escapeHtml(p.right)}]</span>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        } else if (q.type === 'table_completion' || q.rows) {
+          answersPreviewHtml = `
+            <div class="admin-dd-preview">
+              ${(q.rows || []).map(r => `
+                <div class="admin-dd-row">
+                  <span class="dd-p-prompt">${escapeHtml(r[0] ? r[0].text : '')}</span>
+                  <span class="dd-p-ans">➔ [${escapeHtml(r[1] && r[1].acceptedAnswers ? r[1].acceptedAnswers.join(', ') : '')}]</span>
                 </div>
               `).join('')}
             </div>
@@ -293,6 +330,9 @@ export class AdminEngine {
             <select id="edit-q-type" class="admin-select">
               <option value="single_choice" ${q.type === 'single_choice' ? 'selected' : ''}>Trắc nghiệm 1 đáp án đúng</option>
               <option value="multiple_choice" ${q.type === 'multiple_choice' ? 'selected' : ''}>Trắc nghiệm chọn nhiều đáp án</option>
+              <option value="fill_blank" ${q.type === 'fill_blank' ? 'selected' : ''}>Điền từ vào chỗ trống</option>
+              <option value="matching" ${q.type === 'matching' ? 'selected' : ''}>Nối cột khái niệm</option>
+              <option value="table_completion" ${q.type === 'table_completion' ? 'selected' : ''}>Điền đáp án vào bảng</option>
               <option value="true_false_group" ${q.type === 'true_false_group' ? 'selected' : ''}>Đúng / Sai theo từng phát biểu</option>
               <option value="drag_drop" ${q.type === 'drag_drop' ? 'selected' : ''}>Kéo thả điền khuyết</option>
               <option value="drag_drop_columns" ${q.type === 'drag_drop_columns' ? 'selected' : ''}>Kéo thả phân loại cột</option>
@@ -302,6 +342,11 @@ export class AdminEngine {
           <div class="form-group">
             <label>Nội dung câu hỏi:</label>
             <textarea id="edit-q-content" class="admin-textarea" rows="3">${q.content}</textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Lời giải &amp; Ghi chú kiến thức:</label>
+            <textarea id="edit-q-explanation" class="admin-textarea" rows="2" placeholder="Nhập lời giải hoặc kiến thức trọng tâm...">${q.explanation || ''}</textarea>
           </div>
 
           <div class="form-group">
@@ -394,6 +439,68 @@ export class AdminEngine {
                 <input type="text" class="admin-input edit-dd-prompt" data-index="${i}" value="${p.prompt.replace(/"/g, '&quot;')}" placeholder="Phát biểu ${i+1} có chỗ trống _____">
                 <span class="dd-arrow">➔</span>
                 <input type="text" class="admin-input edit-dd-ans" data-index="${i}" value="${p.correctAnswer.replace(/"/g, '&quot;')}" placeholder="Đáp án đúng">
+              </div>
+            `).join('')}
+          </div>
+        `;
+      } else if (type === 'fill_blank') {
+        const blanks = (q.blanks && q.blanks.length) ? q.blanks : [
+          { id: 'blank-1', order: 1, label: 'Chỗ trống 1', acceptedAnswers: ['1848'] }
+        ];
+        optionsContainer.innerHTML = `
+          <label>Các chỗ trống & Đáp án đúng tương đương (ngăn cách bằng dấu phẩy):</label>
+          <div class="edit-fb-list" style="display: flex; flex-direction: column; gap: 8px;">
+            ${blanks.map((b, i) => `
+              <div class="edit-fb-row" style="display: flex; gap: 8px; align-items: center;">
+                <span class="tf-label">${i+1}.</span>
+                <input type="text" class="admin-input edit-fb-label" data-index="${i}" value="${(b.label || '').replace(/"/g, '&quot;')}" placeholder="Mô tả chỗ trống">
+                <input type="text" class="admin-input edit-fb-answers" data-index="${i}" value="${((b.acceptedAnswers || []).join(', ')).replace(/"/g, '&quot;')}" placeholder="Đáp án đúng (ví dụ: 1848, năm 1848)">
+              </div>
+            `).join('')}
+          </div>
+        `;
+      } else if (type === 'matching') {
+        const pairs = (q.pairs && q.pairs.length) ? q.pairs : [
+          { id: 'pair-1', left: 'Karl Marx', right: 'Tác phẩm Tuyên ngôn của Đảng Cộng sản' },
+          { id: 'pair-2', left: 'Friedrich Engels', right: 'Đồng tác giả với Karl Marx' },
+          { id: 'pair-3', left: 'Năm 1848', right: 'Năm ra đời của CNXHKH' }
+        ];
+        optionsContainer.innerHTML = `
+          <label>Các cặp ghép đôi (Cột A ➔ Cột B):</label>
+          <div class="edit-matching-list" style="display: flex; flex-direction: column; gap: 8px;">
+            ${pairs.map((p, i) => `
+              <div class="edit-matching-row" style="display: flex; gap: 8px; align-items: center;">
+                <input type="text" class="admin-input edit-match-left" data-index="${i}" value="${(p.left || '').replace(/"/g, '&quot;')}" placeholder="Cột A (Ví dụ: Karl Marx)">
+                <span class="dd-arrow">➔</span>
+                <input type="text" class="admin-input edit-match-right" data-index="${i}" value="${(p.right || '').replace(/"/g, '&quot;')}" placeholder="Cột B (Ví dụ: Tác phẩm Tuyên ngôn)">
+              </div>
+            `).join('')}
+          </div>
+        `;
+      } else if (type === 'table_completion') {
+        const headers = q.headers || ['Nội dung', 'Câu trả lời'];
+        const rows = q.rows || [
+          [{ text: 'Năm ra đời CNXH khoa học', isInput: false }, { isInput: true, id: 'cell-1', placeholder: 'Năm ra đời', acceptedAnswers: ['1848', 'năm 1848'] }],
+          [{ text: 'Hai nhà sáng lập', isInput: false }, { isInput: true, id: 'cell-2', placeholder: 'Hai nhà sáng lập', acceptedAnswers: ['C.Mác và Ph.Ăngghen', 'Mác và Ăngghen'] }]
+        ];
+        const flatCells = [];
+        rows.forEach((r, rIdx) => {
+          (r || []).forEach((c, cIdx) => {
+            if (c && c.isInput) {
+              flatCells.push({ ...c, row: rIdx + 1, col: cIdx + 1 });
+            }
+          });
+        });
+        optionsContainer.innerHTML = `
+          <label>Tiêu đề các cột bảng (ngăn cách bởi dấu phẩy):</label>
+          <input type="text" class="admin-input edit-tbl-headers" value="${headers.join(', ').replace(/"/g, '&quot;')}" style="margin-bottom: 8px;">
+          <label>Các ô cần điền trong bảng:</label>
+          <div class="edit-tbl-cells-list" style="display: flex; flex-direction: column; gap: 8px;">
+            ${flatCells.map((c, i) => `
+              <div class="edit-tbl-cell-row" style="display: flex; gap: 8px; align-items: center;">
+                <span class="tf-label">Ô [${c.row},${c.col}]</span>
+                <input type="text" class="admin-input edit-tbl-prompt" data-index="${i}" value="${(c.placeholder || c.id || '').replace(/"/g, '&quot;')}" placeholder="Mô tả ô">
+                <input type="text" class="admin-input edit-tbl-answers" data-index="${i}" value="${((c.acceptedAnswers || []).join(', ')).replace(/"/g, '&quot;')}" placeholder="Đáp án đúng (ngăn cách phẩy)">
               </div>
             `).join('')}
           </div>
@@ -492,6 +599,48 @@ export class AdminEngine {
           allPool = allPool.concat(rawItems);
         });
         q.optionsPool = allPool;
+      } else if (q.type === 'fill_blank') {
+        const labels = modalOverlay.querySelectorAll('.edit-fb-label');
+        const ansList = modalOverlay.querySelectorAll('.edit-fb-answers');
+        q.blanks = [];
+        labels.forEach((inp, idx) => {
+          const accepted = ansList[idx].value.split(',').map(s => s.trim()).filter(Boolean);
+          q.blanks.push({
+            id: `blank-${idx + 1}`,
+            order: idx + 1,
+            label: inp.value.trim() || `Chỗ trống ${idx + 1}`,
+            acceptedAnswers: accepted.length ? accepted : ['']
+          });
+        });
+      } else if (q.type === 'matching') {
+        const lefts = modalOverlay.querySelectorAll('.edit-match-left');
+        const rights = modalOverlay.querySelectorAll('.edit-match-right');
+        q.pairs = [];
+        lefts.forEach((inp, idx) => {
+          q.pairs.push({
+            id: `pair-${idx + 1}`,
+            left: inp.value.trim(),
+            right: rights[idx].value.trim()
+          });
+        });
+      } else if (q.type === 'table_completion') {
+        const headersInp = modalOverlay.querySelector('.edit-tbl-headers');
+        const promptInps = modalOverlay.querySelectorAll('.edit-tbl-prompt');
+        const ansInps = modalOverlay.querySelectorAll('.edit-tbl-answers');
+        q.headers = headersInp ? headersInp.value.split(',').map(s => s.trim()).filter(Boolean) : ['Nội dung', 'Câu trả lời'];
+        q.rows = [];
+        promptInps.forEach((pInp, idx) => {
+          const accepted = ansInps[idx].value.split(',').map(s => s.trim()).filter(Boolean);
+          q.rows.push([
+            { text: pInp.value.trim() || `Nội dung ${idx + 1}`, isInput: false },
+            { isInput: true, id: `cell-${idx + 1}`, placeholder: 'Nhập câu trả lời...', acceptedAnswers: accepted.length ? accepted : [''] }
+          ]);
+        });
+      }
+
+      const explanationInp = modalOverlay.querySelector('#edit-q-explanation');
+      if (explanationInp) {
+        q.explanation = explanationInp.value.trim();
       }
 
       if (isNew) {
