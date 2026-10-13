@@ -4,7 +4,7 @@
  */
 import { INITIAL_QUIZ_DATA } from './data.js';
 
-export const CURRENT_DATA_VERSION = '2.0.1-20261012';
+export const CURRENT_DATA_VERSION = '2.0.4-20261014';
 
 export const STORAGE_KEYS = {
   EXERCISES: 'onthi_exercises_v1',
@@ -205,12 +205,34 @@ class Store {
           this.saveExercises(migrated);
           storage.setItem(STORAGE_KEYS.DATA_VERSION, CURRENT_DATA_VERSION);
         } else {
-          // Same version: ensure any missing lesson is present
+          // Same version: ensure any missing lesson is present and heal any outdated questions
           let changed = false;
           INITIAL_QUIZ_DATA.forEach(initEx => {
-            if (!parsed.some(e => e.id === initEx.id)) {
+            const foundEx = parsed.find(e => e.id === initEx.id);
+            if (!foundEx) {
               parsed.push(initEx);
               changed = true;
+            } else {
+              // Self-heal known outdated questions if not customized
+              (foundEx.questions || []).forEach((q, qIdx) => {
+                if (q.isCustomized === true) return;
+                const officialQ = initEx.questions.find(oq => oq.id === q.id);
+                if (!officialQ) return;
+
+                if (q.id === 'bai-4-q7' && (!q.content || !q.content.includes('Trước sự liên minh') || q.content.trim() === 'Chọn phương án trả lời đúng nhất để điền vào chỗ trống cho câu sau:')) {
+                  foundEx.questions[qIdx] = JSON.parse(JSON.stringify(officialQ));
+                  changed = true;
+                } else if (q.id === 'bai-2-q40' && (q.options || []).length < 4) {
+                  foundEx.questions[qIdx] = JSON.parse(JSON.stringify(officialQ));
+                  changed = true;
+                } else if (q.id === 'bai-3-q29' && (q.options || []).length < 4) {
+                  foundEx.questions[qIdx] = JSON.parse(JSON.stringify(officialQ));
+                  changed = true;
+                } else if (q.id === 'bai-2-q31' && (q.items || []).length < 4) {
+                  foundEx.questions[qIdx] = JSON.parse(JSON.stringify(officialQ));
+                  changed = true;
+                }
+              });
             }
           });
           if (changed) {

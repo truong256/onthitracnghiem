@@ -357,6 +357,7 @@ body.quiz-mode .top-navbar {
   font-weight: 400;
   color: #1f2937;
   line-height: 1.5;
+  white-space: pre-line;
 }
 
 /* Flag / Review Later Checkbox (Right top of question) */
@@ -1606,6 +1607,7 @@ body.quiz-mode .top-navbar {
   .q-content-text {
     font-size: 14.5px;
     line-height: 1.5;
+    white-space: pre-line;
   }
 
   .options-grid-container {

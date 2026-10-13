@@ -2795,7 +2795,7 @@ export const INITIAL_QUIZ_DATA = [
         "type": "multiple_choice",
         "header": "Câu 40:",
         "content": "Đặc điểm cơ bản của thời kỳ quá độ lên chủ nghĩa xã hội ở Việt Nam là gì? (Chọn 2 đáp án đúng)",
-        "instructionNote": "Hãy chọn 2 đáp án đúng nhất!",
+        "instructionNote": "Sinh viên chọn 2 phương án đúng nhất",
         "options": [
           {
             "key": "A",
@@ -3839,6 +3839,11 @@ export const INITIAL_QUIZ_DATA = [
             "key": "C",
             "content": "Chức năng giai cấp và chức năng đối ngoại",
             "isCorrect": false
+          },
+          {
+            "key": "D",
+            "content": "Chức năng đối nội và chức năng đối ngoại",
+            "isCorrect": false
           }
         ],
         "correctAnswers": [
@@ -4440,7 +4445,7 @@ export const INITIAL_QUIZ_DATA = [
         "number": 7,
         "type": "single_choice",
         "header": "Câu 7:",
-        "content": "Chọn phương án trả lời đúng nhất để điền vào chỗ trống cho câu sau:",
+        "content": "Chọn phương án trả lời đúng nhất để điền vào chỗ trống cho câu sau: “Trước sự liên minh của các đại biểu khoa học…, giới kỹ thuật không một thế lực đen tối nào đứng vững được”.",
         "instructionNote": "",
         "options": [
           {
@@ -5779,7 +5784,7 @@ export const INITIAL_QUIZ_DATA = [
         "number": 45,
         "type": "drag_drop",
         "header": "Câu 45:",
-        "content": "Kéo thả",
+        "content": "Kéo thả các đáp án phù hợp với từng nội dung, phương hướng về liên minh giai cấp, tầng lớp:",
         "instructionNote": "Kéo các thẻ đáp án vào vị trí tương ứng",
         "pairs": [
           {
