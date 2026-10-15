@@ -99,7 +99,71 @@ for (const mode of ['quick', 'exam']) {
 const inOrder = new QuizEngine({ random: () => 0 });
 inOrder.startQuiz({ exerciseId: 'bai-1', mode: 'all' });
 assert.deepEqual(inOrder.questions.map(q => q.id), source.map(q => q.id));
-assert.deepEqual(inOrder.questions[0].options, source[0].options);
+assert.notDeepEqual(inOrder.questions[0].options, source[0].options, 'ordered mode also shuffles answers');
 inOrder.clearTimer();
 
 console.log('Quiz interaction and shuffle regressions PASS');
+
+// Drag pools shuffle independently of prompts/targets, preserving duplicates and distractors.
+const pairQuestion = {
+  id: 'test-pairs', type: 'drag_drop', content: 'Match',
+  pairs: [{id: 'p1', prompt: 'First', correctAnswer: 'one'}, {id: 'p2', prompt: 'Second', correctAnswer: 'two'}],
+  optionsPool: ['one', 'two', 'one', 'distractor']
+};
+const columnQuestion = {
+  id: 'test-columns', type: 'drag_drop_columns', content: 'Classify',
+  columns: [{id: 'c1', title: 'First', correctItems: ['one']}, {id: 'c2', title: 'Second', correctItems: ['two']}],
+  optionsPool: ['one', 'two']
+};
+for (const question of [pairQuestion, columnQuestion, {...pairQuestion, optionsPool: undefined}, {...columnQuestion, optionsPool: undefined}, {...columnQuestion, allItems: ['two', 'one']}]) {
+  const original = structuredClone(question);
+  const pool = question.type === 'drag_drop'
+    ? question.optionsPool || question.pairs.map(p => p.correctAnswer)
+    : question.allItems || question.optionsPool || question.columns.flatMap(c => c.correctItems);
+  const shuffled = shuffleQuestionOptions(question, () => 0);
+  const actual = shuffled.allItems || shuffled.optionsPool;
+  assert.deepEqual(actual, [...pool.slice(1), pool[0]], 'drag answers move position including fallback/legacy pools');
+  assert.deepEqual(shuffled.pairs || shuffled.columns, question.pairs || question.columns, 'target IDs, prompts and correct mappings stay fixed');
+  assert.deepEqual(question, original, 'source pool is never mutated');
+  const answer = shuffled.type === 'drag_drop'
+    ? Object.fromEntries(shuffled.pairs.map(p => [p.id, p.correctAnswer]))
+    : Object.fromEntries(shuffled.columns.map(c => [c.id, c.correctItems]));
+  assert.equal(new QuizEngine().evaluateQuestion(shuffled, answer).isCorrect, true);
+}
+
+const originalGetExercise = store.getExercise;
+const originalWrongObjects = store.getWrongQuestionObjects;
+const fixtures = [single, multiple, pairQuestion, columnQuestion];
+store.getExercise = () => ({id: 'shuffle-fixture', title: 'Shuffle', questions: fixtures});
+store.getWrongQuestionObjects = () => fixtures;
+try {
+  for (const mode of ['all', 'random', 'quick', 'exam', 'wrong_only']) {
+    const session = new QuizEngine({random: () => 0});
+    try {
+      session.startQuiz({exerciseId: 'shuffle-fixture', mode});
+      if (['all', 'wrong_only'].includes(mode)) assert.deepEqual(session.questions.map(q => q.id), fixtures.map(q => q.id));
+      for (const original of fixtures) {
+        const q = session.questions.find(item => item.id === original.id);
+        const before = original.options || original.optionsPool;
+        assert.notDeepEqual(q.options || q.optionsPool, before, `${mode} shuffles ${q.type}`);
+        const snapshot = structuredClone(q);
+        const answer = q.type === 'single_choice' ? q.correctAnswers[0]
+          : q.type === 'multiple_choice' ? q.correctAnswers
+          : q.type === 'drag_drop' ? Object.fromEntries(q.pairs.map(p => [p.id, p.correctAnswer]))
+          : Object.fromEntries(q.columns.map(c => [c.id, c.correctItems]));
+        session.goToQuestion(session.questions.indexOf(q));
+        session.setAnswer(q.id, answer);
+        session.nextQuestion(); session.prevQuestion();
+        assert.deepEqual(session.questions.find(item => item.id === q.id), snapshot, 'answer/navigation never reshuffles');
+        assert.equal(session.evaluateQuestion(q, session.getAnswer(q.id)).isCorrect, true);
+      }
+      const summary = session.submitQuiz();
+      assert.equal(summary.results.every(result => result.isCorrect), true);
+      assert.deepEqual(summary.results.map(result => result.question), session.questions, 'review retains session pools and labels');
+    } finally { session.clearTimer(); }
+  }
+} finally {
+  store.getExercise = originalGetExercise;
+  store.getWrongQuestionObjects = originalWrongObjects;
+}
+console.log('All-mode choice and drag answer shuffle regressions PASS');

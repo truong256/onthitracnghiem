@@ -4,17 +4,34 @@
 import { store } from './store.js';
 import { sounds } from './audio.js';
 
-// Create session-only options with new labels. Keep correctness attached to content.
+// Fisher–Yates on a copy; duplicate cards and distractors must be preserved.
+function shuffleValues(values, random) {
+  const result = [...values];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+// Create session-only answer order. Keep correctness attached to content/target IDs.
 export function shuffleQuestionOptions(question, random = Math.random) {
   const copy = JSON.parse(JSON.stringify(question));
+  if (copy.type === 'drag_drop') {
+    copy.optionsPool = shuffleValues(copy.optionsPool || (copy.pairs || []).map(pair => pair.correctAnswer), random);
+    return copy;
+  }
+  if (copy.type === 'drag_drop_columns') {
+    const pool = copy.allItems || copy.optionsPool || (copy.columns || []).flatMap(column => column.correctItems || []);
+    copy.optionsPool = shuffleValues(pool, random);
+    // The renderer prioritizes legacy allItems, so it must use the same order.
+    if (copy.allItems) copy.allItems = [...copy.optionsPool];
+    return copy;
+  }
   if (!['single_choice', 'multiple_choice'].includes(copy.type) || !Array.isArray(copy.options)) return copy;
 
   const correctKeys = new Set(copy.correctAnswers || copy.options.filter(option => option.isCorrect).map(option => option.key));
-  const options = [...copy.options];
-  for (let i = options.length - 1; i > 0; i--) {
-    const j = Math.floor(random() * (i + 1));
-    [options[i], options[j]] = [options[j], options[i]];
-  }
+  const options = shuffleValues(copy.options, random);
   copy.options = options.map((option, index) => ({
     ...option,
     key: String.fromCharCode(65 + index),
@@ -95,10 +112,9 @@ export class QuizEngine {
       }
     }
 
-    // Shuffle answer choices once per session, never while navigating or rendering.
-    if (['random', 'quick', 'exam'].includes(this.mode)) {
-      baseQuestions = baseQuestions.map(q => shuffleQuestionOptions(q, this.random));
-    }
+    // Every mode shuffles choices and drag cards once at session start.
+    // Ordered practice still preserves question order; navigation never reshuffles.
+    baseQuestions = baseQuestions.map(q => shuffleQuestionOptions(q, this.random));
 
     // Set numbers
     this.questions = baseQuestions.map((q, idx) => ({
@@ -118,12 +134,7 @@ export class QuizEngine {
   }
 
   shuffleArray(arr) {
-    const copy = [...arr];
-    for (let i = copy.length - 1; i > 0; i--) {
-      const j = Math.floor(this.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    return copy;
+    return shuffleValues(arr, this.random);
   }
 
   // --- Timer ---
