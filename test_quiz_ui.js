@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { QuizEngine } from './js/quizEngine.js';
+import { QuizEngine, shuffleQuestionOptions } from './js/quizEngine.js';
 import { App } from './js/app.js';
 import { DragDropEngine } from './js/dragDropEngine.js';
 
@@ -108,3 +108,35 @@ assert.deepEqual(untouched, {}, 'render must not mutate saved answer');
 assert.deepEqual(ddEngine.currentState, {}, 'empty render remains unanswered');
 
 console.log('Quiz UI interaction regressions PASS');
+
+// Render shuffled session pools in exactly their session order, even after placing a card.
+function chipValues(root) {
+  const values = [];
+  const visit = node => {
+    if (node.dataset?.value !== undefined) values.push(node.dataset.value);
+    (node.children || []).forEach(visit);
+  };
+  visit(root);
+  return values;
+}
+const pairCards = shuffleQuestionOptions({
+  id: 'shuffled-pairs', type: 'drag_drop',
+  pairs: [{id: 'p1', prompt: 'First', correctAnswer: 'one'}, {id: 'p2', prompt: 'Second', correctAnswer: 'two'}],
+  optionsPool: ['one', 'two', 'one', 'extra']
+}, () => 0);
+const shuffledColumns = shuffleQuestionOptions({...columns, allItems: ['one', 'two']}, () => 0);
+for (const question of [pairCards, shuffledColumns]) {
+  const container = new Element();
+  const renderer = new DragDropEngine(container, () => {});
+  const expected = question.allItems || question.optionsPool;
+  renderer.render(question);
+  assert.deepEqual(chipValues(container), expected, 'visible pool follows shuffled session order');
+  renderer.render(question);
+  assert.deepEqual(chipValues(container), expected, 'rerender does not reshuffle cards');
+  const state = question.type === 'drag_drop' ? {p1: 'one'} : {c1: ['one']};
+  renderer.render(question, state);
+  const remaining = [...expected]; remaining.splice(remaining.indexOf('one'), 1);
+  assert.deepEqual(chipValues(container), remaining, 'placing a card preserves remaining card order and duplicates');
+  assert.deepEqual(state, question.type === 'drag_drop' ? {p1: 'one'} : {c1: ['one']}, 'render leaves saved answers intact');
+}
+console.log('Shuffled drag pool rendering regressions PASS');
