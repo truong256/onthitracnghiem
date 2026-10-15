@@ -4440,7 +4440,7 @@ export const INITIAL_QUIZ_DATA = [
         "number": 7,
         "type": "single_choice",
         "header": "Câu 7:",
-        "content": "Chọn phương án trả lời đúng nhất để điền vào chỗ trống cho câu sau:",
+        "content": "Chọn phương án trả lời đúng nhất để điền vào chỗ trống cho câu sau:\n “Trước sự liên minh của các đại biểu khoa học…, giới kỹ thuật không một thế lực đen tối nào đứng vững được”.",
         "instructionNote": "",
         "options": [
           {

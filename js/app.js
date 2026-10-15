@@ -6,6 +6,7 @@ import { sounds } from './audio.js';
 import { QuizEngine } from './quizEngine.js';
 import { DragDropEngine } from './dragDropEngine.js';
 import { AdminEngine } from './adminEngine.js';
+import { startPresence } from './presence.js';
 
 export function escapeHtml(str) {
   if (str === null || str === undefined) return '';
@@ -36,6 +37,7 @@ export class App {
     this.initEngines();
     this.renderHome();
     this.setupEventListeners();
+    this.stopPresence = startPresence({ element: document.getElementById('online-presence') });
   }
 
   bindDOM() {
