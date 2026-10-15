@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import { INITIAL_QUIZ_DATA } from './js/data.js';
+import { CURRENT_DATA_VERSION, migrateExercisesData } from './js/store.js';
+const question = INITIAL_QUIZ_DATA.find(e => e.id === 'bai-4').questions.find(q => q.id === 'bai-4-q7');
+assert.match(question.content, /Trước sự liên minh của các đại biểu khoa học/);
+assert.match(question.content, /giới kỹ thuật không một thế lực đen tối nào đứng vững được/);
+assert.deepEqual(question.correctAnswers, ['B']);
+assert.equal(question.options.find(o => o.key === 'B').content, 'Giai cấp vô sản');
+assert.notEqual(CURRENT_DATA_VERSION, '2.0.1-20261012', 'Existing browsers must migrate');
+const old = structuredClone(INITIAL_QUIZ_DATA);
+old.find(e => e.id === 'bai-4').questions.find(q => q.id === question.id).content = 'Chọn phương án trả lời đúng nhất để điền vào chỗ trống cho câu sau:';
+assert.equal(migrateExercisesData(old, INITIAL_QUIZ_DATA).find(e => e.id === 'bai-4').questions.find(q => q.id === question.id).content, question.content);
+console.log('Bài 4 missing quote and migration regression PASS');

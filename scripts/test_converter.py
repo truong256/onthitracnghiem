@@ -5,7 +5,7 @@ def convert_block_to_question(block, lesson_id, q_seq_num):
     h_type, h_text, h_p = block[0]
     
     # Parse header and number
-    m = re.match(r'^(Câu\s*(\d*)[:.]?)\s*(.*)', h_text, re.IGNORECASE)
+    m = re.match(r'^(Câu\s*(\d*)[:.]?)\s*(.*)', h_text, re.IGNORECASE | re.DOTALL)
     orig_header = m.group(1).strip() if m else f"Câu {q_seq_num}:"
     raw_num = m.group(2).strip() if m else ""
     content_raw = m.group(3).strip() if m else h_text

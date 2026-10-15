@@ -1792,3 +1792,28 @@ body.quiz-mode .top-navbar {
   }
 }
 
+
+
+/* Online status stays visible without squeezing quiz actions on narrow screens. */
+.online-presence {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #475569;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.online-presence::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #94a3b8;
+  flex-shrink: 0;
+}
+.online-presence[data-state="connected"]::before { background: #16a34a; }
+@media (max-width: 600px) {
+  .top-navbar { flex-wrap: wrap; height: auto; min-height: 52px; gap: 6px; }
+  .navbar-left-spacer { order: 3; flex: 0 0 100%; text-align: center; }
+  .online-presence { font-size: 12px; }
+}
