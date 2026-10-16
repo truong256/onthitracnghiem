@@ -133,7 +133,26 @@ for (const question of [pairQuestion, columnQuestion, {...pairQuestion, optionsP
 
 const originalGetExercise = store.getExercise;
 const originalWrongObjects = store.getWrongQuestionObjects;
-const fixtures = [single, multiple, pairQuestion, columnQuestion];
+const trueFalseQuestion = {
+  id: 'test-true-false', type: 'true_false_group', content: 'True or false',
+  items: [
+    {order: 1, statement: 'First statement', correctAnswer: 'Đúng'},
+    {order: 2, statement: 'Second statement', correctAnswer: 'Sai'},
+    {order: 3, statement: 'Third statement', correctAnswer: 'Đúng'}
+  ]
+};
+const trueFalseSnapshot = structuredClone(trueFalseQuestion);
+const shuffledTF = shuffleQuestionOptions(trueFalseQuestion, () => 0);
+assert.deepEqual(shuffledTF.items.map(item => item.statement), ['Second statement', 'Third statement', 'First statement']);
+assert.deepEqual(shuffledTF.items.map(item => item.order), [1, 2, 3], 'display numbers follow the new order');
+assert.deepEqual(shuffledTF.items.map(item => item.correctAnswer), ['Sai', 'Đúng', 'Đúng']);
+assert.equal(new QuizEngine().evaluateQuestion(shuffledTF, {1: 'Sai', 2: 'Đúng', 3: 'Đúng'}).score, 1);
+assert.equal(new QuizEngine().evaluateQuestion(shuffledTF, {1: 'Đúng', 2: 'Đúng'}).score, 1 / 3, 'wrong and blank statements are not credited');
+assert.deepEqual(shuffleQuestionOptions({...trueFalseQuestion, items: []}).items, []);
+assert.deepEqual(shuffleQuestionOptions({...trueFalseQuestion, items: [trueFalseQuestion.items[0]]}).items, [trueFalseQuestion.items[0]]);
+assert.deepEqual(trueFalseQuestion, trueFalseSnapshot, 'the question bank retains its statement order and answer keys');
+
+const fixtures = [single, multiple, pairQuestion, columnQuestion, trueFalseQuestion];
 store.getExercise = () => ({id: 'shuffle-fixture', title: 'Shuffle', questions: fixtures});
 store.getWrongQuestionObjects = () => fixtures;
 try {
@@ -144,11 +163,12 @@ try {
       if (['all', 'wrong_only'].includes(mode)) assert.deepEqual(session.questions.map(q => q.id), fixtures.map(q => q.id));
       for (const original of fixtures) {
         const q = session.questions.find(item => item.id === original.id);
-        const before = original.options || original.optionsPool;
-        assert.notDeepEqual(q.options || q.optionsPool, before, `${mode} shuffles ${q.type}`);
+        const before = original.options || original.optionsPool || original.items;
+        assert.notDeepEqual(q.options || q.optionsPool || q.items, before, `${mode} shuffles ${q.type}`);
         const snapshot = structuredClone(q);
         const answer = q.type === 'single_choice' ? q.correctAnswers[0]
           : q.type === 'multiple_choice' ? q.correctAnswers
+          : q.type === 'true_false_group' ? Object.fromEntries(q.items.map(item => [item.order, trueFalseQuestion.items.find(sourceItem => sourceItem.statement === item.statement).correctAnswer]))
           : q.type === 'drag_drop' ? Object.fromEntries(q.pairs.map(p => [p.id, p.correctAnswer]))
           : Object.fromEntries(q.columns.map(c => [c.id, c.correctItems]));
         session.goToQuestion(session.questions.indexOf(q));
@@ -166,4 +186,14 @@ try {
   store.getExercise = originalGetExercise;
   store.getWrongQuestionObjects = originalWrongObjects;
 }
-console.log('All-mode choice and drag answer shuffle regressions PASS');
+assert.deepEqual(trueFalseQuestion, trueFalseSnapshot, 'all modes leave the source statements untouched');
+
+const repeatSession = new QuizEngine({random: () => 0});
+try {
+  repeatSession.startQuiz({exerciseId: 'bai-1'});
+  const first = structuredClone(repeatSession.questions.find(q => q.type === 'true_false_group').items);
+  repeatSession.random = () => 0.99;
+  repeatSession.startQuiz({exerciseId: 'bai-1'});
+  assert.notDeepEqual(repeatSession.questions.find(q => q.type === 'true_false_group').items, first, 'a new attempt generates a fresh statement order');
+} finally { repeatSession.clearTimer(); }
+console.log('All-mode choice, drag and true/false shuffle regressions PASS');

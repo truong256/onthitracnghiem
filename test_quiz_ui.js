@@ -86,6 +86,20 @@ assert.equal(tfEngine.isChecked(tf.id), false, 'all true/false items do not trig
 tfEngine.checkCurrentQuestion();
 assert.equal(tfEngine.isChecked(tf.id), true);
 
+const shuffledTF = shuffleQuestionOptions(tf, () => 0);
+const {app: shuffledTFApp, engine: shuffledTFEngine} = setup(shuffledTF);
+let tfRows = shuffledTFApp.quizAnswersContainer.children[0].children;
+assert.ok(tfRows[0].innerHTML.includes('<span>two</span>'), 'the first displayed statement is shuffled');
+assert.ok(tfRows[0].innerHTML.includes('class="tf-num">1.</span>'));
+tfRows[0].querySelector('.btn-tf-false').click();
+tfRows = shuffledTFApp.quizAnswersContainer.children[0].children;
+tfRows[1].querySelector('.btn-tf-true').click();
+assert.deepEqual(shuffledTFEngine.getAnswer(tf.id), {1: 'Sai', 2: 'Đúng'}, 'clicks follow the displayed statement numbers');
+assert.equal(shuffledTFEngine.isChecked(tf.id), false, 'shuffling still requires explicit checking');
+assert.equal(shuffledTFEngine.checkCurrentQuestion().score, 1);
+tfRows = shuffledTFApp.quizAnswersContainer.children[0].children;
+assert.ok(tfRows.every(row => row.className.includes('eval-correct')), 'feedback grades the shuffled statements correctly');
+
 const { app: examApp, engine: examEngine } = setup(single);
 examEngine.mode = 'exam';
 examEngine.instantCheck = false;
