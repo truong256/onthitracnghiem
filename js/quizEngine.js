@@ -17,6 +17,13 @@ function shuffleValues(values, random) {
 // Create session-only answer order. Keep correctness attached to content/target IDs.
 export function shuffleQuestionOptions(question, random = Math.random) {
   const copy = JSON.parse(JSON.stringify(question));
+  if (copy.type === 'true_false_group') {
+    copy.items = shuffleValues(copy.items || [], random).map((item, index) => ({
+      ...item,
+      order: index + 1
+    }));
+    return copy;
+  }
   if (copy.type === 'drag_drop') {
     copy.optionsPool = shuffleValues(copy.optionsPool || (copy.pairs || []).map(pair => pair.correctAnswer), random);
     return copy;
@@ -112,7 +119,7 @@ export class QuizEngine {
       }
     }
 
-    // Every mode shuffles choices and drag cards once at session start.
+    // Every mode shuffles choices, true/false statements and drag cards once at session start.
     // Ordered practice still preserves question order; navigation never reshuffles.
     baseQuestions = baseQuestions.map(q => shuffleQuestionOptions(q, this.random));
 
