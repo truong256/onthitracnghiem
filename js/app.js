@@ -927,11 +927,11 @@ class App {
           if (isItemAnswered) {
             row.classList.add(isItemCorrect ? 'eval-correct' : 'eval-wrong');
             if (isItemCorrect) {
-              tfFeedbackHtml = `<span class="tf-eval-tag correct">✓ Đúng</span>`;
+              tfFeedbackHtml = `<span class="tf-eval-tag correct">✓ Chính xác</span>`;
               if (userChoice === 'Đúng') btnTrueClass = 'eval-btn-correct';
               if (userChoice === 'Sai') btnFalseClass = 'eval-btn-correct';
             } else {
-              tfFeedbackHtml = `<span class="tf-eval-tag wrong">✗ Sai (Đáp án đúng: ${escapeHtml(correctAns)})</span>`;
+              tfFeedbackHtml = `<span class="tf-eval-tag wrong">✗ Chưa chính xác (Đáp án đúng: <strong>${escapeHtml(correctAns)}</strong>)</span>`;
               if (userChoice === 'Đúng') {
                 btnTrueClass = 'eval-btn-wrong';
                 btnFalseClass = 'eval-btn-hint';
@@ -942,7 +942,7 @@ class App {
             }
           } else if (isChecked) {
             row.classList.add('eval-wrong');
-            tfFeedbackHtml = `<span class="tf-eval-tag wrong">✗ Chưa chọn (Đáp án đúng: ${escapeHtml(correctAns)})</span>`;
+            tfFeedbackHtml = `<span class="tf-eval-tag wrong">✗ Chưa chọn (Đáp án đúng: <strong>${escapeHtml(correctAns)}</strong>)</span>`;
             if (correctAns.toLowerCase() === 'đúng') btnTrueClass = 'eval-btn-hint';
             if (correctAns.toLowerCase() === 'sai') btnFalseClass = 'eval-btn-hint';
           }
