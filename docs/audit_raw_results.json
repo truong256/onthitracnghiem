@@ -3898,17 +3898,17 @@
       "number": 25,
       "id": "bai-6-q25",
       "type": "true_false_group",
-      "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+      "content": "Chọn đáp án Đúng hoặc Sai đối với các phát biểu sau về chức năng và quan hệ gia đình Việt Nam hiện nay:",
       "status": "ADDED",
       "details": [
         "Câu hỏi mới bổ sung từ tài liệu Word"
       ],
       "old_answers": null,
       "new_answers": [
-        "Sai",
-        "Sai",
         "Đúng",
-        "Đúng"
+        "Đúng",
+        "Sai",
+        "Sai"
       ],
       "pdf_basis": ""
     },

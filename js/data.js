@@ -8156,28 +8156,28 @@ export const INITIAL_QUIZ_DATA = [
         "number": 25,
         "type": "true_false_group",
         "header": "Câu 25:",
-        "content": "Chọn đáp án (Đúng hoặc Sai) với từng phát biểu sau:",
+        "content": "Chọn đáp án Đúng hoặc Sai đối với các phát biểu sau về chức năng và quan hệ gia đình Việt Nam hiện nay:",
         "instructionNote": "Chọn Đúng hoặc Sai cho từng nhận định",
         "items": [
           {
             "order": 1,
-            "statement": "Nội dung giáo dục trong gia đình hiện nay chỉ tập trung giáo dục đạo đức",
-            "correctAnswer": "Sai"
+            "statement": "Hiện nay, kinh tế gia đình đang trở thành một bộ phận quan trọng trong nền kinh tế quốc dân",
+            "correctAnswer": "Đúng"
           },
           {
             "order": 2,
+            "statement": "Điểm tương đồng giữa giáo dục gia đình truyền thống và giáo dục của xã hội mới là tiếp tục nhấn mạnh sự hy sinh của cá nhân cho cộng đồng",
+            "correctAnswer": "Đúng"
+          },
+          {
+            "order": 3,
             "statement": "Hiện nay, độ bền vững của gia đình không bị chi phối bởi các mối quan hệ hòa hợp tình cảm giữa chồng và vợ, cha mẹ và con cái",
             "correctAnswer": "Sai"
           },
           {
-            "order": 3,
-            "statement": "Giáo dục gia đình tiếp tục nhấn mạnh sự hy sinh của cá nhân cho cộng đồng",
-            "correctAnswer": "Đúng"
-          },
-          {
             "order": 4,
-            "statement": "Hiện nay, kinh tế gia đình đang trở thành một bộ phận quan trọng trong nền kinh tế quốc dân",
-            "correctAnswer": "Đúng"
+            "statement": "Nội dung giáo dục trong gia đình hiện nay chỉ tập trung giáo dục đạo đức",
+            "correctAnswer": "Sai"
           }
         ],
         "needsReview": false,

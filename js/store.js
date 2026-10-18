@@ -4,7 +4,7 @@
  */
 import { INITIAL_QUIZ_DATA } from './data.js';
 
-export const CURRENT_DATA_VERSION = '2.0.4-20261014';
+export const CURRENT_DATA_VERSION = '2.0.5-20261019';
 
 export const STORAGE_KEYS = {
   EXERCISES: 'onthi_exercises_v1',
@@ -242,6 +242,9 @@ class Store {
                   foundEx.questions[qIdx] = JSON.parse(JSON.stringify(officialQ));
                   changed = true;
                 } else if (q.id === 'bai-2-q31' && (q.items || []).length < 4) {
+                  foundEx.questions[qIdx] = JSON.parse(JSON.stringify(officialQ));
+                  changed = true;
+                } else if (q.id === 'bai-6-q25' && (!q.content || !q.content.includes('chức năng và quan hệ gia đình') || (q.items && q.items[0] && q.items[0].statement.includes('Nội dung giáo dục')))) {
                   foundEx.questions[qIdx] = JSON.parse(JSON.stringify(officialQ));
                   changed = true;
                 }
