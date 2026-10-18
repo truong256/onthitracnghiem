@@ -102,16 +102,29 @@ export class QuizEngine {
         title: 'ÔN TẬP CÁC CÂU LÀM SAI',
         description: `Luyện tập lại ${baseQuestions.length} câu đã trả lời sai`
       };
+    } else if (config.exerciseId === 'random_50' || this.mode === 'random_50' || config.isRandom50) {
+      const allEx = store.getExercises();
+      baseQuestions = [];
+      allEx.forEach(ex => {
+        baseQuestions.push(...JSON.parse(JSON.stringify(ex.questions)));
+      });
+      const isExam = !this.instantCheck;
+      this.exercise = {
+        id: 'random_50',
+        title: isExam ? 'ĐỀ THI THỬ 50 CÂU NGẪU NHIÊN' : 'LUYỆN 50 CÂU NGẪU NHIÊN',
+        description: 'Bộ đề 50 câu hỏi trích xuất ngẫu nhiên từ toàn bộ ngân hàng câu hỏi 6 bài'
+      };
     } else if (config.exerciseId === 'all') {
       const allEx = store.getExercises();
       baseQuestions = [];
       allEx.forEach(ex => {
         baseQuestions.push(...JSON.parse(JSON.stringify(ex.questions)));
       });
+      const isCount50 = config.questionCount == 50;
       this.exercise = {
-        id: 'all',
-        title: 'TẤT CẢ CÁC BÀI ÔN TẬP',
-        description: `Bộ đề tổng hợp toàn bộ ${baseQuestions.length} câu hỏi`
+        id: isCount50 ? 'random_50' : 'all',
+        title: isCount50 ? (this.instantCheck ? 'LUYỆN 50 CÂU NGẪU NHIÊN' : 'ĐỀ THI THỬ 50 CÂU NGẪU NHIÊN') : 'TẤT CẢ CÁC BÀI ÔN TẬP',
+        description: isCount50 ? 'Bộ đề 50 câu hỏi trích xuất ngẫu nhiên từ toàn bộ ngân hàng câu hỏi 6 bài' : `Bộ đề tổng hợp toàn bộ ${baseQuestions.length} câu hỏi`
       };
     } else {
       const ex = store.getExercise(config.exerciseId || 'bai-1');
@@ -137,17 +150,21 @@ export class QuizEngine {
     // Determine whether to shuffle question order
     const shouldShuffleQuestions = config.shuffleQuestions !== undefined
       ? Boolean(config.shuffleQuestions)
-      : (this.mode === 'random' || this.mode === 'quick' || this.mode === 'exam');
+      : (this.mode === 'random' || this.mode === 'quick' || this.mode === 'exam' || this.mode === 'random_50' || config.exerciseId === 'random_50' || config.isRandom50);
 
     if (shouldShuffleQuestions) {
       baseQuestions = shuffleArray(baseQuestions);
     }
 
     // Slice question count if needed
-    if (config.questionCount && config.questionCount > 0 && config.questionCount < baseQuestions.length) {
-      baseQuestions = baseQuestions.slice(0, config.questionCount);
+    const parsedCount = (config.questionCount && config.questionCount !== 'all') ? parseInt(config.questionCount, 10) : null;
+    if (this.mode === 'random_50' || config.exerciseId === 'random_50' || config.isRandom50) {
+      const targetCount = parsedCount && parsedCount > 0 ? parsedCount : 50;
+      baseQuestions = baseQuestions.slice(0, targetCount);
+    } else if (parsedCount && parsedCount > 0 && parsedCount < baseQuestions.length) {
+      baseQuestions = baseQuestions.slice(0, parsedCount);
     } else if (this.mode === 'quick') {
-      baseQuestions = baseQuestions.slice(0, config.questionCount || 10);
+      baseQuestions = baseQuestions.slice(0, parsedCount || 10);
     }
 
     // Determine whether to shuffle option positions
@@ -213,7 +230,16 @@ export class QuizEngine {
     });
 
     // Setup Timer
-    const durationMinutes = config.timeLimitMinutes || (this.mode === 'exam' ? 15 : (this.questions.length * 1.5));
+    let durationMinutes = config.timeLimitMinutes;
+    if (!durationMinutes) {
+      if (config.exerciseId === 'random_50' || this.mode === 'random_50_exam' || ((this.mode === 'exam' || this.instantCheck === false) && (config.isRandom50 || this.questions.length >= 50))) {
+        durationMinutes = 45;
+      } else if (this.mode === 'exam') {
+        durationMinutes = 15;
+      } else {
+        durationMinutes = Math.max(15, Math.round(this.questions.length * 1.5));
+      }
+    }
     this.timeLimitSeconds = Math.round(durationMinutes * 60);
     this.timeRemaining = this.timeLimitSeconds;
     this.startTimer();

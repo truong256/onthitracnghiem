@@ -1,0 +1,44 @@
+{
+  "rules": {
+    "stats": {
+      ".read": true,
+      "total_visitors": {
+        ".write": "!data.exists() ? (newData.val() == 1) : (newData.val() == data.val() + 1)",
+        ".validate": "newData.isNumber()"
+      },
+      "daily": {
+        "$date": {
+          ".write": "!data.exists() ? (newData.val() == 1) : (newData.val() == data.val() + 1)",
+          ".validate": "newData.isNumber()"
+        }
+      }
+    },
+    "presence": {
+      ".read": true,
+      "$visitorId": {
+        "tabs": {
+          "$tabId": {
+            ".write": true,
+            ".validate": "newData.hasChildren(['screen', 'state', 'lastSeen']) && (newData.child('screen').val() == 'home' || newData.child('screen').val() == 'quiz' || newData.child('screen').val() == 'result' || newData.child('screen').val() == 'admin') && (newData.child('state').val() == 'active' || newData.child('state').val() == 'idle')"
+          }
+        }
+      }
+    },
+    "daily_visitors": {
+      "$date": {
+        "$visitorId": {
+          ".read": false,
+          ".write": "!data.exists()",
+          ".validate": "newData.hasChildren(['visitedAt']) && newData.child('visitedAt').isNumber()"
+        }
+      }
+    },
+    "all_visitors": {
+      "$visitorId": {
+        ".read": false,
+        ".write": "!data.exists()",
+        ".validate": "newData.hasChildren(['firstSeen']) && newData.child('firstSeen').isNumber()"
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import { sounds } from './audio.js';
 import { QuizEngine } from './quizEngine.js';
 import { DragDropEngine } from './dragDropEngine.js';
 import { AdminEngine } from './adminEngine.js';
+import { StatsEngine } from './statsEngine.js';
 
 export function escapeHtml(str) {
   if (str === null || str === undefined) return '';
@@ -25,6 +26,7 @@ class App {
     this.quizEngine = null;
     this.dragDropEngine = null;
     this.adminEngine = null;
+    this.statsEngine = null;
     this.lastResultSummary = null;
     this.resultFilter = 'all';
 
@@ -102,6 +104,12 @@ class App {
         this.renderHome();
       }
     );
+
+    // Stats & Presence Engine
+    this.statsEngine = new StatsEngine();
+    this.statsEngine.init().catch((err) => {
+      console.warn('StatsEngine initialization notice:', err);
+    });
   }
 
   switchScreen(screenName) {
@@ -131,11 +139,19 @@ class App {
       this.renderHome();
     }
 
+    // Sync active screen to presence engine (takingQuiz tracking)
+    if (this.statsEngine) {
+      this.statsEngine.setScreen(screenName);
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   // --- Home Screen Rendering ---
   renderHome() {
+    if (this.statsEngine) {
+      this.statsEngine.updateUI();
+    }
     const exercises = store.getExercises();
     const wrongItems = store.getWrongQuestions();
     const totalWrong = wrongItems.length;
@@ -179,6 +195,66 @@ class App {
 
       grid.appendChild(card);
     });
+
+    // "50 câu ngẫu nhiên" Card
+    const random50Card = document.createElement('div');
+    random50Card.className = 'exercise-card card-random-50';
+    random50Card.innerHTML = `
+      <div>
+        <div class="ex-card-avatar-pill ex-avatar-random50">50</div>
+        <span class="ex-badge-tag ex-badge-random50">🎯 ĐỀ THI CHUẨN 50 CÂU</span>
+        <h3 class="ex-card-title">LÀM 50 CÂU NGẪU NHIÊN</h3>
+        <p class="ex-card-desc">Tự động chọn lọc 50 câu hỏi ngẫu nhiên từ toàn bộ 6 bài học, trộn đề và đảo phương án đáp án chuẩn theo cấu trúc kỳ thi kết thúc học phần.</p>
+      </div>
+      <div>
+        <div class="ex-meta-info">
+          <span>⚡ 50 câu chọn lọc</span>
+          <span>🎲 Trộn ngẫu nhiên</span>
+          <span>⏱️ 45 phút / Tự do</span>
+        </div>
+        <div class="ex-card-actions-double">
+          <button class="ex-action-btn btn-start-random50-practice" title="Bắt đầu luyện tập 50 câu tự do có kiểm tra đáp án tức thì">
+            Luyện Tự Do (50 câu)
+          </button>
+          <button class="ex-action-btn btn-start-random50-exam" title="Thi thử 50 câu có bấm giờ 45 phút chuẩn phòng thi">
+            Thi Thử (45 Phút)
+          </button>
+        </div>
+        <button class="btn-config-random50" title="Tùy biến bộ lọc dạng câu hỏi hoặc chế độ">
+          ⚙️ Tùy biến bộ lọc &amp; cấu hình
+        </button>
+      </div>
+    `;
+
+    random50Card.querySelector('.btn-start-random50-practice').addEventListener('click', () => {
+      this.startQuizSession({
+        exerciseId: 'random_50',
+        mode: 'random_50',
+        shuffleQuestions: true,
+        shuffleOptions: true,
+        questionCount: 50,
+        instantCheck: true
+      });
+    });
+
+    random50Card.querySelector('.btn-start-random50-exam').addEventListener('click', () => {
+      this.startQuizSession({
+        exerciseId: 'random_50',
+        mode: 'exam',
+        isRandom50: true,
+        shuffleQuestions: true,
+        shuffleOptions: true,
+        questionCount: 50,
+        instantCheck: false,
+        timeLimitMinutes: 45
+      });
+    });
+
+    random50Card.querySelector('.btn-config-random50').addEventListener('click', () => {
+      this.openModeSelector('random_50', '50 CÂU HỎI NGẪU NHIÊN', 50, 'random_50');
+    });
+
+    grid.appendChild(random50Card);
 
     // "Tất cả các bài" (All questions) Card
     const allCard = document.createElement('div');
@@ -237,9 +313,30 @@ class App {
   }
 
   // --- Mode Selector Modal ---
-  openModeSelector(exerciseId, exerciseTitle) {
+  openModeSelector(exerciseId, exerciseTitle, defaultCount = null, defaultMode = null) {
     this.selectedExerciseId = exerciseId;
     document.getElementById('mode-modal-title').textContent = `Ôn luyện: ${exerciseTitle}`;
+
+    if (defaultCount) {
+      const selCount = document.getElementById('cfg-question-count');
+      if (selCount) selCount.value = String(defaultCount);
+    }
+
+    if (defaultMode) {
+      this.selectedMode = defaultMode;
+      document.querySelectorAll('.mode-option-card').forEach(c => {
+        if (c.dataset.mode === defaultMode) {
+          c.classList.add('selected');
+        } else {
+          c.classList.remove('selected');
+        }
+      });
+      const chkShuffleQ = document.getElementById('cfg-shuffle-questions');
+      const chkShuffleOpt = document.getElementById('cfg-shuffle-options');
+      if (chkShuffleQ) chkShuffleQ.checked = true;
+      if (chkShuffleOpt) chkShuffleOpt.checked = true;
+    }
+
     this.modeModal.style.display = 'flex';
   }
 
@@ -249,6 +346,7 @@ class App {
 
   startQuizSession(config) {
     try {
+      this.lastQuizConfig = { ...config };
       this.quizEngine.startQuiz(config);
       this.switchScreen('quiz');
       sounds.playClick();
@@ -1420,6 +1518,10 @@ class App {
         if (this.selectedMode === 'random') {
           if (chkShuffleQ) chkShuffleQ.checked = true;
           if (chkShuffleOpt) chkShuffleOpt.checked = true;
+        } else if (this.selectedMode === 'random_50') {
+          if (chkShuffleQ) chkShuffleQ.checked = true;
+          if (chkShuffleOpt) chkShuffleOpt.checked = true;
+          if (selCount) selCount.value = '50';
         } else if (this.selectedMode === 'quick') {
           if (chkShuffleQ) chkShuffleQ.checked = true;
           if (selCount) selCount.value = '10';
@@ -1441,19 +1543,26 @@ class App {
       const questionFilter = document.getElementById('cfg-question-filter')?.value || 'all';
       const questionCount = document.getElementById('cfg-question-count')?.value || 'all';
 
+      const isRandom50 = this.selectedMode === 'random_50' || questionCount === '50';
+
       this.startQuizSession({
-        exerciseId: this.selectedExerciseId,
+        exerciseId: isRandom50 && this.selectedExerciseId !== 'random_50' && this.selectedExerciseId !== 'all'
+          ? this.selectedExerciseId
+          : (isRandom50 ? 'random_50' : this.selectedExerciseId),
         mode: this.selectedMode,
+        isRandom50,
         shuffleQuestions,
         shuffleOptions,
         questionFilter,
-        questionCount
+        questionCount: isRandom50 && questionCount === 'all' ? 50 : questionCount
       });
     });
 
     // Result Screen Buttons
     document.getElementById('btn-retry-same-quiz').addEventListener('click', () => {
-      if (this.lastResultSummary && this.lastResultSummary.exercise) {
+      if (this.lastQuizConfig) {
+        this.startQuizSession(this.lastQuizConfig);
+      } else if (this.lastResultSummary && this.lastResultSummary.exercise) {
         this.startQuizSession({
           exerciseId: this.lastResultSummary.exercise.id,
           mode: this.lastResultSummary.mode

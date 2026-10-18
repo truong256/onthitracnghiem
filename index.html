@@ -51,6 +51,104 @@
       <section class="screen active" id="screen-home">
         <div class="dashboard-container">
 
+          <!-- REALTIME STATS OVERVIEW PANEL (Firebase Presence & Analytics) -->
+          <div class="stats-overview-panel" id="stats-overview-panel">
+            <div class="stats-panel-header">
+              <div class="stats-title-group">
+                <span class="stats-badge-icon">📊</span>
+                <span class="stats-panel-heading">Thống Kê Hoạt Động Trực Tuyến</span>
+              </div>
+              <div class="stats-status-pill" id="stats-connection-status" title="Đang kết nối tới Firebase Realtime Database">
+                <span class="status-dot connecting" id="stats-status-dot"></span>
+                <span class="status-label" id="stats-status-label">Đang kết nối...</span>
+              </div>
+            </div>
+
+            <div class="stats-cards-grid">
+              <!-- Stat 1: Online -->
+              <div class="stat-card stat-card-online" id="stat-card-online">
+                <div class="stat-card-header">
+                  <div class="stat-icon-wrap stat-icon-online">
+                    <span class="stat-live-beacon"></span>
+                    <svg class="stat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <span class="stat-live-badge">TRỰC TUYẾN</span>
+                </div>
+                <div class="stat-card-value">
+                  <span class="stat-number" id="stat-online-count">--</span>
+                  <span class="stat-unit">người</span>
+                </div>
+                <div class="stat-card-label">Đang Trực Tuyến</div>
+                <div class="stat-card-sub" id="stat-active-detail">-- đang hoạt động</div>
+              </div>
+
+              <!-- Stat 2: Taking Quiz -->
+              <div class="stat-card stat-card-quiz" id="stat-card-quiz">
+                <div class="stat-card-header">
+                  <div class="stat-icon-wrap stat-icon-quiz">
+                    <svg class="stat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 20h9"></path>
+                      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                    </svg>
+                  </div>
+                  <span class="stat-pill-tag">LÀM BÀI</span>
+                </div>
+                <div class="stat-card-value">
+                  <span class="stat-number" id="stat-quiz-count">--</span>
+                  <span class="stat-unit">người</span>
+                </div>
+                <div class="stat-card-label">Đang Làm Bài</div>
+                <div class="stat-card-sub">Luyện tập trực tiếp</div>
+              </div>
+
+              <!-- Stat 3: Today -->
+              <div class="stat-card stat-card-today" id="stat-card-today">
+                <div class="stat-card-header">
+                  <div class="stat-icon-wrap stat-icon-today">
+                    <svg class="stat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                  </div>
+                  <span class="stat-pill-tag">HÔM NAY</span>
+                </div>
+                <div class="stat-card-value">
+                  <span class="stat-number" id="stat-today-count">--</span>
+                  <span class="stat-unit">lượt</span>
+                </div>
+                <div class="stat-card-label">Truy Cập Hôm Nay</div>
+                <div class="stat-card-sub" id="stat-today-date">Hôm nay</div>
+              </div>
+
+              <!-- Stat 4: Total -->
+              <div class="stat-card stat-card-total" id="stat-card-total">
+                <div class="stat-card-header">
+                  <div class="stat-icon-wrap stat-icon-total">
+                    <svg class="stat-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <span class="stat-pill-tag">TỔNG CỘNG</span>
+                </div>
+                <div class="stat-card-value">
+                  <span class="stat-number" id="stat-total-count">--</span>
+                  <span class="stat-unit">lượt</span>
+                </div>
+                <div class="stat-card-label">Tổng Lượt Truy Cập</div>
+                <div class="stat-card-sub">Toàn thời gian</div>
+              </div>
+            </div>
+          </div>
+
           <!-- Exercises Grid Header -->
           <div class="dashboard-section-header">
             <h2 class="section-title">Danh Sách Bài Ôn Luyện</h2>
@@ -243,9 +341,15 @@
               <p>Bài luyện tập nhanh phù hợp khi có ít thời gian ôn tập.</p>
             </div>
           </div>
+          <div class="mode-option-card" data-mode="random_50">
+            <div class="mode-info">
+              <h4>Đề Thi 50 Câu Ngẫu Nhiên (Chuẩn Kỳ Thi)</h4>
+              <p>Rút ngẫu nhiên 50 câu hỏi từ ngân hàng câu hỏi, xáo trộn đề và đáp án.</p>
+            </div>
+          </div>
           <div class="mode-option-card" data-mode="exam">
             <div class="mode-info">
-              <h4>Thi Thử Tính Giờ (15 Phút)</h4>
+              <h4>Thi Thử Tính Giờ (15 - 45 Phút)</h4>
               <p>Đồng hồ LCD đếm ngược chuẩn kỳ thi, bảo mật đáp án đến khi nộp bài.</p>
             </div>
           </div>
@@ -294,6 +398,7 @@
               <option value="20">20 câu hỏi</option>
               <option value="30">30 câu hỏi</option>
               <option value="40">40 câu hỏi</option>
+              <option value="50">50 câu hỏi (Chuẩn đề thi)</option>
             </select>
           </div>
         </div>
