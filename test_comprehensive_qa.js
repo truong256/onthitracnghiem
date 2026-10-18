@@ -946,6 +946,59 @@ runTest('RESULT-12', 'Scoring', 'Câu kéo thả cả điền khuyết và 2 c�
 });
 
 // =============================================================================
+// TEST GROUP 13: TÍNH NĂNG 50 CÂU NGẪU NHIÊN
+// =============================================================================
+console.log('\n--- TEST GROUP 13: Tính năng Luyện & Thi thử 50 câu ngẫu nhiên ---');
+
+runTest('RANDOM50-01', 'Random 50', 'Khởi tạo 50 câu ngẫu nhiên rút đủ 50 câu duy nhất từ ngân hàng 235 câu', () => {
+  const engine = new QuizEngine();
+  const qList = engine.startQuiz({ exerciseId: 'random_50', mode: 'random_50' });
+  assert(qList.length === 50, `Phải có đúng 50 câu, thực tế: ${qList.length}`);
+  const uniqueIds = new Set(qList.map(q => q.id));
+  assert(uniqueIds.size === 50, 'Tất cả 50 câu hỏi phải là các câu duy nhất không trùng lặp');
+  assert(qList[0].sessionNumber === 1 && qList[49].sessionNumber === 50, 'Đánh số thứ tự sessionNumber từ 1 đến 50');
+  assert(engine.exercise.id === 'random_50', 'Exercise ID là random_50');
+  assert(engine.exercise.title.includes('50 CÂU NGẪU NHIÊN'), 'Tiêu đề thể hiện đúng 50 câu ngẫu nhiên');
+});
+
+runTest('RANDOM50-02', 'Random 50', 'Chế độ luyện tập 50 câu tự do bật kiểm tra tức thì và thời gian linh hoạt', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'random_50', mode: 'random_50', instantCheck: true });
+  assert(engine.instantCheck === true, 'Chế độ tự do cho phép kiểm tra đáp án tức thì');
+  assert(engine.exercise.title === 'LUYỆN 50 CÂU NGẪU NHIÊN', 'Tiêu đề chế độ tự do là LUYỆN 50 CÂU NGẪU NHIÊN');
+  assert(engine.timeLimitSeconds >= 45 * 60, 'Thời gian làm bài tự do thoải mái');
+});
+
+runTest('RANDOM50-03', 'Random 50', 'Chế độ thi thử 50 câu tính giờ đúng 45 phút và khóa kiểm tra tức thì', () => {
+  const engine = new QuizEngine();
+  engine.startQuiz({ exerciseId: 'random_50', mode: 'exam', isRandom50: true, instantCheck: false });
+  assert(engine.instantCheck === false, 'Thi thử không cho phép kiểm tra tức thì trước khi nộp');
+  assert(engine.timeLimitSeconds === 45 * 60, `Thời gian thi thử 50 câu phải là 45 phút (2700s), thực tế: ${engine.timeLimitSeconds}`);
+  assert(engine.getFormattedTime() === '45:00', 'Đồng hồ hiển thị ban đầu 45:00');
+  assert(engine.exercise.title === 'ĐỀ THI THỬ 50 CÂU NGẪU NHIÊN', 'Tiêu đề thể hiện đúng ĐỀ THI THỬ 50 CÂU NGẪU NHIÊN');
+});
+
+runTest('RANDOM50-04', 'Random 50', 'Xáo trộn ngẫu nhiên tạo các đề thi 50 câu khác nhau giữa các lượt bắt đầu', () => {
+  const engine1 = new QuizEngine();
+  const qList1 = engine1.startQuiz({ exerciseId: 'random_50', mode: 'random_50' });
+
+  const engine2 = new QuizEngine();
+  const qList2 = engine2.startQuiz({ exerciseId: 'random_50', mode: 'random_50' });
+
+  // Compare first 10 question IDs
+  const sample1 = qList1.slice(0, 10).map(q => q.id).join(',');
+  const sample2 = qList2.slice(0, 10).map(q => q.id).join(',');
+  assert(sample1 !== sample2, 'Hai lượt tạo đề 50 câu ngẫu nhiên phải sinh ra thứ tự hoặc tập hợp câu hỏi khác nhau');
+});
+
+runTest('RANDOM50-05', 'Random 50', 'Chọn 50 câu từ cấu hình modal với exerciseId: all và questionCount: 50', () => {
+  const engine = new QuizEngine();
+  const qList = engine.startQuiz({ exerciseId: 'all', questionCount: '50', mode: 'random' });
+  assert(qList.length === 50, `Rút đúng 50 câu từ tất cả các bài, thực tế: ${qList.length}`);
+  assert(engine.exercise.id === 'random_50', 'Tự động gắn mã đề random_50 khi chọn 50 câu');
+});
+
+// =============================================================================
 // TỔNG KẾT BÁO CÁO AUTOMATION
 // =============================================================================
 console.log('\n================================================================');

@@ -4,7 +4,7 @@
  */
 import { INITIAL_QUIZ_DATA } from './data.js';
 
-export const CURRENT_DATA_VERSION = '2.0.2-20261015';
+export const CURRENT_DATA_VERSION = '2.0.4-20261014';
 
 export const STORAGE_KEYS = {
   EXERCISES: 'onthi_exercises_v1',
@@ -13,7 +13,8 @@ export const STORAGE_KEYS = {
   WRONG_QUESTIONS: 'onthi_wrong_questions_v1',
   ATTEMPTS_HISTORY: 'onthi_history_v1',
   USER_PROFILE: 'onthi_user_profile_v1',
-  SETTINGS: 'onthi_settings_v1'
+  SETTINGS: 'onthi_settings_v1',
+  ACTIVE_SESSION: 'onthi_active_session_v1'
 };
 
 const memoryStorage = {
@@ -83,6 +84,18 @@ export function validateExercisesSchema(exercises) {
       } else if (q.type === 'drag_drop_columns') {
         if (!Array.isArray(q.columns) || q.columns.length < 2) {
           return { valid: false, error: `Câu ${q.id} (drag_drop_columns) thiếu các cột phân loại.` };
+        }
+      } else if (q.type === 'fill_blank') {
+        if (!Array.isArray(q.blanks) || q.blanks.length === 0) {
+          return { valid: false, error: `Câu ${q.id} (fill_blank) thiếu danh sách ô điền blanks.` };
+        }
+      } else if (q.type === 'matching') {
+        if (!Array.isArray(q.pairs) || q.pairs.length < 2) {
+          return { valid: false, error: `Câu ${q.id} (matching) thiếu các cặp nối pairs.` };
+        }
+      } else if (q.type === 'table_completion') {
+        if (!Array.isArray(q.rows) || q.rows.length === 0) {
+          return { valid: false, error: `Câu ${q.id} (table_completion) thiếu dữ liệu bảng rows.` };
         }
       }
     }
@@ -205,12 +218,34 @@ class Store {
           this.saveExercises(migrated);
           storage.setItem(STORAGE_KEYS.DATA_VERSION, CURRENT_DATA_VERSION);
         } else {
-          // Same version: ensure any missing lesson is present
+          // Same version: ensure any missing lesson is present and heal any outdated questions
           let changed = false;
           INITIAL_QUIZ_DATA.forEach(initEx => {
-            if (!parsed.some(e => e.id === initEx.id)) {
+            const foundEx = parsed.find(e => e.id === initEx.id);
+            if (!foundEx) {
               parsed.push(initEx);
               changed = true;
+            } else {
+              // Self-heal known outdated questions if not customized
+              (foundEx.questions || []).forEach((q, qIdx) => {
+                if (q.isCustomized === true) return;
+                const officialQ = initEx.questions.find(oq => oq.id === q.id);
+                if (!officialQ) return;
+
+                if (q.id === 'bai-4-q7' && (!q.content || !q.content.includes('Trước sự liên minh') || q.content.trim() === 'Chọn phương án trả lời đúng nhất để điền vào chỗ trống cho câu sau:')) {
+                  foundEx.questions[qIdx] = JSON.parse(JSON.stringify(officialQ));
+                  changed = true;
+                } else if (q.id === 'bai-2-q40' && (q.options || []).length < 4) {
+                  foundEx.questions[qIdx] = JSON.parse(JSON.stringify(officialQ));
+                  changed = true;
+                } else if (q.id === 'bai-3-q29' && (q.options || []).length < 4) {
+                  foundEx.questions[qIdx] = JSON.parse(JSON.stringify(officialQ));
+                  changed = true;
+                } else if (q.id === 'bai-2-q31' && (q.items || []).length < 4) {
+                  foundEx.questions[qIdx] = JSON.parse(JSON.stringify(officialQ));
+                  changed = true;
+                }
+              });
             }
           });
           if (changed) {
@@ -521,6 +556,35 @@ class Store {
       console.warn('Import parse error:', e.message);
       return { success: false, error: 'Lỗi phân tích JSON: ' + e.message };
     }
+  }
+
+  // --- Active Quiz Session Persistence ---
+  saveActiveSession(sessionData) {
+    const storage = getStorage();
+    try {
+      if (!sessionData) {
+        storage.removeItem(STORAGE_KEYS.ACTIVE_SESSION);
+      } else {
+        storage.setItem(STORAGE_KEYS.ACTIVE_SESSION, JSON.stringify(sessionData));
+      }
+    } catch (e) {
+      console.warn('Failed to save active session', e);
+    }
+  }
+
+  getActiveSession() {
+    const storage = getStorage();
+    try {
+      const raw = storage.getItem(STORAGE_KEYS.ACTIVE_SESSION);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  clearActiveSession() {
+    const storage = getStorage();
+    storage.removeItem(STORAGE_KEYS.ACTIVE_SESSION);
   }
 }
 

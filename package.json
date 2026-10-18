@@ -7,9 +7,12 @@
     "dev": "vite --port 3000 --host",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node test_quiz_data.js && node test_comprehensive_qa.js && node test_quiz_interactions.js && node test_quiz_ui.js && node test_bai4_regression.js && node --test test_presence.js test_presence_client.js"
+    "test": "node test_quiz_data.js && node test_comprehensive_qa.js && node test_advanced_randomization.js && node test_stats_presence.js"
   },
   "devDependencies": {
     "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "firebase": "^13.0.0"
   }
 }

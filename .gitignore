@@ -7,7 +7,7 @@ dist/
 __pycache__/
 *.pyc
 ~$*
-
-.env*
+.env
+.env.*
 !.env.example
 .vercel/

@@ -9,6 +9,8 @@ def convert_block_to_question(block, lesson_id, q_seq_num):
     orig_header = m.group(1).strip() if m else f"Câu {q_seq_num}:"
     raw_num = m.group(2).strip() if m else ""
     content_raw = m.group(3).strip() if m else h_text
+    if '\n' in content_raw:
+        content_raw = "\n".join(line.strip() for line in content_raw.split('\n') if line.strip())
     
     # Clean header format e.g. "Câu 1:"
     header = f"Câu {q_seq_num}:"
